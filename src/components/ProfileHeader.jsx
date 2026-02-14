@@ -1,7 +1,7 @@
 const ProfileHeader = () => {
   return (
     <header className="flex items-start gap-4 w-full">
-      <div className="">
+      <section className="">
         {/* image goes here */}
         <div className="h-40 w-40">
           <img
@@ -10,8 +10,8 @@ const ProfileHeader = () => {
             alt="my image"
           />
         </div>
-      </div>
-    <div className="flex flex-col bg-blue-500 gap-7">
+      </section>
+    <section className="flex flex-col gap-7">
         {/* rest of the content */}
         <div className="">
             <p className="font-extrabold text-xl">John Phillip Lor Malbas</p>
@@ -20,7 +20,7 @@ const ProfileHeader = () => {
 
         <p className="font-semibold">Student Intern</p>
 
-        <div className="flex gap-2 bg-blue-600">
+        <nav className="flex gap-2">
           {/* for the socials link */}
           <a href="" className="flex items-center gap-1">
             <i class="fa-brands fa-facebook-f"></i>
@@ -35,8 +35,8 @@ const ProfileHeader = () => {
           <a href="" className="flex items-center gap-1">
             <i class="fa-brands fa-linkedin"></i>
             LinkedIn</a>
-        </div>
-    </div>
+        </nav>
+    </section>
     </header>
   );
 };
