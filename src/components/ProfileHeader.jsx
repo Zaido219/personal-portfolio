@@ -3,22 +3,22 @@ const ProfileHeader = () => {
         <header className="flex items-center gap-8 w-full">
             <div className="bg-orange-500">
                 {/* image goes here */}
-                <div className="h-40 w-40 bg-yellow-500">
-                    <img className="h-full w-full object-cover bg-green-500" src="src/assets/images/image.png" alt="my image" />
+                <div className="h-40 w-40">
+                    <img className="h-full w-full object-cover" src="src/assets/images/image.png" alt="my image" />
                 </div>
             </div>
-            <div className="flex bg-blue-500 flex-col p-10">
+            <div className="flex flex-col p-10">
                 {/* rest of the content */}
-                <div className="bg-indigo-500">
+                <div className="">
                     <p className="font-bold">John Phillip Lor Malbas</p>
                     <p className="font-semibold">San Ildefonso,Bulacan,Philippines</p>
                 </div>
                 <p>Student Intern</p>
-                <div className="bg-violet-500">
+                <div className="">
                     {/* theme toggle button */}
                     <button>Change theme</button>
                 </div>
-                <div className="bg-white">
+                <div className="">
                     {/* for the socials link */}
                     <a href="">Facebook</a>
                     <a href="">Github</a>
