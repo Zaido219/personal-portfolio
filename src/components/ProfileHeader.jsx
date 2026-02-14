@@ -1,10 +1,10 @@
 const ProfileHeader = () => {
     return(
-        <header className="flex bg-red-500 w-fit p-10">
+        <header className="flex items-center gap-8 w-full">
             <div className="bg-orange-500">
                 {/* image goes here */}
                 <div className="h-40 w-40 bg-yellow-500">
-                    <img className="h-10 w-10 bg-green-500" src="src/assets/images/image.png" alt="my image" />
+                    <img className="h-full w-full object-cover bg-green-500" src="src/assets/images/image.png" alt="my image" />
                 </div>
             </div>
             <div className="flex bg-blue-500 flex-col p-10">

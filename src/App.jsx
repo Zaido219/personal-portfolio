@@ -4,13 +4,16 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import './components/ProfileHeader'
 import ProfileHeader from './components/ProfileHeader'
+import CustomBody from './components/CustomBody'
 
 function App() {
   const [count, setCount] = useState(0)
 
     return (
       <>
-        <ProfileHeader />
+        <CustomBody>
+          <ProfileHeader/>
+        </CustomBody>
       </>
     )
 }
