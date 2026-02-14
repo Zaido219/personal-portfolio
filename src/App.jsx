@@ -5,15 +5,16 @@ import './App.css'
 import './components/ProfileHeader'
 import ProfileHeader from './components/ProfileHeader'
 import CustomBody from './components/CustomBody'
+import BodyCard from './components/BodyCard'
 
 function App() {
   const [count, setCount] = useState(0)
 
     return (
       <>
-        <CustomBody>
+        <BodyCard>
           <ProfileHeader/>
-        </CustomBody>
+        </BodyCard>
       </>
     )
 }
