@@ -10,8 +10,8 @@ const ProfileHeader = () => {
             <div className="flex flex-col p-10">
                 {/* rest of the content */}
                 <div className="">
-                    <p className="font-bold">John Phillip Lor Malbas</p>
-                    <p className="font-semibold">San Ildefonso,Bulacan,Philippines</p>
+                    <p className="font-bold text-xl">John Phillip Lor Malbas</p>
+                    <p className="font-medium">San Ildefonso,Bulacan,Philippines</p>
                 </div>
                 <p>Student Intern</p>
                 <div className="">
