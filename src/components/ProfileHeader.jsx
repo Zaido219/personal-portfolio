@@ -10,7 +10,7 @@ const ProfileHeader = () => {
             <div className="flex bg-blue-500 flex-col p-10">
                 {/* rest of the content */}
                 <div className="bg-indigo-500">
-                    <p>John Phillip Lor Malbas</p>
+                    <p className="font-extrabold">John Phillip Lor Malbas</p>
                     <p>San Ildefonso,Bulacan,Philippines</p>
                 </div>
                 <p>Student Intern</p>
@@ -18,7 +18,7 @@ const ProfileHeader = () => {
                     {/* theme toggle button */}
                     <button>Change theme</button>
                 </div>
-                <div className="bg-red-500">
+                <div className="bg-white">
                     {/* for the socials link */}
                     <a href="">Facebook</a>
                     <a href="">Github</a>
