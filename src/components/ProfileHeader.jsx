@@ -1,6 +1,6 @@
 const ProfileHeader = () => {
   return (
-    <header className="flex items-start gap-4 w-full">
+    <header className="bg-yellow-300 flex items-start gap-4 w-full">
       <section className="">
         {/* image goes here */}
         <div className="h-40 w-40">
@@ -36,6 +36,25 @@ const ProfileHeader = () => {
             <i class="fa-brands fa-linkedin"></i>
             LinkedIn</a>
         </nav>
+    </section>
+    <section className="bg-blue-100 position-relative flex gap-5 items-end p-1">
+      {/* download resume aand email section */}
+      <div className="bg-red-200 flex p-2 gap-2 items-center">
+        <span>
+          <i class="fa-regular fa-file"></i>
+        </span>
+        <button className="bg-blue-300 p-1">My Resume</button>
+      </div>
+      <div className="bg-red-200 flex p-2 gap-2 items-center">
+        <span>
+          <i class="fa-regular fa-envelope"></i>
+        </span>
+        <button className="bg-blue-300 p-1">Email</button>
+      </div>
+      {/* display work experiences */}
+      <div className="work-experiences bg-orange-100">
+        <button className="flex items-center bg-orange-200 p-2">Experiences will show here</button>
+      </div>
     </section>
     </header>
   );
