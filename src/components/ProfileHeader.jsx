@@ -53,7 +53,7 @@ const ProfileHeader = () => {
       </div>
       {/* display work experiences */}
       <div className="flex items-center work-experiences">
-        <button className="flex items-center p-2">Experiences will show here</button>
+        <button className="flex items-center p-2">Certifications</button>
       </div>
     </section>
     </header>
