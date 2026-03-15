@@ -1,5 +1,6 @@
 import BaseCard from "./Ui/Card";
 import BaseSection from "./Ui/BaseSection";
+import SectionHeader from "./Ui/SectionHeaderText";
 
 const ProjectCard = () => {
   return (
@@ -7,7 +8,9 @@ const ProjectCard = () => {
       <section className="max-w-lg">
         <BaseCard>
           <div>
-            <h2>Recent Projects</h2>
+            <SectionHeader
+                title="Recent Projects"
+            />  
           </div>
           <ul className="flex flex-col gap-2">
             <li>Project 1</li>
