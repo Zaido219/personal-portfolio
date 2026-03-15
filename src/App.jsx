@@ -6,6 +6,7 @@ import './components/ProfileHeader'
 import ProfileHeader from './components/ProfileHeader'
 import CustomBody from './components/CustomBody'
 import BodyCard from './components/BodyCard'
+import ProjectCard from './components/ProjectCard'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +15,7 @@ function App() {
       <>
         <BodyCard>
           <ProfileHeader/>
+          <ProjectCard/>
         </BodyCard>
       </>
     )
