@@ -1,6 +1,6 @@
 const ProfileHeader = () => {
   return (
-    <header className="bg-orange-200 flex items-start gap-4 w-full p-2">
+    <header className="flex items-start gap-4 w-full p-2">
       <section className="">
         {/* image goes here */}
         <div className="h-40 w-40">
@@ -19,6 +19,10 @@ const ProfileHeader = () => {
         </div>
 
         <p className="font-semibold">Student Intern</p>
+        <div className="flex gap-10">
+          <span>09914003588</span>
+          <span>09914003588</span>
+        </div>
 
         <nav className="flex gap-2">
           {/* for the socials link */}
@@ -37,7 +41,10 @@ const ProfileHeader = () => {
             LinkedIn</a>
         </nav>
     </section>
-    <section className="bg-red-200 self-end flex gap-5 items-center p-1">
+    <section>
+      <button>Toggle</button>
+    </section>
+    <section className="self-end flex gap-5 items-center p-1">
       {/* download resume aand email section */}
       <div className="flex p-2 gap-2 items-center">
         <span>
