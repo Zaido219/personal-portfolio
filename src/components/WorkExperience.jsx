@@ -1,9 +1,12 @@
 import BaseSection from "./Ui/BaseSection";
+import SectionHeader from "./Ui/SectionHeaderText";
 
 const WorkExperienceSection = () => {
   return (
     <BaseSection>
-        <h2>Experiences</h2>
+        <SectionHeader
+            title="Experiences"
+        />
       <ul className="flex flex-col gap-3 border-l-2 border-zinc-800 pl-4">
         <li>
           <span className="block text-zinc-500 text-xs uppercase">Runtime</span>

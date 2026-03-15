@@ -1,7 +1,7 @@
 const SectionHeader = ({title="Default Header Title"}) => {
     return (
-        <header>
-            <h2> {title} </h2>
+        <header className="w-fit bg-blue-400 p-2 m-2">
+            <h2 className="text-lg font-semibold tracking-tight"> {title} </h2>
         </header>
     )
 }
