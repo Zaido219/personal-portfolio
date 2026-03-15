@@ -1,3 +1,5 @@
+import BaseCard from "./Ui/Card";
+
 const ProfileHeader = () => {
   return (
     <header className="flex items-start gap-4 w-full p-2">

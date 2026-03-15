@@ -1,4 +1,4 @@
-import BaseCard from "./Card";
+import BaseCard from "./Ui/Card";
 
 const ProjectCard = () => {
   return (
@@ -7,7 +7,6 @@ const ProjectCard = () => {
         <div>
           <h2>Recent Projects</h2>
         </div>
-
         <ul className="flex flex-col gap-2">
             <li>Project 1</li>
             <li>Project 2</li>
