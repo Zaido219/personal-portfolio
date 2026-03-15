@@ -1,6 +1,6 @@
 const ProfileHeader = () => {
   return (
-    <header className="bg-purple-700 flex items-start gap-4 w-full p-2">
+    <header className="flex items-start gap-4 w-full p-2">
       <section className="">
         {/* image goes here */}
         <div className="h-40 w-40">

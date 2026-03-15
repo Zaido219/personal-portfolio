@@ -1,7 +1,7 @@
 //
 const BaseCard = ({children}) => {
     return(
-        <div className="className=p-6 m-4 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-emerald-500 transition-all">
+        <div className="border border-slate-400 rounded-sm transition-all">
             {children}
         </div>
     );
