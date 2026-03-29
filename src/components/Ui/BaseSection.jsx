@@ -1,6 +1,6 @@
 const BaseSection = ({children}) => {
     return(
-        <div className="max-w-lg  p-2 m-2 ">
+        <div className="max-w-lg  p-2 m-2 shadow-sm">
             {children}
         </div>
         );
