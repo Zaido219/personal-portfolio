@@ -19,9 +19,11 @@ function App() {
       <>
         <BodyCard>
           <ProfileHeader/>
-          <ProjectCard/>
-          <Recognition/>
-          <WorkExperienceSection/>
+          <div className='flex col col-2'>
+            <ProjectCard/>
+            <Recognition/>
+            <WorkExperienceSection/>
+          </div>
           <AboutMe/>
           <Gallery/>
         </BodyCard>
