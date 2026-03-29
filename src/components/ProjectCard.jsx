@@ -13,7 +13,12 @@ const ProjectCard = () => {
             />  
           </div>
           <ul className="flex flex-col gap-2">
-            <li>Project 1</li>
+            <li>
+              <div>
+                <p>Gadinsight</p>
+                <p>A data analytics system for the Gender And Development Office at BASC</p>
+              </div>
+            </li>
             <li>Project 2</li>
             <li>Project 3</li>
           </ul>

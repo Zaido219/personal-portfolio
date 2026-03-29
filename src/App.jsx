@@ -20,8 +20,10 @@ function App() {
         <BodyCard>
           <ProfileHeader/>
           <div className='flex col col-2'>
-            <ProjectCard/>
-            <Recognition/>
+            <div>
+              <ProjectCard/>
+              <Recognition/>
+            </div>
             <WorkExperienceSection/>
           </div>
           <AboutMe/>
