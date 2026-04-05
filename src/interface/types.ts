@@ -1,3 +1,10 @@
+export type  WorkExperienceItemProps = {
+    workTitle : string
+    workCompany : string,
+    startDate : string,
+    endDate? : string,
+}
+
 export type CertificateItemProps = {
     certificateTitle : string,
     certificateProvider : string
