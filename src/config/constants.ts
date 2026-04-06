@@ -7,6 +7,8 @@ export const galleryImages = [
   { id: 3, url: "https://picsum.photos/id/1039/800/600", title: "Forest Path" },
 ];
 
+
+
 export const Testimonials : TestimonialProps[] = [
    {
         quote: "Working with the team was an incredible experience...",

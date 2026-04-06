@@ -1,5 +1,10 @@
 import { ReactNode } from "react"
 
+export type GalleryPhotoProps = {
+    src:string,
+    alt:string
+}
+
 export type TestimonialProps = {
     quote:string
     author:string
