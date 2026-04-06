@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 
 export type TestimonialProps = {
-    qoute:string
+    quote:string
     author:string
     title:string
     affiliation?:string

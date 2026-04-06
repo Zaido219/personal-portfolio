@@ -1,3 +1,20 @@
+import type { TestimonialProps } from "../interface/types"
+
+export const Testimonials : TestimonialProps[] = [
+   {
+        quote: "Working with the team was an incredible experience...",
+        author: "Sponge Bob",
+        title: "Cook",
+        affiliation: "Bulacan Agricultural State College"
+    },
+    {
+        quote: "Highly recommended for any software engineering role.",
+        author: "Mark Russell L. Lim",
+        title: "Lead Developer",
+        // affiliation is optional, so we can leave it out here
+    }
+]
+
 export const workExperiences = [
     {title:'BSIT Student', company: 'Bulacan Agricultural State College', startYear: '2002', endYear: '2003'},
     {title:'Glass and Aluminum installation helper', company: 'Family Owned Small Business', startYear: '2002', endYear: '2003'},
