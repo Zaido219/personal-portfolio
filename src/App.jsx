@@ -11,6 +11,7 @@ import Recognition from './components/Recognition'
 import WorkExperienceSection from './components/WorkExperience'
 import AboutMe from './components/AboutMe'
 import Gallery from './components/GallerySection'
+import TestimonialSection from './components/Testimonial'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,14 +20,17 @@ function App() {
       <>
         <BodyCard>
           <ProfileHeader/>
-          <div className='flex justify-center w-full p-1 bg-orange-300'>
+          <div className='flex justify-center w-full p-1'>
             <div className=''>
               <ProjectCard/>
               <Recognition/>
             </div>
             <WorkExperienceSection/>
           </div>
-          <AboutMe/>
+          <div className='bg-green-300 flex '>
+            <AboutMe/>
+            <TestimonialSection/>
+          </div>
           <Gallery/>
         </BodyCard>
       </>

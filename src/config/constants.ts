@@ -1,5 +1,12 @@
 import type { TestimonialProps } from "../interface/types"
 
+
+export const galleryImages = [
+  { id: 1, url: "https://picsum.photos/id/1018/800/600", title: "Mountain View" },
+  { id: 2, url: "https://picsum.photos/id/1015/800/600", title: "River Flow" },
+  { id: 3, url: "https://picsum.photos/id/1039/800/600", title: "Forest Path" },
+];
+
 export const Testimonials : TestimonialProps[] = [
    {
         quote: "Working with the team was an incredible experience...",
