@@ -23,13 +23,13 @@ function App() {
           <div className="flex flex-row gap-6 p-4">
             {/* Left Column: Projects and Recognition */}
             <div className="flex flex-col gap-4 w-1/2">
-              <ProjectCard />
+              <WorkExperienceSection />
               <Recognition />
             </div>
 
             {/* Right Column: Work Experience */}
             <div className="w-1/2">
-              <WorkExperienceSection />
+              <ProjectCard />
             </div>
           </div>
           <div className="flex justify-centerp-1">
