@@ -15,6 +15,12 @@ const ProjectCard = () => {
           </div>
           <ul className="flex flex-col gap-2">
             <li>
+                <ProjectItem projectName="Project Photo Booth"
+                projectDescription = "A simple photo booth app on the browser"
+                >
+              </ProjectItem>
+            </li>
+            <li>
               <ProjectItem projectName="Gadinsight"
                 projectDescription = "A data Analytics system for the Gender Development Office at Basc"
                 >
