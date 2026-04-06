@@ -2,16 +2,18 @@ import BaseCard from "./Ui/Card";
 import BaseSection from "./Ui/BaseSection";
 import SectionHeader from "./Ui/SectionHeaderText";
 import ProjectItem  from "./Ui/ProjectItem";
+import { ViewMore } from "./Ui/Navigations";
 
 const ProjectCard = () => {
   return (
     <BaseSection>
       <section className="max-w-lg">
         <BaseCard>
-          <div>
+          <div className="bg-yellow-300 flex justify-between items-center p-1">
             <SectionHeader
                 title="Recent Projects"
-            />  
+            /> 
+            <ViewMore/> 
           </div>
           <ul className="flex flex-col gap-2">
             <li>

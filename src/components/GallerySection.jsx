@@ -11,7 +11,7 @@ const Gallery = () => {
      <div className="bg-green-300 p-5 w-3xl overflow-hidden">
       <div className="flex flex-col items-center bg-blue-300 overflow-hidden p-2 w-full">
         <SectionHeader title="Gallery" />
-        <div className="bg-yellow-300 flex gap-10 p-1 w-4xl  overflow-x-auto">
+        <div className="flex gap-10 p-1 w-4xl  overflow-x-auto">
           {galleryImages.map((item, index) => {
             return (
               <div>
