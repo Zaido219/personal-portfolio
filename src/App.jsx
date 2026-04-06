@@ -27,7 +27,7 @@ function App() {
             </div>
             <WorkExperienceSection/>
           </div>
-          <div className='bg-green-300 flex '>
+          <div className='flex'>
             <AboutMe/>
             <TestimonialSection/>
           </div>
