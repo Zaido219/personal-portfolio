@@ -1,10 +1,14 @@
-import { ReactNode } from "react"
+import { Children, ReactNode } from "react"
+
+export type BaseSectionProps = {
+    children: ReactNode
+}
 
 export type GalleryPhotoProps = {
     src:string,
     alt:string
 }
-
+    
 export type TestimonialProps = {
     quote:string
     author:string
