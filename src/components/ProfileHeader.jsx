@@ -1,4 +1,5 @@
 import BaseCard from "./Ui/Card";
+import { HoverCards } from "./Ui/Cards";
 
 const ProfileHeader = () => {
   return (
@@ -49,24 +50,30 @@ const ProfileHeader = () => {
           </a>
         </nav>
       </section>
-      <section className="self-end flex gap-5 items-center p-1">
+      <section className="self-end flex gap-5 items-center p-1 ">
         {/* download resume aand email section */}
-        <div className="flex p-2 gap-2 items-center">
+        <HoverCards>
+            <div className="flex p-2 gap-2 items-center">
           <span>
             <i class="fa-regular fa-file"></i>
           </span>
           <button className="p-1">My Resume</button>
         </div>
-        <div className="flex p-2 gap-2 items-center">
+        </HoverCards>
+        <HoverCards>
+          <div className="flex p-2 gap-2 items-center">
           <span>
             <i class="fa-regular fa-envelope"></i>
           </span>
           <button className="p-1">Email</button>
         </div>
+        </HoverCards>
         {/* display work experiences */}
-        <div className="flex items-center work-experiences">
+        <HoverCards>
+          <div className="flex items-center work-experiences">
           <button className="flex items-center p-2">Certifications</button>
         </div>
+        </HoverCards>
       </section>
     </header>
   );
