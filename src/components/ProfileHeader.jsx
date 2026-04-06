@@ -2,7 +2,7 @@ import BaseCard from "./Ui/Card";
 
 const ProfileHeader = () => {
   return (
-    <header className="flex items-start gap-4 w-full p-2 bg-green-200">
+    <header className="flex items-start gap-4 w-full p-2">
       <section className="">
         {/* image goes here */}
         <div className="h-40 w-40">
