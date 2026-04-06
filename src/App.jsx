@@ -12,6 +12,7 @@ import WorkExperienceSection from './components/WorkExperience'
 import AboutMe from './components/AboutMe'
 import Gallery from './components/GallerySection'
 import TestimonialSection from './components/Testimonial'
+import { Footer } from './components/FooterSection'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,22 +20,25 @@ function App() {
     return (
       <>
         <BodyCard>
-          <ProfileHeader/>
-          <div className='flex justify-center w-full p-1'>
-            <div className=''>
-              <ProjectCard/>
-              <Recognition/>
+          <ProfileHeader />
+          <div className="flex justify-center w-full p-1">
+            <div className="">
+              <ProjectCard />
+              <Recognition />
             </div>
-            <WorkExperienceSection/>
+            <WorkExperienceSection />
           </div>
-          <div className='flex'>
-            <AboutMe/>
-            <TestimonialSection/>
+          <div className="flex">
+            <AboutMe />
+            <TestimonialSection />
           </div>
-          <Gallery/>
+          <div className='bg-red-300 flex flex-col items-center gap-2 p-2'>
+            <Gallery />
+            <Footer />
+          </div>
         </BodyCard>
       </>
-    )
+    );
 }
 
 export default App

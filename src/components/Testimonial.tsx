@@ -7,7 +7,7 @@ const TestimonialSection = () => {
   return (
     <BaseSection>
       <SectionHeader title="Recommendations" />
-      <div className="bg-violet-300 flex flex-col gap-4 p-1">
+      <div className="flex flex-col gap-4 p-1">
         {Testimonials.map((item, index) => {
           return (
             <div>
