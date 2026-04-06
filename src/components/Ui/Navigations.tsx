@@ -6,7 +6,7 @@ export const GalleryNav = ({direction} : NavProps) => {
   const positionClass = direction === "left" ? "left-2" : "right-2";
 
   return (
-    <div className={`bg-red-300 absolute ${positionClass} top-1/2 -translate-y-1/2 h-10 w-10 z-10 flex items-center justify-center cursor-pointer opacity-80 hover:opacity-100`}>
+    <div className={`bg-gray-300 absolute ${positionClass} top-1/2 -translate-y-1/2 h-10 w-10 z-10 flex items-center justify-center cursor-pointer opacity-80 hover:opacity-100`}>
       {direction === "left" ? "<" : ">"}
     </div>
   );
