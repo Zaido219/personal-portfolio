@@ -31,7 +31,7 @@ export const Testimonials : TestimonialProps[] = [
     },
     {
         quote: "Highly recommended for any software engineering role.",
-        author: "Mark Russell L. Lim",
+        author: "Squidward",
         title: "Lead Developer",
         // affiliation is optional, so we can leave it out here
     }
