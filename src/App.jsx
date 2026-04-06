@@ -19,18 +19,18 @@ function App() {
       <>
         <BodyCard>
           <ProfileHeader />
-          <div className="flex justify-center w-full p-1">
+          <div className="flex flex-col justify-center w-full p-1 bg-red-300">
             <div className="">
               <ProjectCard />
               <Recognition />
             </div>
             <WorkExperienceSection />
-          </div>
-          <div className="flex">
+          <div className="flex bg-violet-300 justify-center w-full p-1">
             <AboutMe />
             <TestimonialSection />
           </div>
-          <div className='bg-red-300 flex flex-col items-center justify-center gap-20 p-1'>
+          </div>
+          <div className='flex flex-col items-center justify-center gap-20 p-1'>
             <Gallery />
             <Footer />
           </div>
