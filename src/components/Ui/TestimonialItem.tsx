@@ -7,7 +7,7 @@ const TestimonialItem = ({ quote, author, title, affiliation}:TestimonialProps) 
             <div className="p-1">
                 <p className="italic text-md">{quote}</p>
             </div>
-            <div className="bg-orange-300 w-fit flex flex-col gap-1">
+            <div className="w-fit flex flex-col gap-1">
                 <p className="font-semibold text-sm">{author}</p>
                 <p className="text-xs">{title}</p>
                 <p>{affiliation}</p>

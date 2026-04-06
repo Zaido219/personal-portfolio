@@ -15,8 +15,6 @@ import TestimonialSection from './components/Testimonial'
 import { Footer } from './components/FooterSection'
 
 function App() {
-  const [count, setCount] = useState(0)
-
     return (
       <>
         <BodyCard>
@@ -32,7 +30,7 @@ function App() {
             <AboutMe />
             <TestimonialSection />
           </div>
-          <div className='bg-red-300 flex flex-col items-center gap-2 p-2'>
+          <div className='bg-red-300 flex flex-col items-center justify-center gap-20 p-1'>
             <Gallery />
             <Footer />
           </div>
