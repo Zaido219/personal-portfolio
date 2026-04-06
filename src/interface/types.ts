@@ -1,3 +1,10 @@
+import { ReactNode } from "react"
+
+export type HoverCardProps = {
+    children : ReactNode;
+    className?: string; // this allows extra styling mas better if wala na e
+}
+
 export type  WorkExperienceItemProps = {
     workTitle : string
     workCompany : string,
