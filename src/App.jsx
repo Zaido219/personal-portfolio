@@ -19,7 +19,7 @@ function App() {
       <>
         <BodyCard>
           <ProfileHeader/>
-          <div className='flex justify-center w-full p-1'>
+          <div className='flex justify-center w-full p-1 bg-orange-300'>
             <div className=''>
               <ProjectCard/>
               <Recognition/>
