@@ -64,14 +64,14 @@ const ProjectCard = () => {
             </li>
             <li>
               <ProjectItem
-                projectName="drowsiness-alert"
-                projectDescription="A simply project that involves computer vision that alerts if the user's eye is shut"
+                projectName="qoute-generator"
+                projectDescription="A simple web app that returns a random qoute. This project uses an api-key less api to generate the qoutes."
               ></ProjectItem>
             </li>
             <li>
               <ProjectItem
-                projectName="drowsiness-alert"
-                projectDescription="A simply project that involves computer vision that alerts if the user's eye is shut"
+                projectName="Dswd Document Support"
+                projectDescription="A web app aimed to streamline document submission and processing for the dswd office of san ildefonso bulacan."
               ></ProjectItem>
             </li>
           </ul>
