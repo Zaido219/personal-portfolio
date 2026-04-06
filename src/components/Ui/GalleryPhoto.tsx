@@ -1,6 +1,8 @@
-const GalleryPhotos = () => {
+import { GalleryPhotoProps } from "../../interface/types";
+
+const GalleryPhotos = ({src, alt}:GalleryPhotoProps) => {
     return (
-        <img src="" alt="" />
+        <img src={src} alt={alt} />
     );
 };
 
