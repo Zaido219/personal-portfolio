@@ -8,7 +8,7 @@ const Recognition = () => {
   return (
     <BaseSection>
       <BaseCard>
-        <div className="bg-green-300 flex justify-between">
+        <div className="flex justify-between">
           <SectionHeader title="Recent Certifications" />
           <ViewMore />
         </div>

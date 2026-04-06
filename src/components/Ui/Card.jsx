@@ -1,7 +1,7 @@
 //
 const BaseCard = ({children}) => {
     return(
-        <div className="p-1 m-1 rounded-sm transition-all bg-blue-300">
+        <div className="p-1 m-1 rounded-sm transition-all">
             {children}
         </div>
     );

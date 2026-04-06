@@ -9,7 +9,7 @@ const ProjectCard = () => {
     <BaseSection>
       <section className="max-w-lg">
         <BaseCard>
-          <div className="bg-yellow-300 flex justify-between items-center p-1">
+          <div className="flex justify-between items-center p-1">
             <SectionHeader
                 title="Recent Projects"
             /> 

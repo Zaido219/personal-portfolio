@@ -19,8 +19,8 @@ function App() {
     <>
       <BodyCard>
         <ProfileHeader />
-        <div className="flex flex-col justify-center w-full p-1 bg-red-300">
-          <div className="bg-orange-300 flex flex-row gap-6 p-4">
+        <div className="flex flex-col justify-center w-full p-1">
+          <div className="flex flex-row gap-6 p-4">
             {/* Left Column: Projects and Recognition */}
             <div className="flex flex-col gap-4 w-1/2">
               <ProjectCard />
@@ -32,7 +32,7 @@ function App() {
               <WorkExperienceSection />
             </div>
           </div>
-          <div className="flex bg-violet-300 justify-center w-full p-1">
+          <div className="flex justify-centerp-1">
             <AboutMe />
             <TestimonialSection />
           </div>
