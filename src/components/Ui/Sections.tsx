@@ -1,5 +1,7 @@
-export const BaseSection = () => {
+import type { BaseSectionProps } from "../../interface/types";
+
+export const BaseSection = ({children}: BaseSectionProps) => {
     return(
-        <div className="max-w-lg shadow-sm"></div>
+        <div className="max-w-lg shadow-sm">{children}</div>
     );
 };
