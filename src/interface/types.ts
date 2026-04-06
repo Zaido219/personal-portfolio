@@ -1,5 +1,9 @@
 import { Children, ReactNode } from "react"
 
+export type NavProps = {
+    direction: "left" | "right"
+}
+
 export type BaseSectionProps = {
     children: ReactNode
 }
@@ -8,7 +12,7 @@ export type GalleryPhotoProps = {
     src:string,
     alt:string
 }
-    
+
 export type TestimonialProps = {
     quote:string
     author:string
