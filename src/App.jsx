@@ -19,8 +19,8 @@ function App() {
       <>
         <BodyCard>
           <ProfileHeader/>
-          <div className='flex justify-center gap-8 w-full p-1'>
-            <div>
+          <div className='flex justify-center gap-35 w-full p-1'>
+            <div className=''>
               <ProjectCard/>
               <Recognition/>
             </div>

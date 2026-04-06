@@ -3,9 +3,9 @@ import BaseCard from "./Ui/Card";
 const ProfileHeader = () => {
   return (
     <header className="flex items-start gap-4 w-full p-2">
-      <section className="">
+      <section>
         {/* image goes here */}
-        <div className="h-40 w-40">
+        <div className="h-43 w-43">
           <img
             className="h-full w-full object-cover"
             src="src/assets/images/image.png"
@@ -13,20 +13,23 @@ const ProfileHeader = () => {
           />
         </div>
       </section>
-      <section className="flex flex-col gap-7">
+      <section className="flex flex-col p-2 gap-2">
         {/* rest of the content */}
-        <div className="">
-          <p className="font-extrabold text-xl">John Phillip Lor Malbas</p>
-          <p className="font-bold">San Ildefonso,Bulacan,Philippines</p>
+        <div className="p-1 flex flex-col gap-1">
+          <div className="">
+            <p className="font-extrabold text-xl">John Phillip Lor Malbas</p>
+            <p className="font-bold">San Ildefonso,Bulacan,Philippines</p>
+          </div>
+
+          <p className="font-semibold">Student Intern</p>
+
+          <div className="flex justify-center gap-3 w-fit">
+            <span>09914003588</span>
+            <span>09914003588</span>
+          </div>
         </div>
 
-        <p className="font-semibold">Student Intern</p>
-        <div className="flex gap-10">
-          <span>09914003588</span>
-          <span>09914003588</span>
-        </div>
-
-        <nav className="flex gap-2">
+        <nav className="flex gap-2 p-1">
           {/* for the socials link */}
           <a href="" className="flex items-center gap-1">
             <i class="fa-brands fa-facebook-f"></i>
@@ -45,9 +48,6 @@ const ProfileHeader = () => {
             LinkedIn
           </a>
         </nav>
-      </section>
-      <section>
-        <button>Toggle</button>
       </section>
       <section className="self-end flex gap-5 items-center p-1">
         {/* download resume aand email section */}
