@@ -1,9 +1,10 @@
 import { ReactNode } from "react"
 
-export type RecomendationProps = {
-    testimonialBody:string
-    referrerName:string
-    referrerTitle:string
+export type TestimonialProps = {
+    qoute:string
+    author:string
+    title:string
+    affiliation?:string
 }
 
 export type HoverCardProps = {
