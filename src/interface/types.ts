@@ -1,5 +1,11 @@
 import { ReactNode } from "react"
 
+export type RecomendationProps = {
+    testimonialBody:string
+    referrerName:string
+    referrerTitle:string
+}
+
 export type HoverCardProps = {
     children : ReactNode;
     className?: string; // this allows extra styling mas better if wala na e
@@ -17,7 +23,7 @@ export type CertificateItemProps = {
     certificateProvider : string
 }
 
-export type  ProjectItemProps = {
+export type  ProjectItemProps = {   
     projectName : string
     projectDescription : string
     projectLink?:string
