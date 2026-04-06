@@ -10,6 +10,6 @@ export const BaseSection = ({children}: BaseSectionProps) => {
 
 export const GalleryBaseSection = ({children} : BaseSectionProps) => {
     return (
-        <div className="max-w-4xl w-full mx-auto shadow-sm bg-orange-300 flex items-center justify-center">{children}</div>
+        <div className="max-w-4xl w-full mx-auto shadow-sm flex items-center justify-center">{children}</div>
     )
 } 
