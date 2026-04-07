@@ -10,7 +10,7 @@ const ProfileHeader = () => {
         <div className="h-43 w-43">
           <img
             className="h-full w-full object-cover"
-            src='/images/image.png'
+            src='/images/my_pfp.jpg'
             alt="my image"
           />
         </div>
