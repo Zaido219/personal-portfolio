@@ -1,6 +1,7 @@
 import BaseCard from "./Ui/Card";
 import { HoverCards } from "./Ui/Cards";
 
+
 const ProfileHeader = () => {
   return (
     <header className="flex items-start gap-4 w-full p-2">
@@ -9,7 +10,7 @@ const ProfileHeader = () => {
         <div className="h-43 w-43">
           <img
             className="h-full w-full object-cover"
-            src="src/assets/images/image.png"
+            src='/images/image.png'
             alt="my image"
           />
         </div>
