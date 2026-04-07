@@ -7,10 +7,10 @@ const ProfileHeader = () => {
     <header className="flex items-start gap-4 w-full p-2">
       <section>
         {/* image goes here */}
-        <div className="h-43 w-43">
+        <div className="h-43 w-43 rounded-md overflow-hidden">
           <img
             className="h-full w-full object-cover"
-            src='/images/my_pfp.jpg'
+            src='/images/my_pfp_new.jpg'
             alt="my image"
           />
         </div>
