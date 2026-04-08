@@ -18,18 +18,21 @@ const ProjectCard = () => {
               <ProjectItem
                 projectName="Project Photo Booth"
                 projectDescription="A simple photo booth app on the browser"
+                projectLink="https://photobooth-app-three.vercel.app/"
               ></ProjectItem>
             </li>
             <li>
               <ProjectItem
                 projectName="Gadinsight"
                 projectDescription="A data Analytics system for the Gender Development Office at Basc"
+                projectLink="https://www.gadinsight.com/"
               ></ProjectItem>
             </li>
             <li>
               <ProjectItem
                 projectName="Simpy Chat"
                 projectDescription="My crude implementation of multi user chat application with JWT tokens."
+                projectLink="https://github.com/Zaido219/simple-chat-app"
               ></ProjectItem>
             </li>
             <li>
