@@ -1,5 +1,10 @@
 import { Children, ReactNode } from "react"
 
+export type ShineProps = {
+    children:ReactNode;
+    className?:string;
+}
+
 export type NavProps = {
     direction: "left" | "right"
 }

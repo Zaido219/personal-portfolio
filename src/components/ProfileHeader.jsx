@@ -1,5 +1,5 @@
 import BaseCard from "./Ui/Card";
-import { HoverCards } from "./Ui/Cards";
+import { HoverCards, ShineWrapperCard } from "./Ui/Cards";
 import { downloadFile } from "../utils/Downloaders";
 
 const ProfileHeader = () => {
@@ -12,7 +12,7 @@ const ProfileHeader = () => {
         <div className="h-43 w-43 rounded-md overflow-hidden">
           <img
             className="h-full w-full object-cover"
-            src='/images/my_pfp_new.png'
+            src="/images/my_pfp_new.png"
             alt="my image"
           />
         </div>
@@ -28,8 +28,10 @@ const ProfileHeader = () => {
           <p className="font-semibold">Student Intern</p>
 
           <div className="flex justify-center gap-3 w-fit">
-            <span>09914003588</span>
-            <span>09914003588</span>
+            <span className="flex items-center gap-3">
+              <i class="fa-solid fa-phone "></i>
+              09914003588
+            </span>
           </div>
         </div>
 
@@ -55,28 +57,38 @@ const ProfileHeader = () => {
       </section>
       <section className="self-end flex flex-col w-fit gap-2 items-center p-1">
         {/* download resume aand email section */}
-        <HoverCards>
-          <div className="flex p-2 gap-2 items-center w-md cursor-pointer" onClick={() => downloadFile(myCv, 'John_Phillip_Lor_Resume.pdf')}>
-            <span>
-              <i className="fa-regular fa-file"></i>
-            </span>
-            <button className="p-1">My Resume</button>
-          </div>
-        </HoverCards>
-        <HoverCards>
-          <div className="flex p-2 gap-2 items-center  w-md">
-            <span>
-              <i class="fa-regular fa-envelope"></i>
-            </span>
-            <button className="p-1">Email</button>
-          </div>
-        </HoverCards>
+        <ShineWrapperCard>
+          <HoverCards>
+            <div
+              className="flex p-2 gap-2 items-center w-md cursor-pointer"
+              onClick={() => downloadFile(myCv, "John_Phillip_Lor_Resume.pdf")}
+            >
+              <span>
+                <i className="fa-regular fa-file"></i>
+              </span>
+              <button className="p-1 cursor-pointer">My Resume</button>
+            </div>
+          </HoverCards>
+        </ShineWrapperCard>
+
+        <ShineWrapperCard>
+          <HoverCards>
+            <div className="flex p-2 gap-2 items-center  w-md">
+              <span>
+                <i class="fa-regular fa-envelope"></i>
+              </span>
+              <button className="p-1">Email</button>
+            </div>
+          </HoverCards>
+        </ShineWrapperCard>
         {/* display work experiences */}
-        <HoverCards>
-          <div className="flex items-center work-experiences  w-md">
-            <button className="flex items-center p-2">Certifications</button>
-          </div>
-        </HoverCards>
+        <ShineWrapperCard>
+          <HoverCards>
+            <div className="flex items-center work-experiences  w-md">
+              <button className="flex items-center p-2">Certifications</button>
+            </div>
+          </HoverCards>
+        </ShineWrapperCard>
       </section>
     </header>
   );
