@@ -2,6 +2,7 @@ import BaseCard from "./Ui/Card";
 import { HoverCards, ShineWrapperCard } from "./Ui/Cards";
 import { downloadFile } from "../utils/Downloaders";
 import { emailMe } from "../utils/Emailers";
+import { navigate } from "../utils/Navigators";
 
 const ProfileHeader = () => {
   const myCv = "/files/my_resume.pdf";
@@ -38,15 +39,15 @@ const ProfileHeader = () => {
 
         <nav className="flex gap-2 p-1">
           {/* for the socials link */}
-          <a href="" className="flex items-center gap-1">
+          <a href="https://www.facebook.com/share/14h2U6Be8hT/" className="flex items-center gap-1">
             <i class="fa-brands fa-facebook-f"></i>
             Facebook
           </a>
-          <a href="" className="flex items-center gap-1">
+          <a href="https://github.com/Zaido219" className="flex items-center gap-1">
             <i class="fa-brands fa-github"></i>
             Github
           </a>
-          <a href="" className="flex items-center gap-1">
+          <a href="https://www.tiktok.com/@_zaido19?_r=1&_t=ZS-95MUZ5QxedM" className="flex items-center gap-1">
             <i class="fa-brands fa-tiktok"></i>
             Tiktok
           </a>
