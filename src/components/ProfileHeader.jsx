@@ -1,8 +1,10 @@
 import BaseCard from "./Ui/Card";
 import { HoverCards } from "./Ui/Cards";
-
+import { downloadFile } from "../utils/Downloaders";
 
 const ProfileHeader = () => {
+  const myCv = "/files/my_resume.pdf";
+
   return (
     <header className="flex items-start gap-4 w-full p-2">
       <section>
@@ -54,9 +56,9 @@ const ProfileHeader = () => {
       <section className="self-end flex flex-col w-fit gap-2 items-center p-1">
         {/* download resume aand email section */}
         <HoverCards>
-          <div className="flex p-2 gap-2 items-center w-md">
+          <div className="flex p-2 gap-2 items-center w-md cursor-pointer" onClick={() => downloadFile(myCv, 'John_Phillip_Lor_Resume.pdf')}>
             <span>
-              <i class="fa-regular fa-file"></i>
+              <i className="fa-regular fa-file"></i>
             </span>
             <button className="p-1">My Resume</button>
           </div>
