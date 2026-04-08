@@ -1,6 +1,7 @@
 import BaseCard from "./Ui/Card";
 import { HoverCards, ShineWrapperCard } from "./Ui/Cards";
 import { downloadFile } from "../utils/Downloaders";
+import { emailMe } from "../utils/Emailers";
 
 const ProfileHeader = () => {
   const myCv = "/files/my_resume.pdf";
@@ -73,7 +74,7 @@ const ProfileHeader = () => {
 
         <ShineWrapperCard>
           <HoverCards>
-            <div className="flex p-2 gap-2 items-center  w-md">
+            <div className="flex p-2 gap-2 items-center w-md cursor-pointer" onClick={emailMe}>
               <span>
                 <i class="fa-regular fa-envelope"></i>
               </span>

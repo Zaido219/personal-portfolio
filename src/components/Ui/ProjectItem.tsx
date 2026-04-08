@@ -6,7 +6,7 @@ const ProjectItem = ({projectName, projectDescription, projectLink, ...props} : 
             <strong className="text-md">{projectName}</strong>
             <p className="text-sm">{projectDescription}</p>
             <div>
-                <a href={projectLink}></a>
+                <a className="text-xs bg-gray-200 p-1 rounded-lg" href={projectLink}>View Project</a>
             </div>
         </div>
     );
