@@ -8,8 +8,8 @@ const ProfileHeader = () => {
   const myCv = "/files/my_resume.pdf";
 
   return (
-    <header className="flex items-start overflow-hidden w-fit gap-2 p-2">
-      <section>
+    <header className="flex flex-col md:flex-row md:gap-10 gap-1 p-1 md:p-2 items-center justify-center w-90 md:w-5xl overflow-hidden bg-red-300">
+      <section className="">
         {/* image goes here */}
         <div className="rounded-full h-30 w-30  md:rounded-sm md:h-43 md:w-43 overflow-hidden">
           <img
@@ -19,9 +19,9 @@ const ProfileHeader = () => {
           />
         </div>
       </section>
-      <section className="flex flex-col p-2 gap-2">
+      <section className="flex flex-col items-center justify-center mt-2 p-2 gap-2">
         {/* rest of the content */}
-        <div className="p-1 flex flex-col gap-1">
+        <div className="p-1 flex flex-col gap-1 bg-red-400">
           <div className="">
             <p className="text-md font-extrabold md:text-xl">John Phillip Lor Malbas</p>
             <p className="text-xs md:text-base font-bold">San Ildefonso,Bulacan,Philippines</p>
@@ -37,7 +37,7 @@ const ProfileHeader = () => {
           </div>
         </div>
 
-        <nav className="flex gap-2 p-1 md:w-fit overflow-hidden">
+        <nav className="flex gap-3 p-1 md:w-fit overflow-hidden">
           {/* for the socials link */}
           <a href="https://www.facebook.com/share/14h2U6Be8hT/" className="flex items-center gap-1">
             <i class="fa-brands fa-facebook-f"></i>
@@ -57,25 +57,26 @@ const ProfileHeader = () => {
           </a>
         </nav>
       </section>
-      <section className="self-end flex flex-col w-fit gap-2 items-center p-1">
+      <section className="flex flex-col w-86 gap-2 p-1">
+          {/* <section className="self-end flex flex-col w-fit gap-2 items-center p-1"></section> */}
         {/* download resume aand email section */}
         <ShineWrapperCard>
           <HoverCards>
             <div
-              className="flex p-2 gap-2 items-center w-md cursor-pointer"
+              className="flex justify-center w-85 h-10 items-center p-2 gap-2"
               onClick={() => downloadFile(myCv, "John_Phillip_Lor_Resume.pdf")}
             >
               <span>
                 <i className="fa-regular fa-file"></i>
               </span>
-              <button className="p-1 cursor-pointer">My Resume</button>
+              <button className="">My Resume</button>
             </div>
           </HoverCards>
         </ShineWrapperCard>
 
         <ShineWrapperCard>
           <HoverCards>
-            <div className="flex p-2 gap-2 items-center w-md cursor-pointer" onClick={emailMe}>
+            <div className="flex justify-center w-85 h-10 items-center p-2 gap-2" onClick={emailMe}>
               <span>
                 <i class="fa-regular fa-envelope"></i>
               </span>
@@ -86,7 +87,7 @@ const ProfileHeader = () => {
         {/* display work experiences */}
         <ShineWrapperCard>
           <HoverCards>
-            <div className="flex items-center work-experiences  w-md">
+            <div className="flex justify-center w-85 h-10 items-center p-2 gap-2">
               <button className="flex items-center p-2">Certifications</button>
             </div>
           </HoverCards>
