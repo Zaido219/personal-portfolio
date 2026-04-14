@@ -8,10 +8,10 @@ const ProfileHeader = () => {
   const myCv = "/files/my_resume.pdf";
 
   return (
-    <header className="flex items-start gap-4 w-full p-2">
+    <header className="flex items-start overflow-hidden w-fit gap-2 p-2">
       <section>
         {/* image goes here */}
-        <div className="h-43 w-43 rounded-md overflow-hidden">
+        <div className="rounded-full h-30 w-30  md:rounded-sm md:h-43 md:w-43 overflow-hidden">
           <img
             className="h-full w-full object-cover"
             src="/images/my_pfp_new.png"
@@ -23,21 +23,21 @@ const ProfileHeader = () => {
         {/* rest of the content */}
         <div className="p-1 flex flex-col gap-1">
           <div className="">
-            <p className="font-extrabold text-xl">John Phillip Lor Malbas</p>
-            <p className="font-bold">San Ildefonso,Bulacan,Philippines</p>
+            <p className="text-md font-extrabold md:text-xl">John Phillip Lor Malbas</p>
+            <p className="text-xs md:text-base font-bold">San Ildefonso,Bulacan,Philippines</p>
           </div>
 
-          <p className="font-semibold">Student Intern</p>
+          <p className="text-sm md:text-base font-semibold">Student Intern</p>
 
           <div className="flex justify-center gap-3 w-fit">
-            <span className="flex items-center gap-3">
-              <i class="fa-solid fa-phone "></i>
+            <span className="flex items-center gap-2 md:gap-3">
+              <i class="text-sm md:text-base fa-solid fa-phone"></i>
               09914003588
             </span>
           </div>
         </div>
 
-        <nav className="flex gap-2 p-1">
+        <nav className="flex gap-2 p-1 md:w-fit overflow-hidden">
           {/* for the socials link */}
           <a href="https://www.facebook.com/share/14h2U6Be8hT/" className="flex items-center gap-1">
             <i class="fa-brands fa-facebook-f"></i>
