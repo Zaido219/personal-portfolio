@@ -1,5 +1,6 @@
 import type { TestimonialProps } from "../interface/types"
 
+const images = import.meta.glob('/public/images/gallery/*.{png,jpg,jpeg,svg}', { eager: true });
 
 export const galleryImages = [
   {
