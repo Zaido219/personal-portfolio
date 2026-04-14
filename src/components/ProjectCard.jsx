@@ -16,6 +16,13 @@ const ProjectCard = () => {
           <ul className="flex flex-col gap-2 h-80 md:h-184 overflow-y-auto overflow-x-hidden p-1">
             <li>
               <ProjectItem
+                projectName="ShareMoLang"
+                projectDescription="An ongoing web based file sharing app that allows user to share files offline.Provided that they are on the same network"
+                projectLink="https://photobooth-app-three.vercel.app/"
+              ></ProjectItem>
+            </li>
+            <li>
+              <ProjectItem
                 projectName="Project Photo Booth"
                 projectDescription="A simple photo booth app on the browser"
                 projectLink="https://photobooth-app-three.vercel.app/"
@@ -30,7 +37,7 @@ const ProjectCard = () => {
             </li>
             <li>
               <ProjectItem
-                projectName="Simpy Chat"
+                projectName="Simply Chat"
                 projectDescription="My crude implementation of multi user chat application with JWT tokens."
                 projectLink="https://github.com/Zaido219/simple-chat-app"
               ></ProjectItem>
