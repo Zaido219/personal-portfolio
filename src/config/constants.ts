@@ -1,25 +1,15 @@
 import type { TestimonialProps } from "../interface/types"
 
-const images = import.meta.glob('/public/images/gallery/*.{png,jpg,jpeg,svg}', { eager: true });
+const images = import.meta.glob('../images/gallery/*.{png,jpg,jpeg,svg}', { eager: true });
 
-export const galleryImages = [
-  {
-    id: 1,
-    url: "https://picsum.photos/id/1018/800/600",
-    title: "Mountain View",
-  },
-  { id: 2, url: "https://picsum.photos/id/1015/800/600", title: "River Flow" },
-  { id: 3, url: "https://picsum.photos/id/1039/800/600", title: "Forest Path" },
-  { id: 3, url: "https://picsum.photos/id/1039/800/600", title: "Forest Path" },
-  { id: 3, url: "https://picsum.photos/id/1039/800/600", title: "Forest Path" },
-  { id: 3, url: "https://picsum.photos/id/1039/800/600", title: "Forest Path" },
-  { id: 3, url: "https://picsum.photos/id/1039/800/600", title: "Forest Path" },
-  { id: 3, url: "https://picsum.photos/id/1039/800/600", title: "Forest Path" },
-  { id: 3, url: "https://picsum.photos/id/1039/800/600", title: "Forest Path" },
-  { id: 3, url: "https://picsum.photos/id/1039/800/600", title: "Forest Path" },
-  { id: 3, url: "https://picsum.photos/id/1039/800/600", title: "Forest Path" },
-  { id: 3, url: "https://picsum.photos/id/1039/800/600", title: "Forest Path" },
-];
+console.table(images);
+
+export const galleryImages = Object.entries(images).map(([path, module], index) => ({
+  id: index + 1,
+  // When importing from assets, the 'module' contains the final optimized URL
+  url: (module as any).default, 
+  title: `Gallery Image ${index + 1}`
+}));
 
 
 
