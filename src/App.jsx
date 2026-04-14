@@ -32,7 +32,7 @@ function App() {
               <ProjectCard />
             </div>
           </div>
-          <div className="flex justify-centerp-1">
+          <div className="flex flex-col md:flex-row justify-centerp-1">
             <AboutMe />
             <TestimonialSection />
           </div>
