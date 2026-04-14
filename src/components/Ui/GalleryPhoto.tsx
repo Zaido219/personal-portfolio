@@ -1,4 +1,4 @@
-import { GalleryPhotoProps } from "../../interface/types";
+import { type GalleryPhotoProps } from "../../interface/types";
 
 const GalleryPhotos = ({src, alt}:GalleryPhotoProps) => {
     return (

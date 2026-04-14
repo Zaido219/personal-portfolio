@@ -1,5 +1,5 @@
 import { Testimonials } from "../../config/constants";
-import { TestimonialProps } from "../../interface/types";
+import { type TestimonialProps } from "../../interface/types";
 
 const TestimonialItem = ({ quote, author, title, affiliation}:TestimonialProps) => {
     return(

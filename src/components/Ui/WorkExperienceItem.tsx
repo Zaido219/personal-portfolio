@@ -1,4 +1,4 @@
-import { WorkExperienceItemProps } from "./../../interface/types";
+import { type WorkExperienceItemProps } from "./../../interface/types";
 import { HoverCards } from "./Cards";
 
 const WorkExperienceItem = ({

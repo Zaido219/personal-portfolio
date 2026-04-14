@@ -1,4 +1,4 @@
-import {ProjectItemProps} from "../../interface/types"
+import { type ProjectItemProps} from "../../interface/types"
 
 const ProjectItem = ({projectName, projectDescription, projectLink, ...props} : ProjectItemProps) => {
     return (

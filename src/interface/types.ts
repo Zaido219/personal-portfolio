@@ -1,4 +1,4 @@
-import { Children, ReactNode } from "react"
+import { Children, type ReactNode } from "react"
 
 export type ShineProps = {
     children:ReactNode;
