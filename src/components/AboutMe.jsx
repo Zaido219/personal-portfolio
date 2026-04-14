@@ -10,18 +10,12 @@ const AboutMe = () => {
         <BaseCard>
             <div className="flex flex-col gap-2">
               <p className="bg-red-300p-1 rounded-sm text-base">
-                Gemini said I'm a BSIT student and Software Engineering Intern
-                dedicated to building clean, modular systems. Proficient in
-                Python and Django, I balance high-level web development with a
-                deep-seated passion for low-level architecture. I prioritize
-                technical craftsmanship and critical problem-solving,
-                consistently striving to bridge the gap between complex backend
-                logic and intuitive, high-performance user interfaces for
-                impactful, real-world applications.
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad accusamus totam natus? Omnis quaerat quo obcaecati! 
+               Magnam dignissimos tempora commodi vitae ullam corporis vel, nostrum quos, distinctio numquam voluptates quas!
               </p>
               <p className="">
-                Currently im enrolled at Bulacan Agricultural State College.
-                Taking up Bachelor of Science in Information Technology
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Doloremque blanditiis optio sequi ipsum nostrum repellendus provident!
               </p>
             </div>
         </BaseCard>
