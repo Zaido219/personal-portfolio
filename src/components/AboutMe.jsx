@@ -8,16 +8,26 @@ const AboutMe = () => {
       <SectionHeader title="About" />
       <section className="">
         <BaseCard>
-            <div className="flex flex-col gap-2">
-              <p className="bg-red-300p-1 rounded-sm text-base">
-               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad accusamus totam natus? Omnis quaerat quo obcaecati! 
-               Magnam dignissimos tempora commodi vitae ullam corporis vel, nostrum quos, distinctio numquam voluptates quas!
-              </p>
-              <p className="">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Doloremque blanditiis optio sequi ipsum nostrum repellendus provident!
-              </p>
-            </div>
+          <div className="flex flex-col gap-2">
+            <p className="bg-red-300p-1 rounded-sm text-base">
+              Im an aspiring software engineer and BSIT student at Bulacan
+              Agricultural State College, currently based in San Ildefonso,
+              Bulacan. My passion lies in backend development and systems
+              architecture—specifically building clean, modular solutions that
+              solve real-world problems. My most significant technical
+              contribution to date has been serving as the Lead Developer for
+              GAD Insight, a data analytics system for my college. This role
+              allowed me to bridge the gap between high-level architectural
+              strategy and hands-on implementation using Python, Django, and
+              MySQL. I pride myself on being a "technical craftsman" who values
+              SOLID principles and thorough documentation, ensuring that the
+              systems I build are not just functional, but maintainable for
+              years to come. I am currently seeking a full-time role or
+              growth-oriented opportunity where I can apply my experience in
+              backend logic and system design to help a team build impactful
+              software.
+            </p>
+          </div>
         </BaseCard>
       </section>
     </BaseSection>
