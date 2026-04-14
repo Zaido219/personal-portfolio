@@ -37,7 +37,7 @@ function App() {
             <TestimonialSection />
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center gap-20 p-1">
+        <div className="flex flex-col items-center justify-center gap-5 md:gap-20 p-1">
           <Gallery />
           <Footer />
         </div>
