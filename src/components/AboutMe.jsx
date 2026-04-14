@@ -9,7 +9,7 @@ const AboutMe = () => {
       <section className="">
         <BaseCard>
           <div className="flex flex-col gap-2">
-            <p className="bg-red-300p-1 rounded-sm text-base">
+            <p className="p-1 rounded-sm text-sm md:text-base">
               Im an aspiring software engineer and BSIT student at Bulacan
               Agricultural State College, currently based in San Ildefonso,
               Bulacan. My passion lies in backend development and systems
