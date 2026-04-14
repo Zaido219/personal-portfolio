@@ -13,7 +13,7 @@ const ProjectCard = () => {
             <SectionHeader title="Recent Projects" />
             <ViewMore />
           </div>
-          <ul className="flex flex-col gap-2 h-176 overflow-y-auto overflow-x-hidden p-1">
+          <ul className="flex flex-col gap-2 h-80 md:h-184 overflow-y-auto overflow-x-hidden p-1">
             <li>
               <ProjectItem
                 projectName="Project Photo Booth"
