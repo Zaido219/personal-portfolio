@@ -14,7 +14,7 @@ const WorkExperienceItem = ({
         <div className="flex justify-between gap-1 p-1">
           <p className="text-md md:text-sm">{workCompany}</p>
           <div className="text-md md:text-sm flex justify-between gap-2">
-            <span>
+            <span className="bg-gray-200 text-xs p-1 rounded-md">
               {startDate} - {endDate}
             </span>
           </div>

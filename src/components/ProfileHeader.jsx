@@ -63,7 +63,7 @@ const ProfileHeader = () => {
               className="flex items-center gap-1"
             >
               <i class="fa-brands fa-tiktok md:text-sm"></i>
-               <p className="md:text-sm">Tiktok</p>
+              <p className="md:text-sm">Tiktok</p>
             </a>
             <a href="" className="flex items-center gap-1">
               <i class="fa-brands fa-linkedin md:text-sm"></i>
