@@ -8,57 +8,72 @@ const ProfileHeader = () => {
   const myCv = "/files/my_resume.pdf";
 
   return (
-    <header className="flex flex-col md:flex-row md:gap-10 gap-1 p-1 md:p-2 items-center justify-center w-90 md:w-5xl overflow-hidden bg-red-300">
-      <section className="">
-        {/* image goes here */}
-        <div className="rounded-full h-30 w-30  md:rounded-sm md:h-43 md:w-43 overflow-hidden">
-          <img
-            className="h-full w-full object-cover"
-            src="/images/my_pfp_new.png"
-            alt="my image"
-          />
-        </div>
-      </section>
-      <section className="flex flex-col items-center justify-center mt-2 p-2 gap-2">
-        {/* rest of the content */}
-        <div className="p-1 flex flex-col gap-1 bg-red-400">
-          <div className="">
-            <p className="text-md font-extrabold md:text-xl">John Phillip Lor Malbas</p>
-            <p className="text-xs md:text-base font-bold">San Ildefonso,Bulacan,Philippines</p>
+    <header className="flex flex-col md:flex-row md:gap-10 gap-4 p-1 md:p-2 items-center justify-center w-90 md:w-5xl overflow-hidden">
+      <div className="flex flex-col md:flex-row items-center p-2">
+        <section className="">
+          {/* image goes here */}
+          <div className="rounded-full h-40 w-40  md:rounded-sm md:h-43 md:w-43 overflow-hidden">
+            <img
+              className="h-full w-full object-cover"
+              src="/images/my_pfp_new.png"
+              alt="my image"
+            />
+          </div>
+        </section>
+        <section className="flex flex-col items-center justify-center mt-2 p-2 gap-2">
+          {/* rest of the content */}
+          <div className="p-1 flex flex-col gap-1">
+            <div className="">
+              <p className="text-md font-extrabold md:text-xl">
+                John Phillip Lor Malbas
+              </p>
+              <p className="text-xs md:text-base font-bold">
+                San Ildefonso,Bulacan,Philippines
+              </p>
+            </div>
+
+            <p className="text-sm md:text-base font-semibold">Student Intern</p>
+
+            <div className="flex justify-center gap-3 w-fit">
+              <span className="flex items-center gap-2 md:gap-3">
+                <i class="text-sm md:text-base fa-solid fa-phone"></i>
+                09914003588
+              </span>
+            </div>
           </div>
 
-          <p className="text-sm md:text-base font-semibold">Student Intern</p>
-
-          <div className="flex justify-center gap-3 w-fit">
-            <span className="flex items-center gap-2 md:gap-3">
-              <i class="text-sm md:text-base fa-solid fa-phone"></i>
-              09914003588
-            </span>
-          </div>
-        </div>
-
-        <nav className="flex gap-3 p-1 md:w-fit overflow-hidden">
-          {/* for the socials link */}
-          <a href="https://www.facebook.com/share/14h2U6Be8hT/" className="flex items-center gap-1">
-            <i class="fa-brands fa-facebook-f"></i>
-            Facebook
-          </a>
-          <a href="https://github.com/Zaido219" className="flex items-center gap-1">
-            <i class="fa-brands fa-github"></i>
-            Github
-          </a>
-          <a href="https://www.tiktok.com/@_zaido19?_r=1&_t=ZS-95MUZ5QxedM" className="flex items-center gap-1">
-            <i class="fa-brands fa-tiktok"></i>
-            Tiktok
-          </a>
-          <a href="" className="flex items-center gap-1">
-            <i class="fa-brands fa-linkedin"></i>
-            LinkedIn
-          </a>
-        </nav>
-      </section>
+          <nav className="flex md:gap-1 gap-3 md:text-md p-1 md:w-fit overflow-hidden">
+            {/* for the socials link */}
+            <a
+              href="https://www.facebook.com/share/14h2U6Be8hT/"
+              className="flex items-center gap-1"
+            >
+              <i className="fa-brands fa-facebook-f md:text-sm"></i>
+              <p className="md:text-sm">Facebook</p>
+            </a>
+            <a
+              href="https://github.com/Zaido219"
+              className="flex items-center gap-1"
+            >
+              <i class="fa-brands fa-github md:text-sm"></i>
+              <p className="md:text-sm">Github</p>
+            </a>
+            <a
+              href="https://www.tiktok.com/@_zaido19?_r=1&_t=ZS-95MUZ5QxedM"
+              className="flex items-center gap-1"
+            >
+              <i class="fa-brands fa-tiktok md:text-sm"></i>
+               <p className="md:text-sm">Tiktok</p>
+            </a>
+            <a href="" className="flex items-center gap-1">
+              <i class="fa-brands fa-linkedin md:text-sm"></i>
+              <p className="md:text-sm">LinkedIn</p>
+            </a>
+          </nav>
+        </section>
+      </div>
       <section className="flex flex-col w-86 gap-2 p-1">
-          {/* <section className="self-end flex flex-col w-fit gap-2 items-center p-1"></section> */}
+        {/* <section className="self-end flex flex-col w-fit gap-2 items-center p-1"></section> */}
         {/* download resume aand email section */}
         <ShineWrapperCard>
           <HoverCards>
@@ -76,7 +91,10 @@ const ProfileHeader = () => {
 
         <ShineWrapperCard>
           <HoverCards>
-            <div className="flex justify-center w-85 h-10 items-center p-2 gap-2" onClick={emailMe}>
+            <div
+              className="flex justify-center w-85 h-10 items-center p-2 gap-2"
+              onClick={emailMe}
+            >
               <span>
                 <i class="fa-regular fa-envelope"></i>
               </span>
