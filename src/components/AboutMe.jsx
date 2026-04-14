@@ -6,10 +6,10 @@ const AboutMe = () => {
   return (
     <BaseSection>
       <SectionHeader title="About" />
-      <section>
+      <section className="">
         <BaseCard>
             <div className="flex flex-col gap-2">
-              <p className="p-1 rounded-sm text-base">
+              <p className="bg-red-300p-1 rounded-sm text-base">
                 Gemini said I'm a BSIT student and Software Engineering Intern
                 dedicated to building clean, modular systems. Proficient in
                 Python and Django, I balance high-level web development with a

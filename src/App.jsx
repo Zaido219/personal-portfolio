@@ -22,7 +22,7 @@ function App() {
         <div className="flex flex-col justify-center w-90 md:w-full md:p-1 overflow-hidden">
           <div className="flex flex-col md:flex-row w-2xl md:w-fit gap-6 p-1">
             {/* Left Column: Projects and Recognition */}
-            <div className="flex flex-col gap-4 w-1/2 bg-red-300 overflow-hidden overflow-hidden">
+            <div className="flex flex-col  gap-4 w-89 md:w-1/2 overflow-hidden">
               <WorkExperienceSection />
               <Recognition />
             </div>
