@@ -19,10 +19,10 @@ function App() {
     <>
       <BodyCard>
         <ProfileHeader />
-        <div className="flex flex-col justify-center w-full p-1">
-          <div className="flex flex-row gap-6 p-4">
+        <div className="flex flex-col justify-center w-90 md:w-full md:p-1 overflow-hidden">
+          <div className="flex flex-col md:flex-row w-2xl md:w-fit gap-6 p-1">
             {/* Left Column: Projects and Recognition */}
-            <div className="flex flex-col gap-4 w-1/2">
+            <div className="flex flex-col gap-4 w-1/2 bg-red-300 overflow-hidden overflow-hidden">
               <WorkExperienceSection />
               <Recognition />
             </div>
