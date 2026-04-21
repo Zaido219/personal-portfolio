@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+@theme {
+  /* 1. Define the animation utility */
+  --animate-marquee: marquee var(--speed, 20s) linear infinite;
+
+  /* 2. Define the keyframes */
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+}
 
 .logo {
   height: 6em;

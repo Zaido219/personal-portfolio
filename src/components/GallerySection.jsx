@@ -5,6 +5,7 @@ import GalleryPhotos from "./Ui/GalleryPhoto";
 import { galleryImages } from "../config/constants";
 import { GalleryBaseSection } from "./Ui/Sections";
 import { GalleryNav } from "./Ui/Navigations";
+import { Marquee } from "./Ui/Motions";
 
 const Gallery = () => {
   return (
@@ -16,7 +17,8 @@ const Gallery = () => {
             <GalleryNav direction="left" />
             <GalleryNav direction="right" />
             <div className="flex gap-4 p-1 w-4xl  overflow-x-auto">
-              {galleryImages.map((item, index) => {
+              <Marquee>
+                 {galleryImages.map((item, index) => {
                 return (
                   <div>
                     <GalleryPhotos
@@ -26,6 +28,7 @@ const Gallery = () => {
                   </div>
                 );
               })}
+              </Marquee>
             </div>
           </div>
         </div>

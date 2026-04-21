@@ -1,5 +1,12 @@
 import { Children, type ReactNode } from "react"
 
+export interface MarqueeProps {
+  children: ReactNode;
+  speed?: number; // Speed in seconds
+  className?: string;
+}
+
+
 export type ShineProps = {
     children:ReactNode;
     className?:string;
