@@ -16,7 +16,7 @@ const Gallery = () => {
           <div className="relative w-full group">
             <GalleryNav direction="left" />
             <GalleryNav direction="right" />
-            <div className="flex gap-4 p-1 w-4xl  overflow-x-auto">
+            <div className="flex gap-2 p-1 w-4xl  overflow-x-auto">
               <Marquee>
                  {galleryImages.map((item, index) => {
                 return (
