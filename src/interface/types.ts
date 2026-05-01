@@ -46,7 +46,8 @@ export type  WorkExperienceItemProps = {
 
 export type CertificateItemProps = {
     certificateTitle : string,
-    certificateProvider : string
+    certificateProvider : string,
+    onClick?: () => void
 }
 
 export type  ProjectItemProps = {   
