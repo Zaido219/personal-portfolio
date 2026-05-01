@@ -2,8 +2,6 @@ import type { TestimonialProps } from "../interface/types"
 
 const images = import.meta.glob('../images/gallery/*.{png,jpg,jpeg,svg}', { eager: true });
 
-console.table(images);
-
 export const galleryImages = Object.entries(images).map(([path, module], index) => ({
   id: index + 1,
   // When importing from assets, the 'module' contains the final optimized URL
