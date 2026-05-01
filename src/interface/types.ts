@@ -3,7 +3,9 @@ import { Children, type ReactNode } from "react"
 export interface CertificateModalProps {
     title:string,
     // certificates will be stored as pdf, jpeg or in some other formats
-    src:string
+    src:string,
+    isOpen:boolean,
+    onClose:any
 }
 
 
