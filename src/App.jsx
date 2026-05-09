@@ -34,7 +34,8 @@ function App() {
           </div>
           <div className="flex flex-col md:flex-row justify-centerp-1">
             <AboutMe />
-            <TestimonialSection />
+            {/* no testimonials, disabled for now */}
+            {/* <TestimonialSection /> */}
           </div>
         </div>
         <div className="flex flex-col items-center justify-center gap-5 md:gap-20 p-1">
