@@ -18,61 +18,38 @@ export const educationExperiences: EducationItemProps[] = [
   },
   {
     id: "edu-02",
-    institutionName: "Family Owned Small Business",
-    degree: "Vocational / Practical Experience",
-    fieldOfStudy: "Glass and Aluminum Installation",
-    location: "Local Area, Bulacan",
-    startDate: new Date(2020, 0), // January 2020
-    isCurrent: true,
-    achievements: [
-      "Mastered precision measurement and materials handling",
-      "Developed strong collaborative teamwork and problem-solving skills under pressure"
-    ]
+    institutionName: "San Ildefonso National High School",
+    degree: "High School(Old curiculum)",
+    fieldOfStudy: "Secondary Education",
+    location: "Pinaod, San Ildefonso, Bulacan",
+    startDate: new Date(2014, 6), // January 2020
+    endDate:new Date(2015, 6),
+    isCurrent: false,
+    achievements : []
   },
   {
     id: "edu-03",
-    institutionName: "Nana Minda's Patahian",
-    degree: "Apprenticeship",
-    fieldOfStudy: "High Speed Sewing & Garment Manufacturing",
+    institutionName: "Maypajo Integrated School",
+    degree: "High School (Old curiculum)",
+    fieldOfStudy: "Secondary Education",
     location: "Local Community, Bulacan",
-    startDate: new Date(2017, 5), // June 2017
-    endDate: new Date(2020, 2),   // March 2020
+    startDate: new Date(2009, 5), // June 2017
+    endDate: new Date(2010, 2),   // March 2020
     isCurrent: false,
-    achievements: [
-      "Operated industrial-grade high-speed machinery efficiently",
-      "Maintained strict quality control and attention to detail for high-volume outputs"
-    ]
+    achievements: []
   },
   {
     // Restructured the informal poultry entry to fit valid timeline constraints
     id: "edu-04",
-    institutionName: "Local Poultry Farm",
-    degree: "Short-term Practical Labor",
-    fieldOfStudy: "Agricultural Operations",
-    location: "Bulacan",
-    startDate: new Date(2016, 4), // May 2016
-    endDate: new Date(2016, 4),   // One week duration represented within the month
+    institutionName: "Bung-aw National High School",
+    degree: "High School (Old curiculum)",
+    fieldOfStudy: "Secondary Education",
+    location: "Brgy.Bung-aw, Hilongos, Southern Leyte",
+    startDate: new Date(2005, 4), // May 2016
+    endDate: new Date(2004, 4),   // One week duration represented within the month
     isCurrent: false,
-    achievements: [
-      "Gained rigorous, hands-on experience in fast-paced agricultural maintenance",
-      "Developed a strong work ethic and adaptability to physically demanding environments"
-    ]
+    achievements: []
   },
-  {
-    // Added a 5th unique item to complete your set of 5 and show a standard secondary education baseline
-    id: "edu-05",
-    institutionName: "Local High School",
-    degree: "High School Diploma",
-    fieldOfStudy: "General Secondary Education",
-    location: "Bulacan, Philippines",
-    startDate: new Date(2012, 5), // June 2012
-    endDate: new Date(2016, 2),   // March 2016
-    isCurrent: false,
-    achievements: [
-      "Completed secondary education with consistent academic performance",
-      "Participated in school-level technology and science fairs"
-    ]
-  }
 ];
 
 
