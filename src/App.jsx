@@ -13,6 +13,7 @@ import AboutMe from "./components/AboutMe";
 import Gallery from "./components/GallerySection";
 import TestimonialSection from "./components/Testimonial";
 import { Footer } from "./components/FooterSection";
+import EducationExperienceSection from "./components/EducationSection";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <AboutMe />
             {/* no testimonials, disabled for now */}
             {/* <TestimonialSection /> */}
+            <EducationExperienceSection></EducationExperienceSection>
           </div>
         </div>
         <div className="flex flex-col items-center justify-center gap-5 md:gap-20 p-1">
