@@ -7,7 +7,7 @@ const EducationExperienceSection = () => {
   return (
     <BaseSection>
       <SectionHeader title="Educations"></SectionHeader>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 p-3 min-w-lg items-center">
         {educationExperiences.map((item, index) => {
           return <EducItems key={item.id || index} {...item}></EducItems>;
         })}

@@ -33,7 +33,7 @@ function App() {
               <ProjectCard />
             </div>
           </div>
-          <div className="flex flex-col md:flex-row justify-centerp-1">
+          <div className="bg-red-200 p-2 flex flex-col md:flex-row justify-center-1">
             <AboutMe />
             {/* no testimonials, disabled for now */}
             {/* <TestimonialSection /> */}
