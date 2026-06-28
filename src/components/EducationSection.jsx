@@ -6,7 +6,7 @@ import { educationExperiences } from "../config/constants";
 
 const EducationExperienceSection = () => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center max-h-100 overflow-hidden overflow-y-auto">
       <SectionHeader title="Educations"></SectionHeader>
       <div className="flex flex-col gap-3 p-3 min-w-full items-center">
         {educationExperiences.map((item, index) => {

@@ -19,7 +19,7 @@ const EducItems = ({
         {/* 1. Header: Space distributed elegantly across the container width */}
         <div className="flex flex-row justify-between items-start w-full p-2 gap-4">
           <div className="flex-1 min-w-0">
-            <h3 className="text-sm font-bold text-black tracking-wide break-words">
+            <h3 className="text-md font-bold text-black tracking-wide break-words">
               {institutionName}
             </h3>
             <p className="text-xs text-slate-700 mt-0.5 break-words">{location}</p>
@@ -33,14 +33,14 @@ const EducItems = ({
 
         {/* 2. Subheading: Qualification Details */}
         {(degree || fieldOfStudy) && (
-          <div className="text-sm font-medium text-black border-l-2 border-slate-400 pl-3 my-1 break-words">
+          <div className="text-md font-medium text-black border-l-2 border-slate-400 pl-3 my-1 break-words">
             {degree} {fieldOfStudy && `in ${fieldOfStudy}`}
           </div>
         )}
 
         {/* 3. Achievements Bulleted List */}
         {achievements.length > 0 && (
-          <ul className="list-disc list-inside space-y-1.5 text-xs text-black pl-1">
+          <ul className="list-disc list-inside space-y-1.5 text-sm text-black pl-1">
             {achievements.map((achievement, index) => (
               <li key={index} className="leading-relaxed break-words">
                 <span className="text-black">{achievement}</span>
