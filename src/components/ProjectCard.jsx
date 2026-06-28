@@ -19,7 +19,7 @@ const ProjectCard = () => {
               {
                 Projects.map((item, index) => {
                   return (
-                    <li className="bg-blue-100 p-1 rounded-sm">
+                    <li className="p-1 w-80 rounded-sm">
                       <ProjectItem
                         projectName={item.projectName}
                         projectStatus={item.projectStatus}
