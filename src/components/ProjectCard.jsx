@@ -14,7 +14,7 @@ const ProjectCard = () => {
             <SectionHeader title="Recent Projects" />
             <ViewMore />
           </div>
-          <ul className="bg-indigo-100 max-h-120 overflow-y-auto">
+          <ul className="max-h-120 overflow-y-auto">
               {/* iterate over projects - create project item for each */}
               {
                 Projects.map((item, index) => {
