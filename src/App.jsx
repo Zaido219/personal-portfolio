@@ -28,7 +28,7 @@ function App() {
           <div className="flex flex-col md:grid md:grid-cols-2 gap-6 p-1 w-full box-border">
             
             {/* Quadrant A: Experience Section */}
-            <div className="w-full md:order-1">
+            <div className="flex flex-col w-87 md:w-full md:order-1">
               <WorkExperienceSection />
             </div>
 
