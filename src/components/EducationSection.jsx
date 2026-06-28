@@ -6,9 +6,9 @@ import { educationExperiences } from "../config/constants";
 
 const EducationExperienceSection = () => {
   return (
-    <div className="bg-violet-300 flex flex-col items-center">
+    <div className="flex flex-col items-center">
       <SectionHeader title="Educations"></SectionHeader>
-      <div className="bg-violet-200 flex flex-col gap-3 p-3 min-w-full items-center">
+      <div className="flex flex-col gap-3 p-3 min-w-full items-center">
         {educationExperiences.map((item, index) => {
           return <EducItems key={item.id || index} {...item}></EducItems>;
         })}

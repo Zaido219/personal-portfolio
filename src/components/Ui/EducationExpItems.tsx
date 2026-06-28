@@ -14,10 +14,10 @@ const EducItems = ({
 }: EducationItemProps) => {
   return (
     <HoverCards>
-      <div className="bg-indigo-200 flex flex-col w-full p-3 rounded-sm gap-2 overflow-hidden">
+      <div className="flex flex-col w-full p-3 rounded-sm gap-2 overflow-hidden">
         
         {/* 1. Header: Space distributed elegantly across the container width */}
-        <div className="bg-purple-200 flex flex-row justify-between items-start w-full p-2 gap-4">
+        <div className="flex flex-row justify-between items-start w-full p-2 gap-4">
           <div className="flex-1 min-w-0">
             <h3 className="text-sm font-bold text-black tracking-wide break-words">
               {institutionName}
@@ -26,14 +26,14 @@ const EducItems = ({
           </div>
 
           {/* Timeline Badging - whitespace-nowrap keeps the date on one clean line */}
-          <div className="text-xs font-semibold text-black bg-purple-300 px-2.5 py-1 rounded-full shrink-0 whitespace-nowrap">
+          <div className="text-xs font-semibold text-black  px-2.5 py-1 rounded-full shrink-0 whitespace-nowrap">
             {startDate.getFullYear()} – {isCurrent ? "Present" : endDate?.getFullYear()}
           </div>
         </div>
 
         {/* 2. Subheading: Qualification Details */}
         {(degree || fieldOfStudy) && (
-          <div className="text-sm font-medium text-black border-l-2 border-indigo-500 pl-3 my-1 break-words">
+          <div className="text-sm font-medium text-black border-l-2 border-slate-400 pl-3 my-1 break-words">
             {degree} {fieldOfStudy && `in ${fieldOfStudy}`}
           </div>
         )}
