@@ -25,19 +25,19 @@ function App() {
             {/* Left Column: Projects and Recognition */}
             <div className="flex flex-col  gap-4 w-89 md:w-1/2 overflow-hidden">
               <WorkExperienceSection />
-              <Recognition />
+              <ProjectCard/>
             </div>
 
             {/* Right Column: Work Experience */}
             <div className="w-1/2">
-              <ProjectCard />
+              <Recognition />
             </div>
           </div>
           <div className="p-2 flex flex-col md:flex-row justify-center-1">
-            <AboutMe />
             {/* no testimonials, disabled for now */}
             {/* <TestimonialSection /> */}
             <EducationExperienceSection></EducationExperienceSection>
+            <AboutMe />
           </div>
         </div>
         <div className="flex flex-col items-center justify-center gap-5 md:gap-20 p-1">
