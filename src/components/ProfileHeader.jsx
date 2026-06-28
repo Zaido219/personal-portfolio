@@ -22,14 +22,14 @@ const ProfileHeader = () => {
         </section>
         <section className="flex flex-col items-center justify-center mt-2 p-2 gap-2">
           {/* rest of the content */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6 p-2 text-center">
+          <div className="flex flex-col md:flex-row items-center justify-center md:gap-6 p-2 text-center">
             <div className="px-2 py-0.5 rounded">
               <p className="text-md md:text-md font-bold whitespace-nowrap">
                 John Phillip Lor Malbas
               </p>
             </div>
 
-            <p className="text-sm md:text-sm font-semibold text-slate-700 whitespace-nowrap">
+            <p className="text-sm md:text-sm font-semibold whitespace-nowrap">
               Software Developer
             </p>
 
@@ -38,7 +38,7 @@ const ProfileHeader = () => {
               <span>09914003588</span>
             </div>
           </div>
-          <p className="text-[10px] md:text-base font-bold inline-block">
+          <p className="text-xs md:text-base font-bold inline-block">
             San Ildefonso,Bulacan,Philippines
           </p>
 
