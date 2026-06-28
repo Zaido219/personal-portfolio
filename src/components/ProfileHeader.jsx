@@ -42,32 +42,32 @@ const ProfileHeader = () => {
             San Ildefonso,Bulacan,Philippines
           </p>
 
-          <nav className="flex md:gap-1 gap-3 md:text-md p-1 md:w-fit overflow-hidden">
+          <nav className="flex md:gap-2 gap-3 md:text-md p-1 md:w-fit overflow-hidden">
             {/* for the socials link */}
             <a
               href="https://www.facebook.com/share/14h2U6Be8hT/"
               className="flex items-center gap-1"
             >
-              <i className="fa-brands fa-facebook-f md:text-sm"></i>
-              <p className="md:text-sm">Facebook</p>
+              <i className="fa-brands fa-facebook-f md:text-md"></i>
+              <p className="md:text-md">Facebook</p>
             </a>
             <a
               href="https://github.com/Zaido219"
               className="flex items-center gap-1"
             >
-              <i class="fa-brands fa-github md:text-sm"></i>
-              <p className="md:text-sm">Github</p>
+              <i class="fa-brands fa-github md:text-md"></i>
+              <p className="md:text-md">Github</p>
             </a>
             <a
               href="https://www.tiktok.com/@_zaido19?_r=1&_t=ZS-95MUZ5QxedM"
               className="flex items-center gap-1"
             >
-              <i class="fa-brands fa-tiktok md:text-sm"></i>
-              <p className="md:text-sm">Tiktok</p>
+              <i class="fa-brands fa-tiktok md:text-md"></i>
+              <p className="md:text-md">Tiktok</p>
             </a>
             <a href="" className="flex items-center gap-1">
-              <i class="fa-brands fa-linkedin md:text-sm"></i>
-              <p className="md:text-sm">LinkedIn</p>
+              <i class="fa-brands fa-linkedin md:text-md"></i>
+              <p className="md:text-md">LinkedIn</p>
             </a>
           </nav>
         </section>
