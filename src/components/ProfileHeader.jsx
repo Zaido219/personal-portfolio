@@ -12,7 +12,7 @@ const ProfileHeader = () => {
       <div className="flex flex-col md:flex-row items-center p-2">
         <section className="">
           {/* image goes here */}
-          <div className="rounded-full h-54 w-54  md:rounded-sm md:h-43 md:w-43 overflow-hidden">
+          <div className="rounded-full h-54 w-54  md:rounded-lg md:h-60 md:w-60 overflow-hidden">
             <img
               className="h-full w-full object-cover"
               src="/images/my_pfp_new.jpg"
@@ -22,7 +22,7 @@ const ProfileHeader = () => {
         </section>
         <section className="flex flex-col items-center justify-center mt-2 p-2 gap-2">
           {/* rest of the content */}
-          <div className="flex flex-col md:flex-row items-center justify-center md:gap-6 p-2 text-center">
+          <div className="flex flex-col md:flex-col items-center justify-center md:gap-2 p-2 text-center">
             <div className="px-2 py-0.5 rounded">
               <p className="text-md md:text-md font-bold whitespace-nowrap">
                 John Phillip Lor Malbas
