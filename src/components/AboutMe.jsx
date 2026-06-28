@@ -8,8 +8,8 @@ const AboutMe = () => {
       <SectionHeader title="About" />
       <section className="">
         <BaseCard>
-          <div className="flex flex-col gap-2">
-            <p className="p-1 rounded-sm text-sm md:text-base">
+          <div className="bg-red-100 flex flex-col gap-2 w-full">
+            <p className="className=p-1 rounded-sm text-sm md:text-base break-words whitespace-normal">
               Im an aspiring software engineer and BSIT student at Bulacan
               Agricultural State College, currently based in San Ildefonso,
               Bulacan. My passion lies in backend development and systems
