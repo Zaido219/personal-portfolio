@@ -8,9 +8,9 @@ import {Projects} from "./../config/ProjectConstants";
 const ProjectCard = () => {
   return (
     <BaseSection>
-      <section className="max-w-lg">
+      <section className="min-w-xs overflow-hidden">
         <BaseCard>
-          <div className="flex justify-between items-center p-1">
+          <div className="w-84 flex gap-20 items-center">
             <SectionHeader title="Recent Projects" />
             <ViewMore />
           </div>
@@ -19,7 +19,7 @@ const ProjectCard = () => {
               {
                 Projects.map((item, index) => {
                   return (
-                    <li>
+                    <li className="bg-blue-100 p-1 rounded-sm">
                       <ProjectItem
                         projectName={item.projectName}
                         projectStatus={item.projectStatus}
