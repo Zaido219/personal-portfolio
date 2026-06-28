@@ -78,7 +78,8 @@ export const Testimonials : TestimonialProps[] = [
 ]
 
 export const workExperiences = [
-    {title:'BSIT Student', company: 'Bulacan Agricultural State College', startYear: '2022', endYear: 'present'},
+    {title:'Full Stack Web Developer Intern', company: 'Gender And Development Office at BASC', startYear: '2022', endYear: 'present'},
+    {title:'BSIT Student', company: 'Bulacan Agricultural State College', startYear: '2022', endYear: '2026'},
     {title:'Glass and Aluminum installation helper', company: 'Family Owned Small Business', startYear: '2020', endYear: 'present'},
     {title:'High Speed Sewer', company: 'Nana minda`s patahian ', startYear: '2017', endYear: '2020'},
     {title:'Poultry Boy', company: 'Not available', startYear: 'One', endYear: 'Week'}
