@@ -6,14 +6,14 @@ import { educationExperiences } from "../config/constants";
 
 const EducationExperienceSection = () => {
   return (
-    <BaseSection>
+    <div className="bg-violet-300 flex flex-col items-center">
       <SectionHeader title="Educations"></SectionHeader>
-      <div className="flex flex-col gap-3 p-3 min-w-lg items-center">
+      <div className="bg-violet-200 flex flex-col gap-3 p-3 min-w-full items-center">
         {educationExperiences.map((item, index) => {
           return <EducItems key={item.id || index} {...item}></EducItems>;
         })}
       </div>
-    </BaseSection>
+    </div>
   );
 };
 
