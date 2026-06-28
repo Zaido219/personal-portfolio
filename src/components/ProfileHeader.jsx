@@ -72,9 +72,7 @@ const ProfileHeader = () => {
           </nav>
         </section>
       </div>
-      <section className="flex flex-col w-86 gap-2 p-1">
-        {/* <section className="self-end flex flex-col w-fit gap-2 items-center p-1"></section> */}
-        {/* download resume aand email section */}
+      <section className="flex flex-col items-center w-86 md:w-60 gap-2 md:gap-4 p-1">
         <ShineWrapperCard>
           <HoverCards>
             <div
