@@ -38,7 +38,7 @@ function App() {
             </div>
 
             {/* Quadrant C: Recent Projects */}
-            <div className="w-full md:order-2 md:row-span-2">
+            <div className="flex flex-col items-center w-full md:order-2 md:row-span-2">
               <ProjectCard />
             </div>
 

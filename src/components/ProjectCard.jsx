@@ -14,12 +14,12 @@ const ProjectCard = () => {
             <SectionHeader title="Recent Projects" />
             <ViewMore />
           </div>
-          <ul className="max-h-120 md:max-h-174 overflow-y-auto">
+          <ul className="max-h-120 md:max-h-200 overflow-y-auto">
               {/* iterate over projects - create project item for each */}
               {
                 Projects.map((item, index) => {
                   return (
-                    <li className="p-1 w-80 rounded-sm">
+                    <li className="p-1 w-80 md:w-100 rounded-sm">
                       <ProjectItem
                         projectName={item.projectName}
                         projectStatus={item.projectStatus}
