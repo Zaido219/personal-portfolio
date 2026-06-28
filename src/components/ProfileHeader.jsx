@@ -22,7 +22,7 @@ const ProfileHeader = () => {
         </section>
         <section className="flex flex-col items-center justify-center mt-2 p-2 gap-2">
           {/* rest of the content */}
-          <div className="p-1 flex flex-col gap-1">
+          <div className="bg-violet-300 p-1 flex flex-row items-center  gap-2">
             <div className="">
               <p className="text-md font-extrabold md:text-xl">
                 John Phillip Lor Malbas
