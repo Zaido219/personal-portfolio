@@ -11,7 +11,7 @@ const Recognition = () => {
   return (
     <BaseSection>
       <BaseCard>
-        <div className="flex justify-between">
+        <div className="flex  gap-15 md:justify-between">
           <SectionHeader title="Recent Certifications" />
           <ViewMore />
         </div>
