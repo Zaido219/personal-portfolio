@@ -22,25 +22,25 @@ const ProfileHeader = () => {
         </section>
         <section className="flex flex-col items-center justify-center mt-2 p-2 gap-2">
           {/* rest of the content */}
-          <div className="bg-violet-300 p-1 flex flex-row items-center  gap-2">
-            <div className="bg-indigo-300 w-fit">
-              <p className="text-sm font-extrabold md:text-xl inline-block">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6 p-2 text-center">
+            <div className="px-2 py-0.5 rounded">
+              <p className="text-md md:text-md font-bold whitespace-nowrap">
                 John Phillip Lor Malbas
               </p>
-              <p className="text-xs md:text-base font-bold inline-block">
-                San Ildefonso,Bulacan,Philippines
-              </p>
             </div>
 
-            <p className="text-sm md:text-base font-semibold">Student Intern</p>
+            <p className="text-sm md:text-sm font-semibold text-slate-700 whitespace-nowrap">
+              Software Developer
+            </p>
 
-            <div className="flex justify-center gap-3 w-fit">
-              <span className="flex items-center gap-2 md:gap-3">
-                <i class="text-sm md:text-base fa-solid fa-phone"></i>
-                09914003588
-              </span>
+            <div className="flex items-center gap-2 text-xs md:text-sm whitespace-nowrap">
+              <i className="fa-solid fa-phone"></i>
+              <span>09914003588</span>
             </div>
           </div>
+          <p className="text-[10px] md:text-base font-bold inline-block">
+            San Ildefonso,Bulacan,Philippines
+          </p>
 
           <nav className="flex md:gap-1 gap-3 md:text-md p-1 md:w-fit overflow-hidden">
             {/* for the socials link */}
