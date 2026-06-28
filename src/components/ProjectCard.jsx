@@ -16,6 +16,13 @@ const ProjectCard = () => {
           <ul className="flex flex-col gap-2 h-80 md:h-184 overflow-y-auto overflow-x-hidden p-1">
             <li>
               <ProjectItem
+                projectName="Notepad Clone"
+                projectDescription="UNDERCONSTRUCTION"
+                projectLink="https://photobooth-app-three.vercel.app/"
+              ></ProjectItem>
+            </li>
+            <li>
+              <ProjectItem
                 projectName="ShareMoLang"
                 projectDescription="An ongoing web based file sharing app that allows user to share files offline.Provided that they are on the same network"
                 projectLink="https://photobooth-app-three.vercel.app/"

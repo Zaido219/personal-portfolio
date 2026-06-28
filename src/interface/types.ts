@@ -75,6 +75,7 @@ export type CertificateItemProps = {
 
 export type  ProjectItemProps = {   
     projectName : string
+    projectStatus:string
     projectDescription : string
     projectLink?:string
 }
