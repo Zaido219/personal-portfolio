@@ -12,10 +12,10 @@ const ProfileHeader = () => {
       <div className="flex flex-col md:flex-row items-center p-2">
         <section className="">
           {/* image goes here */}
-          <div className="rounded-full h-50 w-50  md:rounded-sm md:h-43 md:w-43 overflow-hidden">
+          <div className="rounded-full h-54 w-54  md:rounded-sm md:h-43 md:w-43 overflow-hidden">
             <img
               className="h-full w-full object-cover"
-              src="/images/my_pfp_new.png"
+              src="/images/my_pfp_new.jpg"
               alt="my image"
             />
           </div>
