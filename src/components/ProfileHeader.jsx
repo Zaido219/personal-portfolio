@@ -24,16 +24,16 @@ const ProfileHeader = () => {
           {/* rest of the content */}
           <div className="flex flex-col md:flex-col items-center justify-center md:gap-2 p-2 text-center">
             <div className="px-2 py-0.5 rounded">
-              <p className="text-md md:text-md font-bold whitespace-nowrap">
+              <p className="text-md md:text-2xl font-bold md:font-semibold whitespace-nowrap">
                 John Phillip Lor Malbas
               </p>
             </div>
 
-            <p className="text-sm md:text-sm font-semibold whitespace-nowrap">
+            <p className="text-sm md:text-lg font-semibold whitespace-nowrap">
               Software Developer
             </p>
 
-            <div className="flex items-center gap-2 text-xs md:text-sm whitespace-nowrap">
+            <div className="flex items-center gap-2 text-xs md:text-lg whitespace-nowrap">
               <i className="fa-solid fa-phone"></i>
               <span>09914003588</span>
             </div>
