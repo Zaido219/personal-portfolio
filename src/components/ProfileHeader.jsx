@@ -23,11 +23,11 @@ const ProfileHeader = () => {
         <section className="flex flex-col items-center justify-center mt-2 p-2 gap-2">
           {/* rest of the content */}
           <div className="bg-violet-300 p-1 flex flex-row items-center  gap-2">
-            <div className="">
-              <p className="text-md font-extrabold md:text-xl">
+            <div className="bg-indigo-300 w-fit">
+              <p className="text-sm font-extrabold md:text-xl inline-block">
                 John Phillip Lor Malbas
               </p>
-              <p className="text-xs md:text-base font-bold">
+              <p className="text-xs md:text-base font-bold inline-block">
                 San Ildefonso,Bulacan,Philippines
               </p>
             </div>
