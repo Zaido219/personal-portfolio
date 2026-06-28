@@ -8,73 +8,71 @@ const ProfileHeader = () => {
   const myCv = "/files/my_resume.pdf";
 
   return (
-    <header className="flex flex-col md:flex-row md:gap-10 gap-4 p-1 md:p-2 items-center justify-center w-90 md:w-5xl overflow-hidden">
-      <div className="flex flex-col md:flex-row items-center p-2">
+    <header className="flex flex-col md:flex-row md:gap-5 gap-4 p-1 md:p-2 items-center justify-center md:justify-between w-90 md:w-5xl overflow-hidden">
+      <div className="flex flex-col md:flex-row items-center p-2 md:gap-12">
         <section className="">
           {/* image goes here */}
-          <div className="rounded-full h-50 w-50  md:rounded-sm md:h-43 md:w-43 overflow-hidden">
+          <div className="rounded-full h-54 w-54  md:rounded-lg md:h-60 md:w-60 overflow-hidden">
             <img
               className="h-full w-full object-cover"
-              src="/images/my_pfp_new.png"
+              src="/images/my_pfp_new.jpg"
               alt="my image"
             />
           </div>
         </section>
         <section className="flex flex-col items-center justify-center mt-2 p-2 gap-2">
           {/* rest of the content */}
-          <div className="p-1 flex flex-col gap-1">
-            <div className="">
-              <p className="text-md font-extrabold md:text-xl">
+          <div className="flex flex-col md:flex-col items-center justify-center md:gap-2 p-2 text-center">
+            <div className="px-2 py-0.5 rounded">
+              <p className="text-md md:text-2xl font-bold md:font-semibold whitespace-nowrap">
                 John Phillip Lor Malbas
               </p>
-              <p className="text-xs md:text-base font-bold">
-                San Ildefonso,Bulacan,Philippines
-              </p>
             </div>
 
-            <p className="text-sm md:text-base font-semibold">Student Intern</p>
+            <p className="text-sm md:text-lg font-semibold whitespace-nowrap">
+              Software Developer
+            </p>
 
-            <div className="flex justify-center gap-3 w-fit">
-              <span className="flex items-center gap-2 md:gap-3">
-                <i class="text-sm md:text-base fa-solid fa-phone"></i>
-                09914003588
-              </span>
+            <div className="flex items-center gap-2 text-xs md:text-lg whitespace-nowrap">
+              <i className="fa-solid fa-phone"></i>
+              <span>09914003588</span>
             </div>
           </div>
+          <p className="text-xs md:text-base font-bold inline-block">
+            San Ildefonso,Bulacan,Philippines
+          </p>
 
-          <nav className="flex md:gap-1 gap-3 md:text-md p-1 md:w-fit overflow-hidden">
+          <nav className="flex md:gap-2 gap-3 md:text-md p-1 md:w-fit overflow-hidden">
             {/* for the socials link */}
             <a
               href="https://www.facebook.com/share/14h2U6Be8hT/"
               className="flex items-center gap-1"
             >
-              <i className="fa-brands fa-facebook-f md:text-sm"></i>
-              <p className="md:text-sm">Facebook</p>
+              <i className="fa-brands fa-facebook-f md:text-md"></i>
+              <p className="md:text-md">Facebook</p>
             </a>
             <a
               href="https://github.com/Zaido219"
               className="flex items-center gap-1"
             >
-              <i class="fa-brands fa-github md:text-sm"></i>
-              <p className="md:text-sm">Github</p>
+              <i class="fa-brands fa-github md:text-md"></i>
+              <p className="md:text-md">Github</p>
             </a>
             <a
               href="https://www.tiktok.com/@_zaido19?_r=1&_t=ZS-95MUZ5QxedM"
               className="flex items-center gap-1"
             >
-              <i class="fa-brands fa-tiktok md:text-sm"></i>
-              <p className="md:text-sm">Tiktok</p>
+              <i class="fa-brands fa-tiktok md:text-md"></i>
+              <p className="md:text-md">Tiktok</p>
             </a>
             <a href="" className="flex items-center gap-1">
-              <i class="fa-brands fa-linkedin md:text-sm"></i>
-              <p className="md:text-sm">LinkedIn</p>
+              <i class="fa-brands fa-linkedin md:text-md"></i>
+              <p className="md:text-md">LinkedIn</p>
             </a>
           </nav>
         </section>
       </div>
-      <section className="flex flex-col w-86 gap-2 p-1">
-        {/* <section className="self-end flex flex-col w-fit gap-2 items-center p-1"></section> */}
-        {/* download resume aand email section */}
+      <section className="flex flex-col items-center w-86  gap-2 md:gap-4 p-1">
         <ShineWrapperCard>
           <HoverCards>
             <div

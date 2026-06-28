@@ -5,9 +5,9 @@ import { workExperiences } from "../config/constants";
 
 const WorkExperienceSection = () => {
   return (
-    <BaseSection>
+    <div className="flex flex-col items-center">
       <SectionHeader title="Experiences" />
-      <ul className="flex flex-col gap-3 p-1">
+      <ul className="flex flex-col gap-2 p-1">
         {/* loop para di isa isa nakaka tamad */}
         {workExperiences.map((item, index) => {
           return (
@@ -22,7 +22,7 @@ const WorkExperienceSection = () => {
           );
         })}
       </ul>
-    </BaseSection>
+    </div>
   );
 };
 

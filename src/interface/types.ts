@@ -1,5 +1,19 @@
 import { Children, type ReactNode } from "react"
 
+
+export interface EducationItemProps{
+    id?:string,
+    institutionName:string,
+    degree?:string,
+    fieldOfStudy?:string,
+    location:string,
+    startDate:Date,
+    endDate?:Date,
+    // track if still enrolled
+    isCurrent:boolean,
+    // track notable achievements on this education during the time spent
+    achievements: string[],
+}
 export interface CertificateModalProps {
     title:string,
     // certificates will be stored as pdf, jpeg or in some other formats
@@ -61,6 +75,7 @@ export type CertificateItemProps = {
 
 export type  ProjectItemProps = {   
     projectName : string
+    projectStatus:string
     projectDescription : string
     projectLink?:string
 }
