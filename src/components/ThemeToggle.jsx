@@ -22,7 +22,7 @@ export const ThemeToggle = () => {
         The layout uses arbitrary classes or native v4 transforms to shift 24px (translate-x-6) when dark.
       */}
       <span
-        className={`pointer-events-none relative inline-block h-7 w-7 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out flex items-center justify-center
+        className={`pointer-events-none relative inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out flex items-center justify-center
           ${isDark ? 'translate-x-6' : 'translate-x-0'}
         `}
       >

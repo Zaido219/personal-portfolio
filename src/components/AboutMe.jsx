@@ -8,7 +8,7 @@ const AboutMe = () => {
       <SectionHeader title="About" />
       <section className="flex items-center justify-center p-4 min-h-fit">
         <div className="p-2 rounded-xl w-full max-w-2xl">
-          <p className="text-sm md:text-lg font-normal md:text-base leading-relaxed text-slate-800 break-words whitespace-normal text-left">
+          <p className="text-sm md:text-lg font-normal md:text-base leading-relaxed text-slate-800 break-words whitespace-normal text-left dark:text-white">
             Im an aspiring software engineer, currently based in San Ildefonso,
             Bulacan. My passion lies in backend development and systems
             architecture—specifically building clean, modular solutions that
