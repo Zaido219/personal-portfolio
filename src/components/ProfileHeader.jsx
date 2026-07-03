@@ -22,7 +22,7 @@ const ProfileHeader = () => {
                 className="h-full w-full object-cover"
                 src="/images/my_pfp_new.jpg"
                 alt="my image"
-              />
+              />  
             </div>
           </section>
           <section className="flex flex-col items-center justify-center mt-2 p-2 gap-2">
@@ -81,15 +81,15 @@ const ProfileHeader = () => {
           <ShineWrapperCard>
             <HoverCards>
               <div
-                className="flex justify-center w-85 h-10 items-center p-2 gap-2"
+                className="flex justify-center w-85 h-10 items-center p-2 gap-2 dark:bg-zinc-900"
                 onClick={() =>
                   downloadFile(myCv, "John_Phillip_Lor_Resume.pdf")
                 }
               >
                 <span>
-                  <i className="fa-regular fa-file dark:text-black"></i>
+                  <i className="fa-regular fa-file dark:text-white"></i>
                 </span>
-                <button className="dark:text-black">My Resume</button>
+                <button className="dark:text-white">My Resume</button>
               </div>
             </HoverCards>
           </ShineWrapperCard>
@@ -97,21 +97,21 @@ const ProfileHeader = () => {
           <ShineWrapperCard>
             <HoverCards>
               <div
-                className="flex justify-center w-85 h-10 items-center p-2 gap-2"
+                className="flex justify-center w-85 h-10 items-center p-2 gap-2 dark:bg-zinc-900"
                 onClick={emailMe}
               >
                 <span>
-                  <i class="fa-regular fa-envelope dark:text-black"></i>
+                  <i class="fa-regular fa-envelope dark:text-white"></i>
                 </span>
-                <button className="p-1 dark:text-black">Email</button>
+                <button className="p-1 dark:text-white">Email</button>
               </div>
             </HoverCards>
           </ShineWrapperCard>
           {/* display work experiences */}
           <ShineWrapperCard>
             <HoverCards>
-              <div className="flex justify-center w-85 h-10 items-center p-2 gap-2">
-                <button className="flex items-center p-2 dark:text-black">
+              <div className="flex justify-center w-85 h-10 items-center p-2 gap-2 dark:bg-zinc-900">
+                <button className="flex items-center p-2 dark:text-white">
                   Certifications
                 </button>
               </div>
