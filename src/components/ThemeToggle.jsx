@@ -14,7 +14,7 @@ export const ThemeToggle = () => {
       role="switch"
       aria-checked={isDark}
       aria-label="Toggle dark mode"
-      className="relative items-center inline-flex h-9 w-14 flex-shrink-0 cursor-pointer rounded-full border-1 border-transparent bg-slate-200 transition-colors duration-200 ease-in-out focus:outline-none  dark:bg-slate-700"
+      className="relative items-center inline-flex h-5 md:h-9 w-14 flex-shrink-0 cursor-pointer rounded-full border-1 border-transparent bg-slate-200 transition-colors duration-200 ease-in-out focus:outline-none  dark:bg-slate-700"
     >
       {/* 
         The Moving Thumb: 
@@ -22,7 +22,7 @@ export const ThemeToggle = () => {
         The layout uses arbitrary classes or native v4 transforms to shift 24px (translate-x-6) when dark.
       */}
       <span
-        className={`pointer-events-none relative inline-block h-6 w-6 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out flex items-center justify-center
+        className={`pointer-events-none relative inline-block h-6 md:h-6 w-6 md:w-6 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out flex items-center justify-center
           ${isDark ? 'translate-x-6' : 'translate-x-0'}
         `}
       >
