@@ -14,7 +14,7 @@ export const ThemeToggle = () => {
       role="switch"
       aria-checked={isDark}
       aria-label="Toggle dark mode"
-      className="relative items-center inline-flex h-8 w-14 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-slate-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-slate-700"
+      className="relative items-center inline-flex h-8 w-14 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-slate-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 dark:bg-slate-700"
     >
       {/* 
         The Moving Thumb: 
