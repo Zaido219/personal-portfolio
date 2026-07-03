@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* 1. Define the animation utility */
   --animate-marquee: marquee var(--speed, 20s) linear infinite;

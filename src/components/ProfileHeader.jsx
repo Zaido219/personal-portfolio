@@ -3,12 +3,15 @@ import { HoverCards, ShineWrapperCard } from "./Ui/Cards";
 import { downloadFile } from "../utils/Downloaders";
 import { emailMe } from "../utils/Emailers";
 import { navigate } from "../utils/Navigators";
+import { ThemeToggle } from "./ThemeToggle";
 
 const ProfileHeader = () => {
   const myCv = "/files/my_resume.pdf";
 
   return (
-    <header className="flex flex-col md:flex-row md:gap-5 gap-4 p-1 md:p-2 items-center justify-center md:justify-between w-90 md:w-5xl overflow-hidden">
+    <>
+     <ThemeToggle/>
+    <header className="flex flex-col md:flex-row md:gap-5 gap-4 p-1 md:p-2 items-center justify-center md:justify-between w-90 md:w-5xl overflow-hidden dark:bg-red-200">
       <div className="flex flex-col md:flex-row items-center p-2 md:gap-12">
         <section className="">
           {/* image goes here */}
@@ -110,6 +113,7 @@ const ProfileHeader = () => {
         </ShineWrapperCard>
       </section>
     </header>
+    </>
   );
 };
 
