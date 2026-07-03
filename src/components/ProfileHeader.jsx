@@ -24,21 +24,21 @@ const ProfileHeader = () => {
           {/* rest of the content */}
           <div className="flex flex-col md:flex-col items-center justify-center md:gap-2 p-2 text-center">
             <div className="px-2 py-0.5 rounded">
-              <p className="text-md md:text-2xl font-bold md:font-semibold whitespace-nowrap">
+              <p className="text-md md:text-xl font-bold md:font-semibold whitespace-nowrap">
                 John Phillip Lor Malbas
               </p>
             </div>
 
-            <p className="text-sm md:text-lg font-semibold whitespace-nowrap">
+            <p className="text-sm md:text-md font-semibold whitespace-nowrap">
               Software Developer
             </p>
 
-            <div className="flex items-center gap-2 text-xs md:text-lg whitespace-nowrap">
+            <div className="flex items-center gap-2 text-xs md:text-md whitespace-nowrap">
               <i className="fa-solid fa-phone"></i>
               <span>09914003588</span>
             </div>
           </div>
-          <p className="text-xs md:text-base font-bold inline-block">
+          <p className="text-xs md:text-md font-bold inline-block">
             San Ildefonso,Bulacan,Philippines
           </p>
 
@@ -49,25 +49,25 @@ const ProfileHeader = () => {
               className="flex items-center gap-1"
             >
               <i className="fa-brands fa-facebook-f md:text-md"></i>
-              <p className="md:text-md">Facebook</p>
+              <p className="md:text-sm">Facebook</p>
             </a>
             <a
               href="https://github.com/Zaido219"
               className="flex items-center gap-1"
             >
               <i class="fa-brands fa-github md:text-md"></i>
-              <p className="md:text-md">Github</p>
+              <p className="md:text-sm">Github</p>
             </a>
             <a
               href="https://www.tiktok.com/@_zaido19?_r=1&_t=ZS-95MUZ5QxedM"
               className="flex items-center gap-1"
             >
               <i class="fa-brands fa-tiktok md:text-md"></i>
-              <p className="md:text-md">Tiktok</p>
+              <p className="md:text-sm">Tiktok</p>
             </a>
             <a href="" className="flex items-center gap-1">
               <i class="fa-brands fa-linkedin md:text-md"></i>
-              <p className="md:text-md">LinkedIn</p>
+              <p className="md:text-sm">LinkedIn</p>
             </a>
           </nav>
         </section>
