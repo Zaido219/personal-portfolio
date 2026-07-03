@@ -17,7 +17,7 @@ const ProfileHeader = () => {
         <div className="flex flex-col md:flex-row items-center p-2 md:gap-12">
           <section className="">
             {/* image goes here */}
-            <div className="rounded-full h-54 w-54  md:rounded-lg md:h-60 md:w-60 overflow-hidden">
+            <div className="rounded-full h-54 w-54  md:rounded-lg md:h-50 md:w-50 overflow-hidden">
               <img
                 className="h-full w-full object-cover"
                 src="/images/my_pfp_new.jpg"
