@@ -14,11 +14,14 @@
 }
 
 /* global reset for the body when the root element has the .dark class */
-html.dark body{
-  background-color: black;
-  color:#f8fafc;
+html.dark body {
+  background-color: #09090b; /* Tailwind bg-zinc-950 */
+  color: #fafafa;            /* Crisp off-white text (Tailwind text-zinc-50) */
 }
 
+.dark-border {
+  border-color: #27272a;     /* Subtle gray divider (Tailwind border-zinc-800) */
+}
 
 #root{
   overflow-y: hidden;
