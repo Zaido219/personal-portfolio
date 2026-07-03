@@ -10,7 +10,6 @@ const ProfileHeader = () => {
 
   return (
     <>
-     <ThemeToggle/>
     <header className="flex flex-col md:flex-row md:gap-5 gap-4 p-1 md:p-2 items-center justify-center md:justify-between w-90 md:w-5xl overflow-hidden dark:bg-red-200">
       <div className="flex flex-col md:flex-row items-center p-2 md:gap-12">
         <section className="">
@@ -76,6 +75,7 @@ const ProfileHeader = () => {
         </section>
       </div>
       <section className="flex flex-col items-center w-86  gap-2 md:gap-4 p-1">
+        <ThemeToggle/>
         <ShineWrapperCard>
           <HoverCards>
             <div

@@ -12,6 +12,14 @@
     to { transform: translateX(-100%); }
   }
 }
+
+/* global reset for the body when the root element has the .dark class */
+html.dark body{
+  background-color: black;
+  color:#f8fafc;
+}
+
+
 #root{
   overflow-y: hidden;
 }
