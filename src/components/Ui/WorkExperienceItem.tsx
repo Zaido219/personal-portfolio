@@ -9,12 +9,12 @@ const WorkExperienceItem = ({
 }: WorkExperienceItemProps) => {
   return (
     <HoverCards>
-      <div className="flex flex-col md:gap-1 p-1 rounded-md w-xs md:w-md">
-        <strong className="p-1 text-md md:text-lg">{workTitle}</strong>
+      <div className="flex flex-col md:gap-1 p-1 rounded-md w-xs md:w-md dark:bg-zinc-900">
+        <strong className="p-1 text-md md:text-md dark:text-white">{workTitle}</strong>
         <div className="flex justify-between gap-1 p-1">
-          <p className="text-sm md:text-md">{workCompany}</p>
-          <div className="text-sm md:text-sm flex justify-between gap-2">
-            <span className="bg-gray-200 text-xs md:text-sm p-1 rounded-md">
+          <p className="text-sm md:text-sm dark:text-white">{workCompany}</p>
+          <div className="text-sm md:text-xs flex justify-between gap-2">
+            <span className="bg-gray-200 dark:bg-zinc-800 text-xs md:text-xs p-1 rounded-md dark:text-white">
               {startDate} - {endDate}
             </span>
           </div>
