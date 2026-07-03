@@ -10,7 +10,7 @@ const ProfileHeader = () => {
 
   return (
     <>
-    <header className="flex flex-col md:flex-row md:gap-5 gap-4 p-1 md:p-2 items-center justify-center md:justify-between w-90 md:w-5xl overflow-hidden dark:bg-red-200">
+    <header className="flex flex-col md:flex-row md:gap-5 gap-4 p-1 md:p-2 items-center justify-center md:justify-between w-90 md:w-5xl overflow-hidden">
       <div className="flex flex-col md:flex-row items-center p-2 md:gap-12">
         <section className="">
           {/* image goes here */}
@@ -83,9 +83,9 @@ const ProfileHeader = () => {
               onClick={() => downloadFile(myCv, "John_Phillip_Lor_Resume.pdf")}
             >
               <span>
-                <i className="fa-regular fa-file"></i>
+                <i className="fa-regular fa-file dark:text-black"></i>
               </span>
-              <button className="">My Resume</button>
+              <button className="dark:text-black">My Resume</button>
             </div>
           </HoverCards>
         </ShineWrapperCard>
@@ -97,9 +97,9 @@ const ProfileHeader = () => {
               onClick={emailMe}
             >
               <span>
-                <i class="fa-regular fa-envelope"></i>
+                <i class="fa-regular fa-envelope dark:text-black"></i>
               </span>
-              <button className="p-1">Email</button>
+              <button className="p-1 dark:text-black">Email</button>
             </div>
           </HoverCards>
         </ShineWrapperCard>
@@ -107,7 +107,7 @@ const ProfileHeader = () => {
         <ShineWrapperCard>
           <HoverCards>
             <div className="flex justify-center w-85 h-10 items-center p-2 gap-2">
-              <button className="flex items-center p-2">Certifications</button>
+              <button className="flex items-center p-2 dark:text-black">Certifications</button>
             </div>
           </HoverCards>
         </ShineWrapperCard>
