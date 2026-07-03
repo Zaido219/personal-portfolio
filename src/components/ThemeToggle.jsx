@@ -22,13 +22,13 @@ export const ThemeToggle = () => {
         The layout uses arbitrary classes or native v4 transforms to shift 24px (translate-x-6) when dark.
       */}
       <span
-        className={`pointer-events-none relative inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out flex items-center justify-center
+        className={`pointer-events-none relative inline-block h-6 w-6 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out flex items-center justify-center
           ${isDark ? 'translate-x-6' : 'translate-x-0'}
         `}
       >
         {/* Light Mode Icon (Sun) - Centered inside the thumb when light */}
         <svg
-          className={`h-4 w-4 text-amber-500 transition-opacity duration-100 absolute
+          className={`h-full w-full text-amber-500 transition-opacity duration-100 absolute
             ${isDark ? 'opacity-0 ease-out duration-100' : 'opacity-100 ease-in duration-200'}
           `}
           fill="none"
@@ -45,7 +45,7 @@ export const ThemeToggle = () => {
 
         {/* Dark Mode Icon (Moon) - Centered inside the thumb when dark */}
         <svg
-          className={`h-4 w-4 text-slate-700 transition-opacity duration-100 absolute
+          className={`h-full w-full text-slate-700 transition-opacity duration-100 absolute
             ${isDark ? 'opacity-100 ease-in duration-200' : 'opacity-0 ease-out duration-100'}
           `}
           fill="none"
@@ -58,7 +58,7 @@ export const ThemeToggle = () => {
             strokeLinejoin="round"
             d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
           />
-        </svg>
+        </svg> 
       </span>
     </button>
   );
