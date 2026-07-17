@@ -26,7 +26,7 @@ export const CertificateModal = ({title, src, isOpen, onClose}  : CertificateMod
         <h2 className="text-xl font-bold dark:text-white">{title}</h2>
         
         {/* 2. Constrain the image container so it doesn't blow up vertically */}
-        <div className="flex-1 flex items-center justify-center overflow-hidden bg-slate-50 dark:bg-transparent rounded-md">
+        <div className="flex-1 flex items-center justify-center overflow-hidden bg-white dark:bg-transparent rounded-md">
             <img 
                 src={src} 
                 alt={title} 
@@ -36,7 +36,7 @@ export const CertificateModal = ({title, src, isOpen, onClose}  : CertificateMod
 
         <button 
             onClick={onClose}
-            className="mt-4 px-5 py-2.5 bg-zinc-700 hover:bg-zinc-600 active:scale-[0.98] text-white text-md font-semibold rounded-lg shadow-sm transition-all duration-200"
+            className="mt-4 px-5 py-2.5 bg-slate-200 dark:bg-zinc-700 hover:bg-slate-300 dark:hover:bg-zinc-600 active:scale-[0.98] dark:text-white text-md font-semibold rounded-lg shadow-sm transition-all duration-200"
         >
             Close
         </button>
