@@ -87,7 +87,7 @@ const ProfileHeader = () => {
                 }
               >
                 <span>
-                  <i className="fa-regular fa-file dark:text-white"></i>
+                  <i className="fa-regular fa-file dark:text-zinc-300"></i>
                 </span>
                 <button className="dark:text-zinc-300">My Resume</button>
               </div>
@@ -101,7 +101,7 @@ const ProfileHeader = () => {
                 onClick={emailMe}
               >
                 <span>
-                  <i class="fa-regular fa-envelope dark:text-white"></i>
+                  <i class="fa-regular fa-envelope dark:text-zinc-300"></i>
                 </span>
                 <button className="p-1 dark:text-zinc-300">Email</button>
               </div>
