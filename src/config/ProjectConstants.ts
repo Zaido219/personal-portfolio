@@ -1,9 +1,15 @@
 import type { ProjectItemProps } from "../interface/types";
-
+// showcased projects 1/2
 export const Projects : ProjectItemProps[] = [
     {
+        projectName:"Static Web Server",
+        projectStatus: "Done",
+        projectDescription:"A lightweight, multi-threaded static file server built entirely from scratch in C# using raw TCP sockets. Instead of relying on high-level HTTP abstractions (like ASP.NET Core or HttpListener), this project implements the fundamental networking and protocol parsing layers manually to understand how web servers actually communicate with modern browsers under the hood.",
+        projectLink: "https://github.com/Zaido219/static-html-server"
+    },
+    {
         projectName:"Notepad",
-        projectStatus:"Ongoing",
+        projectStatus:"Done",
         projectDescription:"A notepad clone built with c#, and WPF that follows the MVVM architecture",
         projectLink:"https://github.com/Zaido219/Notepad.git"
     },
@@ -32,12 +38,6 @@ export const Projects : ProjectItemProps[] = [
         projectLink:"https://bascgad.gadinsight.com/"
     },
     {
-        projectName:"Web based file sharing app",
-        projectStatus:"Abandoned",
-        projectDescription:"A simple web based file sharing app. This allows users to send files over Local Area Network without the need for a internet connection.",
-        projectLink:"https://github.com/Zaido219/web-based-file-sharing-app.git"
-    },
-    {
         projectName:"Custom Chess Engine",
         projectStatus:"Abandoned",
         projectDescription:"A web-based chess application featuring a custom-built game engine written from scratch. Focuses on pure logic implementation, complex state management, and algorithmic move validation without external chess libraries.",
@@ -54,5 +54,11 @@ export const Projects : ProjectItemProps[] = [
         projectStatus:"Done",
         projectDescription:"A console based video player that plays videos in ascii",
         projectLink:"https://github.com/Zaido219/ascii-videoplayer.git"
+    },
+    {
+        projectName:"Web based file sharing app",
+        projectStatus:"Abandoned",
+        projectDescription:"A simple web based file sharing app. This allows users to send files over Local Area Network without the need for a internet connection.",
+        projectLink:"https://github.com/Zaido219/web-based-file-sharing-app.git"
     },
 ]
