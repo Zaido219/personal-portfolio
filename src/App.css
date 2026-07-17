@@ -12,7 +12,35 @@
     to { transform: translateX(-100%); }
   }
 }
+/* for the scroll bar  */
+/* for the scroll bar  */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px; /* For horizontal scrollbars if needed */
+}
 
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Light mode thumb */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d4d4d8; /* Tailwind bg-zinc-300 */
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #a1a1aa; /* Tailwind bg-zinc-400 */
+}
+
+/* Dark mode thumb override */
+html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #3f3f46; /* Tailwind bg-zinc-700 */
+}
+
+html.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #52525b; /* Tailwind bg-zinc-600 */
+}
 /* global reset for the body when the root element has the .dark class */
 html.dark body {
   background-color: #09090b; /* Tailwind bg-zinc-950 */

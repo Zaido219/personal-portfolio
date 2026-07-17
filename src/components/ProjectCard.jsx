@@ -13,7 +13,7 @@ const ProjectCard = () => {
           <div className="w-84 flex gap-20 items-center">
             <SectionHeader title="Recent Projects" />
           </div>
-          <ul className="max-h-120 md:max-h-200 overflow-y-auto">
+          <ul className="max-h-120 md:max-h-200 overflow-y-auto custom-scrollbar">
               {/* iterate over projects - create project item for each */}
               {
                 Projects.map((item, index) => {
