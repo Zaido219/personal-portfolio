@@ -29,21 +29,21 @@ const ProfileHeader = () => {
             {/* rest of the content */}
             <div className="flex flex-col md:flex-col items-center justify-center md:gap-2 p-2 text-center">
               <div className="px-2 py-0.5 rounded">
-                <p className="text-md md:text-xl font-bold md:font-semibold whitespace-nowrap">
+                <p className="dark:text-zinc-300 text-md md:text-xl font-bold md:font-semibold whitespace-nowrap">
                   John Phillip Lor Malbas
                 </p>
               </div>
 
-              <p className="text-sm md:text-md font-semibold whitespace-nowrap">
+              <p className="text-sm dark:text-zinc-300 md:text-md font-semibold whitespace-nowrap">
                 Software Developer
               </p>
 
               <div className="flex items-center gap-2 text-xs md:text-md whitespace-nowrap">
                 <i className="fa-solid fa-phone"></i>
-                <span>09914003588</span>
+                <span className="dark:text-zinc-300">09914003588</span>
               </div>
             </div>
-            <p className="text-xs md:text-md font-bold inline-block">
+            <p className="text-xs dark:text-zinc-300 md:text-md font-bold inline-block">
               San Ildefonso,Bulacan,Philippines
             </p>
 
@@ -54,25 +54,25 @@ const ProfileHeader = () => {
                 className="flex items-center gap-1"
               >
                 <i className="fa-brands fa-facebook-f md:text-md"></i>
-                <p className="md:text-sm">Facebook</p>
+                <p className="md:text-sm dark:text-zinc-300">Facebook</p>
               </a>
               <a
                 href="https://github.com/Zaido219"
                 className="flex items-center gap-1"
               >
                 <i class="fa-brands fa-github md:text-md"></i>
-                <p className="md:text-sm">Github</p>
+                <p className="md:text-sm dark:text-zinc-300">Github</p>
               </a>
               <a
                 href="https://www.tiktok.com/@_zaido19?_r=1&_t=ZS-95MUZ5QxedM"
                 className="flex items-center gap-1"
               >
                 <i class="fa-brands fa-tiktok md:text-md"></i>
-                <p className="md:text-sm">Tiktok</p>
+                <p className="md:text-sm dark:text-zinc-300">Tiktok</p>
               </a>
               <a href="" className="flex items-center gap-1">
                 <i class="fa-brands fa-linkedin md:text-md"></i>
-                <p className="md:text-sm">LinkedIn</p>
+                <p className="md:text-sm dark:text-zinc-300">LinkedIn</p>
               </a>
             </nav>
           </section>
@@ -89,7 +89,7 @@ const ProfileHeader = () => {
                 <span>
                   <i className="fa-regular fa-file dark:text-white"></i>
                 </span>
-                <button className="dark:text-white">My Resume</button>
+                <button className="dark:text-zinc-300">My Resume</button>
               </div>
             </HoverCards>
           </ShineWrapperCard>
@@ -103,7 +103,7 @@ const ProfileHeader = () => {
                 <span>
                   <i class="fa-regular fa-envelope dark:text-white"></i>
                 </span>
-                <button className="p-1 dark:text-white">Email</button>
+                <button className="p-1 dark:text-zinc-300">Email</button>
               </div>
             </HoverCards>
           </ShineWrapperCard>
@@ -111,7 +111,7 @@ const ProfileHeader = () => {
           <ShineWrapperCard>
             <HoverCards>
               <div className="flex justify-center w-85 h-10 items-center p-2 gap-2 dark:bg-zinc-900">
-                <button className="flex items-center p-2 dark:text-white">
+                <button className="flex items-center p-2 dark:text-zinc-300">
                   Certifications
                 </button>
               </div>
