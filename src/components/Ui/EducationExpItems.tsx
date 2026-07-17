@@ -43,7 +43,7 @@ const EducItems = ({
           <ul className="list-disc list-inside space-y-1.5 text-sm md:text-xs text-black dark:text-white pl-1">
             {achievements.map((achievement, index) => (
               <li key={index} className="leading-relaxed break-words">
-                <span className="text-black dark:text-white">{achievement}</span>
+                <span className="text-black dark:text-zinc-300">{achievement}</span>
               </li>
             ))}
           </ul>

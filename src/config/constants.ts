@@ -10,7 +10,8 @@ export const educationExperiences: EducationItemProps[] = [
     fieldOfStudy: "Information Technology",
     location: "San Ildefonso, Bulacan",
     startDate: new Date(2022, 7), // August 2022
-    isCurrent: true,
+    endDate: new Date(2026, 6),
+    isCurrent: false,
     achievements: [
       "Maintained a strong academic standing in tech courses",
       "Gained foundational knowledge in web development and data modeling"

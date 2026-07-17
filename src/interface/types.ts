@@ -9,14 +9,11 @@ export interface EducationItemProps{
     location:string,
     startDate:Date,
     endDate?:Date,
-    // track if still enrolled
     isCurrent:boolean,
-    // track notable achievements on this education during the time spent
     achievements: string[],
 }
 export interface CertificateModalProps {
     title:string,
-    // certificates will be stored as pdf, jpeg or in some other formats
     src:string,
     isOpen:boolean,
     onClose:any
@@ -25,7 +22,7 @@ export interface CertificateModalProps {
 
 export interface MarqueeProps {
   children: ReactNode;
-  speed?: number; // Speed in seconds
+  speed?: number;
   className?: string;
 }
 
@@ -57,7 +54,7 @@ export type TestimonialProps = {
 
 export type HoverCardProps = {
     children : ReactNode;
-    className?: string; // this allows extra styling mas better if wala na e
+    className?: string;
 }
 
 export type  WorkExperienceItemProps = {
