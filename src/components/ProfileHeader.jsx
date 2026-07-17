@@ -6,7 +6,7 @@ import { navigate } from "../utils/Navigators";
 import { ThemeToggle } from "./ThemeToggle";
 
 const ProfileHeader = () => {
-  const myCv = "/files/my_resume.pdf";
+  const myCv = "/files/MALBAS JOHN PHILLIP - RESUME.pdf";
 
   return (
     <>
