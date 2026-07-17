@@ -22,7 +22,7 @@ const Recognition = () => {
             onClick={() =>
               setSelectedCert({
                 title: "Cyber Threat Management",
-                src: "/path-to-cisco-cert.png", // Use your actual image path here
+                src:"certificates/ctm-cert.png",
               })
             }
           ></CertificateItem>
@@ -32,7 +32,7 @@ const Recognition = () => {
             onClick={() =>
               setSelectedCert({
                 title: "Cyber Threat Management",
-                src: "/path-to-cisco-cert.png", // Use your actual image path here
+                src: "/certificates/iot-cert.png", // Use your actual image path here
               })
             }
           ></CertificateItem>
@@ -42,7 +42,7 @@ const Recognition = () => {
             onClick={() =>
               setSelectedCert({
                 title: "Cyber Threat Management",
-                src: "/path-to-cisco-cert.png", // Use your actual image path here
+                src: "/certificates/oss-cert.png", // Use your actual image path here
               })
             }
           ></CertificateItem>
@@ -52,7 +52,7 @@ const Recognition = () => {
             onClick={() =>
               setSelectedCert({
                 title: "Cyber Threat Management",
-                src: "/path-to-cisco-cert.png", // Use your actual image path here
+                src: "/certificates/Screenshot 2026-07-17 122131.png", // Use your actual image path here
               })
             }
           ></CertificateItem>

@@ -19,9 +19,9 @@ export const CertificateModal = ({title, src, isOpen, onClose}  : CertificateMod
         <dialog 
             ref={dialogRef} 
             onClose={onClose} // Syncs native 'Esc' key press with React state
-            className="rounded-lg p-0 backdrop:bg-black/50"
+            className="fixed inset-0 m-auto rounded-lg p-0 backdrop:bg-black/50"
         >
-            <div className="p-6 bg-white flex flex-col gap-4">
+            <div className="p-6 bg-purple-200 flex flex-col gap-4">
                 <h2 className="text-xl font-bold">{title}</h2>
                 <img src={src} alt={title} className="max-w-full h-auto" />
                 <button 
