@@ -96,7 +96,7 @@ export const Footer = () => {
           </div>
         </div>
         {/* aside navigation link */}
-        <aside className="flex flex-col">
+        <aside className="p-2 gap-1 flex flex-col border-t border-neutral-800">
           <div className="grid grid-cols-2 gap-4">
             <div>
               <nav>Home</nav>
