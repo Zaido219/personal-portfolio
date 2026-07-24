@@ -88,9 +88,9 @@ export const Footer = () => {
       </div>
       {/* center banner */}
       <div className="flex flex-col gap-2">
-        <div className="bg-red-200 h-70 flex flex-col items-center justify-center gap-5 p-2">
+        <div className="h-70 flex flex-col items-center justify-center gap-5 p-2">
           {/* banner text */}
-          <p className="text-5xl font-bold">LETS MAKE IT HAPPEN</p>
+          <p className="text-5xl font-bold text-center">LETS MAKE IT HAPPEN</p>
           <div>
             <button>Email Me</button>
           </div>
