@@ -88,11 +88,11 @@ export const Footer = () => {
       </div>
       {/* center banner */}
       <div className="flex flex-col gap-2">
-        <div className="flex flex-col items-center gap-5 p-2">
+        <div className="bg-red-200 h-70 flex flex-col items-center justify-center gap-5 p-2">
           {/* banner text */}
           <p className="text-5xl font-bold">LETS MAKE IT HAPPEN</p>
-          <div className="">
-            <button className="">Email Me</button>
+          <div>
+            <button>Email Me</button>
           </div>
         </div>
         {/* aside navigation link */}
