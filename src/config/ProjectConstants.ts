@@ -2,6 +2,12 @@ import type { ProjectItemProps } from "../interface/types";
 // showcased projects 1/2
 export const Projects : ProjectItemProps[] = [
     {
+        projectName:"Custom Chess Engine",
+        projectStatus:"Ongoing",
+        projectDescription:"A web-based chess application featuring a custom-built game engine written from scratch. Focuses on pure logic implementation, complex state management, and algorithmic move validation without external chess libraries.",
+        projectLink:"https://github.com/Zaido219/custom-chess-engine.git"
+    },
+    {
         projectName:"Static Web Server",
         projectStatus: "Done",
         projectDescription:"A lightweight, multi-threaded static file server built entirely from scratch in C# using raw TCP sockets. Instead of relying on high-level HTTP abstractions (like ASP.NET Core or HttpListener), this project implements the fundamental networking and protocol parsing layers manually to understand how web servers actually communicate with modern browsers under the hood.",
@@ -36,12 +42,6 @@ export const Projects : ProjectItemProps[] = [
         projectStatus:"Done - To be turned over to next maintainer",
         projectDescription:"This is an updated website for the gender and development office at the Bulacan Agricultural State University.",
         projectLink:"https://bascgad.gadinsight.com/"
-    },
-    {
-        projectName:"Custom Chess Engine",
-        projectStatus:"Abandoned",
-        projectDescription:"A web-based chess application featuring a custom-built game engine written from scratch. Focuses on pure logic implementation, complex state management, and algorithmic move validation without external chess libraries.",
-        projectLink:"https://github.com/Zaido219/custom-chess-engine.git"
     },
     {
         projectName:"Photo Booth App",
