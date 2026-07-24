@@ -2,16 +2,16 @@ import { BaseSection } from "./Ui/Sections";
 
 export const Footer = () => {
   return (
-    <div className="flex flex-col gap-5 rounded-md p-3 overflow-hidden w-fit">
+    <div className="flex flex-col gap-5 rounded-md p-3 overflow-hidden w-fit md:w-full">
       {/* upper pill */}
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col md:flex-row md:items-center gap-3 md:justify-around">
         <div>{/* some icon will go in here */}</div>
-        <div>
+        <div className="">
           <p className="text-xl text-center">
             Let me help you build solutions that will last a lifetime.
           </p>
         </div>
-        <div className="flex justify-around">
+        <div className="flex justify-around md:gap-3">
           <div>
             {/* Facebook Icon Link */}
             <a
@@ -89,17 +89,20 @@ export const Footer = () => {
       {/* center banner */}
       <div className="flex flex-col gap-2">
         <div>
-             <div className="h-70 flex flex-col items-center justify-center gap-5 p-2 bg-slate-100 rounded-2xl">
-          {/* banner text */}
-          <p className="text-5xl font-bold text-center dark:text-zinc-900">LETS MAKE IT HAPPEN</p>
-          <div>
-            <button className="dark:text-zinc-900">Email Me</button>
+          <div className="h-70 flex flex-col items-center justify-center gap-5 p-2 bg-slate-100 rounded-2xl">
+            {/* banner text */}
+            <p className="text-5xl font-bold text-center dark:text-zinc-900">
+              LETS MAKE IT HAPPEN
+            </p>
+            <div>
+              <button className="dark:text-zinc-900">Email Me</button>
+            </div>
           </div>
         </div>
-        </div>
         {/* aside navigation link */}
-        <aside className="p-2 gap-1 flex flex-col border-t border-neutral-800">
-          <div className="grid grid-cols-2 gap-4">
+        <aside className="p-4 border-t border-neutral-800">
+          <div className="flex justify-between items-start">
+            {/* Left Column */}
             <div className="flex flex-col gap-1">
               <a href="#home" className="hover:underline">
                 Home
@@ -116,10 +119,20 @@ export const Footer = () => {
                 About
               </a>
             </div>
-            <div>
-              <nav>Download CV</nav>
-              <nav>GadInsight</nav>
-              {/* perhaps other hosted projects goes in here */}
+
+            {/* Right Column - aligned right for balance */}
+            <div className="flex flex-col gap-1 text-right">
+              <a href="/cv.pdf" download className="hover:underline">
+                Download CV
+              </a>
+              <a
+                href="https://gadinsight.com"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:underline"
+              >
+                GadInsight
+              </a>
             </div>
           </div>
         </aside>
