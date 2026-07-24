@@ -2,9 +2,9 @@ import { BaseSection } from "./Ui/Sections";
 
 export const Footer = () => {
   return (
-    <div className="">
+    <div className="flex flex-col gap-5 rounded-md p-3 overflow-hidden w-fit">
       {/* upper pill */}
-      <div className="">
+      <div className="flex flex-col gap-3">
         <div>{/* some icon will go in here */}</div>
         <div>
           <p className="text-xl">
@@ -88,9 +88,9 @@ export const Footer = () => {
       </div>
       {/* center banner */}
       <div className="flex flex-col gap-2">
-        <div className="flex flex-col items-center gap-2 p-2">
+        <div className="flex flex-col items-center gap-5 p-2">
           {/* banner text */}
-          <p className="text-4xl font-bold">LETS MAKE IT HAPPEN</p>
+          <p className="text-5xl font-bold">LETS MAKE IT HAPPEN</p>
           <div className="">
             <button className="">Email Me</button>
           </div>
