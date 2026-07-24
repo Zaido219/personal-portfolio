@@ -60,7 +60,7 @@ export const Footer = () => {
             <div>
               {/* Viber Icon Link */}
               <a
-                href="viber://chat?number=%2B639123456789" // Replace with your phone number (international format without + or spaces)
+                href="viber://chat?number=%2B639553395861" // Replace with your phone number (international format without + or spaces)
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Viber"
