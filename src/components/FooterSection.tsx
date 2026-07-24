@@ -101,7 +101,8 @@ export const Footer = () => {
         </div>
         {/* aside navigation link */}
         <aside className="p-4 border-t border-neutral-800">
-          <div className="flex justify-between items-start">
+          {/* Added mx-auto to center the max-w container */}
+          <div className="flex justify-between items-start max-w-md md:max-w-xl mx-auto">
             {/* Left Column */}
             <div className="flex flex-col gap-1">
               <a href="#home" className="hover:underline">
@@ -120,8 +121,8 @@ export const Footer = () => {
               </a>
             </div>
 
-            {/* Right Column - aligned right for balance */}
-            <div className="flex flex-col gap-1 text-right">
+            {/* Right Column */}
+            <div className="flex flex-col gap-1 text-left">
               <a href="/cv.pdf" download className="hover:underline">
                 Download CV
               </a>
