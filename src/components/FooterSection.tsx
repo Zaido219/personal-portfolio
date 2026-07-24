@@ -87,17 +87,17 @@ export const Footer = () => {
         </div>
       </div>
       {/* center banner */}
-      <div className="bg-orange-100 flex flex-col gap-2">
-        <div className="bg-red-100 flex flex-col items-center gap-2 p-2">
+      <div className="flex flex-col gap-2">
+        <div className="flex flex-col items-center gap-2 p-2">
           {/* banner text */}
           <p className="text-4xl font-bold">LETS MAKE IT HAPPEN</p>
-          <div>
-            <button>Email Me</button>
+          <div className="">
+            <button className="">Email Me</button>
           </div>
         </div>
         {/* aside navigation link */}
-        <aside>
-          <div>
+        <aside className="flex flex-col">
+          <div className="grid grid-cols-2 gap-4">
             <div>
               <nav>Home</nav>
               <nav>Github</nav>
@@ -113,11 +113,11 @@ export const Footer = () => {
       </div>
       {/* final footer */}
       <div>
-        <div className="bg-yellow-100 flex flex-col items-center">
+        <div className="flex flex-col items-center">
           <p>All rights reserved</p>
           <div>
-            <p className="text-lg font-semibold">JOHN PHILLIP LOR 2026</p>
-            <div className="bg-green-100 flex flex-col items-center">
+            <p className="text-lg font-semibold">JOHN PHILLIP L MALBAS 2026</p>
+            <div className="flex flex-col items-center">
               {/* show local time */}
               <p>Local Time</p>
               <div>{/* local time goes inside this div */}</div>
