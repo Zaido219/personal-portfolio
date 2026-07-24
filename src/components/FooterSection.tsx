@@ -7,7 +7,7 @@ export const Footer = () => {
       <div className="flex flex-col gap-3">
         <div>{/* some icon will go in here */}</div>
         <div>
-          <p className="text-xl">
+          <p className="text-xl text-center">
             Let me help you build solutions that will last a lifetime.
           </p>
         </div>
