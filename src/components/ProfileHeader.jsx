@@ -10,7 +10,7 @@ const ProfileHeader = () => {
 
   return (
     <>
-      <div className="w-full flex justify-end px-2">
+      <div id="home" className="w-full flex justify-end px-2">
         <ThemeToggle />
       </div>
       <header className="flex flex-col md:flex-row md:gap-5 gap-4 p-1 md:p-2 items-center justify-center md:justify-between w-90 md:w-5xl overflow-hidden">

@@ -98,10 +98,21 @@ export const Footer = () => {
         {/* aside navigation link */}
         <aside className="p-2 gap-1 flex flex-col border-t border-neutral-800">
           <div className="grid grid-cols-2 gap-4">
-            <div>
-              <nav>Home</nav>
-              <nav>Github</nav>
-              <nav>About</nav>
+            <div className="flex flex-col gap-1">
+              <a href="#home" className="hover:underline">
+                Home
+              </a>
+              <a
+                href="https://github.com/Zaido219"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:underline"
+              >
+                Github
+              </a>
+              <a href="#about" className="hover:underline">
+                About
+              </a>
             </div>
             <div>
               <nav>Download CV</nav>
