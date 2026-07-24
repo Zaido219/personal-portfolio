@@ -117,11 +117,6 @@ export const Footer = () => {
           <p>All rights reserved</p>
           <div>
             <p className="text-lg font-semibold">JOHN PHILLIP L MALBAS 2026</p>
-            <div className="flex flex-col items-center">
-              {/* show local time */}
-              <p>Local Time</p>
-              <div>{/* local time goes inside this div */}</div>
-            </div>
             <div>{/* to "up" arrow */}</div>
           </div>
         </div>
