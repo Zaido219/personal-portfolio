@@ -4,7 +4,7 @@ import SectionHeader from "./Ui/SectionHeaderText";
 
 const AboutMe = () => {
   return (
-    <div>
+    <div id="about">
       <SectionHeader title="About" />
       <section className="flex items-center justify-center p-4 min-h-fit">
         <div className="p-2 rounded-xl w-full max-w-2xl">
