@@ -12,7 +12,7 @@ export interface TechStackItem{
     id?:string,
     field: TechField // backend,frontend,database,testing,etc...
     name:string,
-    icon?:string,
+    icon?:React.ReactNode,
     color?:string
 }
 
