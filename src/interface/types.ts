@@ -14,11 +14,11 @@ export type TechField =
   | 'hardware&systems';
 
 export interface TechStackItemProps{
-    id?:string,
+    id?:string | undefined,
     field: TechField // backend,frontend,database,testing,etc...
     name:string,
-    icon?:React.ReactNode,
-    color?:string
+    icon?:React.ReactNode | undefined,
+    color?:string | undefined
 }
 
 
