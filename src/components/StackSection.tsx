@@ -2,6 +2,7 @@ import SectionHeader from "./Ui/SectionHeaderText";
 import { techStacks } from "../config/TechStacks";
 import TechStackItem from "./Ui/TechStackItem";
 import type { TechField, TechStackItemProps } from "../interface/types";
+import BaseSection from "./Ui/BaseSection";
 
 const StackSection = () => {
   // Group items by field
@@ -15,7 +16,7 @@ const StackSection = () => {
   }, {} as Partial<Record<TechField, TechStackItemProps[]>>);
 
   return (
-    <div className="w-full space-y-6">
+    <BaseSection>
       <SectionHeader title="Tech Stack" />
       
       <div className="space-y-6">
@@ -115,7 +116,7 @@ const StackSection = () => {
           </div>
         )}
       </div>
-    </div>
+    </BaseSection>
   );
 };
 
