@@ -1,4 +1,4 @@
-export const TechStacks : TechStackItem[] = [
+export const techStacks = [
     {
         field:'backend',
         name:'C#',
