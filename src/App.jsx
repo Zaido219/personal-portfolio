@@ -11,6 +11,7 @@ import AboutMe from "./components/AboutMe";
 import Gallery from "./components/GallerySection";
 import { Footer } from "./components/FooterSection";
 import EducationExperienceSection from "./components/EducationSection";
+import StackSection from "./components/StackSection";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             {/* Quadrant C: Recent Projects */}
             <div className="flex flex-col items-center w-full md:order-2 md:row-span-2">
               <ProjectCard />
+              <StackSection/>
             </div>
 
           </div>
