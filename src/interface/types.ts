@@ -8,18 +8,12 @@ export type TechField =
   | 'devops' 
   | 'tools';
 
-export interface TechStackItem{
+export interface TechStackItemProps{
     id?:string,
     field: TechField // backend,frontend,database,testing,etc...
     name:string,
     icon?:React.ReactNode,
     color?:string
-}
-
-export interface TechStackItemProps {
-  item: TechStackItem;
-  className?: string;
-  onClick?: (item: TechStackItem) => void;
 }
 
 
