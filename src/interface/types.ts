@@ -1,12 +1,17 @@
 import { Children, type ReactNode } from "react"
 
 export type TechField = 
+  | 'languages'
   | 'frontend' 
   | 'backend' 
   | 'database' 
   | 'testing' 
   | 'devops' 
-  | 'tools';
+  | 'tools'
+  | 'frameworks'
+  | 'testing'
+  | 'deployment'
+  | 'hardware&systems';
 
 export interface TechStackItemProps{
     id?:string,
