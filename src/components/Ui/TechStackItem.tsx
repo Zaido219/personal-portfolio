@@ -10,7 +10,7 @@ const TechStackItem = ({ name, icon, color }: TechStackItemProps) => {
       >
         {icon}
       </span>
-      <span className="text-sm font-medium text-neutral-200">{name}</span>
+      <span className="text-sm font-medium text-zinc-900">{name}</span>
     </div>
   );
 };
