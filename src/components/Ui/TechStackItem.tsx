@@ -5,7 +5,7 @@ const TechStackItem = ({ name, icon, color }: TechStackItemProps) => {
     <div className="flex items-center gap-3 p-1">
       {/* Apply the passed color string here */}
       <span 
-        className="text-xl flex-shrink-0 flex items-center justify-center [&>svg]:w-8 [&>svg]:h-8"
+        className="text-xl flex-shrink-0 flex items-center justify-center [&>svg]:w-6 md:[&>svg]:w-8 [&>svg]:h-6 md:[&>svg]:h-8"
         style={{ color: color ?? "currentColor" }}
       >
         {icon}
