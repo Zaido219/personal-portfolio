@@ -35,12 +35,12 @@ function App() {
 
             {/* Quadrant B: Certifications/Recognition */}
             <div className="w-full md:order-3">
-              <Recognition />
+               <ProjectCard />
             </div>
 
             {/* Quadrant C: Recent Projects */}
             <div className="flex flex-col items-center w-full md:order-2 md:row-span-2">
-              <ProjectCard />
+               <Recognition />
             </div>
 
           </div>
