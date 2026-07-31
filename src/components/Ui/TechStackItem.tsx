@@ -1,12 +1,16 @@
 import { type TechStackItemProps} from "./../../interface/types";
 
-const TechStackItem = ({field, name,icon, color, ...props}:TechStackItemProps) => {
-  return(
-    <div className="p-1 w-fit">
-      <div>
+const TechStackItem = ({ name, icon, color }: TechStackItemProps) => {
+  return (
+    <div className="flex items-center gap-3 p-2.5">
+      {/* Apply the passed color string here */}
+      <span 
+        className="text-xl flex-shrink-0 flex items-center justify-center"
+        style={{ color: color ?? "currentColor" }}
+      >
         {icon}
-      </div>
-      {name}
+      </span>
+      <span className="text-sm font-medium text-neutral-200">{name}</span>
     </div>
   );
 };

@@ -27,7 +27,7 @@ export const techStacks : TechStackItemProps[] = [
         field:'languages',
         name:'css3',
         icon: <SiCss />,
-        color:"#512BD4",
+        color:"#1572B6",
     },
     {
         field:'languages',
