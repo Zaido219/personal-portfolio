@@ -23,7 +23,7 @@ const StackSection = () => {
         {/* Languages */}
         {groupedTechStacks["languages"] && (
           <div className="space-y-2 p-2 md:shadow-sm shadow-md">
-            <p className="font-semibold text-sm text-zinc-700 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 w-fit p-2 rounded-2xl">Languages</p>
+            <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 w-fit p-2 rounded-2xl">Languages</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
               {groupedTechStacks["languages"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
