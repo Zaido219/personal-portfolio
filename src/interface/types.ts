@@ -1,5 +1,27 @@
 import { Children, type ReactNode } from "react"
 
+export type TechField = 
+  | 'frontend' 
+  | 'backend' 
+  | 'database' 
+  | 'testing' 
+  | 'devops' 
+  | 'tools';
+
+export interface TechStackItem{
+    id?:string,
+    field: TechField // backend,frontend,database,testing,etc...
+    name:string,
+    icon?:string,
+    color?:string
+}
+
+export interface TechStackItemProps {
+  item: TechStackItem;
+  className?: string;
+  onClick?: (item: TechStackItem) => void;
+}
+
 
 export interface EducationItemProps{
     id?:string,
