@@ -1,4 +1,5 @@
 import SectionHeader  from "./Ui/SectionHeaderText";
+import TechStackItemProps from "./"
 
 const StackSection = () => {
   return (
