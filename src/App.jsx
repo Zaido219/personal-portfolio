@@ -11,6 +11,7 @@ import AboutMe from "./components/AboutMe";
 import Gallery from "./components/GallerySection";
 import { Footer } from "./components/FooterSection";
 import EducationExperienceSection from "./components/EducationSection";
+import StackSection from "./components/StackSection";
 
 function App() {
   return (
@@ -34,16 +35,16 @@ function App() {
 
             {/* Quadrant B: Certifications/Recognition */}
             <div className="w-full md:order-3">
-              <Recognition />
+               <Recognition />
             </div>
 
             {/* Quadrant C: Recent Projects */}
             <div className="flex flex-col items-center w-full md:order-2 md:row-span-2">
-              <ProjectCard />
+                <ProjectCard />
             </div>
 
           </div>
-
+           <StackSection />
           {/* 3. LOWER SECTIONS: Education & About Me */}
           <div className="p-2 flex flex-col md:flex-row gap-6 justify-center w-full">
             <EducationExperienceSection />
