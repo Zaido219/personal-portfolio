@@ -41,11 +41,10 @@ function App() {
             {/* Quadrant C: Recent Projects */}
             <div className="flex flex-col items-center w-full md:order-2 md:row-span-2">
               <ProjectCard />
-              <StackSection/>
             </div>
 
           </div>
-
+           <StackSection />
           {/* 3. LOWER SECTIONS: Education & About Me */}
           <div className="p-2 flex flex-col md:flex-row gap-6 justify-center w-full">
             <EducationExperienceSection />

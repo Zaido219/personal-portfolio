@@ -7,3 +7,5 @@ const TechStackItem = ({field, name,icon, color, ...props}:TechStackItemProps) =
     </div>
   );
 };
+
+export default TechStackItem;
