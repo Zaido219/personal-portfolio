@@ -18,10 +18,42 @@ import {
   SiVercel, 
   SiHostinger, 
   SiArduino,
-  SiRaylib 
+  SiRaylib ,
+  SiReact,
+  SiHtml5,
 } from "@icons-pack/react-simple-icons";
 
 export const techStacks: TechStackItemProps[] = [
+     {
+        field: 'languages',
+        name: 'C#',
+        icon: <SiSharp />,
+        color: "#239120",
+    },
+    {
+        field: 'languages',
+        name: 'Python',
+        icon: <SiPython />,
+        color: "#3776AB",
+    },
+    {
+        field: 'languages',
+        name: 'javaScript',
+        icon: <SiJavascript />,
+        color: "#F7DF1E",
+    },
+    {
+        field: 'languages',
+        name: 'typescript.js',
+        icon: <SiTypescript />,
+        color: "#3178C6",
+    },
+    {
+        field: 'languages',
+        name: 'HTML',
+        icon: <SiHtml5 />,
+        color: "#E34F26",
+    },
     {
         field: 'languages',
         name: 'css3',
@@ -41,30 +73,6 @@ export const techStacks: TechStackItemProps[] = [
         color: "#777BB4",
     },
     {
-        field: 'languages',
-        name: 'typescript.js',
-        icon: <SiTypescript />,
-        color: "#3178C6",
-    },
-    {
-        field: 'languages',
-        name: 'C#',
-        icon: <SiSharp />,
-        color: "#239120",
-    },
-    {
-        field: 'languages',
-        name: 'Python',
-        icon: <SiPython />,
-        color: "#3776AB",
-    },
-    {
-        field: 'languages',
-        name: 'javaScript',
-        icon: <SiJavascript />,
-        color: "#F7DF1E",
-    },
-    {
         field: 'database',
         name: 'SQL',
         icon: <SiPostgresql />,
@@ -75,6 +83,12 @@ export const techStacks: TechStackItemProps[] = [
         name: 'django',
         icon: <SiDjango />,
         color: "#092E20",
+    },
+    {
+        field: 'frameworks',
+        name: 'react',
+        icon: <SiReact />,
+        color: "#61DAFB",
     },
     {
         field: 'frameworks',
