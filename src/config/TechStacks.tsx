@@ -22,7 +22,8 @@ import {
   SiReact,
   SiHtml5,
   SiTailwindcss,
-  SiSqlite
+  SiSqlite,
+  SiYaml,
 } from "@icons-pack/react-simple-icons";
 
 export const techStacks: TechStackItemProps[] = [
@@ -139,6 +140,12 @@ export const techStacks: TechStackItemProps[] = [
         name: 'Github Actions',
         icon: <SiGithubactions />,
         color: "#2088FF",
+    },
+    {
+        field: 'devops',
+        name: 'YAML',
+        icon: <SiYaml />,
+        color: "#CB171E",
     },
     {
         field: 'tools',
