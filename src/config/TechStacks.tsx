@@ -22,6 +22,7 @@ import {
   SiReact,
   SiHtml5,
   SiTailwindcss,
+  SiSqlite
 } from "@icons-pack/react-simple-icons";
 
 export const techStacks: TechStackItemProps[] = [
@@ -76,7 +77,13 @@ export const techStacks: TechStackItemProps[] = [
     {
         field: 'database',
         name: 'SQL',
-        icon: <SiPostgresql />,
+        icon: <SiSqlite />,
+        color: "#4169E1",
+    },
+    {
+        field: 'database',
+        name: 'SQLite',
+        icon: <SiSqlite />,
         color: "#4169E1",
     },
     {
