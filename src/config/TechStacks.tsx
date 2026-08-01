@@ -24,6 +24,7 @@ import {
   SiTailwindcss,
   SiSqlite,
   SiYaml,
+  SiGithub,
 } from "@icons-pack/react-simple-icons";
 
 export const techStacks: TechStackItemProps[] = [
@@ -158,6 +159,12 @@ export const techStacks: TechStackItemProps[] = [
         name: 'postman',
         icon: <SiPostman />,
         color: "#FF6C37",
+    },
+    {
+        field: 'deployment',
+        name: 'Github',
+        icon: <SiGithub />,
+        color: "#000000",
     },
     {
         field: 'deployment',
