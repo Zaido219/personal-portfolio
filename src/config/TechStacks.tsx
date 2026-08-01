@@ -21,6 +21,7 @@ import {
   SiRaylib ,
   SiReact,
   SiHtml5,
+  SiTailwindcss,
 } from "@icons-pack/react-simple-icons";
 
 export const techStacks: TechStackItemProps[] = [
@@ -83,6 +84,12 @@ export const techStacks: TechStackItemProps[] = [
         name: 'django',
         icon: <SiDjango />,
         color: "#092E20",
+    },
+    {
+        field: 'frameworks',
+        name: 'tailwindCSs',
+        icon: <SiTailwindcss />,
+        color: "#06B6D4",
     },
     {
         field: 'frameworks',
