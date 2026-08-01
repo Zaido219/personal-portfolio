@@ -1,5 +1,11 @@
 import { Children, type ReactNode } from "react"
 
+
+
+export interface groupCardProps{
+    children:ReactNode
+}
+
 export type TechField = 
   | 'languages'
   | 'frontend' 

@@ -21,6 +21,10 @@ import {
   SiRaylib ,
   SiReact,
   SiHtml5,
+  SiTailwindcss,
+  SiSqlite,
+  SiYaml,
+  SiGithub,
 } from "@icons-pack/react-simple-icons";
 
 export const techStacks: TechStackItemProps[] = [
@@ -75,7 +79,13 @@ export const techStacks: TechStackItemProps[] = [
     {
         field: 'database',
         name: 'SQL',
-        icon: <SiPostgresql />,
+        icon: <SiSqlite />,
+        color: "#4169E1",
+    },
+    {
+        field: 'database',
+        name: 'SQLite',
+        icon: <SiSqlite />,
         color: "#4169E1",
     },
     {
@@ -83,6 +93,12 @@ export const techStacks: TechStackItemProps[] = [
         name: 'django',
         icon: <SiDjango />,
         color: "#092E20",
+    },
+    {
+        field: 'frameworks',
+        name: 'tailwindCSs',
+        icon: <SiTailwindcss />,
+        color: "#06B6D4",
     },
     {
         field: 'frameworks',
@@ -127,6 +143,12 @@ export const techStacks: TechStackItemProps[] = [
         color: "#2088FF",
     },
     {
+        field: 'devops',
+        name: 'YAML',
+        icon: <SiYaml />,
+        color: "#CB171E",
+    },
+    {
         field: 'tools',
         name: 'Git',
         icon: <SiGit />,
@@ -137,6 +159,12 @@ export const techStacks: TechStackItemProps[] = [
         name: 'postman',
         icon: <SiPostman />,
         color: "#FF6C37",
+    },
+    {
+        field: 'deployment',
+        name: 'Github',
+        icon: <SiGithub />,
+        color: "#000000",
     },
     {
         field: 'deployment',
