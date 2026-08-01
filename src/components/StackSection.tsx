@@ -20,7 +20,7 @@ const StackSection = () => {
     <div className="">
       <SectionHeader title="My Tool Kit" />
       
-      <div className="space-y-6 p-3 grid md:grid grid-cols-2 md:grid-cols-3  gap-x-6 md:gap-x-8 gap-y-2 md:gap-y-4 rounded-lg dark:bg-zinc-900 rounded-xl">
+      <div className="space-y-6 p-3 grid md:grid grid-cols-2 md:grid-cols-3  gap-x-6 md:gap-x-8 gap-y-2 md:gap-y-4 rounded-lg rounded-xl">
         {/* Languages */}
         {groupedTechStacks["languages"] && (
           <GroupCard>
