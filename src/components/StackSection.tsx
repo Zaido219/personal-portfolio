@@ -3,6 +3,7 @@ import { techStacks } from "../config/TechStacks";
 import TechStackItem from "./Ui/TechStackItem";
 import type { TechField, TechStackItemProps } from "../interface/types";
 import BaseSection from "./Ui/BaseSection";
+import GroupCard from "./Ui/stackSection/groupCard";
 
 const StackSection = () => {
   // Group items by field
@@ -22,14 +23,14 @@ const StackSection = () => {
       <div className="space-y-6 p-3 grid md:grid grid-cols-2 md:grid-cols-3  gap-x-6 md:gap-x-8 gap-y-2 md:gap-y-4 rounded-lg dark:bg-zinc-900 rounded-xl">
         {/* Languages */}
         {groupedTechStacks["languages"] && (
-          <div className="space-y-2 p-2 md:shadow-sm shadow-md bg-red-200">
+          <GroupCard>
             <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Languages</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
               {groupedTechStacks["languages"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
               ))}
             </div>
-          </div>
+          </GroupCard>
         )}
 
         {/* Database */}
