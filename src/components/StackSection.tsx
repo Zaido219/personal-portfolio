@@ -25,7 +25,7 @@ const StackSection = () => {
         {groupedTechStacks["languages"] && (
           <GroupCard>
             <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Languages</p>
-            <div className="grid grid-cols-3 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-1 max-w-2xl">
               {groupedTechStacks["languages"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
               ))}
