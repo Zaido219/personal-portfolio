@@ -24,7 +24,7 @@ const StackSection = () => {
         {/* Languages */}
         {groupedTechStacks["languages"] && (
           <GroupCard>
-            <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Languages</p>
+            <p className="font-semibold text-xs text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Languages</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-1 max-w-2xl">
               {groupedTechStacks["languages"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
@@ -36,7 +36,7 @@ const StackSection = () => {
         {/* Database */}
         {groupedTechStacks["database"] && (
           <GroupCard>
-            <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Database</p>
+            <p className="font-semibold text-xs text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Database</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
               {groupedTechStacks["database"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
@@ -48,7 +48,7 @@ const StackSection = () => {
         {/* Frameworks */}
         {groupedTechStacks["frameworks"] && (
           <GroupCard>
-            <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Frameworks</p>
+            <p className="font-semibold text-xs text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Frameworks</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
               {groupedTechStacks["frameworks"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
@@ -60,7 +60,7 @@ const StackSection = () => {
         {/* Testing */}
         {groupedTechStacks["testing"] && (
           <GroupCard>
-            <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Testing</p>
+            <p className="font-semibold text-xs text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Testing</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
               {groupedTechStacks["testing"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
@@ -72,7 +72,7 @@ const StackSection = () => {
         {/* DevOps */}
         {groupedTechStacks["devops"] && (
           <GroupCard>
-            <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">DevOps</p>
+            <p className="font-semibold text-xs text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">DevOps</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
               {groupedTechStacks["devops"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
@@ -84,7 +84,7 @@ const StackSection = () => {
         {/* Tools */}
         {groupedTechStacks["tools"] && (
           <GroupCard>
-            <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Tools</p>
+            <p className="font-semibold text-xs text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Tools</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
               {groupedTechStacks["tools"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
@@ -96,7 +96,7 @@ const StackSection = () => {
         {/* Deployment */}
         {groupedTechStacks["deployment"] && (
           <GroupCard>
-            <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Deployment</p>
+            <p className="font-semibold text-xs text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Deployment</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
               {groupedTechStacks["deployment"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
@@ -108,7 +108,7 @@ const StackSection = () => {
         {/* Hardware & Systems */}
         {groupedTechStacks["hardware&systems"] && (
           <GroupCard>
-            <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Hardware and Systems</p>
+            <p className="font-semibold text-xs text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Hardware and Systems</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
               {groupedTechStacks["hardware&systems"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
