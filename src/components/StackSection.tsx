@@ -35,86 +35,86 @@ const StackSection = () => {
 
         {/* Database */}
         {groupedTechStacks["database"] && (
-          <div className="space-y-2 p-2 md:shadow-sm shadow-md">
+          <GroupCard>
             <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Database</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
               {groupedTechStacks["database"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
               ))}
             </div>
-          </div>
+          </GroupCard>
         )}
 
         {/* Frameworks */}
         {groupedTechStacks["frameworks"] && (
-          <div className="space-y-2 p-2 md:shadow-sm shadow-md">
+          <GroupCard>
             <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Frameworks</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
               {groupedTechStacks["frameworks"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
               ))}
             </div>
-          </div>
+          </GroupCard>
         )}
 
         {/* Testing */}
         {groupedTechStacks["testing"] && (
-          <div className="space-y-2 p-2 md:shadow-sm shadow-md">
+          <GroupCard>
             <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Testing</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
               {groupedTechStacks["testing"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
               ))}
             </div>
-          </div>
+          </GroupCard>
         )}
 
         {/* DevOps */}
         {groupedTechStacks["devops"] && (
-          <div className="space-y-2 p-2 md:shadow-sm shadow-md">
+          <GroupCard>
             <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">DevOps</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
               {groupedTechStacks["devops"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
               ))}
             </div>
-          </div>
+          </GroupCard>
         )}
 
         {/* Tools */}
         {groupedTechStacks["tools"] && (
-          <div className="space-y-2 p-2 md:shadow-sm shadow-md">
+          <GroupCard>
             <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Tools</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
               {groupedTechStacks["tools"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
               ))}
             </div>
-          </div>
+          </GroupCard>
         )}
 
         {/* Deployment */}
         {groupedTechStacks["deployment"] && (
-          <div className="space-y-2 p-2 md:shadow-sm shadow-md">
+          <GroupCard>
             <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Deployment</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
               {groupedTechStacks["deployment"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
               ))}
             </div>
-          </div>
+          </GroupCard>
         )}
 
         {/* Hardware & Systems */}
         {groupedTechStacks["hardware&systems"] && (
-          <div className="space-y-2 p-2 md:shadow-sm shadow-md">
+          <GroupCard>
             <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-300 uppercase tracking-tight bg-slate-200 dark:bg-zinc-800 w-fit p-2 rounded-2xl">Hardware and Systems</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-2xl">
               {groupedTechStacks["hardware&systems"].map((item, index) => (
                 <TechStackItem key={item.id ?? `${item.name}-${index}`} {...item} />
               ))}
             </div>
-          </div>
+          </GroupCard>
         )}
       </div>
     </div>
