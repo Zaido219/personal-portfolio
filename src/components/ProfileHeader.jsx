@@ -13,7 +13,7 @@ const ProfileHeader = () => {
       <div id="home" className="w-full flex justify-end px-2">
         <ThemeToggle />
       </div>
-      <header className="flex flex-col md:flex-row md:gap-5 gap-4 p-1 md:p-2 items-center justify-center md:justify-between w-90 md:w-5xl overflow-hidden">
+      <header className="flex flex-col  md:flex-row md:gap-5 gap-4 p-1 md:p-2 items-center justify-center md:justify-between w-90 md:w-5xl overflow-hidden">
         <div className="flex flex-col md:flex-row items-center p-2 md:gap-12">
           <section className="">
             {/* image goes here */}
