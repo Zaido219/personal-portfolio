@@ -4,7 +4,7 @@ import SectionHeader from "./Ui/SectionHeaderText";
 
 const AboutMe = () => {
   return (
-    <div id="about" className="bg-gray-100 rounded-xl">
+    <div id="about" className="bg-gray-100 dark:bg-zinc-900 rounded-xl">
       <SectionHeader title="About" />
       <section className="flex items-center justify-center p-4 min-h-fit">
         <div className="p-2 rounded-xl w-full max-w-2xl">

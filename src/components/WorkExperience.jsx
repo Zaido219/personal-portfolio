@@ -5,7 +5,7 @@ import { workExperiences } from "../config/constants";
 
 const WorkExperienceSection = () => {
   return (
-    <div className="flex flex-col items-center bg-gray-100 rounded-xl">
+    <div className="flex flex-col items-center bg-gray-100 dark:bg-zinc-900 rounded-xl">
       <SectionHeader title="Experiences" />
       <ul className="flex flex-col gap-2 p-1">
         {/* loop para di isa isa nakaka tamad */}
