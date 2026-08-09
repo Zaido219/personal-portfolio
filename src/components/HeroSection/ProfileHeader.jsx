@@ -1,7 +1,7 @@
 export const HeroSection = () => {
   return (
-    <section className="px-4">
-      <div className="flex flex-row justify-between items-center">
+    <section className="px-4 overflow-hidden">
+      <div className="flex flex-col items-center">
         <div className="flex flex-row items-center gap-x-2">
           <div>
             <div className="rounded-full h-11 w-11 bg-red-500"></div>
@@ -10,7 +10,7 @@ export const HeroSection = () => {
             <p>ZAIDO.DEV</p>
           </div>
         </div>
-        <div className="bg-red-400 flex flex-row gap-x-2">
+        <div className="flex flex-row gap-x-2">
           <nav>Work</nav>
           <nav>Skills</nav>
           <nav>Experience</nav>
@@ -18,15 +18,15 @@ export const HeroSection = () => {
           <nav>Contact</nav>
         </div>
       </div>
-      <div className="bg-red-700 flex flex-row items-center gap-x-10 p-2">
+      <div className="flex flex-row items-center gap-x-10 p-2">
         <div>
-          <div className="bg-red-300 inline-block mb-6">
-            <p className="bg-red-900 w-fit p-2 rounded-full">Available for work</p>
+          <div className="inline-block mb-6">
+            <p className="w-fit p-2 rounded-full">Available for work</p>
           </div>
-          <div className="bg-red-200 flex flex-col gap-4">
-            <p className="bg-red-800 text-7xl font-bold">John Phillip Lor Malbas</p>
-            <p className="bg-red-100 inline-block text-5xl font-semibold">Software Developer</p>
-            <p className="bg-red-800 max-w-md justify-around">
+          <div className="flex flex-col gap-4">
+            <p className="text-7xl font-bold">John Phillip Lor Malbas</p>
+            <p className="inline-block text-5xl font-semibold">Software Developer</p>
+            <p className="max-w-md justify-around">
               Engineering elegant solutions through clean code and modern
               architecture. Specializing in robust backend systems and intuitive
               user interfaces.
