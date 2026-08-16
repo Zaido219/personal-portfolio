@@ -1,0 +1,91 @@
+import React from "react";
+import { motion} from "framer-motion";
+import { type PanInfo } from "framer-motion";
+import type { ProjectItemProps } from "../../interface/types";
+
+interface StackedProjectCardProps {
+  project: ProjectItemProps;
+  offset: number;
+  totalCards: number;
+  onDismiss: () => void;
+}
+
+export const StackedProjectCard: React.FC<StackedProjectCardProps> = ({
+  project,
+  offset,
+  totalCards,
+  onDismiss,
+}) => {
+  const isTop = offset === 0;
+
+  // Derive visual depth math based on stack offset
+  const scale = 1 - Math.min(offset, 3) * 0.04;
+  const yTranslate = -Math.min(offset, 3) * 16;
+  const rotate = -Math.min(offset, 3) * 2;
+  const opacity = offset > 2 ? 0 : 1 - offset * 0.15;
+  const zIndex = totalCards - offset;
+
+  const handleDragEnd = (_: unknown, info: PanInfo) => {
+    if (!isTop) return;
+    const swipeThreshold = 100;
+    if (Math.abs(info.offset.x) > swipeThreshold) {
+      onDismiss();
+    }
+  };
+
+  return (
+    <motion.div
+      drag={isTop ? "x" : false}
+      dragConstraints={{ left: 0, right: 0 }}
+      dragSnapToOrigin
+      onDragEnd={handleDragEnd}
+      animate={{
+        scale,
+        y: yTranslate,
+        rotate,
+        opacity,
+      }}
+      transition={{ type: "spring", stiffness: 300, damping: 25 }}
+      style={{ zIndex }}
+      className={`absolute inset-0 w-full rounded-2xl bg-neutral-900 border border-neutral-800 p-6 shadow-2xl flex flex-col justify-between select-none ${
+        isTop ? "cursor-grab active:cursor-grabbing border-sunset-deep/50" : "pointer-events-none"
+      }`}
+    >
+      <div>
+        {/* Card Header & Visual Placeholder */}
+        <div className="w-full aspect-video rounded-xl bg-neutral-950 border border-neutral-800/80 flex items-center justify-center text-neutral-600 font-mono text-xs mb-5">
+          [ {project.projectName} Visual ]
+        </div>
+
+        <div className="flex items-center justify-between gap-x-2 mb-3">
+          <h3 className="text-xl font-bold text-white">{project.projectName}</h3>
+          <span className="px-2.5 py-0.5 text-xs font-mono rounded-full bg-neutral-950 border border-sunset-dusk/50 text-sunset-peach">
+            {project.projectStatus}
+          </span>
+        </div>
+
+        <p className="text-neutral-400 text-sm leading-relaxed line-clamp-3">
+          {project.projectDescription}
+        </p>
+      </div>
+
+      {project.projectLink && (
+        <div className="pt-4 border-t border-neutral-800/80 flex items-center justify-between">
+          <a
+            href={project.projectLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-semibold uppercase tracking-wider text-sunset-bright hover:text-white transition-colors"
+          >
+            Repository &rarr;
+          </a>
+          {isTop && (
+            <span className="text-[10px] font-mono text-neutral-500">
+              Drag horizontally to dismiss
+            </span>
+          )}
+        </div>
+      )}
+    </motion.div>
+  );
+};
