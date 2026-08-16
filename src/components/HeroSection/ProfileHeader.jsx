@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import {ReflectedGlow} from "./../Shared/Glow";
+import React, { useState } from "react";
+import { ReflectedGlow } from "./../Shared/Glow";
+import myPfp from "../../../public/images/my_pfp_new.jpg";
 
 export const NAV_ITEMS = [
-  { label: 'Work', href: '#work' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'About', href: '#about' },
+  { label: "Work", href: "#work" },
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
+  { label: "About", href: "#about" },
 ];
 
 // SRP: Solely responsible for rendering the list of navigation links and CTA
@@ -74,9 +75,16 @@ const MobileNavToggle = ({ isOpen, onToggle }) => (
   >
     <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
       {isOpen ? (
-        <path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
+        />
       ) : (
-        <path fillRule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
+        <path
+          fillRule="evenodd"
+          d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+        />
       )}
     </svg>
   </button>
@@ -99,14 +107,14 @@ const Header = () => {
     <header className="bg-neutral-900 w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-50">
       <Brand />
       <DesktopNavMenu items={NAV_ITEMS} />
-      <MobileNavToggle 
-        isOpen={isMobileMenuOpen} 
-        onToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+      <MobileNavToggle
+        isOpen={isMobileMenuOpen}
+        onToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
       />
       {isMobileMenuOpen && (
-        <MobileNavDrawer 
-          items={NAV_ITEMS} 
-          onClose={() => setIsMobileMenuOpen(false)} 
+        <MobileNavDrawer
+          items={NAV_ITEMS}
+          onClose={() => setIsMobileMenuOpen(false)}
         />
       )}
     </header>
@@ -176,9 +184,22 @@ export const HeroSection = () => {
 
         {/* Right Column: Visual Feature / Image Card */}
         <div className="flex-1 flex justify-center md:justify-end w-full">
-          <div className="relative w-full max-w-md aspect-square rounded-2xl bg-gradient-to-tr from-neutral-900 to-neutral-800 border border-neutral-800 shadow-2xl overflow-hidden flex items-center justify-center">
-            <div className="text-neutral-600 text-sm font-mono">
-              [ Developer Avatar / Visual Card ]
+          {/* Outer wrapper: establishes dimensions and group hover state */}
+          <div className="relative w-full max-w-md aspect-square group">
+            {/* 1. Glow Layer (Outside the overflow-hidden boundary) */}
+            <div
+              aria-hidden="true"
+              className="absolute -inset-1 sm:-inset-2 rounded-3xl bg-gradient-to-tr from-sunset-deep via-sunset-bright to-sunset-amber opacity-40 blur-2xl transition duration-500 group-hover:opacity-70 group-hover:blur-3xl"
+            />
+
+            {/* 2. Image Frame (Handles border and overflow clipping) */}
+            <div className="relative w-full h-full rounded-2xl bg-neutral-900 border border-neutral-800 shadow-2xl overflow-hidden">
+              <img
+                src={myPfp}
+                alt="John Phillip Lor Malbas"
+                className="w-full h-full object-cover object-center"
+                loading="eager"
+              />
             </div>
           </div>
         </div>
