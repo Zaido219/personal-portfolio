@@ -20,7 +20,7 @@ export const FeaturedWorkSection: React.FC = () => {
   };
 
   return (
-    <section id="work" className="w-full max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-neutral-800">
+    <section id="work" className="w-full bg-neutral-950 max-w-7xl mx-auto px-6 py-16 md:py-24">
       {/* Section Title */}
       <div className="mb-12 max-w-2xl">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-sunset-bright tracking-tight mb-3">
