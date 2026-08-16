@@ -58,10 +58,6 @@ html.dark body {
 .dark-border {
   border-color: #27272a;     /* Subtle gray divider (Tailwind border-zinc-800) */
 }
-
-#root{
-  overflow-y: hidden;
-}
 .logo {
   height: 6em;
   padding: 1.5em;
