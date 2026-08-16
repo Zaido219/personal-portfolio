@@ -162,12 +162,9 @@ export const HeroSection = () => {
         {/* Left Column: Hero Copy */}
         <div className="flex-1 max-w-2xl">
           <StatusBadge text="Available for work" />
-
-          <ReflectedGlow>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#F88F22] mb-4 leading-none">
               John Phillip Lor Malbas
             </h1>
-          </ReflectedGlow>
 
           <h2 className="text-2xl sm:text-4xl font-semibold text-neutral-300 mb-6">
             Software Developer
