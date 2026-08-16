@@ -149,11 +149,11 @@ export const HeroSection = () => {
             </h1>
           </ReflectedGlow>
 
-          <h2 className="text-2xl sm:text-4xl font-semibold text-[#FFE3B3] mb-6">
+          <h2 className="text-2xl sm:text-4xl font-semibold text-neutral-300 mb-6">
             Software Developer
           </h2>
 
-          <p className="text-[#FFE3B3] text-base sm:text-lg leading-relaxed max-w-xl mb-8">
+          <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-xl mb-8">
             Engineering elegant solutions through clean code and modern
             architecture. Specializing in robust backend systems and intuitive
             user interfaces.

@@ -6,6 +6,13 @@
   /* 1. Define the animation utility */
   --animate-marquee: marquee var(--speed, 20s) linear infinite;
 
+  /* 2. Custom Sunset Color Tokens */
+  --color-sunset-deep: #EA6113;
+  --color-sunset-bright: #F88F22;
+  --color-sunset-amber: #FBB931;
+  --color-sunset-peach: #FFE3B3;
+
+  
   /* 2. Define the keyframes */
   @keyframes marquee {
     from { transform: translateX(0); }
