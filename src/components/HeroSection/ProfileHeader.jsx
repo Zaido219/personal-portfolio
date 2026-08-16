@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const NAV_ITEMS = [
   { label: 'Work', href: '#work' },
@@ -6,50 +6,99 @@ export const NAV_ITEMS = [
   { label: 'Experience', href: '#experience' },
   { label: 'About', href: '#about' },
 ];
+
+// SRP: Solely responsible for rendering the list of navigation links and CTA
+const NavLinks = ({ items, onItemClick, isVertical = false }) => (
+  <ul className={`flex ${isVertical ? 'flex-col gap-y-4' : 'flex-row items-center gap-x-6 md:gap-x-8'}`}>
+    {items.map((item) => (
+      <li key={item.label}>
+        <a
+          href={item.href}
+          onClick={onItemClick}
+          className="block text-xs font-semibold uppercase tracking-widest text-neutral-400 hover:text-white transition-colors duration-200"
+        >
+          {item.label}
+        </a>
+      </li>
+    ))}
+    <li className={isVertical ? 'pt-2' : ''}>
+      <a
+        href="#contact"
+        onClick={onItemClick}
+        className="inline-block text-xs font-semibold uppercase tracking-widest text-white border border-neutral-700 hover:border-neutral-400 px-4 py-2 rounded-full transition-all duration-200"
+      >
+        Contact
+      </a>
+    </li>
+  </ul>
+);
+
 // SRP: Responsible solely for brand representation
 const Brand = () => (
   <a href="#" className="flex items-center gap-x-3 group">
     <div className="h-9 w-9 rounded-full bg-red-500 overflow-hidden flex-shrink-0 transition-transform group-hover:scale-105">
-      {/* Fallback image placeholder or actual user avatar */}
       <img src="/avatar-placeholder.png" alt="John Phillip Lor Malbas" className="h-full w-full object-cover" />
     </div>
     <span className="font-bold text-sm tracking-wider text-white">JPLM.DEV</span>
   </a>
 );
 
-// SRP: Responsible solely for rendering semantic navigation links (OCP via props/config)
-const NavMenu = ({ items }) => (
-  <nav aria-label="Main Navigation">
-    <ul className="flex items-center gap-x-6 md:gap-x-8">
-      {items.map((item) => (
-        <li key={item.label}>
-          <a
-            href={item.href}
-            className="text-xs font-semibold uppercase tracking-widest text-neutral-400 hover:text-white transition-colors duration-200"
-          >
-            {item.label}
-          </a>
-        </li>
-      ))}
-      <li>
-        <a
-          href="#contact"
-          className="text-xs font-semibold uppercase tracking-widest text-white border border-neutral-700 hover:border-neutral-400 px-4 py-2 rounded-full transition-all duration-200"
-        >
-          Contact
-        </a>
-      </li>
-    </ul>
+// SRP: Desktop container & visibility boundary
+const DesktopNavMenu = ({ items }) => (
+  <nav aria-label="Desktop Navigation" className="hidden md:block">
+    <NavLinks items={items} />
   </nav>
 );
 
-// SRP: Header container handling top-level flex distribution
-const Header = () => (
-  <header className="w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-    <Brand />
-    <NavMenu items={NAV_ITEMS} />
-  </header>
+// SRP: Mobile menu button trigger
+const MobileNavToggle = ({ isOpen, onToggle }) => (
+  <button
+    onClick={onToggle}
+    type="button"
+    aria-expanded={isOpen}
+    aria-label="Toggle navigation menu"
+    className="md:hidden text-white focus:outline-none p-2"
+  >
+    <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
+      {isOpen ? (
+        <path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
+      ) : (
+        <path fillRule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
+      )}
+    </svg>
+  </button>
 );
+
+// SRP: Mobile full-width drawer wrapper
+const MobileNavDrawer = ({ items, onClose }) => (
+  <div className="fixed inset-x-0 top-[88px] bg-neutral-900 border-b border-neutral-800 p-6 md:hidden shadow-lg z-40">
+    <nav aria-label="Mobile Navigation">
+      <NavLinks items={items} onItemClick={onClose} isVertical />
+    </nav>
+  </div>
+);
+
+// SRP: Header container orchestrating layout & state
+const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  return (
+    <header className="bg-neutral-900 w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-50">
+      <Brand />
+      <DesktopNavMenu items={NAV_ITEMS} />
+      <MobileNavToggle 
+        isOpen={isMobileMenuOpen} 
+        onToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+      />
+      {isMobileMenuOpen && (
+        <MobileNavDrawer 
+          items={NAV_ITEMS} 
+          onClose={() => setIsMobileMenuOpen(false)} 
+        />
+      )}
+    </header>
+  );
+};
 
 // SRP: Status Badge Component
 const StatusBadge = ({ text }) => (
@@ -62,7 +111,7 @@ const StatusBadge = ({ text }) => (
   </div>
 );
 
-// SRP: Main Call-To-Action buttons
+// SRP: Hero Call-To-Action buttons
 const HeroCTA = () => (
   <div className="flex items-center gap-x-4 pt-2">
     <a
@@ -82,7 +131,7 @@ const HeroCTA = () => (
   </div>
 );
 
-// SRP: Root component orchestrating the layout structure
+// SRP: Root component orchestrating the Hero section layout
 export const HeroSection = () => {
   return (
     <section className="min-h-screen bg-neutral-950 text-white flex flex-col justify-between selection:bg-neutral-800 selection:text-white">
@@ -112,7 +161,6 @@ export const HeroSection = () => {
         {/* Right Column: Visual Feature / Image Card */}
         <div className="flex-1 flex justify-center md:justify-end w-full">
           <div className="relative w-full max-w-md aspect-square rounded-2xl bg-gradient-to-tr from-neutral-900 to-neutral-800 border border-neutral-800 shadow-2xl overflow-hidden flex items-center justify-center">
-            {/* Visual element or actual headshot goes here */}
             <div className="text-neutral-600 text-sm font-mono">
               [ Developer Avatar / Visual Card ]
             </div>
