@@ -52,11 +52,11 @@ export const FeaturedWorkSection: React.FC = () => {
 
           <div className="max-w-md mx-auto lg:max-w-none w-full">
             <DeckControls
-              total={featuredProjects.length}
               activeIndex={activeIndex}
               onSelect={setActiveIndex}
               onNext={handleNext}
               onPrev={handlePrev}
+              total={featuredProjects.length}
             />
           </div>
         </div>
