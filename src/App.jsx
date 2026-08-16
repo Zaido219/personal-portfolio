@@ -12,11 +12,13 @@ import Gallery from "./components/GallerySection";
 import { Footer } from "./components/FooterSection";
 import EducationExperienceSection from "./components/EducationSection";
 import StackSection from "./components/StackSection";
+import {FeaturedWorkSection} from "./components/FeaturedWorkSection/FeaturedWork";
 
 function App() {
   return (
     <>
     <HeroSection/>
+    <FeaturedWorkSection/>
     </>
   )
 }
