@@ -103,7 +103,7 @@ const Header = () => {
 
 // SRP: Status Badge Component
 const StatusBadge = ({ text }) => (
-  <div className="inline-flex items-center gap-x-2 px-3 py-1.5 rounded-full bg-neutral-900 border border-neutral-800 text-xs font-medium text-emerald-400 mb-6">
+  <div className="inline-flex items-center gap-x-2 px-3 py-1.5 rounded-full bg-neutral-900 border border-sunset-deep text-xs font-medium text-sunset-bright mb-6">
     <span className="relative flex h-2 w-2">
       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
       <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
