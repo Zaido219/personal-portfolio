@@ -7,13 +7,10 @@ import { ReflectedGlow } from "../Shared/Glow";
  * SRP: Renders section title and subtitle
  */
 const SectionHeader = () => (
-  <div className="mb-12">
+  <div className="mb-12 flex flex-row items-center justify-center">
     <h2 className="text-3xl sm:text-4xl font-extrabold text-sunset-bright tracking-tight mb-3">
       Featured Work
     </h2>
-    <p className="text-neutral-400 text-sm sm:text-base max-w-xl">
-      A selection of systems, tools, and engines built from scratch to explore architecture, algorithms, and networking mechanics.
-    </p>
   </div>
 );
 
