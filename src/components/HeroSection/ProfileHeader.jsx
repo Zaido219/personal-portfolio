@@ -118,7 +118,7 @@ const HeroCTA = () => (
       href="/resume.pdf"
       target="_blank"
       rel="noopener noreferrer"
-      className="px-6 py-3 rounded-full bg-white text-neutral-950 font-medium text-sm hover:bg-neutral-200 transition-colors duration-200"
+      className="px-6 py-3 rounded-full bg-[#EA6113] text-neutral-200 font-medium text-sm transition-all duration-200 shadow-[0_0_20px_rgba(234,97,19,0.5)] hover:shadow-[0_0_28px_rgba(234,97,19,0.7)]"
     >
       My Resume
     </a>
@@ -142,7 +142,7 @@ export const HeroSection = () => {
         <div className="flex-1 max-w-2xl">
           <StatusBadge text="Available for work" />
           
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-4 leading-none">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#F88F22] mb-4 leading-none">
             John Phillip Lor Malbas
           </h1>
           

@@ -1,6 +1,12 @@
 import { Children, type ReactNode } from "react"
 
 
+export interface ReflectedGlowProps{
+    children:ReactNode,
+    blur? : string,
+    opacity?: string,
+    hoverOpacity? : string
+}
 
 export interface groupCardProps{
     children:ReactNode
