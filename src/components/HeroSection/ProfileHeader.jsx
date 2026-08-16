@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {ReflectedGlow} from "./../Shared/Glow";
 
 export const NAV_ITEMS = [
   { label: 'Work', href: '#work' },
@@ -141,18 +142,21 @@ export const HeroSection = () => {
         {/* Left Column: Hero Copy */}
         <div className="flex-1 max-w-2xl">
           <StatusBadge text="Available for work" />
-          
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#F88F22] mb-4 leading-none">
-            John Phillip Lor Malbas
-          </h1>
-          
+
+          <ReflectedGlow>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#F88F22] mb-4 leading-none">
+              John Phillip Lor Malbas
+            </h1>
+          </ReflectedGlow>
+
           <h2 className="text-2xl sm:text-4xl font-semibold text-neutral-400 mb-6">
             Software Developer
           </h2>
-          
+
           <p className="text-neutral-400 text-base sm:text-lg leading-relaxed max-w-xl mb-8">
-            Engineering elegant solutions through clean code and modern architecture. 
-            Specializing in robust backend systems and intuitive user interfaces.
+            Engineering elegant solutions through clean code and modern
+            architecture. Specializing in robust backend systems and intuitive
+            user interfaces.
           </p>
 
           <HeroCTA />
