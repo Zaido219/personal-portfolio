@@ -43,11 +43,11 @@
 
 /* Dark mode thumb override */
 html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #3f3f46; /* Tailwind bg-zinc-700 */
+  background-color: var(--color-sunset-dusk); /* Tailwind bg-zinc-700 */
 }
 
 html.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: #52525b; /* Tailwind bg-zinc-600 */
+  background-color:var(--color-sunset-deep); /* Tailwind bg-zinc-600 */
 }
 /* global reset for the body when the root element has the .dark class */
 html.dark body {
