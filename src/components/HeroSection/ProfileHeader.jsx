@@ -119,13 +119,13 @@ const HeroCTA = () => (
       href="/resume.pdf"
       target="_blank"
       rel="noopener noreferrer"
-      className="px-6 py-3 rounded-full bg-[#EA6113] text-neutral-200 font-medium text-sm transition-all duration-200 shadow-[0_0_20px_rgba(234,97,19,0.5)] hover:shadow-[0_0_28px_rgba(234,97,19,0.7)]"
+      className="px-6 py-3 rounded-full bg-[#EA6113] text-sunset-peach font-medium text-sm transition-all duration-200 shadow-[0_0_20px_rgba(234,97,19,0.5)] hover:shadow-[0_0_28px_rgba(234,97,19,0.7)]"
     >
       My Resume
     </a>
     <a
       href="mailto:contact@jplm.dev"
-      className="px-6 py-3 rounded-full border border-neutral-800 text-[#FFE3B3] font-medium text-sm hover:bg-neutral-900 hover:text-white transition-colors duration-200"
+      className="px-6 py-3 rounded-full border border-sunset-amber text-[#FFE3B3] font-medium text-sm hover:bg-neutral-900 hover:text-white transition-colors duration-200"
     >
       Email Me
     </a>
