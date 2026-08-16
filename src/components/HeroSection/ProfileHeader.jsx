@@ -10,26 +10,30 @@ export const NAV_ITEMS = [
 
 // SRP: Solely responsible for rendering the list of navigation links and CTA
 const NavLinks = ({ items, onItemClick, isVertical = false }) => (
-  <ul className={`flex ${isVertical ? 'flex-col gap-y-4' : 'flex-row items-center gap-x-6 md:gap-x-8'}`}>
+  <ul
+    className={`flex ${isVertical ? "flex-col gap-y-4" : "flex-row items-center gap-x-6 md:gap-x-8"}`}
+  >
     {items.map((item) => (
       <li key={item.label}>
         <a
           href={item.href}
           onClick={onItemClick}
-          className="block text-xs font-semibold uppercase tracking-widest text-neutral-400 hover:text-white transition-colors duration-200"
+          className="block text-xs font-semibold uppercase tracking-widest text-sunset-dusk hover:text-white transition-colors duration-200"
         >
           {item.label}
         </a>
       </li>
     ))}
-    <li className={isVertical ? 'pt-2' : ''}>
-      <a
-        href="#contact"
-        onClick={onItemClick}
-        className="inline-block text-xs font-semibold uppercase tracking-widest text-white border border-neutral-700 hover:border-neutral-400 px-4 py-2 rounded-full transition-all duration-200"
-      >
-        Contact
-      </a>
+    <li className={isVertical ? "pt-2" : ""}>
+      <ReflectedGlow>
+        <a
+          href="#contact"
+          onClick={onItemClick}
+          className="bg-sunset-dusk inline-block text-xs font-semibold uppercase tracking-widest text-sunset-peach border border-neutral-700 hover:border-sunset-deep px-4 py-2 rounded-full transition-all duration-200"
+        >
+          Contact
+        </a>
+      </ReflectedGlow>
     </li>
   </ul>
 );
@@ -38,9 +42,17 @@ const NavLinks = ({ items, onItemClick, isVertical = false }) => (
 const Brand = () => (
   <a href="#" className="flex items-center gap-x-3 group">
     <div className="h-9 w-9 rounded-full bg-red-500 overflow-hidden flex-shrink-0 transition-transform group-hover:scale-105">
-      <img src="/avatar-placeholder.png" alt="John Phillip Lor Malbas" className="h-full w-full object-cover" />
+      <img
+        src="/avatar-placeholder.png"
+        alt="John Phillip Lor Malbas"
+        className="h-full w-full object-cover"
+      />
     </div>
-    <span className="font-bold text-sm tracking-wider text-white">JPLM.DEV</span>
+    <ReflectedGlow>
+      <span className="font-bold text-sm tracking-wider text-sunset-peach">
+        JPLM.DEV
+      </span>
+    </ReflectedGlow>
   </a>
 );
 
