@@ -125,7 +125,7 @@ const HeroCTA = () => (
     </a>
     <a
       href="mailto:contact@jplm.dev"
-      className="px-6 py-3 rounded-full border border-neutral-800 text-neutral-300 font-medium text-sm hover:bg-neutral-900 hover:text-white transition-colors duration-200"
+      className="px-6 py-3 rounded-full border border-neutral-800 text-[#FFE3B3] font-medium text-sm hover:bg-neutral-900 hover:text-white transition-colors duration-200"
     >
       Email Me
     </a>
@@ -149,11 +149,11 @@ export const HeroSection = () => {
             </h1>
           </ReflectedGlow>
 
-          <h2 className="text-2xl sm:text-4xl font-semibold text-neutral-400 mb-6">
+          <h2 className="text-2xl sm:text-4xl font-semibold text-[#FFE3B3] mb-6">
             Software Developer
           </h2>
 
-          <p className="text-neutral-400 text-base sm:text-lg leading-relaxed max-w-xl mb-8">
+          <p className="text-[#FFE3B3] text-base sm:text-lg leading-relaxed max-w-xl mb-8">
             Engineering elegant solutions through clean code and modern
             architecture. Specializing in robust backend systems and intuitive
             user interfaces.

@@ -8,7 +8,7 @@ export const ReflectedGlow = ({
   children, 
   blur = 'blur-md', 
   opacity = 'opacity-50',
-  hoverOpacity = 'group-hover:opacity-80' 
+  hoverOpacity = 'group-hover:opacity-75' 
 } : ReflectedGlowProps) => {
   return (
     <div className="relative isolate inline-flex group">
