@@ -14,10 +14,12 @@ import EducationExperienceSection from "./components/EducationSection";
 import StackSection from "./components/StackSection";
 import { FeaturedWorkSection } from "./components/FeaturedWorkSection/FeaturedWork";
 import { ExperienceSection } from "./components/ExperiencesSection/ExperienceSection";
+import {Header} from "./components/HeroSection/ProfileHeader";
 
 function App() {
   return (
     <>
+      <Header/>
       <HeroSection />
       <FeaturedWorkSection />
       <ExperienceSection />

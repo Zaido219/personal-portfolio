@@ -101,12 +101,13 @@ const MobileNavDrawer = ({ items, onClose }) => (
 );
 
 // SRP: Header container orchestrating layout & state
-const Header = () => {
+export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-neutral-900 w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-50">
-      <Brand />
+    <header className="sticky top-0 z-50 w-full border-b border-neutral-800/60 bg-neutral-950/70 backdrop-blur-md transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <Brand />
       <DesktopNavMenu items={NAV_ITEMS} />
       <MobileNavToggle
         isOpen={isMobileMenuOpen}
@@ -118,6 +119,7 @@ const Header = () => {
           onClose={() => setIsMobileMenuOpen(false)}
         />
       )}
+      </div>
     </header>
   );
 };
@@ -157,7 +159,6 @@ const HeroCTA = () => (
 export const HeroSection = () => {
   return (
     <section className="min-h-screen bg-neutral-950 text-white flex flex-col justify-between selection:bg-neutral-800 selection:text-white">
-      <Header />
 
       <main className="w-full max-w-7xl mx-auto px-6 py-12 md:py-24 flex-1 flex flex-col md:flex-row items-center justify-between gap-12">
         {/* Left Column: Hero Copy */}
