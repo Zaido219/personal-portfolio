@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ReflectedGlow } from "./../Shared/Glow";
 import myPfp from "../../../public/images/my_pfp_new.jpg";
+import myLogo from "../../../public/myLogo.png";
 
 export const NAV_ITEMS = [
   { label: "Work", href: "#work" },
@@ -42,9 +43,9 @@ const NavLinks = ({ items, onItemClick, isVertical = false }) => (
 // SRP: Responsible solely for brand representation
 const Brand = () => (
   <a href="#" className="flex items-center gap-x-3 group">
-    <div className="h-9 w-9 rounded-full bg-red-500 overflow-hidden flex-shrink-0 transition-transform group-hover:scale-105">
+    <div className="h-9 w-9 rounded-full overflow-hidden flex-shrink-0 transition-transform group-hover:scale-105">
       <img
-        src="/avatar-placeholder.png"
+        src={myLogo}
         alt="John Phillip Lor Malbas"
         className="h-full w-full object-cover"
       />
