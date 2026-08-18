@@ -1,17 +1,15 @@
-import { type TechStackItemProps} from "./../../interface/types";
+import type { TechStackItemProps } from "../../interface/types";
 
 const TechStackItem: React.FC<TechStackItemProps> = ({ name, icon }) => {
   return (
-    <div 
-      title={name}
-      className="group relative flex items-center justify-center h-11 w-11 sm:h-12 sm:w-12 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-[var(--color-sunset-bright)]/60 hover:bg-neutral-800/90 hover:scale-105 transition-all duration-200 shadow-md cursor-pointer"
-    >
-      <div className="text-2xl transition-transform duration-200 group-hover:scale-110">
+    <div className="group flex flex-col items-center justify-center gap-2 p-2 transition-transform duration-200 hover:-translate-y-1 cursor-pointer">
+      {/* Icon Node - Retains natural brand colors without background boxes */}
+      <div className="text-3xl sm:text-4xl transition-transform duration-200 group-hover:scale-110">
         {icon}
       </div>
 
-      {/* Subtle Tooltip on Hover */}
-      <span className="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-[10px] font-mono font-medium text-white bg-neutral-950 px-2 py-0.5 rounded border border-neutral-800 pointer-events-none whitespace-nowrap z-10 shadow-lg">
+      {/* Label styled with Sunset theme micro-typography */}
+      <span className="text-xs font-medium text-neutral-400 group-hover:text-[var(--color-sunset-peach)] transition-colors text-center line-clamp-1">
         {name}
       </span>
     </div>

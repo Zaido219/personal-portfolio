@@ -11,10 +11,10 @@ import AboutMe from "./components/AboutMe";
 import Gallery from "./components/GallerySection";
 import { Footer } from "./components/FooterSection";
 import EducationExperienceSection from "./components/EducationSection";
-import StackSection from "./components/StackSection";
 import { FeaturedWorkSection } from "./components/FeaturedWorkSection/FeaturedWork";
 import { ExperienceSection } from "./components/ExperiencesSection/ExperienceSection";
 import {Header} from "./components/HeroSection/ProfileHeader";
+import StackSection from "./components/TechStackSection/TechStackSection";
 
 function App() {
   return (

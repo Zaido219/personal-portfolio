@@ -26,17 +26,19 @@ const StackSection = () => {
   }, {});
 
   return (
-    <section className="py-10 max-w-4xl mx-auto px-4 sm:px-6">
-      {/* Main Section Header */}
-      <div className="mb-8 text-center flex flex-col items-center gap-2">
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white flex items-center gap-2">
-          <span>💻</span> My Tool Kit
+    <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Section Title matching Sunset Theme */}
+      <div className="mb-10">
+        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+          My <span className="text-[var(--color-sunset-bright)]">Tool Kit</span>
         </h2>
-        <div className="h-0.5 w-16 bg-gradient-to-r from-[var(--color-sunset-deep)] to-[var(--color-sunset-bright)] rounded-full mt-1" />
+        <p className="text-sm text-neutral-400 mt-2 font-mono">
+          Technologies, frameworks, and environments I work with daily.
+        </p>
       </div>
 
-      {/* Categories Stack */}
-      <div className="space-y-8">
+      {/* Stack Categories Container */}
+      <div className="space-y-10">
         {(
           Object.entries(groupedTechStacks) as [
             TechField,
@@ -46,14 +48,20 @@ const StackSection = () => {
           if (!items || items.length === 0) return null;
 
           return (
-            <div key={category} className="pt-6 border-t border-neutral-800/80 first:border-t-0 first:pt-0">
-              {/* Category Subheader */}
-              <h3 className="text-sm font-semibold text-neutral-400 uppercase tracking-wider mb-4 text-center sm:text-left">
-                {CATEGORY_LABELS[category] ?? category}
-              </h3>
+            <div
+              key={category}
+              className="pt-6 border-t border-neutral-800/80 first:border-t-0 first:pt-0"
+            >
+              {/* Category Subheader Tag */}
+              <div className="mb-6 flex items-center gap-3">
+                <span className="h-2 w-2 rounded-full bg-[var(--color-sunset-deep)]" />
+                <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-[var(--color-sunset-peach)]">
+                  {CATEGORY_LABELS[category] ?? category}
+                </h3>
+              </div>
 
-              {/* Seamless Badge Grid */}
-              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 sm:gap-3">
+              {/* Seamless Icon Grid (No Card Boxes) */}
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6">
                 {items.map((item, index) => (
                   <TechStackItem
                     key={item.id ?? `${item.name}-${index}`}
