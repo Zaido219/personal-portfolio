@@ -37,7 +37,7 @@ const ExperienceItemCard: React.FC<{ item: WorkExperienceItemProps }> = ({
         hidden: { opacity: 0, y: 15 },
         visible: { opacity: 1, y: 0 },
       }}
-      className="group relative pl-6 sm:pl-8 pb-10 last:pb-0 border-l border-neutral-800 hover:border-neutral-700 transition-colors duration-300"
+      className="group relative pl-6 sm:pl-8 pb-10 last:pb-0 border-l border-neutral-800 hover:border-neutral-700 hover:border transition-colors duration-300 rounded-lg"
     >
       {/* Vertical Timeline Dot */}
       <span className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-neutral-700 border border-neutral-900 group-hover:bg-sunset-peach group-hover:scale-125 transition-all duration-300 shadow-[0_0_8px_rgba(255,150,100,0.5)]" />
@@ -64,7 +64,7 @@ const ExperienceItemCard: React.FC<{ item: WorkExperienceItemProps }> = ({
 };
 
 // SRP: List Wrapper for Experience Items
-const ExperienceList: React.FC<{ items: Experience[] }> = ({ items }) => (
+const ExperienceList: React.FC<{ items: WorkExperienceItemProps[] }> = ({ items }) => (
   <motion.div
     initial="hidden"
     whileInView="visible"
