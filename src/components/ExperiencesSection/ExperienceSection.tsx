@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {workExperiences} from "../../config/constants";
-import {type WorkExperienceItemProps} from "../../interface/types";
+import { workExperiences } from "../../config/constants";
+import { type WorkExperienceItemProps } from "../../interface/types";
 
 // SRP: Section Header Typography
 const ExperienceHeader: React.FC = () => (
@@ -10,13 +10,27 @@ const ExperienceHeader: React.FC = () => (
       My <span className="text-sunset-bright">Experience</span>
     </h2>
     <p className="text-neutral-400 text-sm sm:text-base">
-      A timeline of my professional trajectory, engineering roles, and technical contributions.
+      A timeline of my professional trajectory, engineering roles, and technical
+      contributions.
     </p>
   </div>
 );
 
 // SRP: Single Experience Item Card with Hover Effects
-const ExperienceItemCard: React.FC<{ item: WorkExperienceItemProps }> = ({ item }) => {
+// Pure helper to encapsulate formatting logic (SRP)
+const formatYearRange = (startYear: string, endYear?: string): string => {
+  if (!startYear) return "";
+  if (endYear && startYear.toLowerCase() === endYear.toLowerCase()) {
+    return startYear;
+  }
+  return `${startYear} — ${endYear ?? "Present"}`;
+};
+
+const ExperienceItemCard: React.FC<{ item: WorkExperienceItemProps }> = ({
+  item,
+}) => {
+  const periodText = formatYearRange(item.startYear, item.endYear);
+
   return (
     <motion.div
       variants={{
@@ -29,39 +43,18 @@ const ExperienceItemCard: React.FC<{ item: WorkExperienceItemProps }> = ({ item 
         {/* Left Column: Timeline / Period */}
         <div className="md:w-1/3 flex-shrink-0">
           <span className="font-mono text-xs sm:text-sm font-medium tracking-wider text-neutral-400 group-hover:text-sunset-peach transition-colors duration-200">
-            {item.period}
+            {periodText}
           </span>
         </div>
 
-        {/* Right Column: Title, Company, Description & Tech Stack */}
+        {/* Right Column: Company & Role Title */}
         <div className="md:w-2/3 flex flex-col justify-between">
           <div>
             <h3 className="text-xl font-bold text-white group-hover:text-sunset-bright transition-colors duration-200">
               {item.company}
             </h3>
-            <p className="text-sm font-medium text-sunset-dusk mb-3">
-              {item.role}
-            </p>
-            {item.description && (
-              <p className="text-neutral-400 text-sm leading-relaxed mb-4">
-                {item.description}
-              </p>
-            )}
+            <p className="text-sm font-medium text-sunset-dusk">{item.title}</p>
           </div>
-
-          {/* Technology Badges */}
-          {item.technologies && item.technologies.length > 0 && (
-            <div className="flex flex-wrap gap-2 pt-2">
-              {item.technologies.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-2.5 py-1 rounded-full text-[11px] font-mono font-medium bg-neutral-950 border border-neutral-800 text-sunset-peach/80"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          )}
         </div>
       </div>
     </motion.div>
@@ -86,7 +79,10 @@ const ExperienceList: React.FC<{ items: Experience[] }> = ({ items }) => (
 // SRP: Root Section Orchestrator
 export const ExperienceSection: React.FC = () => {
   return (
-    <section id="experience" className="w-full bg-neutral-950 text-white max-w-7xl mx-auto px-6 py-16 md:py-24">
+    <section
+      id="experience"
+      className="w-full bg-neutral-950 text-white max-w-7xl mx-auto px-6 py-16 md:py-24"
+    >
       {/* Outer Card Shell matching reference layout */}
       <div className="rounded-3xl bg-neutral-900/30 border border-neutral-800/80 p-6 sm:p-10 md:p-12 shadow-2xl backdrop-blur-sm">
         <ExperienceHeader />

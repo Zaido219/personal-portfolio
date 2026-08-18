@@ -95,6 +95,8 @@ export type  WorkExperienceItemProps = {
     workCompany : string,
     startDate : string,
     endDate? : string,
+    startYear: string;
+    endYear?: string;
 }
 
 export type CertificateItemProps = {
