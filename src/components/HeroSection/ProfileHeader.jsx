@@ -20,7 +20,7 @@ const NavLinks = ({ items, onItemClick, isVertical = false }) => (
         <a
           href={item.href}
           onClick={onItemClick}
-          className="block text-xs font-semibold uppercase tracking-widest text-sunset-dusk hover:text-white transition-colors duration-200"
+          className="block text-xs md:text-2xs font-semibold uppercase tracking-widest text-sunset-dusk hover:text-white transition-colors duration-200"
         >
           {item.label}
         </a>
@@ -140,13 +140,13 @@ const HeroCTA = () => (
       href="/resume.pdf"
       target="_blank"
       rel="noopener noreferrer"
-      className="px-6 py-3 rounded-full bg-[#EA6113] text-sunset-peach font-medium text-sm transition-all duration-200 shadow-[0_0_20px_rgba(234,97,19,0.5)] hover:shadow-[0_0_28px_rgba(234,97,19,0.7)]"
+      className="px-6 py-3 rounded-full bg-[#EA6113] text-sunset-peach font-medium text-sm md:text-xs transition-all duration-200 shadow-[0_0_20px_rgba(234,97,19,0.5)] hover:shadow-[0_0_28px_rgba(234,97,19,0.7)]"
     >
       My Resume
     </a>
     <a
       href="mailto:contact@jplm.dev"
-      className="px-6 py-3 rounded-full border border-sunset-amber text-[#FFE3B3] font-medium text-sm hover:bg-neutral-900 hover:text-white transition-colors duration-200"
+      className="px-6 py-3 rounded-full border border-sunset-amber text-[#FFE3B3] font-medium text-sm md:text-xs hover:bg-neutral-900 hover:text-white transition-colors duration-200"
     >
       Email Me
     </a>
@@ -163,15 +163,15 @@ export const HeroSection = () => {
         {/* Left Column: Hero Copy */}
         <div className="flex-1 max-w-2xl">
           <StatusBadge text="Available for work" />
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#F88F22] mb-4 leading-none">
+            <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-[#F88F22] mb-4 leading-none">
               John Phillip Lor Malbas
             </h1>
 
-          <h2 className="text-2xl sm:text-4xl font-semibold text-neutral-300 mb-6">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-300 mb-6">
             Software Developer
           </h2>
 
-          <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-xl mb-8">
+          <p className="text-neutral-300 text-base sm:text-md leading-relaxed max-w-xl mb-8">
             Engineering elegant solutions through clean code and modern
             architecture. Specializing in robust backend systems and intuitive
             user interfaces.
