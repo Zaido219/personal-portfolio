@@ -37,25 +37,27 @@ const ExperienceItemCard: React.FC<{ item: WorkExperienceItemProps }> = ({
         hidden: { opacity: 0, y: 15 },
         visible: { opacity: 1, y: 0 },
       }}
-      className="group relative rounded-xl bg-neutral-900/60 border border-neutral-800/80 p-6 sm:p-8 transition-all duration-300 hover:border-neutral-700 hover:bg-neutral-900 shadow-lg"
+      className="group relative pl-6 sm:pl-8 pb-10 last:pb-0 border-l border-neutral-800 hover:border-neutral-700 transition-colors duration-300"
     >
-      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-8">
-        {/* Left Column: Timeline / Period */}
-        <div className="md:w-1/3 flex-shrink-0">
-          <span className="font-mono text-xs sm:text-sm font-medium tracking-wider text-neutral-400 group-hover:text-sunset-peach transition-colors duration-200">
-            {periodText}
-          </span>
-        </div>
+      {/* Vertical Timeline Dot */}
+      <span className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-neutral-700 border border-neutral-900 group-hover:bg-sunset-peach group-hover:scale-125 transition-all duration-300 shadow-[0_0_8px_rgba(255,150,100,0.5)]" />
 
-        {/* Right Column: Company & Role Title */}
-        <div className="md:w-2/3 flex flex-col justify-between">
-          <div>
-            <h3 className="text-xl font-bold text-white group-hover:text-sunset-bright transition-colors duration-200">
-              {item.company}
-            </h3>
-            <p className="text-sm font-medium text-sunset-dusk">{item.title}</p>
-          </div>
-        </div>
+      {/* Node Content Container */}
+      <div className="flex flex-col gap-1.5">
+        {/* Timeline / Period Badge */}
+        <span className="font-mono text-xs font-semibold tracking-wider text-sunset-peach/90 uppercase">
+          {periodText}
+        </span>
+
+        {/* Role Title */}
+        <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-sunset-bright transition-colors duration-200">
+          {item.title}
+        </h3>
+
+        {/* Company Name */}
+        <p className="text-sm font-medium text-neutral-400">
+          {item.company}
+        </p>
       </div>
     </motion.div>
   );
