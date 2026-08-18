@@ -35,7 +35,7 @@ export const FeaturedWorkSection: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         {/* Left Column: Stacked Deck (7 cols on Desktop) */}
         <div className="lg:col-span-7 flex flex-col justify-between">
-          <div className="relative w-full aspect-[4/5] sm:aspect-[1/1] max-w-md mx-auto lg:max-w-none">
+          <div className="relative w-full aspect-[4/5] sm:aspect-[1/1] max-w-md mx-auto lg:max-w-lg">
             {featuredProjects.map((project, index) => {
               const offset = (index - activeIndex + featuredProjects.length) % featuredProjects.length;
               return (
