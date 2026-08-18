@@ -1,43 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-// 1. Data Type Definition
-export interface Experience {
-  id: string;
-  company: string;
-  role: string;
-  period: string;
-  description?: string;
-  technologies?: string[];
-}
-
-// 2. Mock Experience Data (Move to config/ExperienceConstants.ts as needed)
-export const EXPERIENCES: Experience[] = [
-  {
-    id: "exp-1",
-    company: "Tech Solutions Inc.",
-    role: "Full Stack Developer",
-    period: "2024 — Present",
-    description: "Architected microservices and responsive user interfaces using React, Node.js, and PostgreSQL.",
-    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
-  },
-  {
-    id: "exp-2",
-    company: "Digital Innovations Lab",
-    role: "Junior Software Engineer",
-    period: "2023 — 2024",
-    description: "Developed RESTful APIs and maintained core UI components adhering to modern accessibility standards.",
-    technologies: ["React", "JavaScript", "Express", "MongoDB"],
-  },
-  {
-    id: "exp-3",
-    company: "Freelance",
-    role: "Web Developer",
-    period: "2022 — 2023",
-    description: "Built custom web applications and client portfolios focused on performance optimization.",
-    technologies: ["HTML/CSS", "JavaScript", "Tailwind CSS"],
-  },
-];
+import {workExperiences} from "../../config/constants";
+import {type WorkExperienceItemProps} from "../../interface/types";
 
 // SRP: Section Header Typography
 const ExperienceHeader: React.FC = () => (
@@ -52,7 +16,7 @@ const ExperienceHeader: React.FC = () => (
 );
 
 // SRP: Single Experience Item Card with Hover Effects
-const ExperienceItemCard: React.FC<{ item: Experience }> = ({ item }) => {
+const ExperienceItemCard: React.FC<{ item: WorkExperienceItemProps }> = ({ item }) => {
   return (
     <motion.div
       variants={{
@@ -126,7 +90,7 @@ export const ExperienceSection: React.FC = () => {
       {/* Outer Card Shell matching reference layout */}
       <div className="rounded-3xl bg-neutral-900/30 border border-neutral-800/80 p-6 sm:p-10 md:p-12 shadow-2xl backdrop-blur-sm">
         <ExperienceHeader />
-        <ExperienceList items={EXPERIENCES} />
+        <ExperienceList items={workExperiences} />
       </div>
     </section>
   );
