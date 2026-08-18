@@ -23,6 +23,7 @@ function App() {
       <HeroSection />
       <FeaturedWorkSection />
       <ExperienceSection />
+      <StackSection/>
     </>
   );
 }
