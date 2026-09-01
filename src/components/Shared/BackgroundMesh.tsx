@@ -7,14 +7,19 @@ export const BackgroundMesh: React.FC = () => {
       <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
         <defs>
           <linearGradient id="sunset-ribbon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#EA6113" stopOpacity="0.8" />
-            <stop offset="50%" stopColor="#F88F22" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#FBB931" stopOpacity="0.3" />
+            <stop offset="0%" stopColor="#EA6113" stopOpacity="0.7" />
+            <stop offset="50%" stopColor="#F88F22" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#FBB931" stopOpacity="0.2" />
           </linearGradient>
         </defs>
 
-        {/* Abstract Parabolic Ribbon Mesh */}
-        <g stroke="url(#sunset-ribbon-grad)" strokeWidth="1.2" fill="none" className="opacity-40 sm:opacity-50">
+        {/* Abstract Ribbon Mesh with Soft Blur & Low Opacity */}
+        <g 
+          stroke="url(#sunset-ribbon-grad)" 
+          strokeWidth="0.8" 
+          fill="none" 
+          className="opacity-20 sm:opacity-25 blur-[4px]"
+        >
           {Array.from({ length: 28 }).map((_, i: number) => {
             const step = i * 22;
             return (
@@ -27,8 +32,8 @@ export const BackgroundMesh: React.FC = () => {
         </g>
       </svg>
 
-      {/* Subtle Ambient Depth Glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#EA6113]/15 blur-[140px] rounded-full pointer-events-none" />
+      {/* Ambient Depth Glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#EA6113]/10 blur-[150px] rounded-full pointer-events-none" />
     </div>
   );
 };
