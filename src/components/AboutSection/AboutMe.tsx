@@ -126,7 +126,10 @@ export const AboutSection: React.FC = () => {
             Where I Am Today
           </h3>
           <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base leading-relaxed max-w-3xl">
-            During my internship at the Gender and Development Office, I led the development of a data repository and analytics platform. Having graduated in July 2026, I am actively seeking a software engineering team where I can apply my development skills, continuously learn, and contribute to meaningful systems.
+            During my internship at the Gender and Development Office, I led the development of a data repository and 
+            analytics platform. Having graduated in July 2026, 
+            I am actively seeking a software engineering team where I can apply my development skills, 
+            continuously learn, and contribute to meaningful systems.
           </p>
         </div>
 
