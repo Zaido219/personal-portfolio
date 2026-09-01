@@ -24,8 +24,8 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
         </a>
       </li>
     ))}
-    
-    <li className={isVertical ? "pt-2" : ""}>
+    {/* !TODO temporarily disabled theme toggling*/}
+    {/* <li className={isVertical ? "pt-2" : ""}>
       <ReflectedGlow>
         <button
           type="button"
@@ -53,7 +53,7 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
           )}
         </button>
       </ReflectedGlow>
-    </li>
+    </li> */}
   </ul>
 );
 
