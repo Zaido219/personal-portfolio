@@ -77,7 +77,7 @@ export const Testimonials : TestimonialProps[] = [
         // affiliation is optional, so we can leave it out here
     }
 ]
-
+// TODO: add learnings in here
 export const workExperiences = [
     {title:'Full Stack Web Developer Intern', company: 'Gender And Development Office at BASC', startYear: '2026', endYear: '2026'},
     {title:'BSIT Student', company: 'Bulacan Agricultural State College', startYear: '2022', endYear: '2026'},

@@ -1,6 +1,6 @@
 import SectionHeader from "./Ui/SectionHeaderText";
 import { techStacks } from "../config/TechStacks";
-import TechStackItem from "./Ui/TechStackItem";
+import TechStackItem from "./TechStackSection/TechStackItem";
 import type { TechField, TechStackItemProps } from "../interface/types";
 import BaseSection from "./Ui/BaseSection";
 import GroupCard from "./Ui/stackSection/groupCard";

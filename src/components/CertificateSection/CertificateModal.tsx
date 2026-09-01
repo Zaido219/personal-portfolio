@@ -17,34 +17,35 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="bg-red-900 fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
-          {/* 1. Backdrop Overlay with soft blur */}
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+          {/* 1. Backdrop Overlay: Clean dimming with NO backdrop blur */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/40 dark:bg-black/60 backdrop-blur-md"
+            className="fixed inset-0  bg-black/30"
           />
 
-          {/* 2. Glassmorphic Modal Card */}
+          {/* 2. Glassmorphic Modal Card: Glass effect scoped EXCLUSIVELY to this element */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 10 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="relative z-10 w-full max-w-2xl rounded-2xl p-6 shadow-2xl overflow-hidden
-                       bg-white/70 dark:bg-neutral-900/60 
-                       backdrop-blur-xl 
-                       border border-white/40 dark:border-neutral-800/60 flex flex-col gap-4"
+                       bg-white/40 dark:bg-neutral-900/40 
+                       backdrop-blur-xl backdrop-saturate-150
+                       border border-white/30 dark:border-white/10 
+                       flex flex-col gap-4"
           >
-            {/* Header */}
-            <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100">
+            {/* Modal Header */}
+            <h3 className="text-xl font-bold text-sunset-dusk dark:text-sunset-bright tracking-tight">
               {title}
             </h3>
 
             {/* Certificate Image Frame */}
-            <div className="bg-red-900 relative w-full rounded-xl overflow-hidden border border-neutral-200/50 dark:border-neutral-800/50 bg-neutral-100 dark:bg-neutral-950/50">
+            <div className="relative w-full rounded-xl overflow-hidden border border-neutral-900/10 dark:border-white/10 bg-black/5 dark:bg-black/30">
               <img
                 src={src}
                 alt={title}
@@ -52,14 +53,14 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({
               />
             </div>
 
-            {/* Glassmorphic Close Button */}
+            {/* Glass Action Button */}
             <button
               onClick={onClose}
               className="w-full py-2.5 rounded-xl text-sm font-semibold transition-all duration-200
-                         bg-neutral-900/10 dark:bg-neutral-100/10 
-                         hover:bg-neutral-900/20 dark:hover:bg-neutral-100/20
-                         text-neutral-800 dark:text-neutral-200
-                         border border-neutral-900/10 dark:border-neutral-100/10"
+                         bg-neutral-900/10 dark:bg-white/10 
+                         hover:bg-neutral-900/20 dark:hover:bg-white/20
+                         text-sunset-dusk dark:text-sunset-bright
+                         border border-neutral-900/10 dark:border-white/10"
             >
               Close
             </button>

@@ -1,6 +1,12 @@
 import { Children, type ReactNode } from "react"
 
 
+export interface ReflectedGlowProps{
+    children:ReactNode,
+    blur? : string,
+    opacity?: string,
+    hoverOpacity? : string
+}
 
 export interface groupCardProps{
     children:ReactNode
@@ -89,6 +95,8 @@ export type  WorkExperienceItemProps = {
     workCompany : string,
     startDate : string,
     endDate? : string,
+    startYear: string;
+    endYear?: string;
 }
 
 export type CertificateItemProps = {
