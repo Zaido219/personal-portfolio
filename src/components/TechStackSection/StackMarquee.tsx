@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import type { TechStackItemProps } from "../../interface/types";
 
@@ -11,18 +11,26 @@ interface TechMarqueeProps {
 export const TechMarquee: React.FC<TechMarqueeProps> = ({
   items,
   direction = "left",
-  speedInSeconds = 25,
+  speedInSeconds = 20,
 }) => {
-  // Duplicate array to enable seamless 0% -> -50% loop
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Duplicate items array to support infinite scrolling loops
   const duplicatedItems = [...items, ...items];
 
   return (
-    <div className="relative w-full overflow-hidden py-2 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+    <div
+      className="relative w-full overflow-x-auto scrollbar-none py-2 cursor-grab active:cursor-grabbing"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <motion.div
         className="flex items-center gap-4 w-max"
-        animate={{
-          x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"],
-        }}
+        animate={
+          isHovered
+            ? { x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"] }
+            : {} // Hand back full control to natural horizontal scroll wheel/drag when unhovered
+        }
         transition={{
           ease: "linear",
           duration: speedInSeconds,
@@ -32,7 +40,7 @@ export const TechMarquee: React.FC<TechMarqueeProps> = ({
         {duplicatedItems.map((item, idx) => (
           <div
             key={`${item.name}-${idx}`}
-            className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-800 shadow-md dark:shadow-none hover:scale-105 transition-transform duration-200 shrink-0 [&>svg]:w-8 [&>svg]:h-8 sm:[&>svg]:w-10 sm:[&>svg]:h-10"
+            className="flex items-center justify-center w-12 h-12 rounded-xl bg-white dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-800 shadow-sm hover:scale-110 transition-transform duration-200 shrink-0 [&>svg]:w-6 [&>svg]:h-6 select-none"
             style={{ color: item.color ?? "currentColor" }}
             title={item.name}
           >
