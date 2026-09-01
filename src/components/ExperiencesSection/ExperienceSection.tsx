@@ -10,8 +10,7 @@ const ExperienceHeader: React.FC = () => (
       My <span className="text-sunset-bright">Experience</span>
     </h2>
     <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base">
-      A timeline of my professional trajectory, engineering roles, and technical
-      contributions.
+      A lifetime of perseverance, grit, learning and self discovery
     </p>
   </div>
 );
