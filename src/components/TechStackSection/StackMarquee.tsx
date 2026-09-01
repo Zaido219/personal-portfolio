@@ -49,28 +49,29 @@ export const TechMarquee: React.FC<TechMarqueeProps> = ({
         }}
       >
         {displayItems.map((item, idx) => (
-          <div
-            key={`${item.name}-${idx}`}
-            className="group relative isolate flex items-center justify-center w-12 h-12 rounded-xl shrink-0 select-none"
-            title={item.name}
-          >
-            {/* Centered Ambient Dot */}
-            <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full opacity-35 dark:opacity-50 blur-md group-hover:opacity-75 transition-opacity duration-300 pointer-events-none -z-10"
-              style={{ backgroundColor: item.color ?? "var(--color-sunset-bright)" }}
-            />
+  /* 1. Outer Wrapper (Establishes boundary context) */
+  <div
+    key={`${item.name}-${idx}`}
+    className="group relative isolate w-12 h-12 shrink-0 select-none"
+    title={item.name}
+  >
+    {/* 2. Glow Layer (Extends slightly outward behind the tile) */}
+    <div
+      className="absolute -inset-1.5 rounded-xl opacity-40 dark:opacity-60 blur-md group-hover:opacity-80 transition-opacity duration-300 pointer-events-none -z-10"
+      style={{ backgroundColor: item.color ?? "var(--color-sunset-bright)" }}
+    />
 
-            {/* Opaque Foreground Tile */}
-            <div className="w-full h-full rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm flex items-center justify-center hover:scale-105 transition-transform duration-200">
-              <div
-                className="[&>svg]:w-6 [&>svg]:h-6 flex items-center justify-center"
-                style={{ color: item.color ?? "currentColor" }}
-              >
-                {item.icon}
-              </div>
-            </div>
-          </div>
-        ))}
+    {/* 3. Solid Opaque Tile (Blocks all internal light, forcing glow outward) */}
+    <div className="relative z-10 w-full h-full rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm flex items-center justify-center hover:scale-105 transition-transform duration-200">
+      <div
+        className="[&>svg]:w-6 [&>svg]:h-6 flex items-center justify-center"
+        style={{ color: item.color ?? "currentColor" }}
+      >
+        {item.icon}
+      </div>
+    </div>
+  </div>
+))}
       </motion.div>
     </div>
   );
