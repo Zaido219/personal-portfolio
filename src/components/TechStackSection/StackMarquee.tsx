@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import type { TechStackItemProps } from "../../interface/types";
 
@@ -14,18 +14,31 @@ export const TechMarquee: React.FC<TechMarqueeProps> = ({
   speedInSeconds = 20,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const duplicatedItems = [...items, ...items];
+  const [supportsHover, setSupportsHover] = useState(true);
+
+  // Detect pointer capability to handle mobile touch gracefully
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+    setSupportsHover(mediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => setSupportsHover(e.matches);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
+  // Only duplicate items if device supports hover marquees
+  const displayItems = supportsHover ? [...items, ...items] : items;
 
   return (
     <div
       className="relative w-full overflow-x-auto thin-scrollbar py-2 cursor-grab active:cursor-grabbing"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => supportsHover && setIsHovered(true)}
+      onMouseLeave={() => supportsHover && setIsHovered(false)}
     >
       <motion.div
-        className="flex items-center gap-4 w-max"
+        className="flex items-center gap-6 w-max"
         animate={
-          isHovered
+          supportsHover && isHovered
             ? { x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"] }
             : {}
         }
@@ -35,24 +48,20 @@ export const TechMarquee: React.FC<TechMarqueeProps> = ({
           repeat: Infinity,
         }}
       >
-        {duplicatedItems.map((item, idx) => (
+        {displayItems.map((item, idx) => (
           <div
             key={`${item.name}-${idx}`}
-            /* 'isolate' traps local z-indexing */
             className="group relative isolate flex items-center justify-center w-12 h-12 rounded-xl shrink-0 select-none"
             title={item.name}
           >
-            {/* 1. Ambient Backlight Layer (Pushed outward with negative inset) */}
+            {/* Centered Ambient Dot */}
             <div
-              className="absolute -inset-1.5 rounded-xl opacity-30 dark:opacity-50 blur-md group-hover:opacity-60 dark:group-hover:opacity-80 transition-opacity duration-300 pointer-events-none -z-10"
-              style={{
-                backgroundColor: item.color ?? "var(--color-sunset-bright)",
-              }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full opacity-35 dark:opacity-50 blur-md group-hover:opacity-75 transition-opacity duration-300 pointer-events-none -z-10"
+              style={{ backgroundColor: item.color ?? "var(--color-sunset-bright)" }}
             />
 
-            {/* 2. Solid Tile Container (Blocks light from showing through the face) */}
+            {/* Opaque Foreground Tile */}
             <div className="w-full h-full rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm flex items-center justify-center hover:scale-105 transition-transform duration-200">
-              {/* 3. SVG Icon */}
               <div
                 className="[&>svg]:w-6 [&>svg]:h-6 flex items-center justify-center"
                 style={{ color: item.color ?? "currentColor" }}
