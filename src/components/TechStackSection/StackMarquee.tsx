@@ -14,13 +14,11 @@ export const TechMarquee: React.FC<TechMarqueeProps> = ({
   speedInSeconds = 20,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-
-  // Duplicate items array to support infinite scrolling loops
   const duplicatedItems = [...items, ...items];
 
   return (
     <div
-      className="relative w-full overflow-x-auto custom-scrollbar py-2 cursor-grab active:cursor-grabbing"
+      className="relative w-full overflow-x-auto thin-scrollbar py-2 cursor-grab active:cursor-grabbing"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -29,7 +27,7 @@ export const TechMarquee: React.FC<TechMarqueeProps> = ({
         animate={
           isHovered
             ? { x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"] }
-            : {} // Hand back full control to natural horizontal scroll wheel/drag when unhovered
+            : {}
         }
         transition={{
           ease: "linear",
@@ -40,11 +38,28 @@ export const TechMarquee: React.FC<TechMarqueeProps> = ({
         {duplicatedItems.map((item, idx) => (
           <div
             key={`${item.name}-${idx}`}
-            className="flex items-center justify-center w-12 h-12 rounded-xl bg-white dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-800 shadow-sm hover:scale-110 transition-transform duration-200 shrink-0 [&>svg]:w-6 [&>svg]:h-6 select-none"
-            style={{ color: item.color ?? "currentColor" }}
+            /* 'isolate' traps local z-indexing */
+            className="group relative isolate flex items-center justify-center w-12 h-12 rounded-xl shrink-0 select-none"
             title={item.name}
           >
-            {item.icon}
+            {/* 1. Ambient Backlight Layer (Pushed outward with negative inset) */}
+            <div
+              className="absolute -inset-1.5 rounded-xl opacity-30 dark:opacity-50 blur-md group-hover:opacity-60 dark:group-hover:opacity-80 transition-opacity duration-300 pointer-events-none -z-10"
+              style={{
+                backgroundColor: item.color ?? "var(--color-sunset-bright)",
+              }}
+            />
+
+            {/* 2. Solid Tile Container (Blocks light from showing through the face) */}
+            <div className="w-full h-full rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-sm flex items-center justify-center hover:scale-105 transition-transform duration-200">
+              {/* 3. SVG Icon */}
+              <div
+                className="[&>svg]:w-6 [&>svg]:h-6 flex items-center justify-center"
+                style={{ color: item.color ?? "currentColor" }}
+              >
+                {item.icon}
+              </div>
+            </div>
           </div>
         ))}
       </motion.div>
