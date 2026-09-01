@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ReflectedGlow } from "./../Shared/Glow";
+import { useTheme } from "../../hooks/useTheme";
 import myPfp from "../../../public/images/my_pfp_new.jpg";
 import myLogo from "../../../public/myLogo.png";
 
@@ -10,8 +11,8 @@ export const NAV_ITEMS = [
   { label: "About", href: "#about" },
 ];
 
-// SRP: Solely responsible for rendering the list of navigation links and CTA
-const NavLinks = ({ items, onItemClick, isVertical = false }) => (
+// SRP: Solely responsible for rendering navigation links and the Theme Toggle CTA
+const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = false }) => (
   <ul
     className={`flex ${isVertical ? "flex-col gap-y-4" : "flex-row items-center gap-x-6 md:gap-x-8"}`}
   >
@@ -26,15 +27,35 @@ const NavLinks = ({ items, onItemClick, isVertical = false }) => (
         </a>
       </li>
     ))}
+    
+    {/* Theme Toggle replaces static Contact link */}
     <li className={isVertical ? "pt-2" : ""}>
       <ReflectedGlow>
-        <a
-          href="#contact"
-          onClick={onItemClick}
-          className="bg-sunset-dusk inline-block text-xs font-semibold uppercase tracking-widest text-sunset-peach border border-neutral-700 hover:border-sunset-deep px-4 py-2 rounded-full transition-all duration-200"
+        <button
+          type="button"
+          onClick={() => {
+            if (onToggleTheme) onToggleTheme();
+            if (onItemClick) onItemClick();
+          }}
+          aria-label="Toggle theme mode"
+          className="bg-sunset-dusk inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-sunset-peach border border-neutral-700 hover:border-sunset-deep px-4 py-2 rounded-full transition-all duration-200 cursor-pointer"
         >
-          Contact
-        </a>
+          {isDark ? (
+            <>
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+              <span>Light</span>
+            </>
+          ) : (
+            <>
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              </svg>
+              <span>Dark</span>
+            </>
+          )}
+        </button>
       </ReflectedGlow>
     </li>
   </ul>
@@ -59,9 +80,9 @@ const Brand = () => (
 );
 
 // SRP: Desktop container & visibility boundary
-const DesktopNavMenu = ({ items }) => (
+const DesktopNavMenu = ({ items, isDark, onToggleTheme }) => (
   <nav aria-label="Desktop Navigation" className="hidden md:block">
-    <NavLinks items={items} />
+    <NavLinks items={items} isDark={isDark} onToggleTheme={onToggleTheme} />
   </nav>
 );
 
@@ -92,33 +113,46 @@ const MobileNavToggle = ({ isOpen, onToggle }) => (
 );
 
 // SRP: Mobile full-width drawer wrapper
-const MobileNavDrawer = ({ items, onClose }) => (
-  <div className="fixed inset-x-0 top-[88px] bg-neutral-900 border-b border-neutral-800 p-6 md:hidden shadow-lg z-40">
+const MobileNavDrawer = ({ items, onClose, isDark, onToggleTheme }) => (
+  <div className="fixed inset-x-0 top-[64px] bg-neutral-900 border-b border-neutral-800 p-6 md:hidden shadow-lg z-40">
     <nav aria-label="Mobile Navigation">
-      <NavLinks items={items} onItemClick={onClose} isVertical />
+      <NavLinks
+        items={items}
+        onItemClick={onClose}
+        isDark={isDark}
+        onToggleTheme={onToggleTheme}
+        isVertical
+      />
     </nav>
   </div>
 );
 
-// SRP: Header container orchestrating layout & state
+// SRP: Header container orchestrating layout & theme state
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { isDark, toggleTheme } = useTheme();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-neutral-800/60 bg-neutral-950/70 backdrop-blur-md transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <Brand />
-      <DesktopNavMenu items={NAV_ITEMS} />
-      <MobileNavToggle
-        isOpen={isMobileMenuOpen}
-        onToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-      />
-      {isMobileMenuOpen && (
-        <MobileNavDrawer
+        <DesktopNavMenu
           items={NAV_ITEMS}
-          onClose={() => setIsMobileMenuOpen(false)}
+          isDark={isDark}
+          onToggleTheme={toggleTheme}
         />
-      )}
+        <MobileNavToggle
+          isOpen={isMobileMenuOpen}
+          onToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        />
+        {isMobileMenuOpen && (
+          <MobileNavDrawer
+            items={NAV_ITEMS}
+            onClose={() => setIsMobileMenuOpen(false)}
+            isDark={isDark}
+            onToggleTheme={toggleTheme}
+          />
+        )}
       </div>
     </header>
   );
@@ -159,14 +193,13 @@ const HeroCTA = () => (
 export const HeroSection = () => {
   return (
     <section className="min-h-screen bg-neutral-950 text-white flex flex-col justify-between selection:bg-neutral-800 selection:text-white">
-
       <main className="w-full max-w-7xl mx-auto px-6 py-12 md:py-24 flex-1 flex flex-col md:flex-row items-center justify-between gap-12">
         {/* Left Column: Hero Copy */}
         <div className="flex-1 max-w-2xl">
           <StatusBadge text="Available for work" />
-            <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-[#F88F22] mb-4 leading-none">
-              John Phillip Lor Malbas
-            </h1>
+          <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-[#F88F22] mb-4 leading-none">
+            John Phillip Lor Malbas
+          </h1>
 
           <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-300 mb-6">
             Software Developer
@@ -183,15 +216,14 @@ export const HeroSection = () => {
 
         {/* Right Column: Visual Feature / Image Card */}
         <div className="flex-1 flex justify-center md:justify-end w-full">
-          {/* Outer wrapper: establishes dimensions and group hover state */}
           <div className="relative w-full max-w-md aspect-square group">
-            {/* 1. Glow Layer (Outside the overflow-hidden boundary) */}
+            {/* Glow Layer */}
             <div
               aria-hidden="true"
               className="absolute -inset-1 sm:-inset-2 rounded-3xl bg-gradient-to-tr from-sunset-deep via-sunset-bright to-sunset-amber opacity-40 blur-2xl transition duration-500 group-hover:opacity-70 group-hover:blur-3xl"
             />
 
-            {/* 2. Image Frame (Handles border and overflow clipping) */}
+            {/* Image Frame */}
             <div className="relative w-full h-full rounded-2xl bg-neutral-900 border border-neutral-800 shadow-2xl overflow-hidden">
               <img
                 src={myPfp}
