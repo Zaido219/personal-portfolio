@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CertificateModal } from "../Ui/modals";
+import { CertificateModal } from "./CertificateModal";
 
 export interface Certificate {
   id: string;
