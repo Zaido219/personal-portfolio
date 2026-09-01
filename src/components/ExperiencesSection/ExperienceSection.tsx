@@ -36,15 +36,22 @@ const ExperienceItemCard: React.FC<{ item: WorkExperienceItemProps }> = ({
         hidden: { opacity: 0, y: 15 },
         visible: { opacity: 1, y: 0 },
       }}
-      className="group relative pl-6 sm:pl-8 pb-10 last:pb-0 border-l border-neutral-300 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-700 transition-colors duration-300"
+      className="group relative pl-6 sm:pl-8 pb-10 last:pb-0 border-l border-neutral-900/10 dark:border-white/10 hover:border-sunset-bright/50 dark:hover:border-sunset-bright/50 transition-colors duration-300"
     >
       {/* Vertical Timeline Dot */}
-      <span className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-neutral-300 border border-neutral-100 dark:bg-neutral-700 dark:border-neutral-900 group-hover:bg-sunset-peach group-hover:scale-125 transition-all duration-300 shadow-[0_0_8px_rgba(255,150,100,0.5)]" />
+      <span className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full 
+                       bg-neutral-400 dark:bg-neutral-600 
+                       group-hover:bg-sunset-bright group-hover:scale-125 
+                       transition-all duration-300 
+                       shadow-[0_0_10px_rgba(248,143,34,0.6)]" />
 
       {/* Node Content Container */}
-      <div className="flex flex-col gap-1.5">
+      <div className="flex flex-col gap-1.5 p-4 rounded-xl transition-all duration-200
+                      bg-white/20 hover:bg-white/40 dark:bg-neutral-900/20 dark:hover:bg-neutral-900/40
+                      backdrop-blur-md
+                      border border-white/30 dark:border-white/5 hover:border-sunset-deep/40 dark:hover:border-sunset-bright/30">
         {/* Timeline / Period Badge */}
-        <span className="font-mono text-xs font-semibold tracking-wider text-sunset-bright dark:text-sunset-peach/90 uppercase">
+        <span className="font-mono text-xs font-semibold tracking-wider text-sunset-bright dark:text-sunset-peach uppercase">
           {periodText}
         </span>
 
@@ -82,10 +89,14 @@ export const ExperienceSection: React.FC = () => {
   return (
     <section
       id="experience"
-      className="w-full bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-white max-w-7xl mx-auto px-6 py-16 md:py-24 transition-colors duration-300"
+      className="w-full bg-transparent max-w-7xl mx-auto px-6 py-16 md:py-24 transition-colors duration-300"
     >
       {/* Outer Card Shell */}
-      <div className="rounded-3xl bg-white/80 dark:bg-neutral-900/30 border border-neutral-200/80 dark:border-neutral-800/80 p-6 sm:p-10 md:p-12 shadow-sm dark:shadow-2xl backdrop-blur-sm transition-colors duration-300">
+      <div className="rounded-3xl p-6 sm:p-10 md:p-12 transition-colors duration-300
+                      bg-white/30 dark:bg-neutral-900/40 
+                      backdrop-blur-xl backdrop-saturate-150
+                      border border-white/40 dark:border-white/10 
+                      shadow-xl dark:shadow-2xl">
         <ExperienceHeader />
         <ExperienceList items={workExperiences} />
       </div>
