@@ -30,14 +30,18 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full transition-colors duration-200 bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 border-t border-neutral-200 dark:border-neutral-900">
+    <footer className="w-full bg-transparent text-neutral-900 dark:text-neutral-100 border-t border-white/20 dark:border-white/10 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
         
-        {/* --- Upper Tier: Call-To-Action Banner --- */}
-        <div className="relative overflow-hidden rounded-2xl border p-8 sm:p-12 md:p-16 mb-16 transition-colors duration-200 bg-white border-neutral-200 dark:bg-neutral-900/40 dark:border-neutral-800/80">
+        {/* --- Upper Tier: Call-To-Action Glass Banner --- */}
+        <div className="relative overflow-hidden rounded-3xl p-8 sm:p-12 md:p-16 mb-16 transition-colors duration-300
+                        bg-white/30 dark:bg-neutral-900/40 
+                        backdrop-blur-xl backdrop-saturate-150
+                        border border-white/40 dark:border-white/10 
+                        shadow-xl dark:shadow-2xl">
           
-          {/* Subtle Sunset Background Glow */}
-          <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-sunset-bright/10 dark:bg-sunset-bright/5 rounded-full blur-3xl pointer-events-none" />
+          {/* Ambient Sunset Glow Spot */}
+          <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-sunset-bright/15 dark:bg-sunset-bright/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div className="max-w-2xl">
@@ -52,10 +56,14 @@ export const Footer: React.FC = () => {
               </p>
             </div>
 
-            {/* Email CTA Button */}
+            {/* Email CTA Glass Button */}
             <a
               href="mailto:contact@jplm.dev"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-sm text-neutral-950 bg-sunset-bright hover:bg-sunset-amber transition-all duration-200 shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] shrink-0"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-sm text-neutral-950 
+                         bg-sunset-bright hover:bg-sunset-amber 
+                         transition-all duration-200 
+                         shadow-[0_0_20px_rgba(248,143,34,0.3)] hover:shadow-[0_0_25px_rgba(248,143,34,0.5)] 
+                         hover:scale-[1.02] active:scale-[0.98] shrink-0"
             >
               Email Me
             </a>
@@ -63,7 +71,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* --- Middle Tier: Links & Brand Overview --- */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-neutral-200 dark:border-neutral-800/80">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/20 dark:border-white/10">
           
           {/* Brand Column (5 cols) */}
           <div className="md:col-span-5 flex flex-col justify-between">
