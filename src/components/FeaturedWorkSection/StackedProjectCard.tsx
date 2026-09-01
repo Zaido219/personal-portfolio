@@ -53,7 +53,7 @@ export const StackedProjectCard: React.FC<StackedProjectCardProps> = ({
           : "pointer-events-none"
       }`}
     >
-      <div>
+      <div className="">
         {/* Card Header & Visual Placeholder */}
         <div className="w-full aspect-video rounded-xl bg-neutral-100 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800/80 flex items-center justify-center text-neutral-500 dark:text-neutral-600 font-mono text-xs mb-5">
           [ {project.projectName} Visual ]
