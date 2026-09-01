@@ -24,7 +24,7 @@ export const FeaturedWorkSection: React.FC = () => {
   return (
     <section 
       id="work" 
-      className="w-full bg-neutral-50 dark:bg-neutral-950 max-w-7xl mx-auto px-6 py-16 md:py-24 transition-colors duration-300"
+      className="w-full bg-transparent max-w-7xl mx-auto px-6 py-16 md:py-24 transition-colors duration-300"
     >
       {/* Section Title */}
       <div className="mb-12 max-w-2xl">
