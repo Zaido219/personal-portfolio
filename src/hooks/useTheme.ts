@@ -1,29 +1,28 @@
-// src/hooks/useTheme.js
 import { useEffect, useState } from 'react';
 
 export const useTheme = () => {
-  // Initialize state based on localStorage or fallback to system preference
+  // Initialize state based on localStorage, defaulting strictly to 'dark' mode
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme) return savedTheme;
-      
-      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      return systemPrefersDark ? 'dark' : 'light';
     }
-    return 'light';
+    // Default fallback set to 'dark'
+    return 'dark';
   });
 
   // Synchronize DOM and localStorage whenever the theme state changes
   useEffect(() => {
     const root = window.document.documentElement;
-    
+
     if (theme === 'dark') {
       root.classList.add('dark');
+      root.classList.remove('light');
     } else {
       root.classList.remove('dark');
+      root.classList.add('light');
     }
-    
+
     localStorage.setItem('theme', theme);
   }, [theme]);
 
@@ -33,6 +32,3 @@ export const useTheme = () => {
 
   return { theme, toggleTheme, isDark: theme === 'dark' };
 };
-
-
-// this code is 100% copy pasted from gemini ai
