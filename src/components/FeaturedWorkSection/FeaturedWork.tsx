@@ -31,9 +31,6 @@ export const FeaturedWorkSection: React.FC = () => {
         <h2 className="text-3xl md:text-5xl sm:text-4xl font-extrabold text-neutral-900 dark:text-sunset-bright tracking-tight mb-3">
           Featured Work
         </h2>
-        <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base">
-          Explore highlighted applications and custom engines built from scratch, alongside additional open-source systems.
-        </p>
       </div>
 
       {/* 12-Column Responsive Layout */}
