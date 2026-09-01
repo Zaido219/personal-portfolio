@@ -20,7 +20,7 @@ export const TechMarquee: React.FC<TechMarqueeProps> = ({
 
   return (
     <div
-      className="relative w-full overflow-x-auto scrollbar-none py-2 cursor-grab active:cursor-grabbing"
+      className="relative w-full overflow-x-auto custom-scrollbar py-2 cursor-grab active:cursor-grabbing"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
