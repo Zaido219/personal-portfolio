@@ -15,6 +15,7 @@ import { FeaturedWorkSection } from "./components/FeaturedWorkSection/FeaturedWo
 import { ExperienceSection } from "./components/ExperiencesSection/ExperienceSection";
 import {Header} from "./components/HeroSection/ProfileHeader";
 import StackSection from "./components/TechStackSection/TechStackSection";
+import CertificatesSection from "./components/CertificateSection/CertificateSection";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <FeaturedWorkSection />
       <ExperienceSection />
       <StackSection/>
+      <CertificatesSection/>
     </>
   );
 }
