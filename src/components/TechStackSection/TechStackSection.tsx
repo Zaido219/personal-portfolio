@@ -66,7 +66,7 @@ const StackSection: React.FC = () => {
               <div className="w-full overflow-hidden">
                 <TechMarquee
                   items={items}
-                  direction={index % 2 === 0 ? "left" : "right"}
+                  direction="right"
                   speedInSeconds={Math.max(12, items.length * 3.5)}
                 />
               </div>
