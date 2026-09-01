@@ -47,15 +47,18 @@ export const StackedProjectCard: React.FC<StackedProjectCardProps> = ({
       }}
       transition={{ type: "spring", stiffness: 300, damping: 25 }}
       style={{ zIndex }}
-      className={`absolute inset-0 w-full rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-6 shadow-xl dark:shadow-2xl flex flex-col justify-between select-none transition-colors duration-300 ${
+      className={`absolute inset-0 w-full rounded-2xl p-6 shadow-xl dark:shadow-2xl flex flex-col justify-between select-none transition-colors duration-300
+                  bg-white/40 dark:bg-neutral-900/40 
+                  backdrop-blur-xl backdrop-saturate-150
+                  border border-white/40 dark:border-white/10 ${
         isTop 
-          ? "cursor-grab active:cursor-grabbing border-sunset-deep/60 dark:border-sunset-deep/50" 
+          ? "cursor-grab active:cursor-grabbing border-sunset-deep/60 dark:border-sunset-bright/50 shadow-sunset-deep/5" 
           : "pointer-events-none"
       }`}
     >
-      <div className="">
+      <div>
         {/* Card Header & Visual Placeholder */}
-        <div className="w-full aspect-video rounded-xl bg-neutral-100 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800/80 flex items-center justify-center text-neutral-500 dark:text-neutral-600 font-mono text-xs mb-5">
+        <div className="w-full aspect-video rounded-xl bg-white/30 dark:bg-neutral-950/40 backdrop-blur-md border border-white/20 dark:border-white/10 flex items-center justify-center text-neutral-600 dark:text-neutral-400 font-mono text-xs mb-5">
           [ {project.projectName} Visual ]
         </div>
 
@@ -63,7 +66,7 @@ export const StackedProjectCard: React.FC<StackedProjectCardProps> = ({
           <h3 className="text-xl font-bold text-neutral-900 dark:text-white">
             {project.projectName}
           </h3>
-          <span className="px-2.5 py-0.5 text-xs font-mono rounded-full bg-neutral-100 text-neutral-800 border-neutral-300 dark:bg-neutral-950 dark:text-sunset-peach border dark:border-sunset-dusk/50">
+          <span className="px-2.5 py-0.5 text-xs font-mono rounded-full bg-white/50 text-neutral-800 border-neutral-300/60 dark:bg-neutral-950/60 dark:text-sunset-peach border dark:border-sunset-dusk/50 backdrop-blur-xs">
             {project.projectStatus}
           </span>
         </div>
@@ -74,7 +77,7 @@ export const StackedProjectCard: React.FC<StackedProjectCardProps> = ({
       </div>
 
       {project.projectLink && (
-        <div className="pt-4 border-t border-neutral-200 dark:border-neutral-800/80 flex items-center justify-between">
+        <div className="pt-4 border-t border-neutral-900/10 dark:border-white/10 flex items-center justify-between">
           <a
             href={project.projectLink}
             target="_blank"
@@ -84,7 +87,7 @@ export const StackedProjectCard: React.FC<StackedProjectCardProps> = ({
             Repository &rarr;
           </a>
           {isTop && (
-            <span className="text-[10px] font-mono text-neutral-400 dark:text-neutral-500">
+            <span className="text-[10px] font-mono text-neutral-500 dark:text-neutral-400">
               Drag horizontally to dismiss
             </span>
           )}
