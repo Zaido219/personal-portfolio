@@ -11,11 +11,8 @@ export const NAV_ITEMS = [
   { label: "About", href: "#about" },
 ];
 
-// SRP: Solely responsible for rendering navigation links and the Theme Toggle CTA
 const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = false }) => (
-  <ul
-    className={`flex ${isVertical ? "flex-col gap-y-4" : "flex-row items-center gap-x-6 md:gap-x-8"}`}
-  >
+  <ul className={`flex ${isVertical ? "flex-col gap-y-4" : "flex-row items-center gap-x-6 md:gap-x-8"}`}>
     {items.map((item) => (
       <li key={item.label}>
         <a
@@ -28,7 +25,6 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
       </li>
     ))}
     
-    {/* Theme Toggle CTA */}
     <li className={isVertical ? "pt-2" : ""}>
       <ReflectedGlow>
         <button
@@ -38,7 +34,7 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
             if (onItemClick) onItemClick();
           }}
           aria-label="Toggle theme mode"
-          className="bg-neutral-100 hover:bg-neutral-200 text-neutral-900 border-neutral-300 dark:bg-sunset-dusk dark:text-sunset-peach dark:border-neutral-700 dark:hover:border-sunset-deep inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest border px-4 py-2 rounded-full transition-all duration-200 cursor-pointer"
+          className="bg-neutral-100/80 hover:bg-neutral-200/80 text-neutral-900 border-neutral-300 dark:bg-sunset-dusk/80 dark:text-sunset-peach dark:border-white/10 dark:hover:border-sunset-deep backdrop-blur-md inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest border px-4 py-2 rounded-full transition-all duration-200 cursor-pointer"
         >
           {isDark ? (
             <>
@@ -61,15 +57,10 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
   </ul>
 );
 
-// SRP: Responsible solely for brand representation
 const Brand = () => (
   <a href="#" className="flex items-center gap-x-3 group">
-    <div className="h-9 w-9 rounded-full overflow-hidden flex-shrink-0 transition-transform group-hover:scale-105 border border-neutral-200 dark:border-neutral-800">
-      <img
-        src={myLogo}
-        alt="John Phillip Lor Malbas"
-        className="h-full w-full object-cover"
-      />
+    <div className="h-9 w-9 rounded-full overflow-hidden flex-shrink-0 transition-transform group-hover:scale-105 border border-neutral-200 dark:border-white/10">
+      <img src={myLogo} alt="John Phillip Lor Malbas" className="h-full w-full object-cover" />
     </div>
     <ReflectedGlow>
       <span className="font-bold text-sm tracking-wider text-neutral-900 dark:text-sunset-peach">
@@ -79,14 +70,12 @@ const Brand = () => (
   </a>
 );
 
-// SRP: Desktop container & visibility boundary
 const DesktopNavMenu = ({ items, isDark, onToggleTheme }) => (
   <nav aria-label="Desktop Navigation" className="hidden md:block">
     <NavLinks items={items} isDark={isDark} onToggleTheme={onToggleTheme} />
   </nav>
 );
 
-// SRP: Mobile menu button trigger
 const MobileNavToggle = ({ isOpen, onToggle }) => (
   <button
     onClick={onToggle}
@@ -97,70 +86,42 @@ const MobileNavToggle = ({ isOpen, onToggle }) => (
   >
     <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
       {isOpen ? (
-        <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
-        />
+        <path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
       ) : (
-        <path
-          fillRule="evenodd"
-          d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-        />
+        <path fillRule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
       )}
     </svg>
   </button>
 );
 
-// SRP: Mobile full-width drawer wrapper
 const MobileNavDrawer = ({ items, onClose, isDark, onToggleTheme }) => (
-  <div className="fixed inset-x-0 top-[64px] bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 p-6 md:hidden shadow-lg z-40">
+  <div className="fixed inset-x-0 top-[64px] bg-white/80 dark:bg-neutral-900/80 backdrop-blur-xl border-b border-neutral-200 dark:border-white/10 p-6 md:hidden shadow-lg z-40">
     <nav aria-label="Mobile Navigation">
-      <NavLinks
-        items={items}
-        onItemClick={onClose}
-        isDark={isDark}
-        onToggleTheme={onToggleTheme}
-        isVertical
-      />
+      <NavLinks items={items} onItemClick={onClose} isDark={isDark} onToggleTheme={onToggleTheme} isVertical />
     </nav>
   </div>
 );
 
-// SRP: Header container orchestrating layout & theme state
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { isDark, toggleTheme } = useTheme();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-neutral-200/80 dark:border-neutral-800/60 bg-white/80 dark:bg-neutral-950/70 backdrop-blur-md transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full border-b border-neutral-200/60 dark:border-white/10 bg-white/40 dark:bg-neutral-950/40 backdrop-blur-xl transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <Brand />
-        <DesktopNavMenu
-          items={NAV_ITEMS}
-          isDark={isDark}
-          onToggleTheme={toggleTheme}
-        />
-        <MobileNavToggle
-          isOpen={isMobileMenuOpen}
-          onToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        />
+        <DesktopNavMenu items={NAV_ITEMS} isDark={isDark} onToggleTheme={toggleTheme} />
+        <MobileNavToggle isOpen={isMobileMenuOpen} onToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
         {isMobileMenuOpen && (
-          <MobileNavDrawer
-            items={NAV_ITEMS}
-            onClose={() => setIsMobileMenuOpen(false)}
-            isDark={isDark}
-            onToggleTheme={toggleTheme}
-          />
+          <MobileNavDrawer items={NAV_ITEMS} onClose={() => setIsMobileMenuOpen(false)} isDark={isDark} onToggleTheme={toggleTheme} />
         )}
       </div>
     </header>
   );
 };
 
-// SRP: Status Badge Component
 const StatusBadge = ({ text }) => (
-  <div className="inline-flex items-center gap-x-2 px-3 py-1.5 rounded-full bg-neutral-100 border-neutral-300 text-neutral-800 dark:bg-neutral-900 dark:border-sunset-deep dark:text-sunset-bright border text-xs font-medium mb-6 transition-colors duration-200">
+  <div className="inline-flex items-center gap-x-2 px-3 py-1.5 rounded-full bg-white/40 dark:bg-neutral-900/40 backdrop-blur-md border border-neutral-300 dark:border-sunset-deep/60 text-neutral-800 dark:text-sunset-bright text-xs font-medium mb-6 transition-colors duration-200">
     <span className="relative flex h-2 w-2">
       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
       <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -169,7 +130,6 @@ const StatusBadge = ({ text }) => (
   </div>
 );
 
-// SRP: Hero Call-To-Action buttons
 const HeroCTA = () => (
   <div className="flex items-center gap-x-4 pt-2">
     <a
@@ -182,19 +142,18 @@ const HeroCTA = () => (
     </a>
     <a
       href="mailto:contact@jplm.dev"
-      className="px-6 py-3 rounded-full border border-neutral-300 hover:bg-neutral-100 text-neutral-800 dark:border-sunset-amber dark:text-[#FFE3B3] dark:hover:bg-neutral-900 dark:hover:text-white font-medium text-sm md:text-xs transition-colors duration-200"
+      className="px-6 py-3 rounded-full border border-neutral-300/80 hover:bg-neutral-100/50 text-neutral-800 dark:border-sunset-amber/80 dark:text-[#FFE3B3] dark:hover:bg-neutral-900/50 dark:hover:text-white font-medium text-sm md:text-xs backdrop-blur-md transition-colors duration-200"
     >
       Email Me
     </a>
   </div>
 );
 
-// SRP: Root component orchestrating the Hero section layout
 export const HeroSection = () => {
   return (
-    <section className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-white flex flex-col justify-between selection:bg-neutral-200 dark:selection:bg-neutral-800 transition-colors duration-300">
+    /* Removed solid bg-neutral-950/bg-neutral-50 background so ambient mesh passes through */
+    <section className="min-h-screen bg-transparent text-neutral-900 dark:text-white flex flex-col justify-between selection:bg-sunset-bright/20 transition-colors duration-300">
       <main className="w-full max-w-7xl mx-auto px-6 py-12 md:py-24 flex-1 flex flex-col md:flex-row items-center justify-between gap-12">
-        {/* Left Column: Hero Copy */}
         <div className="flex-1 max-w-2xl">
           <StatusBadge text="Available for work" />
           <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-sunset-bright dark:text-[#F88F22] mb-4 leading-none">
@@ -213,17 +172,15 @@ export const HeroSection = () => {
           <HeroCTA />
         </div>
 
-        {/* Right Column: Visual Feature / Image Card */}
+        {/* Profile Card Container with Glassmorphism */}
         <div className="flex-1 flex justify-center md:justify-end w-full">
           <div className="relative w-full max-w-md aspect-square group">
-            {/* Glow Layer */}
             <div
               aria-hidden="true"
               className="absolute -inset-1 sm:-inset-2 rounded-3xl bg-gradient-to-tr from-sunset-deep via-sunset-bright to-sunset-amber opacity-30 dark:opacity-40 blur-2xl transition duration-500 group-hover:opacity-60 dark:group-hover:opacity-70 group-hover:blur-3xl"
             />
 
-            {/* Image Frame */}
-            <div className="relative w-full h-full rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xl dark:shadow-2xl overflow-hidden">
+            <div className="relative w-full h-full rounded-2xl bg-white/30 dark:bg-neutral-900/40 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-xl dark:shadow-2xl overflow-hidden">
               <img
                 src={myPfp}
                 alt="John Phillip Lor Malbas"
