@@ -42,38 +42,44 @@ export const CertificatesSection: React.FC = () => {
   return (
     <section 
       id="certifications" 
-      className="w-full transition-colors duration-200 bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 max-w-7xl mx-auto px-6 py-16 md:py-24"
+      className="w-full bg-transparent text-neutral-900 dark:text-neutral-100 max-w-7xl mx-auto px-6 py-16 md:py-24 transition-colors duration-300"
     >
       {/* Section Header */}
       <div className="mb-12 max-w-2xl">
-        <h2 className="text-3xl md:text-5xl sm:text-4xl font-extrabold text-sunset-bright tracking-tight mb-3">
-          Certifications
+        <h2 className="text-3xl md:text-5xl sm:text-4xl font-extrabold tracking-tight mb-3 text-neutral-900 dark:text-white">
+          <span className="text-sunset-bright">Certifications</span>
         </h2>
       </div>
 
-      {/* Main Container */}
-      <div className="w-full rounded-2xl border p-6 sm:p-8 transition-colors duration-200 bg-white border-neutral-200 dark:bg-neutral-900/40 dark:border-neutral-800/80">
+      {/* Main Container Shell */}
+      <div className="w-full rounded-2xl p-6 sm:p-8 transition-colors duration-300
+                      bg-white/30 dark:bg-neutral-900/40 
+                      backdrop-blur-xl backdrop-saturate-150
+                      border border-white/40 dark:border-white/10 
+                      shadow-xl dark:shadow-2xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {CertificatesData.map((cert) => (
             <div
               key={cert.id}
               onClick={() => setSelectedCert(cert)}
-              className="group cursor-pointer rounded-xl border p-5 transition-all duration-200 
-                         bg-neutral-50/50 border-neutral-200 hover:border-sunset-bright hover:shadow-md
-                         dark:bg-neutral-900/80 dark:border-neutral-800 dark:hover:border-sunset-bright"
+              className="group cursor-pointer rounded-xl p-5 transition-all duration-200 
+                         bg-white/40 hover:bg-white/60 dark:bg-neutral-900/30 dark:hover:bg-neutral-900/60
+                         backdrop-blur-md
+                         border border-white/50 dark:border-white/10 hover:border-sunset-deep/50 dark:hover:border-sunset-bright/40
+                         shadow-sm hover:shadow-md"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
                   <h3 className="text-base font-semibold text-neutral-800 dark:text-neutral-100 group-hover:text-sunset-bright transition-colors">
                     {cert.title}
                   </h3>
-                  <p className="text-xs font-medium text-neutral-500 dark:text-neutral-400 mt-1">
+                  <p className="text-xs font-medium text-neutral-600 dark:text-neutral-400 mt-1">
                     {cert.provider}
                   </p>
                 </div>
                 
                 {cert.issueDate && (
-                  <span className="text-xs text-neutral-400 dark:text-neutral-500 shrink-0">
+                  <span className="text-xs font-mono text-neutral-500 dark:text-neutral-400 shrink-0">
                     {cert.issueDate}
                   </span>
                 )}
