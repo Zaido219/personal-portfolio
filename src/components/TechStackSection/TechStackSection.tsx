@@ -33,7 +33,7 @@ const StackSection = () => {
           My <span className="text-[var(--color-sunset-bright)]">Tool Kit</span>
         </h2>
         <p className="text-sm text-neutral-400 mt-2 font-mono">
-          Technologies, frameworks, and environments I work with daily.
+          Technologies, frameworks, and environments I often work with.
         </p>
       </div>
 
