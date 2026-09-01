@@ -21,14 +21,14 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
         <a
           href={item.href}
           onClick={onItemClick}
-          className="block text-xs md:text-2xs font-semibold uppercase tracking-widest text-sunset-dusk hover:text-white transition-colors duration-200"
+          className="block text-xs md:text-2xs font-semibold uppercase tracking-widest text-neutral-700 hover:text-neutral-950 dark:text-sunset-dusk dark:hover:text-white transition-colors duration-200"
         >
           {item.label}
         </a>
       </li>
     ))}
     
-    {/* Theme Toggle replaces static Contact link */}
+    {/* Theme Toggle CTA */}
     <li className={isVertical ? "pt-2" : ""}>
       <ReflectedGlow>
         <button
@@ -38,7 +38,7 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
             if (onItemClick) onItemClick();
           }}
           aria-label="Toggle theme mode"
-          className="bg-sunset-dusk inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-sunset-peach border border-neutral-700 hover:border-sunset-deep px-4 py-2 rounded-full transition-all duration-200 cursor-pointer"
+          className="bg-neutral-100 hover:bg-neutral-200 text-neutral-900 border-neutral-300 dark:bg-sunset-dusk dark:text-sunset-peach dark:border-neutral-700 dark:hover:border-sunset-deep inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest border px-4 py-2 rounded-full transition-all duration-200 cursor-pointer"
         >
           {isDark ? (
             <>
@@ -64,7 +64,7 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
 // SRP: Responsible solely for brand representation
 const Brand = () => (
   <a href="#" className="flex items-center gap-x-3 group">
-    <div className="h-9 w-9 rounded-full overflow-hidden flex-shrink-0 transition-transform group-hover:scale-105">
+    <div className="h-9 w-9 rounded-full overflow-hidden flex-shrink-0 transition-transform group-hover:scale-105 border border-neutral-200 dark:border-neutral-800">
       <img
         src={myLogo}
         alt="John Phillip Lor Malbas"
@@ -72,7 +72,7 @@ const Brand = () => (
       />
     </div>
     <ReflectedGlow>
-      <span className="font-bold text-sm tracking-wider text-sunset-peach">
+      <span className="font-bold text-sm tracking-wider text-neutral-900 dark:text-sunset-peach">
         JPLM.DEV
       </span>
     </ReflectedGlow>
@@ -93,7 +93,7 @@ const MobileNavToggle = ({ isOpen, onToggle }) => (
     type="button"
     aria-expanded={isOpen}
     aria-label="Toggle navigation menu"
-    className="md:hidden text-white focus:outline-none p-2"
+    className="md:hidden text-neutral-800 dark:text-white focus:outline-none p-2"
   >
     <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
       {isOpen ? (
@@ -114,7 +114,7 @@ const MobileNavToggle = ({ isOpen, onToggle }) => (
 
 // SRP: Mobile full-width drawer wrapper
 const MobileNavDrawer = ({ items, onClose, isDark, onToggleTheme }) => (
-  <div className="fixed inset-x-0 top-[64px] bg-neutral-900 border-b border-neutral-800 p-6 md:hidden shadow-lg z-40">
+  <div className="fixed inset-x-0 top-[64px] bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 p-6 md:hidden shadow-lg z-40">
     <nav aria-label="Mobile Navigation">
       <NavLinks
         items={items}
@@ -133,7 +133,7 @@ export const Header = () => {
   const { isDark, toggleTheme } = useTheme();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-neutral-800/60 bg-neutral-950/70 dark:bg-transparent backdrop-blur-md transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full border-b border-neutral-200/80 dark:border-neutral-800/60 bg-white/80 dark:bg-neutral-950/70 backdrop-blur-md transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <Brand />
         <DesktopNavMenu
@@ -160,7 +160,7 @@ export const Header = () => {
 
 // SRP: Status Badge Component
 const StatusBadge = ({ text }) => (
-  <div className="inline-flex items-center gap-x-2 px-3 py-1.5 rounded-full bg-neutral-900 border border-sunset-deep text-xs font-medium text-sunset-bright mb-6">
+  <div className="inline-flex items-center gap-x-2 px-3 py-1.5 rounded-full bg-neutral-100 border-neutral-300 text-neutral-800 dark:bg-neutral-900 dark:border-sunset-deep dark:text-sunset-bright border text-xs font-medium mb-6 transition-colors duration-200">
     <span className="relative flex h-2 w-2">
       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
       <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -176,13 +176,13 @@ const HeroCTA = () => (
       href="/resume.pdf"
       target="_blank"
       rel="noopener noreferrer"
-      className="px-6 py-3 rounded-full bg-[#EA6113] text-sunset-peach font-medium text-sm md:text-xs transition-all duration-200 shadow-[0_0_20px_rgba(234,97,19,0.5)] hover:shadow-[0_0_28px_rgba(234,97,19,0.7)]"
+      className="px-6 py-3 rounded-full bg-[#EA6113] text-white dark:text-sunset-peach font-medium text-sm md:text-xs transition-all duration-200 shadow-[0_0_20px_rgba(234,97,19,0.3)] hover:shadow-[0_0_28px_rgba(234,97,19,0.5)]"
     >
       My Resume
     </a>
     <a
       href="mailto:contact@jplm.dev"
-      className="px-6 py-3 rounded-full border border-sunset-amber text-[#FFE3B3] font-medium text-sm md:text-xs hover:bg-neutral-900 hover:text-white transition-colors duration-200"
+      className="px-6 py-3 rounded-full border border-neutral-300 hover:bg-neutral-100 text-neutral-800 dark:border-sunset-amber dark:text-[#FFE3B3] dark:hover:bg-neutral-900 dark:hover:text-white font-medium text-sm md:text-xs transition-colors duration-200"
     >
       Email Me
     </a>
@@ -192,20 +192,20 @@ const HeroCTA = () => (
 // SRP: Root component orchestrating the Hero section layout
 export const HeroSection = () => {
   return (
-    <section className="min-h-screen bg-neutral-950 text-white flex flex-col justify-between selection:bg-neutral-800 selection:text-white">
+    <section className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-white flex flex-col justify-between selection:bg-neutral-200 dark:selection:bg-neutral-800 transition-colors duration-300">
       <main className="w-full max-w-7xl mx-auto px-6 py-12 md:py-24 flex-1 flex flex-col md:flex-row items-center justify-between gap-12">
         {/* Left Column: Hero Copy */}
         <div className="flex-1 max-w-2xl">
           <StatusBadge text="Available for work" />
-          <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-[#F88F22] mb-4 leading-none">
+          <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-sunset-bright dark:text-[#F88F22] mb-4 leading-none">
             John Phillip Lor Malbas
           </h1>
 
-          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-300 mb-6">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-700 dark:text-neutral-300 mb-6">
             Software Developer
           </h2>
 
-          <p className="text-neutral-300 text-base sm:text-md leading-relaxed max-w-xl mb-8">
+          <p className="text-neutral-600 dark:text-neutral-300 text-base sm:text-md leading-relaxed max-w-xl mb-8">
             Engineering elegant solutions through clean code and modern
             architecture. Specializing in robust backend systems and intuitive
             user interfaces.
@@ -220,11 +220,11 @@ export const HeroSection = () => {
             {/* Glow Layer */}
             <div
               aria-hidden="true"
-              className="absolute -inset-1 sm:-inset-2 rounded-3xl bg-gradient-to-tr from-sunset-deep via-sunset-bright to-sunset-amber opacity-40 blur-2xl transition duration-500 group-hover:opacity-70 group-hover:blur-3xl"
+              className="absolute -inset-1 sm:-inset-2 rounded-3xl bg-gradient-to-tr from-sunset-deep via-sunset-bright to-sunset-amber opacity-30 dark:opacity-40 blur-2xl transition duration-500 group-hover:opacity-60 dark:group-hover:opacity-70 group-hover:blur-3xl"
             />
 
             {/* Image Frame */}
-            <div className="relative w-full h-full rounded-2xl bg-neutral-900 border border-neutral-800 shadow-2xl overflow-hidden">
+            <div className="relative w-full h-full rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xl dark:shadow-2xl overflow-hidden">
               <img
                 src={myPfp}
                 alt="John Phillip Lor Malbas"
