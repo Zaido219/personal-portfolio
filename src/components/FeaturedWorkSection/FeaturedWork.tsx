@@ -3,6 +3,7 @@ import { Projects } from "../../config/ProjectConstants";
 import { StackedProjectCard } from "./StackedProjectCard";
 import { DeckControls } from "./DeckControls";
 import { ProjectAsideList } from "./ProjectAsideList";
+import { useTheme } from "../../hooks/useTheme";
 
 export const FeaturedWorkSection: React.FC = () => {
   // Partitioning data: Top 5 for deck stack, remaining for secondary list
@@ -10,6 +11,7 @@ export const FeaturedWorkSection: React.FC = () => {
   const secondaryProjects = Projects.slice(5);
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const { isDark } = useTheme();
 
   const handleNext = () => {
     setActiveIndex((prev) => (prev + 1) % featuredProjects.length);
@@ -20,13 +22,16 @@ export const FeaturedWorkSection: React.FC = () => {
   };
 
   return (
-    <section id="work" className="w-full bg-neutral-950 max-w-7xl mx-auto px-6 py-16 md:py-24">
+    <section 
+      id="work" 
+      className="w-full bg-neutral-50 dark:bg-neutral-950 max-w-7xl mx-auto px-6 py-16 md:py-24 transition-colors duration-300"
+    >
       {/* Section Title */}
       <div className="mb-12 max-w-2xl">
-        <h2 className="text-3xl md:text-5xl sm:text-4xl font-extrabold text-sunset-bright tracking-tight mb-3">
+        <h2 className="text-3xl md:text-5xl sm:text-4xl font-extrabold text-neutral-900 dark:text-sunset-bright tracking-tight mb-3">
           Featured Work
         </h2>
-        <p className="text-neutral-400 text-sm sm:text-base">
+        <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base">
           Explore highlighted applications and custom engines built from scratch, alongside additional open-source systems.
         </p>
       </div>
@@ -45,6 +50,7 @@ export const FeaturedWorkSection: React.FC = () => {
                   offset={offset}
                   totalCards={featuredProjects.length}
                   onDismiss={handleNext}
+                  isDark={isDark}
                 />
               );
             })}
@@ -57,13 +63,14 @@ export const FeaturedWorkSection: React.FC = () => {
               onNext={handleNext}
               onPrev={handlePrev}
               total={featuredProjects.length}
+              isDark={isDark}
             />
           </div>
         </div>
 
         {/* Right Column: Scrollable Secondary Projects (5 cols on Desktop) */}
         <div className="lg:col-span-5">
-          <ProjectAsideList projects={secondaryProjects} />
+          <ProjectAsideList projects={secondaryProjects} isDark={isDark} />
         </div>
       </div>
     </section>
