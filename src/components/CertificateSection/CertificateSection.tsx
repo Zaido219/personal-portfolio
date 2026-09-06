@@ -53,7 +53,7 @@ export const CertificatesSection: React.FC = () => {
 
       {/* Main Container Shell */}
       <div className="w-full rounded-2xl p-6 sm:p-8 transition-colors duration-300
-                      bg-white/30 dark:bg-neutral-900/40 
+                      bg-transparent dark:bg-neutral-900/40 
                       backdrop-blur-xl backdrop-saturate-150
                       border border-white/40 dark:border-white/10 
                       shadow-xl dark:shadow-2xl">

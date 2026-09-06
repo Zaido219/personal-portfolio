@@ -42,10 +42,10 @@ const StackSection: React.FC = () => {
     <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Section Header */}
       <div className="mb-8">
-        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
+        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-sunset-bright dark:text-white">
           My <span className="text-[var(--color-sunset-bright)]">Tool Kit</span>
         </h2>
-        <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-2 font-mono">
+        <p className="text-sm text-sunset-amber dark:text-neutral-400 mt-2 font-mono">
           Technologies, frameworks, and environments I work with.
         </p>
       </div>
