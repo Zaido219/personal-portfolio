@@ -71,7 +71,7 @@ export const StackedProjectCard: React.FC<StackedProjectCardProps> = ({
           </span>
         </div>
 
-        <p className="text-sunset-peach dark:text-sunset-bright text-sm leading-relaxed line-clamp-3">
+        <p className="text-sunset-peach dark:text-slate-300 text-sm leading-relaxed line-clamp-3">
           {project.projectDescription}
         </p>
       </div>
