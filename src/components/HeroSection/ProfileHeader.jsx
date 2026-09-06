@@ -34,7 +34,7 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
             if (onItemClick) onItemClick();
           }}
           aria-label="Toggle theme mode"
-          className="bg-neutral-100/80 hover:bg-neutral-200/80 text-neutral-900 border-neutral-300 dark:bg-sunset-dusk/80 dark:text-sunset-peach dark:border-white/10 dark:hover:border-sunset-deep backdrop-blur-md inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest border px-4 py-2 rounded-full transition-all duration-200 cursor-pointer"
+          className="bg-sunset-peach hover:bg-sunset-amber text-neutral-900 border-sunset-amber dark:bg-sunset-dusk/80 dark:text-sunset-peach dark:border-white/10 dark:hover:border-sunset-deep backdrop-blur-md inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest border px-4 py-2 rounded-full transition-all duration-200 cursor-pointer"
         >
           {isDark ? (
             <>
