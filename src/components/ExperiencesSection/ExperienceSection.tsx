@@ -93,7 +93,7 @@ export const ExperienceSection: React.FC = () => {
     >
       {/* Outer Card Shell */}
       <div className="rounded-3xl p-6 sm:p-10 md:p-12 transition-colors duration-300
-                      bg-white/30 dark:bg-neutral-900/40 
+                      bg-transparent dark:bg-neutral-900/40 
                       backdrop-blur-xl backdrop-saturate-150
                       border border-white/40 dark:border-white/10 
                       shadow-xl dark:shadow-2xl">
