@@ -55,15 +55,15 @@ export const ProjectAsideList: React.FC<ProjectAsideListProps> = ({ projects }) 
 
   return (
     <aside className="rounded-2xl p-6 flex flex-col h-full max-h-[580px] transition-colors duration-300
-                      bg-white/30 dark:bg-neutral-900/40 
+                      bg-transparent dark:bg-neutral-900/40 
                       backdrop-blur-xl backdrop-saturate-150
                       border border-white/40 dark:border-white/10 
                       shadow-xl dark:shadow-2xl">
       <div className="flex items-center justify-between mb-4 pb-3 border-b border-neutral-900/10 dark:border-white/10">
-        <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-600 dark:text-neutral-400">
+        <h3 className="text-xs font-mono uppercase tracking-wider text-sunset-bright dark:text-sunset-dusk">
           Other Noteworthy Projects
         </h3>
-        <span className="text-xs font-mono text-neutral-500 dark:text-neutral-500">
+        <span className="text-xs font-mono text-sunset-bright dark:text-sunset-dusk">
           {projects.length} repositor{projects.length > 1 ? "ies" : "y"}
         </span>
       </div>
