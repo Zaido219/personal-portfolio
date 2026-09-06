@@ -63,17 +63,17 @@ export const CertificatesSection: React.FC = () => {
               key={cert.id}
               onClick={() => setSelectedCert(cert)}
               className="group cursor-pointer rounded-xl p-5 transition-all duration-200 
-                         bg-white/40 hover:bg-white/60 dark:bg-neutral-900/30 dark:hover:bg-neutral-900/60
+                         bg-transparent dark:bg-neutral-900/30 dark:hover:bg-neutral-900/60
                          backdrop-blur-md
                          border border-white/50 dark:border-white/10 hover:border-sunset-deep/50 dark:hover:border-sunset-bright/40
                          shadow-sm hover:shadow-md"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
-                  <h3 className="text-base font-semibold text-neutral-800 dark:text-neutral-100 group-hover:text-sunset-bright transition-colors">
+                  <h3 className="text-base font-semibold text-sunset-peach dark:text-neutral-100 group-hover:text-sunset-bright transition-colors">
                     {cert.title}
                   </h3>
-                  <p className="text-xs font-medium text-neutral-600 dark:text-neutral-400 mt-1">
+                  <p className="text-xs font-medium text-sunset-peach dark:text-neutral-400 mt-1">
                     {cert.provider}
                   </p>
                 </div>
