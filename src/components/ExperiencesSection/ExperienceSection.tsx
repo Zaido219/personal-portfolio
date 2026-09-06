@@ -47,7 +47,7 @@ const ExperienceItemCard: React.FC<{ item: WorkExperienceItemProps }> = ({
 
       {/* Node Content Container */}
       <div className="flex flex-col gap-1.5 p-4 rounded-xl transition-all duration-200
-                      bg-white/20 hover:bg-white/40 dark:bg-neutral-900/20 dark:hover:bg-neutral-900/40
+                      bg-transparent dark:bg-neutral-900/20 dark:hover:bg-neutral-900/40
                       backdrop-blur-md
                       border border-white/30 dark:border-white/5 hover:border-sunset-deep/40 dark:hover:border-sunset-bright/30">
         {/* Timeline / Period Badge */}
@@ -56,12 +56,12 @@ const ExperienceItemCard: React.FC<{ item: WorkExperienceItemProps }> = ({
         </span>
 
         {/* Role Title */}
-        <h3 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white group-hover:text-sunset-bright transition-colors duration-200">
+        <h3 className="text-lg sm:text-xl font-bold text-sunset-peach dark:text-white group-hover:text-sunset-bright transition-colors duration-200">
           {item.title}
         </h3>
 
         {/* Company Name */}
-        <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
+        <p className="text-sm font-medium text-sunset-peach dark:text-neutral-400">
           {item.company}
         </p>
       </div>
