@@ -18,14 +18,14 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
         <a
           href={item.href}
           onClick={onItemClick}
-          className="block text-xs md:text-2xs font-semibold uppercase tracking-widest text-neutral-700 hover:text-neutral-950 dark:text-sunset-dusk dark:hover:text-white transition-colors duration-200"
+          className="block text-xs md:text-2xs font-semibold uppercase tracking-widest text-sunset-peach hover:text-neutral-950 dark:text-sunset-dusk dark:hover:text-white transition-colors duration-200"
         >
           {item.label}
         </a>
       </li>
     ))}
     {/* !TODO temporarily disabled theme toggling*/}
-    {/* <li className={isVertical ? "pt-2" : ""}>
+    <li className={isVertical ? "pt-2" : ""}>
       <ReflectedGlow>
         <button
           type="button"
@@ -34,7 +34,7 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
             if (onItemClick) onItemClick();
           }}
           aria-label="Toggle theme mode"
-          className="bg-neutral-100/80 hover:bg-neutral-200/80 text-neutral-900 border-neutral-300 dark:bg-sunset-dusk/80 dark:text-sunset-peach dark:border-white/10 dark:hover:border-sunset-deep backdrop-blur-md inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest border px-4 py-2 rounded-full transition-all duration-200 cursor-pointer"
+          className="bg-sunset-peach hover:bg-sunset-amber text-neutral-900 border-sunset-amber dark:bg-sunset-dusk/80 dark:text-sunset-peach dark:border-white/10 dark:hover:border-sunset-deep backdrop-blur-md inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest border px-4 py-2 rounded-full transition-all duration-200 cursor-pointer"
         >
           {isDark ? (
             <>
@@ -53,7 +53,7 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
           )}
         </button>
       </ReflectedGlow>
-    </li> */}
+    </li>
   </ul>
 );
 
@@ -63,7 +63,7 @@ const Brand = () => (
       <img src={myLogo} alt="John Phillip Lor Malbas" className="h-full w-full object-cover" />
     </div>
     <ReflectedGlow>
-      <span className="font-bold text-sm tracking-wider text-neutral-900 dark:text-sunset-peach">
+      <span className="font-bold text-sm tracking-wider text-sunset-peach dark:text-sunset-bright">
         JPLM.DEV
       </span>
     </ReflectedGlow>
@@ -107,7 +107,7 @@ export const Header = () => {
   const { isDark, toggleTheme } = useTheme();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-neutral-200/60 dark:border-white/10 bg-white/40 dark:bg-neutral-950/40 backdrop-blur-xl transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full bg-transparent dark:bg-neutral-950/40 backdrop-blur-xl transition-all duration-300 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <Brand />
         <DesktopNavMenu items={NAV_ITEMS} isDark={isDark} onToggleTheme={toggleTheme} />
@@ -121,7 +121,7 @@ export const Header = () => {
 };
 
 const StatusBadge = ({ text }) => (
-  <div className="inline-flex items-center gap-x-2 px-3 py-1.5 rounded-full bg-white/40 dark:bg-neutral-900/40 backdrop-blur-md border border-neutral-300 dark:border-sunset-deep/60 text-neutral-800 dark:text-sunset-bright text-xs font-medium mb-6 transition-colors duration-200">
+  <div className="inline-flex items-center gap-x-2 px-3 py-1.5 rounded-full dark:bg-neutral-900/40 backdrop-blur-md border border-sunset-amber dark:border-sunset-deep/60 text-sunset-amber dark:text-sunset-bright text-xs font-medium mb-6 transition-colors duration-200">
     <span className="relative flex h-2 w-2">
       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
       <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -142,7 +142,7 @@ const HeroCTA = () => (
     </a>
     <a
       href="mailto:contact@jplm.dev"
-      className="px-6 py-3 rounded-full border border-neutral-300/80 hover:bg-neutral-100/50 text-neutral-800 dark:border-sunset-amber/80 dark:text-[#FFE3B3] dark:hover:bg-neutral-900/50 dark:hover:text-white font-medium text-sm md:text-xs backdrop-blur-md transition-colors duration-200"
+      className="px-6 py-3 rounded-full border border-neutral-300/80 hover:bg-neutral-100/50 text-sunset-peach dark:border-sunset-amber/80 dark:text-sunset-bright dark:hover:bg-neutral-900/50 dark:hover:text-white font-medium text-sm md:text-xs backdrop-blur-md transition-colors duration-200"
     >
       Email Me
     </a>
@@ -156,15 +156,15 @@ export const HeroSection = () => {
       <main className="w-full max-w-7xl mx-auto px-6 py-12 md:py-24 flex-1 flex flex-col md:flex-row items-center justify-between gap-12">
         <div className="flex-1 max-w-2xl">
           <StatusBadge text="Available for work" />
-          <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-sunset-bright dark:text-[#F88F22] mb-4 leading-none">
+          <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-sunset-peach dark:text-[#F88F22] mb-4 leading-none">
             John Phillip Lor Malbas
           </h1>
 
-          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-700 dark:text-neutral-300 mb-6">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-sunset-peach dark:text-sunset-bright mb-6">
             Software Developer
           </h2>
 
-          <p className="text-neutral-600 dark:text-neutral-300 text-base sm:text-md leading-relaxed max-w-xl mb-8">
+          <p className="text-sunset-peach dark:text-sunset-bright text-base sm:text-md leading-relaxed max-w-xl mb-8">
             Software developer focused on backend systems, data pipelines, and low-level tools. 
             I build things with Django, Python, C#, and React.
           </p>
@@ -180,7 +180,7 @@ export const HeroSection = () => {
               className="absolute -inset-1 sm:-inset-2 rounded-3xl bg-gradient-to-tr from-sunset-deep via-sunset-bright to-sunset-amber opacity-30 dark:opacity-40 blur-2xl transition duration-500 group-hover:opacity-60 dark:group-hover:opacity-70 group-hover:blur-3xl"
             />
 
-            <div className="relative w-full h-full rounded-2xl bg-white/30 dark:bg-neutral-900/40 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-xl dark:shadow-2xl overflow-hidden">
+            <div className="relative w-full h-full rounded-2xl bg-white/30 dark:bg-neutral-900/40 backdrop-blur-xl border sunset-peach dark:border-sunset-deep shadow-xl dark:shadow-2xl overflow-hidden">
               <img
                 src={myPfp}
                 alt="John Phillip Lor Malbas"

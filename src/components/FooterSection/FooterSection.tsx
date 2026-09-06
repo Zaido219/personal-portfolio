@@ -30,28 +30,37 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-transparent text-neutral-900 dark:text-neutral-100 border-t border-white/20 dark:border-white/10 transition-colors duration-300">
+    <footer className="w-full bg-transparent text-neutral-900 dark:text-neutral-100 border-t border-neutral-200/80 dark:border-white/10 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
         
         {/* --- Upper Tier: Call-To-Action Glass Banner --- */}
         <div className="relative overflow-hidden rounded-3xl p-8 sm:p-12 md:p-16 mb-16 transition-colors duration-300
-                        bg-white/30 dark:bg-neutral-900/40 
+                        bg-gradient-to-br from-white/90 via-[var(--color-sunset-peach)]/30 to-white/70 
+                        dark:from-neutral-900/60 dark:via-neutral-900/40 dark:to-neutral-950/80
                         backdrop-blur-xl backdrop-saturate-150
-                        border border-white/40 dark:border-white/10 
-                        shadow-xl dark:shadow-2xl">
+                        border border-[var(--color-sunset-amber)]/40 dark:border-white/10 
+                        shadow-[0_10px_30px_rgba(234,97,19,0.08)] dark:shadow-2xl">
           
-          {/* Ambient Sunset Glow Spot */}
-          <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-sunset-bright/15 dark:bg-sunset-bright/10 rounded-full blur-3xl pointer-events-none" />
+          {/* Enhanced Ambient Sunset Glow Spots */}
+          <div className="absolute -right-16 -bottom-16 w-96 h-96 
+                          bg-gradient-to-tl from-[var(--color-sunset-deep)] via-[var(--color-sunset-bright)] to-[var(--color-sunset-amber)] 
+                          opacity-35 dark:opacity-20 
+                          rounded-full blur-3xl pointer-events-none" />
+
+          <div className="absolute -left-20 -top-20 w-72 h-72 
+                          bg-[var(--color-sunset-peach)] 
+                          opacity-50 dark:opacity-0 
+                          rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div className="max-w-2xl">
-              <span className="text-xs font-semibold uppercase tracking-wider text-sunset-bright">
+              <span className="text-xs font-bold uppercase tracking-widest text-[var(--color-sunset-dusk)] dark:text-[var(--color-sunset-bright)]">
                 Let's Build Together
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-100 mt-2">
                 LET'S MAKE IT HAPPEN
               </h2>
-              <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base mt-3">
+              <p className="text-sunset-peach dark:text-neutral-400 text-sm sm:text-base mt-3">
                 Let me help you build software solutions that will last a lifetime. Whether you have a project in mind or an open role, my inbox is always open.
               </p>
             </div>
@@ -59,10 +68,11 @@ export const Footer: React.FC = () => {
             {/* Email CTA Glass Button */}
             <a
               href="mailto:contact@jplm.dev"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-sm text-neutral-950 
-                         bg-sunset-bright hover:bg-sunset-amber 
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-sm text-white dark:text-neutral-950 
+                         bg-gradient-to-r from-[var(--color-sunset-deep)] via-[var(--color-sunset-bright)] to-[var(--color-sunset-amber)] 
+                         hover:contrast-125
                          transition-all duration-200 
-                         shadow-[0_0_20px_rgba(248,143,34,0.3)] hover:shadow-[0_0_25px_rgba(248,143,34,0.5)] 
+                         shadow-[0_4px_20px_rgba(234,97,19,0.35)] hover:shadow-[0_6px_28px_rgba(234,97,19,0.5)] 
                          hover:scale-[1.02] active:scale-[0.98] shrink-0"
             >
               Email Me
@@ -71,15 +81,15 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* --- Middle Tier: Links & Brand Overview --- */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/20 dark:border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-neutral-200/80 dark:border-white/10">
           
           {/* Brand Column (5 cols) */}
           <div className="md:col-span-5 flex flex-col justify-between">
             <div>
               <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">
-                JPLM<span className="text-sunset-bright">.DEV</span>
+                JPLM<span className="text-[var(--color-sunset-deep)] dark:text-[var(--color-sunset-bright)]">.DEV</span>
               </h3>
-              <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-2 max-w-sm leading-relaxed">
+              <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-2 max-w-sm leading-relaxed">
                 John Phillip Lor Malbas — Software Engineer focused on high-level architecture, robust backend logic, and crafting human-centric web applications.
               </p>
             </div>
@@ -87,7 +97,7 @@ export const Footer: React.FC = () => {
 
           {/* Quick Links (3 cols) */}
           <div className="md:col-span-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 dark:text-neutral-500 mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-4">
               Navigation
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -95,7 +105,7 @@ export const Footer: React.FC = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-neutral-600 dark:text-neutral-400 hover:text-sunset-bright dark:hover:text-sunset-bright transition-colors"
+                    className="text-neutral-600 dark:text-neutral-400 hover:text-[var(--color-sunset-dusk)] dark:hover:text-[var(--color-sunset-bright)] transition-colors"
                   >
                     {link.label}
                   </a>
@@ -106,7 +116,7 @@ export const Footer: React.FC = () => {
 
           {/* Resources & External Links (4 cols) */}
           <div className="md:col-span-4">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 dark:text-neutral-500 mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-4">
               Resources & Highlights
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -116,7 +126,7 @@ export const Footer: React.FC = () => {
                     href={link.href}
                     target={link.isExternal ? "_blank" : "_self"}
                     rel={link.isExternal ? "noopener noreferrer" : undefined}
-                    className="inline-flex items-center gap-1.5 text-neutral-600 dark:text-neutral-400 hover:text-sunset-bright dark:hover:text-sunset-bright transition-colors"
+                    className="inline-flex items-center gap-1.5 text-neutral-600 dark:text-neutral-400 hover:text-[var(--color-sunset-dusk)] dark:hover:text-[var(--color-sunset-bright)] transition-colors"
                   >
                     {link.label}
                     {link.isExternal && (
@@ -139,7 +149,7 @@ export const Footer: React.FC = () => {
               href="https://github.com"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-sunset-bright transition-colors"
+              className="hover:text-[var(--color-sunset-dusk)] dark:hover:text-[var(--color-sunset-bright)] transition-colors"
               aria-label="GitHub"
             >
               GitHub
@@ -148,14 +158,14 @@ export const Footer: React.FC = () => {
               href="https://linkedin.com"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-sunset-bright transition-colors"
+              className="hover:text-[var(--color-sunset-dusk)] dark:hover:text-[var(--color-sunset-bright)] transition-colors"
               aria-label="LinkedIn"
             >
               LinkedIn
             </a>
             <a
               href="mailto:contact@jplm.dev"
-              className="hover:text-sunset-bright transition-colors"
+              className="hover:text-[var(--color-sunset-dusk)] dark:hover:text-[var(--color-sunset-bright)] transition-colors"
               aria-label="Email"
             >
               Contact

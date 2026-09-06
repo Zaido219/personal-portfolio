@@ -26,7 +26,7 @@ export const DeckControls: React.FC<DeckControlsProps> = ({
           className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
             idx === activeIndex
               ? "w-6 bg-sunset-bright shadow-[0_0_12px_rgba(248,143,34,0.5)]"
-              : "w-2 bg-neutral-900/20 hover:bg-neutral-900/40 dark:bg-white/20 dark:hover:bg-white/40"
+              : "w-2 bg-sunset-amber hover:bg-neutral-900/40 dark:bg-white/20 dark:hover:bg-white/40"
           }`}
           aria-label={`Go to project ${idx + 1}`}
         />
@@ -38,11 +38,11 @@ export const DeckControls: React.FC<DeckControlsProps> = ({
       <button
         onClick={onPrev}
         className="p-2.5 rounded-full transition-all duration-200 cursor-pointer
-                   bg-white/30 hover:bg-white/50 dark:bg-neutral-900/30 dark:hover:bg-neutral-900/60
+                   bg-transparent  dark:bg-neutral-900/30 dark:hover:bg-neutral-900/60
                    backdrop-blur-md backdrop-saturate-150
                    border border-white/40 dark:border-white/10
                    hover:border-sunset-deep dark:hover:border-sunset-deep
-                   text-neutral-700 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-white"
+                   text-neutral-700 hover:text-sunset-deep dark:text-neutral-300 dark:hover:text-white"
         aria-label="Previous Project"
       >
         &larr;
@@ -50,11 +50,11 @@ export const DeckControls: React.FC<DeckControlsProps> = ({
       <button
         onClick={onNext}
         className="p-2.5 rounded-full transition-all duration-200 cursor-pointer
-                   bg-white/30 hover:bg-white/50 dark:bg-neutral-900/30 dark:hover:bg-neutral-900/60
+                   bg-transparent  dark:bg-neutral-900/30 dark:hover:bg-neutral-900/60
                    backdrop-blur-md backdrop-saturate-150
                    border border-white/40 dark:border-white/10
                    hover:border-sunset-deep dark:hover:border-sunset-deep
-                   text-neutral-700 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-white"
+                   text-neutral-700 hover:text-sunset-deep dark:text-neutral-300 dark:hover:text-white"
         aria-label="Next Project"
       >
         &rarr;

@@ -6,10 +6,10 @@ import { type WorkExperienceItemProps } from "../../interface/types";
 // SRP: Section Header Typography
 const ExperienceHeader: React.FC = () => (
   <div className="mb-10 max-w-2xl">
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white mb-3">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-sunset-bright dark:text-white mb-3">
       My <span className="text-sunset-bright">Experience</span>
     </h2>
-    <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base">
+    <p className="text-sunset-amber dark:text-neutral-400 text-sm sm:text-base">
       A lifetime of perseverance, grit, learning and self discovery
     </p>
   </div>
@@ -47,7 +47,7 @@ const ExperienceItemCard: React.FC<{ item: WorkExperienceItemProps }> = ({
 
       {/* Node Content Container */}
       <div className="flex flex-col gap-1.5 p-4 rounded-xl transition-all duration-200
-                      bg-white/20 hover:bg-white/40 dark:bg-neutral-900/20 dark:hover:bg-neutral-900/40
+                      bg-transparent dark:bg-neutral-900/20 dark:hover:bg-neutral-900/40
                       backdrop-blur-md
                       border border-white/30 dark:border-white/5 hover:border-sunset-deep/40 dark:hover:border-sunset-bright/30">
         {/* Timeline / Period Badge */}
@@ -56,12 +56,12 @@ const ExperienceItemCard: React.FC<{ item: WorkExperienceItemProps }> = ({
         </span>
 
         {/* Role Title */}
-        <h3 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white group-hover:text-sunset-bright transition-colors duration-200">
+        <h3 className="text-lg sm:text-xl font-bold text-sunset-peach dark:text-white group-hover:text-sunset-bright transition-colors duration-200">
           {item.title}
         </h3>
 
         {/* Company Name */}
-        <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
+        <p className="text-sm font-medium text-sunset-peach dark:text-neutral-400">
           {item.company}
         </p>
       </div>
@@ -93,7 +93,7 @@ export const ExperienceSection: React.FC = () => {
     >
       {/* Outer Card Shell */}
       <div className="rounded-3xl p-6 sm:p-10 md:p-12 transition-colors duration-300
-                      bg-white/30 dark:bg-neutral-900/40 
+                      bg-transparent dark:bg-neutral-900/40 
                       backdrop-blur-xl backdrop-saturate-150
                       border border-white/40 dark:border-white/10 
                       shadow-xl dark:shadow-2xl">
