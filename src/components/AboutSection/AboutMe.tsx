@@ -80,17 +80,17 @@ export const AboutSection: React.FC = () => {
                   }`}
                 >
                   <div>
-                    <h3 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+                    <h3 className="text-2xl font-bold text-sunset-dusk dark:text-neutral-100 mb-4">
                       {block.title}
                     </h3>
-                    <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-sm sm:text-base">
+                    <p className="text-sunset-amber dark:text-neutral-400 leading-relaxed text-sm sm:text-base">
                       {block.content}
                     </p>
                   </div>
 
                   {block.highlight && (
                     <div className="mt-6 pt-4 border-t border-white/20 dark:border-white/10">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-sunset-bright">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-sunset-amber">
                         {block.highlight}
                       </span>
                     </div>
