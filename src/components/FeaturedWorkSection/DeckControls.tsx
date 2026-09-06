@@ -26,7 +26,7 @@ export const DeckControls: React.FC<DeckControlsProps> = ({
           className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
             idx === activeIndex
               ? "w-6 bg-sunset-bright shadow-[0_0_12px_rgba(248,143,34,0.5)]"
-              : "w-2 bg-neutral-900/20 hover:bg-neutral-900/40 dark:bg-white/20 dark:hover:bg-white/40"
+              : "w-2 bg-sunset-amber hover:bg-neutral-900/40 dark:bg-white/20 dark:hover:bg-white/40"
           }`}
           aria-label={`Go to project ${idx + 1}`}
         />
