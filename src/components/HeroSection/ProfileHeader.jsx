@@ -121,7 +121,7 @@ export const Header = () => {
 };
 
 const StatusBadge = ({ text }) => (
-  <div className="inline-flex items-center gap-x-2 px-3 py-1.5 rounded-full bg-white/40 dark:bg-neutral-900/40 backdrop-blur-md border border-neutral-300 dark:border-sunset-deep/60 text-neutral-800 dark:text-sunset-bright text-xs font-medium mb-6 transition-colors duration-200">
+  <div className="inline-flex items-center gap-x-2 px-3 py-1.5 rounded-full dark:bg-neutral-900/40 backdrop-blur-md border border-sunset-amber dark:border-sunset-deep/60 text-sunset-amber dark:text-sunset-bright text-xs font-medium mb-6 transition-colors duration-200">
     <span className="relative flex h-2 w-2">
       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
       <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
