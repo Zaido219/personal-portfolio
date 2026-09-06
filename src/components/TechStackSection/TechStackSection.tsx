@@ -59,7 +59,7 @@ const StackSection: React.FC = () => {
           return (
             <div
               key={category}
-              className="relative isolate rounded-2xl bg-transparent dark:bg-neutral-900/40 backdrop-blur-md border border-neutral-200/80 dark:border-neutral-800 p-5 flex flex-col gap-y-4 shadow-sm dark:shadow-none overflow-hidden transition-all duration-300 hover:border-[var(--color-sunset-amber)]/40 dark:hover:border-neutral-700"
+              className="relative isolate rounded-2xl bg-transparent dark:bg-neutral-900/40 backdrop-blur-md border border-sunset-bright dark:border-neutral-800 p-5 flex flex-col gap-y-4 shadow-sm dark:shadow-none overflow-hidden transition-all duration-300 hover:border-[var(--color-sunset-amber)]/40 dark:hover:border-neutral-700"
               onMouseLeave={() => handleColorChange(category, null)}
             >
               {/* Dynamic Single Ambient Spotlight */}
@@ -73,7 +73,7 @@ const StackSection: React.FC = () => {
               />
 
               {/* Category Subheader */}
-              <div className="flex items-center gap-2 border-b border-neutral-200/60 dark:border-neutral-800/60 pb-2 relative z-10">
+              <div className="flex items-center gap-2 border-b border-sunset-bright dark:border-neutral-800/60 pb-2 relative z-10">
                 <span className="h-2 w-2 rounded-full bg-[var(--color-sunset-deep)] dark:bg-[var(--color-sunset-bright)]" />
                 <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-[var(--color-sunset-dusk)] dark:text-[var(--color-sunset-peach)]">
                   {CATEGORY_LABELS[category] ?? category}
