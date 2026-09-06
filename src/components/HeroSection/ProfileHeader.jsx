@@ -18,7 +18,7 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
         <a
           href={item.href}
           onClick={onItemClick}
-          className="block text-xs md:text-2xs font-semibold uppercase tracking-widest text-neutral-700 hover:text-neutral-950 dark:text-sunset-dusk dark:hover:text-white transition-colors duration-200"
+          className="block text-xs md:text-2xs font-semibold uppercase tracking-widest text-sunset-peach hover:text-neutral-950 dark:text-sunset-dusk dark:hover:text-white transition-colors duration-200"
         >
           {item.label}
         </a>
