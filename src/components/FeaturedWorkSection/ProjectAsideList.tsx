@@ -10,22 +10,22 @@ interface ProjectAsideItemProps {
  */
 export const ProjectAsideItem: React.FC<ProjectAsideItemProps> = ({ project }) => (
   <div className="group p-4 rounded-xl transition-all duration-200
-                  bg-white/40 hover:bg-white/60 dark:bg-neutral-900/30 dark:hover:bg-neutral-900/60
+                  bg-transparent dark:bg-neutral-900/30 dark:hover:bg-neutral-900/60
                   backdrop-blur-md
                   border border-white/50 dark:border-white/10 hover:border-sunset-deep/50 dark:hover:border-sunset-bright/40
                   shadow-sm hover:shadow-md">
     <div className="flex items-center justify-between gap-x-2 mb-1.5">
-      <h4 className="text-sm font-semibold text-neutral-800 dark:text-neutral-200 group-hover:text-sunset-bright transition-colors">
+      <h4 className="text-sm font-semibold text-sunset-amber dark:text-neutral-200 group-hover:text-sunset-bright transition-colors">
         {project.projectName}
       </h4>
       <span className="text-[10px] font-mono px-2 py-0.5 rounded-full 
-                       bg-white/60 text-neutral-800 dark:bg-neutral-950/60 dark:text-sunset-peach 
+                       text-sunset-bright dark:bg-neutral-950/60 dark:text-sunset-peach 
                        border border-neutral-300/60 dark:border-sunset-dusk/30 backdrop-blur-xs">
         {project.projectStatus}
       </span>
     </div>
     
-    <p className="text-xs text-neutral-600 dark:text-neutral-400 line-clamp-2 mb-3 leading-relaxed">
+    <p className="text-xs text-sunset-amber dark:text-neutral-400 line-clamp-2 mb-3 leading-relaxed">
       {project.projectDescription}
     </p>
 
