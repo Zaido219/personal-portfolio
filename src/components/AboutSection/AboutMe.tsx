@@ -50,13 +50,13 @@ export const AboutSection: React.FC = () => {
 
       {/* Editorial Bento Glass Container */}
       <div className="w-full rounded-2xl transition-colors duration-300 overflow-hidden
-                      bg-white/30 dark:bg-neutral-900/40 
+                      bg-transparent dark:bg-neutral-900/40 
                       backdrop-blur-xl backdrop-saturate-150
                       border border-white/40 dark:border-white/10 
                       shadow-xl dark:shadow-2xl">
         
         {/* Intro Quote Banner */}
-        <div className="p-8 sm:p-12 border-b border-white/30 dark:border-white/10 bg-white/20 dark:bg-neutral-950/20 backdrop-blur-md">
+        <div className="p-8 sm:p-12 border-b border-white/30 dark:border-white/10 bg-transparent dark:bg-neutral-950/20 backdrop-blur-md">
           <p className="text-xl sm:text-2xl md:text-3xl font-light leading-relaxed text-neutral-800 dark:text-neutral-200 max-w-4xl">
             "Along with foundational technical knowledge, I bring a level of maturity and a work ethic forged through years of real-world labor."
           </p>
