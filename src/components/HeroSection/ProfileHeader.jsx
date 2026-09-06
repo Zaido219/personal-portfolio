@@ -142,7 +142,7 @@ const HeroCTA = () => (
     </a>
     <a
       href="mailto:contact@jplm.dev"
-      className="px-6 py-3 rounded-full border border-neutral-300/80 hover:bg-neutral-100/50 text-neutral-800 dark:border-sunset-amber/80 dark:text-[#FFE3B3] dark:hover:bg-neutral-900/50 dark:hover:text-white font-medium text-sm md:text-xs backdrop-blur-md transition-colors duration-200"
+      className="px-6 py-3 rounded-full border border-neutral-300/80 hover:bg-neutral-100/50 text-sunset-peach dark:border-sunset-amber/80 dark:text-sunset-bright dark:hover:bg-neutral-900/50 dark:hover:text-white font-medium text-sm md:text-xs backdrop-blur-md transition-colors duration-200"
     >
       Email Me
     </a>
