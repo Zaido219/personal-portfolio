@@ -43,7 +43,7 @@ export const AboutSection: React.FC = () => {
         <h2 className="text-3xl md:text-5xl sm:text-4xl font-extrabold tracking-tight mb-3 text-neutral-900 dark:text-white">
           <span className="text-sunset-bright">About Me</span>
         </h2>
-        <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base">
+        <p className="text-sunset-peach dark:text-neutral-400 text-sm sm:text-base">
           Hi, I'm John Phillip Lor Malbas (or just Lor). Here is the story behind my journey into software engineering.
         </p>
       </div>
@@ -57,7 +57,7 @@ export const AboutSection: React.FC = () => {
         
         {/* Intro Quote Banner */}
         <div className="p-8 sm:p-12 border-b border-white/30 dark:border-white/10 bg-transparent dark:bg-neutral-950/20 backdrop-blur-md">
-          <p className="text-xl sm:text-2xl md:text-3xl font-light leading-relaxed text-neutral-800 dark:text-neutral-200 max-w-4xl">
+          <p className="text-xl sm:text-2xl md:text-3xl font-light leading-relaxed text-sunset-peach dark:text-neutral-200 max-w-4xl">
             "Along with foundational technical knowledge, I bring a level of maturity and a work ethic forged through years of real-world labor."
           </p>
         </div>
