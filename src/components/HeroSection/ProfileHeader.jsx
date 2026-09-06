@@ -63,7 +63,7 @@ const Brand = () => (
       <img src={myLogo} alt="John Phillip Lor Malbas" className="h-full w-full object-cover" />
     </div>
     <ReflectedGlow>
-      <span className="font-bold text-sm tracking-wider text-neutral-900 dark:text-sunset-peach">
+      <span className="font-bold text-sm tracking-wider text-sunset-peach dark:text-sunset-bright">
         JPLM.DEV
       </span>
     </ReflectedGlow>
