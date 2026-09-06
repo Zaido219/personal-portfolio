@@ -121,11 +121,11 @@ export const AboutSection: React.FC = () => {
         </div>
 
         {/* Closing Career Objective Block */}
-        <div className="p-8 sm:p-10 border-t border-white/30 dark:border-white/10 bg-white/20 dark:bg-neutral-950/30 backdrop-blur-md">
-          <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+        <div className="p-8 sm:p-10 border-t border-white/30 dark:border-white/10 bg-transparent dark:bg-neutral-950/30 backdrop-blur-md">
+          <h3 className="text-xl font-bold text-sunset-dusk dark:text-neutral-100 mb-2">
             Where I Am Today
           </h3>
-          <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base leading-relaxed max-w-3xl">
+          <p className="text-sunset-amber dark:text-neutral-400 text-sm sm:text-base leading-relaxed max-w-3xl">
             During my internship at the Gender and Development Office, I led the development of a data repository and 
             analytics platform. Having graduated in July 2026, 
             I am actively seeking a software engineering team where I can apply my development skills, 
