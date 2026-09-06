@@ -6,10 +6,10 @@ import { type WorkExperienceItemProps } from "../../interface/types";
 // SRP: Section Header Typography
 const ExperienceHeader: React.FC = () => (
   <div className="mb-10 max-w-2xl">
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white mb-3">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-sunset-bright dark:text-white mb-3">
       My <span className="text-sunset-bright">Experience</span>
     </h2>
-    <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base">
+    <p className="text-sunset-amber dark:text-neutral-400 text-sm sm:text-base">
       A lifetime of perseverance, grit, learning and self discovery
     </p>
   </div>
