@@ -180,7 +180,7 @@ export const HeroSection = () => {
               className="absolute -inset-1 sm:-inset-2 rounded-3xl bg-gradient-to-tr from-sunset-deep via-sunset-bright to-sunset-amber opacity-30 dark:opacity-40 blur-2xl transition duration-500 group-hover:opacity-60 dark:group-hover:opacity-70 group-hover:blur-3xl"
             />
 
-            <div className="relative w-full h-full rounded-2xl bg-white/30 dark:bg-neutral-900/40 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-xl dark:shadow-2xl overflow-hidden">
+            <div className="relative w-full h-full rounded-2xl bg-white/30 dark:bg-neutral-900/40 backdrop-blur-xl border sunset-peach dark:border-sunset-deep shadow-xl dark:shadow-2xl overflow-hidden">
               <img
                 src={myPfp}
                 alt="John Phillip Lor Malbas"
