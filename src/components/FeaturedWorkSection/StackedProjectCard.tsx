@@ -58,20 +58,20 @@ export const StackedProjectCard: React.FC<StackedProjectCardProps> = ({
     >
       <div>
         {/* Card Header & Visual Placeholder */}
-        <div className="w-full aspect-video rounded-xl bg-white/30 dark:bg-neutral-950/40 backdrop-blur-md border border-white/20 dark:border-white/10 flex items-center justify-center text-neutral-600 dark:text-neutral-400 font-mono text-xs mb-5">
+        <div className="w-full aspect-video rounded-xl bg-white/30 dark:bg-neutral-950/40 backdrop-blur-md border border-white/20 dark:border-white/10 flex items-center justify-center text-sunset-peach dark:text-sunset-bright font-mono text-xs mb-5">
           [ {project.projectName} Visual ]
         </div>
 
         <div className="flex items-center justify-between gap-x-2 mb-3">
-          <h3 className="text-xl font-bold text-neutral-900 dark:text-white">
+          <h3 className="text-xl font-bold text-sunset-amber dark:text-sunset-deep">
             {project.projectName}
           </h3>
-          <span className="px-2.5 py-0.5 text-xs font-mono rounded-full bg-white/50 text-neutral-800 border-neutral-300/60 dark:bg-neutral-950/60 dark:text-sunset-peach border dark:border-sunset-dusk/50 backdrop-blur-xs">
+          <span className="px-2.5 py-0.5 text-xs font-mono rounded-full text-sunset-peach border-neutral-300/60 dark:bg-neutral-950/60 dark:text-sunset-bright border dark:border-sunset-dusk/50 backdrop-blur-xs">
             {project.projectStatus}
           </span>
         </div>
 
-        <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed line-clamp-3">
+        <p className="text-sunset-peach dark:text-sunset-bright text-sm leading-relaxed line-clamp-3">
           {project.projectDescription}
         </p>
       </div>
