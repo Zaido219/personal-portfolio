@@ -48,9 +48,9 @@ export const StackedProjectCard: React.FC<StackedProjectCardProps> = ({
       transition={{ type: "spring", stiffness: 300, damping: 25 }}
       style={{ zIndex }}
       className={`absolute inset-0 w-full rounded-2xl p-6 shadow-xl dark:shadow-2xl flex flex-col justify-between select-none transition-colors duration-300
-                  bg-white/40 dark:bg-neutral-900/40 
+                  bg-transparent dark:bg-neutral-900/40 
                   backdrop-blur-xl backdrop-saturate-150
-                  border border-white/40 dark:border-white/10 ${
+                  border border-sunset-peach dark:border-white/10 ${
         isTop 
           ? "cursor-grab active:cursor-grabbing border-sunset-deep/60 dark:border-sunset-bright/50 shadow-sunset-deep/5" 
           : "pointer-events-none"
