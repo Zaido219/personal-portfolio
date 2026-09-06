@@ -156,15 +156,15 @@ export const HeroSection = () => {
       <main className="w-full max-w-7xl mx-auto px-6 py-12 md:py-24 flex-1 flex flex-col md:flex-row items-center justify-between gap-12">
         <div className="flex-1 max-w-2xl">
           <StatusBadge text="Available for work" />
-          <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-sunset-bright dark:text-[#F88F22] mb-4 leading-none">
+          <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-sunset-peach dark:text-[#F88F22] mb-4 leading-none">
             John Phillip Lor Malbas
           </h1>
 
-          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-700 dark:text-neutral-300 mb-6">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-sunset-peach dark:text-sunset-bright mb-6">
             Software Developer
           </h2>
 
-          <p className="text-neutral-600 dark:text-neutral-300 text-base sm:text-md leading-relaxed max-w-xl mb-8">
+          <p className="text-sunset-peach dark:text-sunset-bright text-base sm:text-md leading-relaxed max-w-xl mb-8">
             Software developer focused on backend systems, data pipelines, and low-level tools. 
             I build things with Django, Python, C#, and React.
           </p>
