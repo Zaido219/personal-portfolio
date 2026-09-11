@@ -28,7 +28,7 @@ export const FeaturedWorkSection: React.FC = () => {
     >
       {/* Section Title */}
       <div className="mb-12 max-w-2xl">
-        <h2 className="text-3xl md:text-5xl sm:text-4xl font-extrabold text-sunset-peach dark:text-sunset-bright tracking-tight mb-3">
+        <h2 className="text-3xl md:text-5xl sm:text-4xl font-extrabold text-neutral-900 dark:text-sunset-bright tracking-tight mb-3">
           Featured Work
         </h2>
       </div>

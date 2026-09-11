@@ -42,10 +42,10 @@ const StackSection: React.FC = () => {
     <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Section Header */}
       <div className="mb-8">
-        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-sunset-bright dark:text-white">
-          My <span className="text-[var(--color-sunset-bright)]">Tool Kit</span>
+        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white">
+          My <span className="text-sunset-deep dark:text-sunset-bright">Tool Kit</span>
         </h2>
-        <p className="text-sm text-sunset-amber dark:text-neutral-400 mt-2 font-mono">
+        <p className="text-sm text-zinc-600 dark:text-neutral-400 mt-2 font-mono font-medium">
           Technologies, frameworks, and environments I work with.
         </p>
       </div>
@@ -59,7 +59,11 @@ const StackSection: React.FC = () => {
           return (
             <div
               key={category}
-              className="relative isolate rounded-2xl bg-transparent dark:bg-neutral-900/40 backdrop-blur-md border border-sunset-bright dark:border-neutral-800 p-5 flex flex-col gap-y-4 shadow-sm dark:shadow-none overflow-hidden transition-all duration-300 hover:border-[var(--color-sunset-amber)]/40 dark:hover:border-neutral-700"
+              className="relative isolate rounded-2xl bg-white/70 dark:bg-neutral-900/40 
+                         backdrop-blur-2xl backdrop-saturate-150 
+                         border border-white/80 dark:border-white/10 p-5 flex flex-col gap-y-4 
+                         shadow-[0_8px_32px_0_rgba(0,0,0,0.06)] dark:shadow-2xl overflow-hidden 
+                         transition-all duration-300 hover:border-sunset-deep/30 dark:hover:border-neutral-700"
               onMouseLeave={() => handleColorChange(category, null)}
             >
               {/* Dynamic Single Ambient Spotlight */}
@@ -73,9 +77,9 @@ const StackSection: React.FC = () => {
               />
 
               {/* Category Subheader */}
-              <div className="flex items-center gap-2 border-b border-sunset-bright dark:border-neutral-800/60 pb-2 relative z-10">
-                <span className="h-2 w-2 rounded-full bg-[var(--color-sunset-deep)] dark:bg-[var(--color-sunset-bright)]" />
-                <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-[var(--color-sunset-dusk)] dark:text-[var(--color-sunset-peach)]">
+              <div className="flex items-center gap-2 border-b border-black/10 dark:border-neutral-800/60 pb-2 relative z-10">
+                <span className="h-2 w-2 rounded-full bg-sunset-deep dark:bg-sunset-bright" />
+                <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-sunset-dusk dark:text-sunset-peach">
                   {CATEGORY_LABELS[category] ?? category}
                 </h3>
               </div>
@@ -85,7 +89,10 @@ const StackSection: React.FC = () => {
                 {items.map((item) => (
                   <div
                     key={item.name}
-                    className="group relative flex items-center justify-center w-12 h-12 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200/90 dark:border-neutral-800 shadow-sm hover:scale-110 hover:border-[var(--color-sunset-deep)] dark:hover:border-[var(--color-sunset-bright)] transition-all duration-200 shrink-0 select-none cursor-pointer"
+                    className="group relative flex items-center justify-center w-12 h-12 rounded-xl 
+                               bg-white/80 dark:bg-neutral-900 border border-black/5 dark:border-neutral-800 
+                               shadow-xs hover:scale-110 hover:border-sunset-deep dark:hover:border-sunset-bright 
+                               transition-all duration-200 shrink-0 select-none cursor-pointer"
                     title={item.name}
                     onMouseEnter={() =>
                       handleColorChange(category, item.color ?? null)
