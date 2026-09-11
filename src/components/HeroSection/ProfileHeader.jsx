@@ -18,13 +18,12 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
         <a
           href={item.href}
           onClick={onItemClick}
-          className="block text-xs md:text-2xs font-semibold uppercase tracking-widest text-sunset-peach hover:text-neutral-950 dark:text-sunset-dusk dark:hover:text-white transition-colors duration-200"
+          className="block text-xs md:text-2xs font-semibold uppercase tracking-widest text-neutral-700 hover:text-neutral-950 dark:text-sunset-dusk dark:hover:text-white transition-colors duration-200"
         >
           {item.label}
         </a>
       </li>
     ))}
-    {/* !TODO temporarily disabled theme toggling*/}
     <li className={isVertical ? "pt-2" : ""}>
       <ReflectedGlow>
         <button
@@ -34,7 +33,7 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
             if (onItemClick) onItemClick();
           }}
           aria-label="Toggle theme mode"
-          className="bg-sunset-peach hover:bg-sunset-amber text-neutral-900 border-sunset-amber dark:bg-sunset-dusk/80 dark:text-sunset-peach dark:border-white/10 dark:hover:border-sunset-deep backdrop-blur-md inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest border px-4 py-2 rounded-full transition-all duration-200 cursor-pointer"
+          className="bg-white/80 hover:bg-white text-neutral-900 border-neutral-300 dark:bg-sunset-dusk/80 dark:text-sunset-peach dark:border-white/10 dark:hover:border-sunset-deep backdrop-blur-md inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest border px-4 py-2 rounded-full transition-all duration-200 cursor-pointer shadow-sm"
         >
           {isDark ? (
             <>
@@ -59,11 +58,11 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
 
 const Brand = () => (
   <a href="#" className="flex items-center gap-x-3 group">
-    <div className="h-9 w-9 rounded-full overflow-hidden flex-shrink-0 transition-transform group-hover:scale-105 border border-neutral-200 dark:border-white/10">
+    <div className="h-9 w-9 rounded-full overflow-hidden flex-shrink-0 transition-transform group-hover:scale-105 border border-neutral-300 dark:border-white/10">
       <img src={myLogo} alt="John Phillip Lor Malbas" className="h-full w-full object-cover" />
     </div>
     <ReflectedGlow>
-      <span className="font-bold text-sm tracking-wider text-sunset-peach dark:text-sunset-bright">
+      <span className="font-bold text-sm tracking-wider text-neutral-900 dark:text-sunset-bright">
         JPLM.DEV
       </span>
     </ReflectedGlow>
@@ -95,7 +94,7 @@ const MobileNavToggle = ({ isOpen, onToggle }) => (
 );
 
 const MobileNavDrawer = ({ items, onClose, isDark, onToggleTheme }) => (
-  <div className="fixed inset-x-0 top-[64px] bg-white/80 dark:bg-neutral-900/80 backdrop-blur-xl border-b border-neutral-200 dark:border-white/10 p-6 md:hidden shadow-lg z-40">
+  <div className="fixed inset-x-0 top-[64px] bg-white/90 dark:bg-neutral-900/80 backdrop-blur-xl border-b border-neutral-200 dark:border-white/10 p-6 md:hidden shadow-lg z-40">
     <nav aria-label="Mobile Navigation">
       <NavLinks items={items} onItemClick={onClose} isDark={isDark} onToggleTheme={onToggleTheme} isVertical />
     </nav>
@@ -107,7 +106,7 @@ export const Header = () => {
   const { isDark, toggleTheme } = useTheme();
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-transparent dark:bg-neutral-950/40 backdrop-blur-xl transition-all duration-300 ">
+    <header className="sticky top-0 z-50 w-full bg-white/70 dark:bg-neutral-950/40 backdrop-blur-xl border-b border-black/5 dark:border-white/10 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <Brand />
         <DesktopNavMenu items={NAV_ITEMS} isDark={isDark} onToggleTheme={toggleTheme} />
@@ -121,7 +120,7 @@ export const Header = () => {
 };
 
 const StatusBadge = ({ text }) => (
-  <div className="inline-flex items-center gap-x-2 px-3 py-1.5 rounded-full dark:bg-neutral-900/40 backdrop-blur-md border border-sunset-amber dark:border-sunset-deep/60 text-sunset-amber dark:text-sunset-bright text-xs font-medium mb-6 transition-colors duration-200">
+  <div className="inline-flex items-center gap-x-2 px-3 py-1.5 rounded-full bg-white/60 dark:bg-neutral-900/40 backdrop-blur-md border border-neutral-300/70 dark:border-sunset-deep/60 text-neutral-800 dark:text-sunset-bright text-xs font-medium mb-6 shadow-xs transition-colors duration-200">
     <span className="relative flex h-2 w-2">
       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
       <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -136,13 +135,13 @@ const HeroCTA = () => (
       href="/resume.pdf"
       target="_blank"
       rel="noopener noreferrer"
-      className="px-6 py-3 rounded-full bg-[#EA6113] text-white dark:text-sunset-peach font-medium text-sm md:text-xs transition-all duration-200 shadow-[0_0_20px_rgba(234,97,19,0.3)] hover:shadow-[0_0_28px_rgba(234,97,19,0.5)]"
+      className="px-6 py-3 rounded-full bg-[#EA6113] text-white font-medium text-sm md:text-xs transition-all duration-200 shadow-[0_0_20px_rgba(234,97,19,0.3)] hover:shadow-[0_0_28px_rgba(234,97,19,0.5)]"
     >
       My Resume
     </a>
     <a
       href="mailto:contact@jplm.dev"
-      className="px-6 py-3 rounded-full border border-neutral-300/80 hover:bg-neutral-100/50 text-sunset-peach dark:border-sunset-amber/80 dark:text-sunset-bright dark:hover:bg-neutral-900/50 dark:hover:text-white font-medium text-sm md:text-xs backdrop-blur-md transition-colors duration-200"
+      className="px-6 py-3 rounded-full border border-neutral-400/80 hover:bg-neutral-900 hover:text-white text-neutral-800 dark:border-sunset-amber/80 dark:text-sunset-bright dark:hover:bg-neutral-900/50 dark:hover:text-white font-medium text-sm md:text-xs backdrop-blur-md transition-colors duration-200"
     >
       Email Me
     </a>
@@ -151,20 +150,19 @@ const HeroCTA = () => (
 
 export const HeroSection = () => {
   return (
-    /* Removed solid bg-neutral-950/bg-neutral-50 background so ambient mesh passes through */
     <section className="min-h-screen bg-transparent text-neutral-900 dark:text-white flex flex-col justify-between selection:bg-sunset-bright/20 transition-colors duration-300">
       <main className="w-full max-w-7xl mx-auto px-6 py-12 md:py-24 flex-1 flex flex-col md:flex-row items-center justify-between gap-12">
         <div className="flex-1 max-w-2xl">
           <StatusBadge text="Available for work" />
-          <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-sunset-peach dark:text-[#F88F22] mb-4 leading-none">
+          <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-neutral-900 dark:text-[#F88F22] mb-4 leading-none">
             John Phillip Lor Malbas
           </h1>
 
-          <h2 className="text-2xl sm:text-3xl font-semibold text-sunset-peach dark:text-sunset-bright mb-6">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-700 dark:text-sunset-bright mb-6">
             Software Developer
           </h2>
 
-          <p className="text-sunset-peach dark:text-sunset-bright text-base sm:text-md leading-relaxed max-w-xl mb-8">
+          <p className="text-neutral-600 dark:text-sunset-bright text-base sm:text-md leading-relaxed max-w-xl mb-8">
             Software developer focused on backend systems, data pipelines, and low-level tools. 
             I build things with Django, Python, C#, and React.
           </p>
@@ -172,7 +170,6 @@ export const HeroSection = () => {
           <HeroCTA />
         </div>
 
-        {/* Profile Card Container with Glassmorphism */}
         <div className="flex-1 flex justify-center md:justify-end w-full">
           <div className="relative w-full max-w-md aspect-square group">
             <div
@@ -180,7 +177,7 @@ export const HeroSection = () => {
               className="absolute -inset-1 sm:-inset-2 rounded-3xl bg-gradient-to-tr from-sunset-deep via-sunset-bright to-sunset-amber opacity-30 dark:opacity-40 blur-2xl transition duration-500 group-hover:opacity-60 dark:group-hover:opacity-70 group-hover:blur-3xl"
             />
 
-            <div className="relative w-full h-full rounded-2xl bg-white/30 dark:bg-neutral-900/40 backdrop-blur-xl border sunset-peach dark:border-sunset-deep shadow-xl dark:shadow-2xl overflow-hidden">
+            <div className="relative w-full h-full rounded-2xl bg-white/70 dark:bg-neutral-900/40 backdrop-blur-xl border border-black/10 dark:border-sunset-deep shadow-xl dark:shadow-2xl overflow-hidden">
               <img
                 src={myPfp}
                 alt="John Phillip Lor Malbas"
