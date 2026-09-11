@@ -66,14 +66,28 @@ export const StackedProjectCard: React.FC<StackedProjectCardProps> = ({
           <h3 className="text-xl font-bold text-neutral-900 dark:text-sunset-deep">
             {project.projectName}
           </h3>
-          <span className="px-2.5 py-0.5 text-xs font-mono rounded-full bg-neutral-100/80 text-neutral-700 border border-neutral-300/80 dark:bg-neutral-950/60 dark:text-sunset-bright dark:border-sunset-dusk/50 backdrop-blur-xs">
+          <span className="px-2.5 py-0.5 text-xs font-mono rounded-full bg-neutral-100/80 text-neutral-700 border border-neutral-300/80 dark:bg-neutral-950/60 dark:text-sunset-bright dark:border-sunset-dusk/50 backdrop-blur-xs flex-shrink-0">
             {project.projectStatus}
           </span>
         </div>
 
-        <p className="text-neutral-600 dark:text-slate-300 text-sm leading-relaxed line-clamp-3">
+        <p className="text-neutral-600 dark:text-slate-300 text-sm leading-relaxed line-clamp-3 mb-4">
           {project.projectDescription}
         </p>
+
+        {/* Tech Stack Pills */}
+        {project.techStacks && project.techStacks.length > 0 && (
+          <div className="flex flex-wrap gap-1.5">
+            {project.techStacks.map((tech) => (
+              <span
+                key={tech}
+                className="px-2 py-0.5 text-[11px] font-mono rounded-md bg-neutral-200/60 dark:bg-neutral-950/50 border border-neutral-300/70 dark:border-white/10 text-neutral-800 dark:text-neutral-300 backdrop-blur-xs"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
 
       {project.projectLink && (
