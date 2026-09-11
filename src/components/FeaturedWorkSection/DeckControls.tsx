@@ -16,7 +16,7 @@ export const DeckControls: React.FC<DeckControlsProps> = ({
   onNext,
   onPrev,
 }) => (
-  <div className="flex items-center justify-between mt-8 pt-4 border-t border-white/20 dark:border-white/10 transition-colors duration-300">
+  <div className="flex items-center justify-between mt-8 pt-4 border-t border-black/10 dark:border-white/10 transition-colors duration-300">
     {/* Dot Indicators */}
     <div className="flex items-center gap-x-2">
       {Array.from({ length: total }).map((_, idx) => (
@@ -25,8 +25,8 @@ export const DeckControls: React.FC<DeckControlsProps> = ({
           onClick={() => onSelect(idx)}
           className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
             idx === activeIndex
-              ? "w-6 bg-sunset-bright shadow-[0_0_12px_rgba(248,143,34,0.5)]"
-              : "w-2 bg-sunset-amber hover:bg-neutral-900/40 dark:bg-white/20 dark:hover:bg-white/40"
+              ? "w-6 bg-sunset-deep dark:bg-sunset-bright shadow-[0_0_12px_rgba(234,97,19,0.4)]"
+              : "w-2 bg-neutral-300 hover:bg-neutral-400 dark:bg-white/20 dark:hover:bg-white/40"
           }`}
           aria-label={`Go to project ${idx + 1}`}
         />
@@ -38,11 +38,11 @@ export const DeckControls: React.FC<DeckControlsProps> = ({
       <button
         onClick={onPrev}
         className="p-2.5 rounded-full transition-all duration-200 cursor-pointer
-                   bg-transparent  dark:bg-neutral-900/30 dark:hover:bg-neutral-900/60
+                   bg-white/60 hover:bg-white/90 dark:bg-neutral-900/30 dark:hover:bg-neutral-900/60
                    backdrop-blur-md backdrop-saturate-150
-                   border border-white/40 dark:border-white/10
-                   hover:border-sunset-deep dark:hover:border-sunset-deep
-                   text-neutral-700 hover:text-sunset-deep dark:text-neutral-300 dark:hover:text-white"
+                   border border-black/10 hover:border-sunset-deep dark:border-white/10 dark:hover:border-sunset-deep
+                   text-neutral-700 hover:text-sunset-deep dark:text-neutral-300 dark:hover:text-white
+                   shadow-xs hover:shadow-md"
         aria-label="Previous Project"
       >
         &larr;
@@ -50,11 +50,11 @@ export const DeckControls: React.FC<DeckControlsProps> = ({
       <button
         onClick={onNext}
         className="p-2.5 rounded-full transition-all duration-200 cursor-pointer
-                   bg-transparent  dark:bg-neutral-900/30 dark:hover:bg-neutral-900/60
+                   bg-white/60 hover:bg-white/90 dark:bg-neutral-900/30 dark:hover:bg-neutral-900/60
                    backdrop-blur-md backdrop-saturate-150
-                   border border-white/40 dark:border-white/10
-                   hover:border-sunset-deep dark:hover:border-sunset-deep
-                   text-neutral-700 hover:text-sunset-deep dark:text-neutral-300 dark:hover:text-white"
+                   border border-black/10 hover:border-sunset-deep dark:border-white/10 dark:hover:border-sunset-deep
+                   text-neutral-700 hover:text-sunset-deep dark:text-neutral-300 dark:hover:text-white
+                   shadow-xs hover:shadow-md"
         aria-label="Next Project"
       >
         &rarr;
