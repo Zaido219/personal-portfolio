@@ -3,6 +3,7 @@ import { ReflectedGlow } from "./../Shared/Glow";
 import { useTheme } from "../../hooks/useTheme";
 import myPfp from "../../../public/images/my_pfp_new.jpg";
 import myLogo from "../../../public/myLogo.png";
+import myResume from "../../../public/files/JOHN PHILLIP MALBAS - RESUME.pdf"
 
 export const NAV_ITEMS = [
   { label: "Work", href: "#work" },
@@ -132,7 +133,7 @@ const StatusBadge = ({ text }) => (
 const HeroCTA = () => (
   <div className="flex items-center gap-x-4 pt-2">
     <a
-      href="/resume.pdf"
+      href={myResume}
       target="_blank"
       rel="noopener noreferrer"
       className="px-6 py-3 rounded-full bg-[#EA6113] text-white font-medium text-sm md:text-xs transition-all duration-200 shadow-[0_0_20px_rgba(234,97,19,0.3)] hover:shadow-[0_0_28px_rgba(234,97,19,0.5)]"
