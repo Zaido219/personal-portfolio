@@ -10,7 +10,8 @@ import {BackgroundMesh} from "./components/Shared/BackgroundMesh";
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-neutral-950 text-neutral-100 overflow-x-hidden selection:bg-sunset-bright/20">
+    /* Changed overflow-x-hidden to overflow-x-clip */
+    <div className="relative min-h-screen bg-neutral-950 text-neutral-100 overflow-x-clip selection:bg-sunset-bright/20">
       {/* Fixed Vector Ribbon Background Layer */}
       <BackgroundMesh />
 
