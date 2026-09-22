@@ -20,6 +20,13 @@
     to { transform: translateX(-100%); }
   }
 }
+
+
+body{
+  cursor: none;
+}
+
+
 /* for the scroll bar  */
 /* for the scroll bar  */
 .custom-scrollbar::-webkit-scrollbar {
