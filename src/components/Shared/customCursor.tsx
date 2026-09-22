@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function CustomCursor() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
-      setPosition({
-        x: event.clientX,
-        y: event.clientY,
-      });
+      if (!cursorRef.current) return;
+
+      cursorRef.current.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -20,6 +19,7 @@ export default function CustomCursor() {
 
   return (
     <div
+      ref={cursorRef}
       className="
         pointer-events-none
         fixed
@@ -29,9 +29,6 @@ export default function CustomCursor() {
         hidden
         md:block
       "
-      style={{
-        transform: `translate(${position.x}px, ${position.y}px)`,
-      }}
     >
       {/* Outer rotating dashed ring */}
       <svg
