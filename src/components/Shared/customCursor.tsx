@@ -2,12 +2,29 @@ import { useEffect, useRef } from "react";
 
 export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<HTMLDivElement>(null);
+  const crossRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       if (!cursorRef.current) return;
 
+      // Move cursor directly without React re-rendering
       cursorRef.current.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
+
+      // Find the element underneath the cursor
+      const target = event.target as HTMLElement;
+
+      const clickable =
+        target.closest("a, button, [role='button'], .cursor-pointer") !== null;
+
+      if (clickable) {
+        dotRef.current?.classList.add("opacity-0", "scale-50");
+        crossRef.current?.classList.remove("opacity-0", "scale-50");
+      } else {
+        dotRef.current?.classList.remove("opacity-0", "scale-50");
+        crossRef.current?.classList.add("opacity-0", "scale-50");
+      }
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -32,7 +49,14 @@ export default function CustomCursor() {
     >
       {/* Outer rotating dashed ring */}
       <svg
-        className="absolute -left-5 -top-5 h-10 w-10 animate-spin"
+        className="
+          absolute
+          -left-5
+          -top-5
+          h-10
+          w-10
+          animate-spin
+        "
         style={{
           animationDuration: "7s",
         }}
@@ -44,14 +68,15 @@ export default function CustomCursor() {
           r="18"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1"
-          strokeDasharray="3 4"
+          strokeWidth="2"
+          strokeDasharray="6 10"
           className="text-sunset-bright"
         />
       </svg>
 
-      {/* Inner solid circle */}
+      {/* Normal cursor dot */}
       <div
+        ref={dotRef}
         className="
           absolute
           -left-1
@@ -60,8 +85,54 @@ export default function CustomCursor() {
           w-2
           rounded-full
           bg-sunset-bright
+          transition-all
+          duration-150
         "
       />
+
+      {/* Clickable cursor cross */}
+      <div
+        ref={crossRef}
+        className="
+          absolute
+          -left-2
+          -top-2
+          h-4
+          w-4
+          opacity-0
+          scale-50
+          transition-all
+          duration-150
+        "
+      >
+        {/* Horizontal line */}
+        <div
+          className="
+            absolute
+            left-0
+            top-1/2
+            h-[2px]
+            w-full
+            -translate-y-1/2
+            rounded-full
+            bg-sunset-bright
+          "
+        />
+
+        {/* Vertical line */}
+        <div
+          className="
+            absolute
+            left-1/2
+            top-0
+            h-full
+            w-[2px]
+            -translate-x-1/2
+            rounded-full
+            bg-sunset-bright
+          "
+        />
+      </div>
     </div>
   );
 }
