@@ -62,6 +62,10 @@ html.dark body {
   color: #fafafa;            /* Crisp off-white text (Tailwind text-zinc-50) */
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 .dark-border {
   border-color: #27272a;     /* Subtle gray divider (Tailwind border-zinc-800) */
 }
