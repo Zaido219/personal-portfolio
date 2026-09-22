@@ -27,7 +27,9 @@ export const Projects : ProjectItemProps[] = [
         projectDescription:"A data analytics and trend forecasting platform for the gender and development office at BASC",
         projectLink:"https://www.gadinsight.com/",
         techStacks: ["Django", "TailwindCss", "Html", "JavaScript"],
-        images:[]
+        images:[
+            "/images/projects/fallback.jpg"
+        ]
     },
     {
         projectName:"Static Web Server",
@@ -35,7 +37,9 @@ export const Projects : ProjectItemProps[] = [
         projectDescription:"A lightweight, multi-threaded static file server built entirely from scratch in C# using raw TCP sockets. Instead of relying on high-level HTTP abstractions (like ASP.NET Core or HttpListener), this project implements the fundamental networking and protocol parsing layers manually to understand how web servers actually communicate with modern browsers under the hood.",
         projectLink: "https://github.com/Zaido219/static-html-server",
         techStacks: ["C#"],
-        images:[]
+        images:[
+            "/images/projects/fallback.jpg"
+        ]
     },
     {
         projectName:"Notepad",
@@ -43,7 +47,9 @@ export const Projects : ProjectItemProps[] = [
         projectDescription:"A notepad clone built with c#, and WPF that follows the MVVM architecture",
         projectLink:"https://github.com/Zaido219/Notepad.git",
         techStacks: ["C#"],
-        images:[]
+        images:[
+            "/images/projects/fallback.jpg"
+        ]
     },
     {
         projectName:"DigitalClockApp",
@@ -51,7 +57,9 @@ export const Projects : ProjectItemProps[] = [
         projectDescription:"A simple digital clock using winforms",
         projectLink:"https://github.com/Zaido219/DigitalClockApp.git",
         techStacks: ["C#"],
-        images:[]
+        images:[
+            "/images/projects/fallback.jpg"
+        ]
     },
     {
         projectName:"ATM Simulator",
@@ -59,7 +67,9 @@ export const Projects : ProjectItemProps[] = [
         projectDescription:"A console based atm simulator. i started this to learn command pattern, domain driven design and a refresher for OOP design.",
         projectLink:"https://github.com/Zaido219/atmSimulator.git",
         techStacks:["C#"],
-        images:[]
+        images:[
+            "/images/projects/fallback.jpg"
+        ]
     },
     {
         projectName:"GAD Office Website",
@@ -67,7 +77,9 @@ export const Projects : ProjectItemProps[] = [
         projectDescription:"This is an updated website for the gender and development office at the Bulacan Agricultural State University.",
         projectLink:"https://bascgad.gadinsight.com/",
         techStacks:["Typescript", "React.js", "TailwindCss"],
-        images:[]
+        images:[
+            "/images/projects/fallback.jpg"
+        ]
     },
     {
         projectName:"Photo Booth App",
@@ -75,7 +87,9 @@ export const Projects : ProjectItemProps[] = [
         projectDescription:"A simple web based photo booth app.",
         projectLink:"https://photobooth-app-three.vercel.app/",
         techStacks:["React.js", "TailwindCss"],
-        images:[]
+        images:[
+            "/images/projects/fallback.jpg"
+        ]
     },
     {
         projectName:"ASCII Video Player",
@@ -83,7 +97,9 @@ export const Projects : ProjectItemProps[] = [
         projectDescription:"A console based video player that plays videos in ascii",
         projectLink:"https://github.com/Zaido219/ascii-videoplayer.git",
         techStacks:["Python"],
-        images:[]
+        images:[
+            "/images/projects/fallback.jpg"
+        ]
     },
     {
         projectName:"Web based file sharing app",
@@ -91,6 +107,8 @@ export const Projects : ProjectItemProps[] = [
         projectDescription:"A simple web based file sharing app. This allows users to send files over Local Area Network without the need for a internet connection.",
         projectLink:"https://github.com/Zaido219/web-based-file-sharing-app.git",
         techStacks:[],
-        images:[]
+        images:[
+            "/images/projects/fallback.jpg"
+        ]
     },
 ]
