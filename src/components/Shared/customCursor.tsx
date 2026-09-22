@@ -60,7 +60,7 @@ export default function CustomCursor() {
           h-2
           w-2
           rounded-full
-          bg-white
+          bg-sunset-bright
         "
       />
     </div>
