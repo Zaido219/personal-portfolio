@@ -39,11 +39,10 @@ export default function CustomCursor() {
       {/* Liquid glass lens */}{" "}
       <div
         ref={glassRef}
-        className=" absolute -left-5 -top-5 h-10 w-10 rounded-full bg-white/5 border border-white/20 backdrop-blur-[3px] shadow-[inset_0_0_8px_rgba(255,255,255,0.12)] transition-transform duration-200 "
+        className=" absolute -left-5 -top-5 h-10 w-10 rounded-full  backdrop-blur-[1px] shadow-[inset_0_0_8px_rgba(255,255,255,0.12)] transition-transform duration-200 "
       >
         {" "}
         {/* Glass highlight */}{" "}
-        <div className=" absolute left-[4px] top-[3px] h-[5px] w-[5px] rounded-full bg-white/30 blur-[1px] " />{" "}
       </div>{" "}
       {/* Outer rotating dashed ring */}{" "}
       <svg
