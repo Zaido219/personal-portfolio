@@ -65,7 +65,7 @@ export const CertificatesSection: React.FC = () => {
             <div
               key={cert.id}
               onClick={() => setSelectedCert(cert)}
-              className="group cursor-pointer rounded-xl p-5 transition-all duration-200 
+              className="group custom-cursor-clickable rounded-xl p-5 transition-all duration-200 
                          bg-white/60 hover:bg-white/90 dark:bg-neutral-900/30 dark:hover:bg-neutral-900/60
                          backdrop-blur-md
                          border border-black/5 hover:border-sunset-deep/40 dark:border-white/10 dark:hover:border-sunset-bright/40

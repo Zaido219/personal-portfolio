@@ -9,14 +9,17 @@ export default function CustomCursor() {
     const handleMouseMove = (event: MouseEvent) => {
       if (!cursorRef.current) return;
 
-      // Move cursor directly without React re-rendering
       cursorRef.current.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
 
-      // Find the element underneath the cursor
-      const target = event.target as HTMLElement;
+      const target = document.elementFromPoint(
+        event.clientX,
+        event.clientY,
+      ) as HTMLElement | null;
 
       const clickable =
-        target.closest("a, button, [role='button'], .cursor-pointer") !== null;
+        target?.closest(
+          "a, button, [role='button'], .custom-cursor-clickable",
+        ) !== null;
 
       if (clickable) {
         dotRef.current?.classList.add("opacity-0", "scale-50");
