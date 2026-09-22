@@ -92,7 +92,7 @@ const StackSection: React.FC = () => {
                     className="group relative flex items-center justify-center w-12 h-12 rounded-xl 
                                bg-white/80 dark:bg-neutral-900 border border-black/5 dark:border-neutral-800 
                                shadow-xs hover:scale-110 hover:border-sunset-deep dark:hover:border-sunset-bright 
-                               transition-all duration-200 shrink-0 select-none cursor-pointer"
+                               transition-all duration-200 shrink-0 select-none cursor-none"
                     title={item.name}
                     onMouseEnter={() =>
                       handleColorChange(category, item.color ?? null)
