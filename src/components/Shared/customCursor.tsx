@@ -9,17 +9,20 @@ export default function CustomCursor() {
     const handleMouseMove = (event: MouseEvent) => {
       if (!cursorRef.current) return;
 
-      cursorRef.current.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
+      // Move the cursor directly without causing React re-renders
+      cursorRef.current.style.transform =
+        `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
 
+      // Find the actual element underneath the mouse
       const target = document.elementFromPoint(
         event.clientX,
-        event.clientY,
+        event.clientY
       ) as HTMLElement | null;
 
-      const clickable =
-        target?.closest(
-          "a, button, [role='button'], .custom-cursor-clickable",
-        ) !== null;
+      // Check whether that element is clickable
+      const clickable = !!target?.closest(
+        "a, button, [role='button'], [data-cursor='clickable']"
+      );
 
       if (clickable) {
         dotRef.current?.classList.add("opacity-0", "scale-50");
@@ -93,7 +96,7 @@ export default function CustomCursor() {
         "
       />
 
-      {/* Clickable cursor cross */}
+      {/* Clickable cursor crosshair */}
       <div
         ref={crossRef}
         className="
@@ -108,7 +111,7 @@ export default function CustomCursor() {
           duration-150
         "
       >
-        {/* Horizontal line */}
+        {/* Horizontal */}
         <div
           className="
             absolute
@@ -122,7 +125,7 @@ export default function CustomCursor() {
           "
         />
 
-        {/* Vertical line */}
+        {/* Vertical */}
         <div
           className="
             absolute
