@@ -111,4 +111,5 @@ export type ProjectItemProps = {
     projectDescription : string
     projectLink?:string;
     techStacks : string[];
+    images: string[] 
 }
