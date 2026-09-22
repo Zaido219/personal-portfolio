@@ -6,29 +6,34 @@ import StackSection from "./components/TechStackSection/TechStackSection";
 import CertificatesSection from "./components/CertificateSection/CertificateSection";
 import AboutSection from "./components/AboutSection/AboutMe";
 import Footer from "./components/FooterSection/FooterSection";
-import {BackgroundMesh} from "./components/Shared/BackgroundMesh";
+import { BackgroundMesh } from "./components/Shared/BackgroundMesh";
+import CustomCursor from "./components/Shared/customCursor";
 
 function App() {
   return (
-    /* Changed overflow-x-hidden to overflow-x-clip */
-    <div className="relative min-h-screen bg-neutral-950 text-neutral-100 overflow-x-clip selection:bg-sunset-bright/20">
-      {/* Fixed Vector Ribbon Background Layer */}
-      <BackgroundMesh />
+    <>
+      <CustomCursor />
 
-      {/* Main Content Layout Layer */}
-      <div className="relative z-10">
-        <Header />
-        <main>
-          <HeroSection />
-          <FeaturedWorkSection />
-          <ExperienceSection />
-          <StackSection />
-          <CertificatesSection />
-          <AboutSection />
-        </main>
-        <Footer />
+      <div className="relative min-h-screen bg-neutral-950 text-neutral-100 overflow-x-clip selection:bg-sunset-bright/20">
+        
+        <BackgroundMesh />
+
+        <div className="relative z-10">
+          <Header />
+
+          <main>
+            <HeroSection />
+            <FeaturedWorkSection />
+            <ExperienceSection />
+            <StackSection />
+            <CertificatesSection />
+            <AboutSection />
+          </main>
+
+          <Footer />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
