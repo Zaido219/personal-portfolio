@@ -23,7 +23,7 @@ export const DeckControls: React.FC<DeckControlsProps> = ({
         <button
           key={idx}
           onClick={() => onSelect(idx)}
-          className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+          className={`h-2 rounded-full transition-all duration-300 cursor-none ${
             idx === activeIndex
               ? "w-6 bg-sunset-deep dark:bg-sunset-bright shadow-[0_0_12px_rgba(234,97,19,0.4)]"
               : "w-2 bg-neutral-300 hover:bg-neutral-400 dark:bg-white/20 dark:hover:bg-white/40"
@@ -37,7 +37,7 @@ export const DeckControls: React.FC<DeckControlsProps> = ({
     <div className="flex items-center gap-x-2">
       <button
         onClick={onPrev}
-        className="p-2.5 rounded-full transition-all duration-200 cursor-pointer
+        className="p-2.5 rounded-full transition-all duration-200 cursor-none
                    bg-white/60 hover:bg-white/90 dark:bg-neutral-900/30 dark:hover:bg-neutral-900/60
                    backdrop-blur-md backdrop-saturate-150
                    border border-black/10 hover:border-sunset-deep dark:border-white/10 dark:hover:border-sunset-deep
@@ -49,7 +49,7 @@ export const DeckControls: React.FC<DeckControlsProps> = ({
       </button>
       <button
         onClick={onNext}
-        className="p-2.5 rounded-full transition-all duration-200 cursor-pointer
+        className="p-2.5 rounded-full transition-all duration-200 cursor-none
                    bg-white/60 hover:bg-white/90 dark:bg-neutral-900/30 dark:hover:bg-neutral-900/60
                    backdrop-blur-md backdrop-saturate-150
                    border border-black/10 hover:border-sunset-deep dark:border-white/10 dark:hover:border-sunset-deep
