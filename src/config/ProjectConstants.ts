@@ -2,6 +2,15 @@ import type { ProjectItemProps } from "../interface/types";
 // showcased projects 1/2
 export const Projects : ProjectItemProps[] = [
     {
+        projectName:"Facebook Content Automation",
+        projectStatus:"Done",
+        projectDescription:"An automation system for streamlining content creation and publishing on facebook platform",
+        projectLink:"https://github.com/Zaido219/fb-content-automation",
+        techStacks: ["Python","GraphAPI","Gemini Api","Streamlit", "JSON"],
+        images: [
+            "/images/projects/fb-content-automation/sample_img_output.png"        ]
+    },
+    {
         projectName:"RAG Pipeline",
         projectStatus:"Done",
         projectDescription:"A highly modular, domain-driven, and local Retrieval-Augmented Generation (RAG) pipeline designed for legal document analysis. This system allows you to ingest documents locally, perform legally enriched semantic search queries, and engage in continuous chat-based conversations using state-of-the-art Large Language Models (LLMs), with support for voice inputs (Speech-to-Text) and audio responses (Text-to-Speech).",
@@ -97,16 +106,6 @@ export const Projects : ProjectItemProps[] = [
         projectDescription:"A console based video player that plays videos in ascii",
         projectLink:"https://github.com/Zaido219/ascii-videoplayer.git",
         techStacks:["Python"],
-        images:[
-            "/images/projects/fallback.jpg"
-        ]
-    },
-    {
-        projectName:"Web based file sharing app",
-        projectStatus:"Abandoned",
-        projectDescription:"A simple web based file sharing app. This allows users to send files over Local Area Network without the need for a internet connection.",
-        projectLink:"https://github.com/Zaido219/web-based-file-sharing-app.git",
-        techStacks:[],
         images:[
             "/images/projects/fallback.jpg"
         ]

@@ -1,4 +1,5 @@
 import React from "react";
+import { SectionHeader } from "../Shared/SectionHeader";
 
 // --- Types & Data Configuration ---
 export interface StoryBlock {
@@ -13,20 +14,20 @@ export interface StoryBlock {
 export const AboutStory: StoryBlock[] = [
   {
     id: "roots",
-    title: "Craftsmanship & Hard Labor",
+    title: "Before college",
     content:
-      "My journey wasn't linear. Financial constraints after high school led me to work two years as a high-speed sewing machine operator, followed by years fabricating glass and aluminum fixtures alongside my father. That manual labor taught me the true meaning of discipline, patience, and raw craftsmanship.",
-    highlight: "Built on real-world labor and grit.",
-    imageSrc: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+      "After high school, financial struggles kept me from going straight to college. I worked as a high-speed sewing machine operator for two years, until the repetitive work left my heart tired and my mind wanting more. The pandemic was a tragic time for so many, but it also gave me the chance to finally leave that job. From there, I stepped into my father's line of work. He's a freelance aluminum and glass installer, and I'm proud to say so. Working alongside him, fabricating fixtures and windows, taught me what hard work and craftsmanship really mean. I could have stayed in that trade, but my heart kept aching for something different.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
     imageAlt: "Craftsmanship and manual labor placeholder",
   },
   {
     id: "discovery",
-    title: "Falling in Love with Code",
+    title: "Falling in love with programming",
     content:
-      "Enrolling in Information Technology at Bulacan Agricultural State College gave me a second chance at education. From writing my first lines of C++, I became obsessed with software development—building, breaking, and iterating through countless projects while balancing full-time work and study.",
-    highlight: "Graduated July 9, 2026 — BS in Information Technology.",
-    imageSrc: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+      "Unexpectedly, life gave me another chance to study. I enrolled at Bulacan Agricultural State College for a Bachelor of Science in Information Technology. Juggling work and college was incredibly tough, but it paid off. From the very first day we were taught C++, I knew I had fallen in love with programming. I met great people and learned things I would never have discovered on my own. I built and broke a lot of projects. Some days I felt like an absolute genius, and just as many days I felt like a monkey typing randomly on a keyboard.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
     imageAlt: "Software development workspace placeholder",
   },
 ];
@@ -39,26 +40,24 @@ export const AboutSection: React.FC = () => {
       className="w-full bg-transparent max-w-7xl mx-auto px-6 py-16 md:py-24 transition-colors duration-300"
     >
       {/* Section Header */}
-      <div className="mb-12 max-w-2xl">
-        <h2 className="text-3xl md:text-5xl sm:text-4xl font-extrabold tracking-tight mb-3 text-zinc-900 dark:text-white">
-          <span className="text-sunset-deep dark:text-sunset-bright">About Me</span>
-        </h2>
-        <p className="text-zinc-600 dark:text-neutral-400 text-sm sm:text-base font-medium">
-          Hi, I'm John Phillip Lor Malbas (or just Lor). Here is the story behind my journey into software engineering.
-        </p>
-      </div>
+      <SectionHeader
+        title="About Me"
+        description="  Hello there! My name is John Phillip Lor Malbas, but most of my friends simply call me Lor.
+          I've always been passionate about learning, and this is how I got here."
+      />
 
       {/* Editorial Bento Glass Container */}
-      <div className="w-full rounded-2xl transition-colors duration-300 overflow-hidden
+      <div
+        className="w-full rounded-2xl transition-colors duration-300 overflow-hidden
                       bg-white/70 dark:bg-neutral-900/40 
                       backdrop-blur-2xl backdrop-saturate-150
                       border border-white/80 dark:border-white/10 
-                      shadow-[0_8px_32px_0_rgba(0,0,0,0.06)] dark:shadow-2xl">
-        
+                      shadow-[0_8px_32px_0_rgba(0,0,0,0.06)] dark:shadow-2xl"
+      >
         {/* Intro Quote Banner */}
         <div className="p-8 sm:p-12 border-b border-black/10 dark:border-white/10 bg-white/40 dark:bg-neutral-950/20 backdrop-blur-md">
           <p className="text-xl sm:text-2xl md:text-3xl font-light leading-relaxed text-zinc-800 dark:text-neutral-200 max-w-4xl">
-            "Along with foundational technical knowledge, I bring a level of maturity and a work ethic forged through years of real-world labor."
+            "I prioritize growth and learning above all else."
           </p>
         </div>
 
@@ -90,7 +89,7 @@ export const AboutSection: React.FC = () => {
 
                   {block.highlight && (
                     <div className="mt-6 pt-4 border-t border-black/10 dark:border-white/10">
-                      <span className="text-xs font-bold uppercase tracking-wider text-sunset-dusk dark:text-sunset-peach">
+                      <span className="text-sm font-semibold text-sunset-dusk dark:text-sunset-peach">
                         {block.highlight}
                       </span>
                     </div>
@@ -120,19 +119,24 @@ export const AboutSection: React.FC = () => {
           })}
         </div>
 
-        {/* Closing Career Objective Block */}
+        {/* Closing Block */}
         <div className="p-8 sm:p-10 border-t border-black/10 dark:border-white/10 bg-white/40 dark:bg-neutral-950/30 backdrop-blur-md">
           <h3 className="text-xl font-bold text-zinc-900 dark:text-neutral-100 mb-2">
-            Where I Am Today
+            Where I am today
           </h3>
           <p className="text-zinc-600 dark:text-neutral-400 text-sm sm:text-base leading-relaxed max-w-3xl">
-            During my internship at the Gender and Development Office, I led the development of a data repository and 
-            analytics platform. Having graduated in July 2026, 
-            I am actively seeking a software engineering team where I can apply my development skills, 
-            continuously learn, and contribute to meaningful systems.
+            I spent my internship at the Gender and Development Office of my
+            school, where I led the development of a data repository and
+            analytics platform, improving and expanding the system's
+            functionality. Time really flies. I received my degree on July 9,
+            2026, a beautiful, bittersweet moment that marked four years of
+            massive personal growth. Today, I'm looking for a place where I can
+            put these skills to use. Along with my foundational technical
+            knowledge, I bring maturity and a work ethic built on years of
+            real-world labor, and I can't wait to find a team that shares that
+            vision.
           </p>
         </div>
-
       </div>
     </section>
   );

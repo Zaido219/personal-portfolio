@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { techStacks } from "../../config/TechStacks";
 import type { TechField, TechStackItemProps } from "../../interface/types";
+import { SectionHeader } from "../Shared/SectionHeader";
 
 const CATEGORY_LABELS: Record<TechField, string> = {
   languages: "Languages",
@@ -41,14 +42,10 @@ const StackSection: React.FC = () => {
   return (
     <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Section Header */}
-      <div className="mb-8">
-        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white">
-          My <span className="text-sunset-deep dark:text-sunset-bright">Tool Kit</span>
-        </h2>
-        <p className="text-sm text-zinc-600 dark:text-neutral-400 mt-2 font-mono font-medium">
-          Technologies, frameworks, and environments I work with.
-        </p>
-      </div>
+      <SectionHeader
+        title="My Tool Kit"
+        description="Technologies, frameworks, and environments I work with."
+      />
 
       {/* Multi-Column Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

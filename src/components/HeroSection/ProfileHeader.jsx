@@ -12,50 +12,120 @@ export const NAV_ITEMS = [
   { label: "About", href: "#about" },
 ];
 
-const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = false }) => (
-  <ul className={`flex ${isVertical ? "flex-col gap-y-4" : "flex-row items-center gap-x-6 md:gap-x-8"}`}>
-    {items.map((item) => (
-      <li key={item.label}>
-        <a
-          href={item.href}
-          onClick={onItemClick}
-          className="cursor-none block text-xs md:text-2xs font-semibold uppercase tracking-widest text-neutral-700 hover:text-neutral-950 dark:text-sunset-dusk dark:hover:text-white transition-colors duration-200"
-        >
-          {item.label}
-        </a>
-      </li>
-    ))}
-    <li className={isVertical ? "pt-2" : ""}>
-      <ReflectedGlow>
-        <button
-          type="button"
-          onClick={() => {
-            if (onToggleTheme) onToggleTheme();
-            if (onItemClick) onItemClick();
+const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = false }) => {
+  // Glass pill that glides to whichever link is hovered / focused (desktop only)
+  const [pill, setPill] = useState({ left: 0, top: 0, width: 0, height: 0, visible: false });
+  const [animate, setAnimate] = useState(false);
+
+  const movePill = (e) => {
+    if (isVertical) return;
+    const el = e.currentTarget;
+    // First appearance snaps into place; after that it glides
+    setAnimate(pill.visible);
+    setPill({
+      left: el.offsetLeft,
+      top: el.offsetTop,
+      width: el.offsetWidth,
+      height: el.offsetHeight,
+      visible: true,
+    });
+  };
+
+  const hidePill = () => setPill((p) => ({ ...p, visible: false }));
+
+  return (
+    <ul
+      onMouseLeave={hidePill}
+      onBlur={hidePill}
+      className={`relative flex ${isVertical ? "flex-col gap-y-4" : "flex-row items-center gap-x-1 md:gap-x-2"}`}
+    >
+      {!isVertical && (
+        <span
+          aria-hidden="true"
+          style={{
+            left: pill.left,
+            top: pill.top,
+            width: pill.width,
+            height: pill.height,
           }}
-          aria-label="Toggle theme mode"
-          className="bg-white/80 hover:bg-white text-neutral-900 border-neutral-300 dark:bg-sunset-dusk/80 dark:text-sunset-peach dark:border-white/10 dark:hover:border-sunset-deep backdrop-blur-md inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest border px-4 py-2 rounded-full transition-all duration-200 cursor-none shadow-sm"
-        >
-          {isDark ? (
-            <>
-              <svg className="cursor-none w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-              </svg>
-              <span>Light</span>
-            </>
-          ) : (
-            <>
-              <svg className="cursor-none w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-              </svg>
-              <span>Dark</span>
-            </>
-          )}
-        </button>
-      </ReflectedGlow>
-    </li>
-  </ul>
-);
+          className={`pointer-events-none absolute z-0 rounded-full border backdrop-blur-md
+            bg-sunset-amber/25 border-sunset-bright/40 shadow-[0_4px_16px_rgba(234,97,19,0.18),inset_0_1px_0_rgba(255,255,255,0.7)]
+            dark:bg-sunset-bright/15 dark:border-sunset-amber/30 dark:shadow-[0_4px_20px_rgba(234,97,19,0.25),inset_0_1px_0_rgba(255,255,255,0.15)]
+            ${pill.visible ? "opacity-100" : "opacity-0"}
+            ${
+              animate
+                ? "transition-[left,top,width,height,opacity] duration-300 ease-[cubic-bezier(0.34,1.3,0.64,1)] motion-reduce:transition-none"
+                : "transition-[opacity] duration-150"
+            }`}
+        />
+      )}
+
+      {items.map((item) => (
+        <li key={item.label} onMouseEnter={movePill} onFocus={movePill}>
+          <a
+            href={item.href}
+            onClick={onItemClick}
+            className={`cursor-none relative z-10 block text-xs md:text-2xs font-semibold uppercase tracking-widest text-neutral-700 hover:text-neutral-950 dark:text-sunset-dusk dark:hover:text-white transition-colors duration-200 ${
+              isVertical ? "" : "px-4 py-2"
+            }`}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+
+      <li className={isVertical ? "pt-2" : "pl-2"}>
+        <ReflectedGlow>
+          <button
+            type="button"
+            onClick={() => {
+              if (onToggleTheme) onToggleTheme();
+              if (onItemClick) onItemClick();
+            }}
+            aria-label="Toggle theme mode"
+            className="bg-white/80 hover:bg-white text-neutral-900 border-neutral-300 dark:bg-sunset-dusk/80 dark:text-sunset-peach dark:border-white/10 dark:hover:border-sunset-deep backdrop-blur-md inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest border px-4 py-2 rounded-full transition-all duration-200 cursor-none shadow-sm"
+          >
+            {isDark ? (
+              <>
+                <svg
+                  className="cursor-none w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+                <span>Light</span>
+              </>
+            ) : (
+              <>
+                <svg
+                  className="cursor-none w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                  />
+                </svg>
+                <span>Dark</span>
+              </>
+            )}
+          </button>
+        </ReflectedGlow>
+      </li>
+    </ul>
+  );
+};
 
 const Brand = () => (
   <a href="#" className="cursor-none flex items-center gap-x-3 group">
@@ -130,19 +200,52 @@ const StatusBadge = ({ text }) => (
   </div>
 );
 
+// --- Glass button styles (shared by the hero CTAs) ---
+const glassBase =
+  "cursor-none inline-flex items-center justify-center whitespace-nowrap px-6 py-3 rounded-full border backdrop-blur-md font-medium text-sm md:text-xs transition-all duration-300 hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+
+const glassPrimary =
+  "bg-sunset-deep/70 border-white/30 text-white " +
+  "shadow-[0_8px_24px_rgba(234,97,19,0.35),inset_0_1px_0_rgba(255,255,255,0.35)] " +
+  "hover:bg-sunset-deep/90 hover:shadow-[0_10px_32px_rgba(234,97,19,0.55),inset_0_1px_0_rgba(255,255,255,0.45)]";
+
+const glassSecondary =
+  "bg-white/50 border-white/70 text-neutral-800 " +
+  "shadow-[0_4px_16px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.8)] " +
+  "hover:bg-sunset-amber/25 hover:border-sunset-bright/50 hover:text-sunset-dusk " +
+  "dark:bg-white/5 dark:border-sunset-amber/30 dark:text-sunset-bright " +
+  "dark:shadow-[0_4px_20px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.12)] " +
+  "dark:hover:bg-sunset-bright/15 dark:hover:border-sunset-amber/50 dark:hover:text-sunset-peach";
+
 const HeroCTA = () => (
-  <div className="flex items-center gap-x-4 pt-2">
+  <div className="flex flex-wrap items-center gap-3 pt-2">
     <a
       href={myResume}
       target="_blank"
       rel="noopener noreferrer"
-      className="cursor-none px-6 py-3 rounded-full bg-[#EA6113] text-white font-medium text-sm md:text-xs transition-all duration-200 shadow-[0_0_20px_rgba(234,97,19,0.3)] hover:shadow-[0_0_28px_rgba(234,97,19,0.5)]"
+      className={`${glassBase} ${glassPrimary}`}
     >
       My Resume
     </a>
     <a
+      href="https://github.com/Zaido219"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${glassBase} ${glassSecondary}`}
+    >
+      Github
+    </a>
+    <a
+      href="https://www.linkedin.com/in/john-phillip-lor-malbas-16b649399/?isSelfProfile=true"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${glassBase} ${glassSecondary}`}
+    >
+      LinkedIn
+    </a>
+    <a
       href="mailto:johnphilliplormalbas2@gmail.com"
-      className="cursor-none px-6 py-3 rounded-full border border-neutral-400/80 hover:bg-neutral-900 hover:text-white text-neutral-800 dark:border-sunset-amber/80 dark:text-sunset-bright dark:hover:bg-neutral-900/50 dark:hover:text-white font-medium text-sm md:text-xs backdrop-blur-md transition-colors duration-200"
+      className={`${glassBase} ${glassSecondary}`}
     >
       Email Me
     </a>
@@ -153,7 +256,7 @@ export const HeroSection = () => {
   return (
     <section className="min-h-screen bg-transparent text-neutral-900 dark:text-white flex flex-col justify-between selection:bg-sunset-bright/20 transition-colors duration-300">
       <main className="w-full max-w-7xl mx-auto px-6 py-12 md:py-24 flex-1 flex flex-col md:flex-row items-center justify-between gap-12">
-        <div className="flex-1 max-w-2xl">
+        <div className="flex-1 w-full min-w-0 max-w-2xl">
           <StatusBadge text="Available for work" />
           <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-neutral-900 dark:text-[#F88F22] mb-4 leading-none">
             John Phillip Lor Malbas
@@ -164,8 +267,8 @@ export const HeroSection = () => {
           </h2>
 
           <p className="text-neutral-600 dark:text-sunset-bright text-base sm:text-md leading-relaxed max-w-xl mb-8">
-            Software developer focused on backend systems, data pipelines, and low-level tools. 
-            I build things with Django, Python, C#, and React.
+            I build data-driven web apps with Django, React, and Python, 
+            and I'm learning to build the AI behind them. Currently looking for my first full-time developer role.
           </p>
 
           <HeroCTA />
