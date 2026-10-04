@@ -6,14 +6,10 @@ import { SectionHeader } from "../Shared/SectionHeader";
 
 // SRP: Section Header Typography
 const ExperienceHeader: React.FC = () => (
-  <div className="mb-10 max-w-2xl">
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white mb-3">
-      My <span className="text-sunset-deep dark:text-sunset-bright">Experience</span>
-    </h2>
-    <p className="text-zinc-600 dark:text-neutral-400 text-sm sm:text-base font-medium">
-      A lifetime of perseverance, grit, learning and self discovery
-    </p>
-  </div>
+  <SectionHeader
+          title="My Journey"
+          description="A lifetime of self discovery and grit."
+        />
 );
 
 // Pure helper to encapsulate formatting logic (SRP)
