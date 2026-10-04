@@ -200,13 +200,30 @@ const StatusBadge = ({ text }) => (
   </div>
 );
 
+// --- Glass button styles (shared by the hero CTAs) ---
+const glassBase =
+  "cursor-none inline-flex items-center justify-center whitespace-nowrap px-6 py-3 rounded-full border backdrop-blur-md font-medium text-sm md:text-xs transition-all duration-300 hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+
+const glassPrimary =
+  "bg-sunset-deep/70 border-white/30 text-white " +
+  "shadow-[0_8px_24px_rgba(234,97,19,0.35),inset_0_1px_0_rgba(255,255,255,0.35)] " +
+  "hover:bg-sunset-deep/90 hover:shadow-[0_10px_32px_rgba(234,97,19,0.55),inset_0_1px_0_rgba(255,255,255,0.45)]";
+
+const glassSecondary =
+  "bg-white/50 border-white/70 text-neutral-800 " +
+  "shadow-[0_4px_16px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.8)] " +
+  "hover:bg-sunset-amber/25 hover:border-sunset-bright/50 hover:text-sunset-dusk " +
+  "dark:bg-white/5 dark:border-sunset-amber/30 dark:text-sunset-bright " +
+  "dark:shadow-[0_4px_20px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.12)] " +
+  "dark:hover:bg-sunset-bright/15 dark:hover:border-sunset-amber/50 dark:hover:text-sunset-peach";
+
 const HeroCTA = () => (
-  <div className="flex items-center gap-x-4 pt-2">
+  <div className="flex flex-wrap items-center gap-3 pt-2">
     <a
       href={myResume}
       target="_blank"
       rel="noopener noreferrer"
-      className="cursor-none px-6 py-3 rounded-full bg-[#EA6113] text-white font-medium text-sm md:text-xs transition-all duration-200 shadow-[0_0_20px_rgba(234,97,19,0.3)] hover:shadow-[0_0_28px_rgba(234,97,19,0.5)]"
+      className={`${glassBase} ${glassPrimary}`}
     >
       My Resume
     </a>
@@ -214,7 +231,7 @@ const HeroCTA = () => (
       href="https://github.com/Zaido219"
       target="_blank"
       rel="noopener noreferrer"
-      className="cursor-none px-6 py-3 rounded-full border border-neutral-400/80 hover:bg-neutral-900 hover:text-white text-neutral-800 dark:border-sunset-amber/80 dark:text-sunset-bright dark:hover:bg-neutral-900/50 dark:hover:text-white font-medium text-sm md:text-xs backdrop-blur-md transition-colors duration-200"
+      className={`${glassBase} ${glassSecondary}`}
     >
       Github
     </a>
@@ -222,13 +239,13 @@ const HeroCTA = () => (
       href="https://www.linkedin.com/in/john-phillip-lor-malbas-16b649399/?isSelfProfile=true"
       target="_blank"
       rel="noopener noreferrer"
-      className="cursor-none px-6 py-3 rounded-full border border-neutral-400/80 hover:bg-neutral-900 hover:text-white text-neutral-800 dark:border-sunset-amber/80 dark:text-sunset-bright dark:hover:bg-neutral-900/50 dark:hover:text-white font-medium text-sm md:text-xs backdrop-blur-md transition-colors duration-200"
+      className={`${glassBase} ${glassSecondary}`}
     >
       LinkedIn
     </a>
     <a
       href="mailto:johnphilliplormalbas2@gmail.com"
-      className="cursor-none px-6 py-3 rounded-full border border-neutral-400/80 hover:bg-neutral-900 hover:text-white text-neutral-800 dark:border-sunset-amber/80 dark:text-sunset-bright dark:hover:bg-neutral-900/50 dark:hover:text-white font-medium text-sm md:text-xs backdrop-blur-md transition-colors duration-200"
+      className={`${glassBase} ${glassSecondary}`}
     >
       Email Me
     </a>
@@ -239,7 +256,7 @@ export const HeroSection = () => {
   return (
     <section className="min-h-screen bg-transparent text-neutral-900 dark:text-white flex flex-col justify-between selection:bg-sunset-bright/20 transition-colors duration-300">
       <main className="w-full max-w-7xl mx-auto px-6 py-12 md:py-24 flex-1 flex flex-col md:flex-row items-center justify-between gap-12">
-        <div className="flex-1 max-w-2xl">
+        <div className="flex-1 w-full min-w-0 max-w-2xl">
           <StatusBadge text="Available for work" />
           <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-neutral-900 dark:text-[#F88F22] mb-4 leading-none">
             John Phillip Lor Malbas
