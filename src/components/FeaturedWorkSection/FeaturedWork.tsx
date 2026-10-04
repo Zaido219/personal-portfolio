@@ -4,6 +4,7 @@ import { StackedProjectCard } from "./StackedProjectCard";
 import { DeckControls } from "./DeckControls";
 import { ProjectAsideList } from "./ProjectAsideList";
 import { useTheme } from "../../hooks/useTheme";
+import { SectionHeader } from "../Shared/SectionHeader";
 
 export const FeaturedWorkSection: React.FC = () => {
   // Partitioning data: Top 5 for deck stack, remaining for secondary list
@@ -18,20 +19,21 @@ export const FeaturedWorkSection: React.FC = () => {
   };
 
   const handlePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + featuredProjects.length) % featuredProjects.length);
+    setActiveIndex(
+      (prev) => (prev - 1 + featuredProjects.length) % featuredProjects.length,
+    );
   };
 
   return (
-    <section 
-      id="work" 
+    <section
+      id="work"
       className="w-full bg-transparent max-w-7xl mx-auto px-6 py-16 md:py-24 transition-colors duration-300"
     >
       {/* Section Title */}
-      <div className="mb-12 max-w-2xl">
-        <h2 className="text-3xl md:text-5xl sm:text-4xl font-extrabold text-neutral-900 dark:text-sunset-bright tracking-tight mb-3">
-          Featured Work
-        </h2>
-      </div>
+      <SectionHeader
+        title="Featured Work"
+        description="Hello there! My name is John Phillip Lor Malbas, but most of my friends simply call me Lor. I've always been passionate about learning, and this is how I got here."
+      />
 
       {/* 12-Column Responsive Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -39,7 +41,9 @@ export const FeaturedWorkSection: React.FC = () => {
         <div className="lg:col-span-7 flex flex-col justify-between">
           <div className="relative w-full aspect-[4/5] sm:aspect-[1/1] max-w-md mx-auto lg:max-w-lg">
             {featuredProjects.map((project, index) => {
-              const offset = (index - activeIndex + featuredProjects.length) % featuredProjects.length;
+              const offset =
+                (index - activeIndex + featuredProjects.length) %
+                featuredProjects.length;
               return (
                 <StackedProjectCard
                   key={project.projectName}

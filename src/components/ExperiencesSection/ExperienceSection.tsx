@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { workExperiences } from "../../config/constants";
 import { type WorkExperienceItemProps } from "../../interface/types";
+import { SectionHeader } from "../Shared/SectionHeader";
 
 // SRP: Section Header Typography
 const ExperienceHeader: React.FC = () => (
