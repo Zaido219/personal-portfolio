@@ -211,6 +211,18 @@ const HeroCTA = () => (
       My Resume
     </a>
     <a
+      href="https://github.com/Zaido219"
+      className="cursor-none px-6 py-3 rounded-full border border-neutral-400/80 hover:bg-neutral-900 hover:text-white text-neutral-800 dark:border-sunset-amber/80 dark:text-sunset-bright dark:hover:bg-neutral-900/50 dark:hover:text-white font-medium text-sm md:text-xs backdrop-blur-md transition-colors duration-200"
+    >
+      Github
+    </a>
+    <a
+      href="https://www.linkedin.com/in/john-phillip-lor-malbas-16b649399/?isSelfProfile=true"
+      className="cursor-none px-6 py-3 rounded-full border border-neutral-400/80 hover:bg-neutral-900 hover:text-white text-neutral-800 dark:border-sunset-amber/80 dark:text-sunset-bright dark:hover:bg-neutral-900/50 dark:hover:text-white font-medium text-sm md:text-xs backdrop-blur-md transition-colors duration-200"
+    >
+      LinkedIn
+    </a>
+    <a
       href="mailto:johnphilliplormalbas2@gmail.com"
       className="cursor-none px-6 py-3 rounded-full border border-neutral-400/80 hover:bg-neutral-900 hover:text-white text-neutral-800 dark:border-sunset-amber/80 dark:text-sunset-bright dark:hover:bg-neutral-900/50 dark:hover:text-white font-medium text-sm md:text-xs backdrop-blur-md transition-colors duration-200"
     >
