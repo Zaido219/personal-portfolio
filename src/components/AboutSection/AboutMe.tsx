@@ -1,4 +1,5 @@
 import React from "react";
+import { SectionHeader } from "../Shared/SectionHeader";
 
 // --- Types & Data Configuration ---
 export interface StoryBlock {
@@ -16,7 +17,8 @@ export const AboutStory: StoryBlock[] = [
     title: "Before college",
     content:
       "After high school, financial struggles kept me from going straight to college. I worked as a high-speed sewing machine operator for two years, until the repetitive work left my heart tired and my mind wanting more. The pandemic was a tragic time for so many, but it also gave me the chance to finally leave that job. From there, I stepped into my father's line of work. He's a freelance aluminum and glass installer, and I'm proud to say so. Working alongside him, fabricating fixtures and windows, taught me what hard work and craftsmanship really mean. I could have stayed in that trade, but my heart kept aching for something different.",
-    imageSrc: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+    imageSrc:
+      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
     imageAlt: "Craftsmanship and manual labor placeholder",
   },
   {
@@ -24,7 +26,8 @@ export const AboutStory: StoryBlock[] = [
     title: "Falling in love with programming",
     content:
       "Unexpectedly, life gave me another chance to study. I enrolled at Bulacan Agricultural State College for a Bachelor of Science in Information Technology. Juggling work and college was incredibly tough, but it paid off. From the very first day we were taught C++, I knew I had fallen in love with programming. I met great people and learned things I would never have discovered on my own. I built and broke a lot of projects. Some days I felt like an absolute genius, and just as many days I felt like a monkey typing randomly on a keyboard.",
-    imageSrc: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+    imageSrc:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
     imageAlt: "Software development workspace placeholder",
   },
 ];
@@ -37,23 +40,20 @@ export const AboutSection: React.FC = () => {
       className="w-full bg-transparent max-w-7xl mx-auto px-6 py-16 md:py-24 transition-colors duration-300"
     >
       {/* Section Header */}
-      <div className="mb-12 max-w-2xl">
-        <h2 className="text-3xl md:text-5xl sm:text-4xl font-extrabold tracking-tight mb-3 text-zinc-900 dark:text-white">
-          <span className="text-sunset-deep dark:text-sunset-bright">About Me</span>
-        </h2>
-        <p className="text-zinc-600 dark:text-neutral-400 text-sm sm:text-base font-medium">
-          Hello there! My name is John Phillip Lor Malbas, but most of my friends simply call me Lor.
-          I've always been passionate about learning, and this is how I got here.
-        </p>
-      </div>
+      <SectionHeader
+        title="About Me"
+        description="  Hello there! My name is John Phillip Lor Malbas, but most of my friends simply call me Lor.
+          I've always been passionate about learning, and this is how I got here."
+      />
 
       {/* Editorial Bento Glass Container */}
-      <div className="w-full rounded-2xl transition-colors duration-300 overflow-hidden
+      <div
+        className="w-full rounded-2xl transition-colors duration-300 overflow-hidden
                       bg-white/70 dark:bg-neutral-900/40 
                       backdrop-blur-2xl backdrop-saturate-150
                       border border-white/80 dark:border-white/10 
-                      shadow-[0_8px_32px_0_rgba(0,0,0,0.06)] dark:shadow-2xl">
-
+                      shadow-[0_8px_32px_0_rgba(0,0,0,0.06)] dark:shadow-2xl"
+      >
         {/* Intro Quote Banner */}
         <div className="p-8 sm:p-12 border-b border-black/10 dark:border-white/10 bg-white/40 dark:bg-neutral-950/20 backdrop-blur-md">
           <p className="text-xl sm:text-2xl md:text-3xl font-light leading-relaxed text-zinc-800 dark:text-neutral-200 max-w-4xl">
@@ -125,16 +125,18 @@ export const AboutSection: React.FC = () => {
             Where I am today
           </h3>
           <p className="text-zinc-600 dark:text-neutral-400 text-sm sm:text-base leading-relaxed max-w-3xl">
-            I spent my internship at the Gender and Development Office of my school, where I led the
-            development of a data repository and analytics platform, improving and expanding the
-            system's functionality. Time really flies. I received my degree on July 9, 2026, a
-            beautiful, bittersweet moment that marked four years of massive personal growth. Today,
-            I'm looking for a place where I can put these skills to use. Along with my foundational
-            technical knowledge, I bring maturity and a work ethic built on years of real-world
-            labor, and I can't wait to find a team that shares that vision.
+            I spent my internship at the Gender and Development Office of my
+            school, where I led the development of a data repository and
+            analytics platform, improving and expanding the system's
+            functionality. Time really flies. I received my degree on July 9,
+            2026, a beautiful, bittersweet moment that marked four years of
+            massive personal growth. Today, I'm looking for a place where I can
+            put these skills to use. Along with my foundational technical
+            knowledge, I bring maturity and a work ethic built on years of
+            real-world labor, and I can't wait to find a team that shares that
+            vision.
           </p>
         </div>
-
       </div>
     </section>
   );

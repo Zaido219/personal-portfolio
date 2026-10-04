@@ -3,8 +3,6 @@ import { techStacks } from "../../config/TechStacks";
 import type { TechField, TechStackItemProps } from "../../interface/types";
 import { SectionHeader } from "../Shared/SectionHeader";
 
-
-
 const CATEGORY_LABELS: Record<TechField, string> = {
   languages: "Languages",
   frontend: "Frontend",
@@ -44,10 +42,10 @@ const StackSection: React.FC = () => {
   return (
     <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Section Header */}
-        <SectionHeader
-                title="My Tool Kit"
-                description="Technologies, frameworks, and environments I work with."
-              />
+      <SectionHeader
+        title="My Tool Kit"
+        description="Technologies, frameworks, and environments I work with."
+      />
 
       {/* Multi-Column Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

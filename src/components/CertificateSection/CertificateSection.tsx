@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CertificateModal } from "./CertificateModal";
+import { SectionHeader } from "../Shared/SectionHeader";
 
 export interface Certificate {
   id: string;
@@ -40,26 +41,24 @@ export const CertificatesSection: React.FC = () => {
   const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
 
   return (
-    <section 
-      id="certifications" 
+    <section
+      id="certifications"
       className="w-full bg-transparent max-w-7xl mx-auto px-6 py-16 md:py-24 transition-colors duration-300"
     >
       {/* Section Header */}
-      <div className="mb-10 max-w-2xl">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-3 text-zinc-900 dark:text-white">
-          <span className="text-sunset-deep dark:text-sunset-bright">Certifications</span>
-        </h2>
-        <p className="text-zinc-600 dark:text-neutral-400 text-sm sm:text-base font-medium">
-          Formal credentials, course achievements, and verified domain skills
-        </p>
-      </div>
+      <SectionHeader
+        title="Certifications"
+        description="  Formal credentials, course achievements, and verified domain skills"
+      />
 
       {/* Main Container Shell */}
-      <div className="w-full rounded-2xl p-6 sm:p-8 transition-colors duration-300
+      <div
+        className="w-full rounded-2xl p-6 sm:p-8 transition-colors duration-300
                       bg-white/70 dark:bg-neutral-900/40 
                       backdrop-blur-2xl backdrop-saturate-150
                       border border-white/80 dark:border-white/10 
-                      shadow-[0_8px_32px_0_rgba(0,0,0,0.06)] dark:shadow-2xl">
+                      shadow-[0_8px_32px_0_rgba(0,0,0,0.06)] dark:shadow-2xl"
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {CertificatesData.map((cert) => (
             <div
@@ -81,7 +80,7 @@ export const CertificatesSection: React.FC = () => {
                     {cert.provider}
                   </p>
                 </div>
-                
+
                 {cert.issueDate && (
                   <span className="text-xs font-mono text-zinc-500 dark:text-neutral-400 shrink-0">
                     {cert.issueDate}
