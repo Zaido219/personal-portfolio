@@ -12,50 +12,98 @@ export const NAV_ITEMS = [
   { label: "About", href: "#about" },
 ];
 
-const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = false }) => (
-  <ul className={`flex ${isVertical ? "flex-col gap-y-4" : "flex-row items-center gap-x-6 md:gap-x-8"}`}>
-    {items.map((item) => (
-      <li key={item.label}>
-        <a
-          href={item.href}
-          onClick={onItemClick}
-          className="cursor-none block text-xs md:text-2xs font-semibold uppercase tracking-widest text-neutral-700 hover:text-neutral-950 dark:text-sunset-dusk dark:hover:text-white transition-colors duration-200"
-        >
-          {item.label}
-        </a>
-      </li>
-    ))}
-    <li className={isVertical ? "pt-2" : ""}>
-      <ReflectedGlow>
-        <button
-          type="button"
-          onClick={() => {
-            if (onToggleTheme) onToggleTheme();
-            if (onItemClick) onItemClick();
+const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = false }) => {
+  // Glass pill that glides to whichever link is hovered / focused (desktop only)
+  const [pill, setPill] = useState({ left: 0, top: 0, width: 0, height: 0, visible: false });
+  const [animate, setAnimate] = useState(false);
+
+  const movePill = (e) => {
+    if (isVertical) return;
+    const el = e.currentTarget;
+    // First appearance snaps into place; after that it glides
+    setAnimate(pill.visible);
+    setPill({
+      left: el.offsetLeft,
+      top: el.offsetTop,
+      width: el.offsetWidth,
+      height: el.offsetHeight,
+      visible: true,
+    });
+  };
+
+  const hidePill = () => setPill((p) => ({ ...p, visible: false }));
+
+  return (
+    <ul
+      onMouseLeave={hidePill}
+      onBlur={hidePill}
+      className={`relative flex ${isVertical ? "flex-col gap-y-4" : "flex-row items-center gap-x-1 md:gap-x-2"}`}
+    >
+      {!isVertical && (
+        <span
+          aria-hidden="true"
+          style={{
+            left: pill.left,
+            top: pill.top,
+            width: pill.width,
+            height: pill.height,
           }}
-          aria-label="Toggle theme mode"
-          className="bg-white/80 hover:bg-white text-neutral-900 border-neutral-300 dark:bg-sunset-dusk/80 dark:text-sunset-peach dark:border-white/10 dark:hover:border-sunset-deep backdrop-blur-md inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest border px-4 py-2 rounded-full transition-all duration-200 cursor-none shadow-sm"
-        >
-          {isDark ? (
-            <>
-              <svg className="cursor-none w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-              </svg>
-              <span>Light</span>
-            </>
-          ) : (
-            <>
-              <svg className="cursor-none w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-              </svg>
-              <span>Dark</span>
-            </>
-          )}
-        </button>
-      </ReflectedGlow>
-    </li>
-  </ul>
-);
+          className={`pointer-events-none absolute z-0 rounded-full border backdrop-blur-md
+            bg-white/60 border-white/80 shadow-[0_4px_16px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.9)]
+            dark:bg-white/10 dark:border-white/15 dark:shadow-[0_4px_20px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.15)]
+            ${pill.visible ? "opacity-100" : "opacity-0"}
+            ${animate
+              ? "transition-[left,top,width,height,opacity] duration-300 ease-[cubic-bezier(0.34,1.3,0.64,1)] motion-reduce:transition-none"
+              : "transition-[opacity] duration-150"}`}
+        />
+      )}
+
+      {items.map((item) => (
+        <li key={item.label} onMouseEnter={movePill} onFocus={movePill}>
+          <a
+            href={item.href}
+            onClick={onItemClick}
+            className={`cursor-none relative z-10 block text-xs md:text-2xs font-semibold uppercase tracking-widest text-neutral-700 hover:text-neutral-950 dark:text-sunset-dusk dark:hover:text-white transition-colors duration-200 ${
+              isVertical ? "" : "px-4 py-2"
+            }`}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+
+      <li className={isVertical ? "pt-2" : "pl-2"}>
+        <ReflectedGlow>
+          <button
+            type="button"
+            onClick={() => {
+              if (onToggleTheme) onToggleTheme();
+              if (onItemClick) onItemClick();
+            }}
+            aria-label="Toggle theme mode"
+            className="bg-white/80 hover:bg-white text-neutral-900 border-neutral-300 dark:bg-sunset-dusk/80 dark:text-sunset-peach dark:border-white/10 dark:hover:border-sunset-deep backdrop-blur-md inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest border px-4 py-2 rounded-full transition-all duration-200 cursor-none shadow-sm"
+          >
+            {isDark ? (
+              <>
+                <svg className="cursor-none w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                <span>Light</span>
+              </>
+            ) : (
+              <>
+                <svg className="cursor-none w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+                <span>Dark</span>
+              </>
+            )}
+          </button>
+        </ReflectedGlow>
+      </li>
+    </ul>
+  );
+};
 
 const Brand = () => (
   <a href="#" className="cursor-none flex items-center gap-x-3 group">
