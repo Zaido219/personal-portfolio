@@ -234,8 +234,8 @@ export const HeroSection = () => {
           </h2>
 
           <p className="text-neutral-600 dark:text-sunset-bright text-base sm:text-md leading-relaxed max-w-xl mb-8">
-            Software developer focused on backend systems, data pipelines, and low-level tools. 
-            I build things with Django, Python, C#, and React.
+            I build data-driven web apps with Django, React, and Python, 
+            and I'm learning to build the AI behind them. Currently looking for my first full-time developer role.
           </p>
 
           <HeroCTA />
