@@ -10,8 +10,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({ title, description
     {/* Sticky bar: sits right under the navbar (h-16 = top-16) */}
     <div
       className="sticky top-16 z-30 -mx-6 px-6 py-3 mb-6
-                 bg-white/70 dark:bg-neutral-950/50 backdrop-blur-xl
-                 border-b border-black/5 dark:border-white/10
+                 bg-transparent dark:bg-neutral-950/50 backdrop-blur-xl
                  transition-colors duration-300"
     >
       <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-sunset-deep dark:text-sunset-bright">
