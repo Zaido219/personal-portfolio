@@ -49,12 +49,14 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
             height: pill.height,
           }}
           className={`pointer-events-none absolute z-0 rounded-full border backdrop-blur-md
-            bg-white/60 border-white/80 shadow-[0_4px_16px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.9)]
-            dark:bg-white/10 dark:border-white/15 dark:shadow-[0_4px_20px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.15)]
+            bg-sunset-amber/25 border-sunset-bright/40 shadow-[0_4px_16px_rgba(234,97,19,0.18),inset_0_1px_0_rgba(255,255,255,0.7)]
+            dark:bg-sunset-bright/15 dark:border-sunset-amber/30 dark:shadow-[0_4px_20px_rgba(234,97,19,0.25),inset_0_1px_0_rgba(255,255,255,0.15)]
             ${pill.visible ? "opacity-100" : "opacity-0"}
-            ${animate
-              ? "transition-[left,top,width,height,opacity] duration-300 ease-[cubic-bezier(0.34,1.3,0.64,1)] motion-reduce:transition-none"
-              : "transition-[opacity] duration-150"}`}
+            ${
+              animate
+                ? "transition-[left,top,width,height,opacity] duration-300 ease-[cubic-bezier(0.34,1.3,0.64,1)] motion-reduce:transition-none"
+                : "transition-[opacity] duration-150"
+            }`}
         />
       )}
 
@@ -85,15 +87,35 @@ const NavLinks = ({ items, onItemClick, isDark, onToggleTheme, isVertical = fals
           >
             {isDark ? (
               <>
-                <svg className="cursor-none w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                <svg
+                  className="cursor-none w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
                 </svg>
                 <span>Light</span>
               </>
             ) : (
               <>
-                <svg className="cursor-none w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                <svg
+                  className="cursor-none w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                  />
                 </svg>
                 <span>Dark</span>
               </>
