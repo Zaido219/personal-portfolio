@@ -40,7 +40,9 @@ const StackSection: React.FC = () => {
   ][];
 
   return (
-    <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="skills"
+      className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Section Header */}
       <SectionHeader
         title="My Tool Kit"

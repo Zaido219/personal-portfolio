@@ -8,6 +8,8 @@ import AboutSection from "./components/AboutSection/AboutMe";
 import Footer from "./components/FooterSection/FooterSection";
 import { BackgroundMesh } from "./components/Shared/BackgroundMesh";
 import CustomCursor from "./components/Shared/customCursor";
+import GallerySection from "./components/GallerySection/GallerySection";
+import BackToTop from "./components/Shared/BackToTop";
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
       <div className="relative min-h-screen bg-neutral-950 text-neutral-100 overflow-x-clip selection:bg-sunset-bright/20">
         
         <BackgroundMesh />
+        <BackToTop/>
 
         <div className="relative z-10">
           <Header />
@@ -28,8 +31,8 @@ function App() {
             <StackSection />
             <CertificatesSection />
             <AboutSection />
+            <GallerySection/>
           </main>
-
           <Footer />
         </div>
       </div>

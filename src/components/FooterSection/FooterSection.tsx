@@ -54,19 +54,19 @@ export const Footer: React.FC = () => {
           <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div className="max-w-2xl">
               <span className="text-xs font-bold uppercase tracking-widest text-sunset-dusk dark:text-sunset-bright">
-                Let's Build Together
+                Open to work
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-neutral-100 mt-2">
-                LET'S MAKE IT HAPPEN
+                Open to new roles and projects
               </h2>
               <p className="text-zinc-600 dark:text-neutral-400 text-sm sm:text-base mt-3 font-medium">
-                Let me help you build software solutions that will last a lifetime. Whether you have a project in mind or an open role, my inbox is always open.
+                I’m a full-stack developer who also works with AI. If you’re hiring or have something to build, send me a message.
               </p>
             </div>
 
             {/* Email CTA Button */}
             <a
-              href="mailto:contact@jplm.dev"
+              href="mailto:johnphilliplormalbas2@gmail.com"
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-sm text-white dark:text-neutral-950 
                          bg-gradient-to-r from-sunset-deep via-sunset-bright to-sunset-amber 
                          hover:contrast-125
@@ -89,7 +89,11 @@ export const Footer: React.FC = () => {
                 JPLM<span className="text-sunset-deep dark:text-sunset-bright">.DEV</span>
               </h3>
               <p className="text-xs text-zinc-600 dark:text-neutral-400 mt-2 max-w-sm leading-relaxed">
-                John Phillip Lor Malbas — Software Engineer focused on high-level architecture, robust backend logic, and crafting human-centric web applications.
+                Junior Full Stack Developer with a BS in Information Technology (2026), focused on web development, 
+                data analytics, and applied AI. Built Gadinsight, a Django and MySQL analytics platform for a state college 
+                office that handles about five years of faculty records and is estimated to speed up reporting by around 30%. 
+                Worked with Python, JavaScript/TypeScript, React, and C#, and built RAG pipelines with ChromaDB and local LLMs. 
+                Looking for a junior full stack or AI-focused developer role where I can keep learning and contribute from day one.
               </p>
             </div>
           </div>
@@ -163,7 +167,7 @@ export const Footer: React.FC = () => {
               LinkedIn
             </a>
             <a
-              href="mailto:contact@jplm.dev"
+              href="mailto:johnphilliplormalbas2@gmail.com"
               className="hover:text-sunset-deep dark:hover:text-sunset-bright transition-colors"
               aria-label="Email"
             >
