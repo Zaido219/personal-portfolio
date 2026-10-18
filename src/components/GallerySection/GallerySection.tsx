@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import {type GalleryPhotoItemProps} from "../../interface/types";
-import {type GallerySectionProps} from "../../interface/types";
+import { type GalleryPhotoItemProps } from "../../interface/types";
+import { type GallerySectionProps } from "../../interface/types";
 
 // --- Placeholder data (swap these out by passing your own `photos` prop) ---
 // Lorem Picsum serves royalty-free Unsplash photos; the seed keeps each image stable.
@@ -276,7 +276,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
     const el = trackRef.current;
     if (!el) return;
     const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
     el.scrollBy({
       left: direction * el.clientWidth * 0.85,
@@ -300,10 +300,10 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
       setActiveIndex((current) =>
         current === null
           ? current
-          : (current + direction + photos.length) % photos.length
+          : (current + direction + photos.length) % photos.length,
       );
     },
-    [photos.length]
+    [photos.length],
   );
 
   useEffect(() => {
@@ -338,9 +338,9 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
         {/* Glass container */}
         <div
           className="relative overflow-hidden rounded-3xl p-8 sm:p-12
-                     bg-white/70 dark:bg-neutral-900/50
-                     backdrop-blur-2xl backdrop-saturate-150
-                     border border-white/80 dark:border-white/10
+                     bg-white/40 dark:bg-white/[0.03]
+                     backdrop-blur-md backdrop-saturate-150
+                     border border-white/80 dark:border-white/10    
                      shadow-[0_8px_32px_0_rgba(0,0,0,0.06)] dark:shadow-2xl
                      transition-colors duration-300"
         >
@@ -382,60 +382,69 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
             <ul
               ref={trackRef}
               onScroll={updateScrollState}
-              className="-mx-2 mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto px-2 py-4
-                         [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              className="-mx-8 -mb-6 mt-4 flex snap-x snap-mandatory scroll-pl-8 gap-6 overflow-x-auto px-8 pb-14 pt-6
+             [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             >
               {photos.map((photo, index) => (
                 <li
                   key={photo.id}
                   className="w-[78%] shrink-0 snap-start sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
                 >
-                  <button
-                    type="button"
-                    onClick={(e) => openPhoto(index, e)}
-                    aria-label={`Open photo: ${photo.photoTitle}`}
-                    className="group relative block aspect-[3/4] w-full overflow-hidden rounded-[2rem] text-left
-                               shadow-lg transition-all duration-300 motion-reduce:transition-none
-                               hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(234,97,19,0.25)]
-                               focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sunset-bright"
+                  <div
+                    className="group relative aspect-[3/4] rounded-[2rem] shadow-lg
+                   transition-all duration-300 motion-reduce:transition-none
+                   hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(234,97,19,0.25)]
+                   has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-4
+                   has-[:focus-visible]:outline-sunset-bright"
                   >
-                    <img
-                      src={photo.photoUrl}
-                      alt={photo.photoAlt ?? photo.photoTitle}
-                      loading="lazy"
-                      draggable={false}
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700
-                                 motion-reduce:transition-none group-hover:scale-105"
-                    />
-
-                    {/* Open indicator */}
-                    <span
-                      aria-hidden="true"
-                      className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full
-                                 border border-white/40 bg-white/20 text-white backdrop-blur-md
-                                 transition-colors duration-200 group-hover:border-sunset-bright group-hover:bg-sunset-bright"
+                    <button
+                      type="button"
+                      onClick={(e) => openPhoto(index, e)}
+                      aria-label={`Open photo: ${photo.photoTitle}`}
+                      className="absolute inset-0 isolate block h-full w-full transform-gpu overflow-hidden
+                     rounded-[2rem] text-left outline-none
+                     [clip-path:inset(0_round_2rem)]"
                     >
-                      <ArrowUpRight />
-                    </span>
+                      <img
+                        src={photo.photoUrl}
+                        alt={photo.photoAlt ?? photo.photoTitle}
+                        loading="lazy"
+                        draggable={false}
+                        className="absolute inset-0 h-full w-full rounded-[2rem] object-cover transition-transform duration-700
+                       motion-reduce:transition-none group-hover:scale-105"
+                      />
 
-                    {/* Glass caption panel */}
-                    <div
-                      className="absolute inset-x-0 bottom-0 border-t border-white/25 bg-neutral-950/45 p-5
-                                 backdrop-blur-xl backdrop-saturate-150 transition-colors duration-300
-                                 group-hover:bg-sunset-dusk/50"
-                    >
-                      <span className="inline-block rounded-full border border-sunset-amber/40 bg-sunset-bright/25 px-2.5 py-0.5 text-xs font-medium text-sunset-peach">
-                        {photo.photoCategory}
+                      {/* Open indicator */}
+                      <span
+                        aria-hidden="true"
+                        className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full
+                       border border-white/40 bg-white/20 text-white backdrop-blur-md
+                       transition-colors duration-200 group-hover:border-sunset-bright group-hover:bg-sunset-bright"
+                      >
+                        <ArrowUpRight />
                       </span>
-                      <h3 className="mt-2 text-lg font-semibold leading-snug text-white">
-                        {photo.photoTitle}
-                      </h3>
-                      <p className="mt-0.5 text-sm text-white/80">
-                        {photo.photoDate}, {photo.photoYear}
-                        {photo.photoLocation ? `, ${photo.photoLocation}` : ""}
-                      </p>
-                    </div>
-                  </button>
+
+                      {/* Glass caption panel */}
+                      <div
+                        className="absolute inset-x-0 bottom-0 border-t border-white/25 bg-neutral-950/45 p-5
+                       backdrop-blur-xl backdrop-saturate-150 transition-colors duration-300
+                       group-hover:bg-sunset-dusk/50"
+                      >
+                        <span className="inline-block rounded-full border border-sunset-amber/40 bg-sunset-bright/25 px-2.5 py-0.5 text-xs font-medium text-sunset-peach">
+                          {photo.photoCategory}
+                        </span>
+                        <h3 className="mt-2 text-lg font-semibold leading-snug text-white">
+                          {photo.photoTitle}
+                        </h3>
+                        <p className="mt-0.5 text-sm text-white/80">
+                          {photo.photoDate}, {photo.photoYear}
+                          {photo.photoLocation
+                            ? `, ${photo.photoLocation}`
+                            : ""}
+                        </p>
+                      </div>
+                    </button>
+                  </div>
                 </li>
               ))}
             </ul>
