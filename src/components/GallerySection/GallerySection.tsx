@@ -344,9 +344,6 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
                      shadow-[0_8px_32px_0_rgba(0,0,0,0.06)] dark:shadow-2xl
                      transition-colors duration-300"
         >
-          {/* Ambient sunset glows */}
-          <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-gradient-to-bl from-sunset-deep via-sunset-bright to-sunset-amber opacity-25 blur-3xl dark:opacity-20" />
-          <div className="pointer-events-none absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-sunset-peach opacity-40 blur-3xl dark:opacity-0" />
 
           <div className="relative z-10">
             {/* Header row */}
