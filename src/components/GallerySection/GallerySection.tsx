@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { type GalleryPhotoItemProps } from "../../interface/types";
 import { type GallerySectionProps } from "../../interface/types";
 import { defaultGalleryPhotos } from "../../config/GalleryPhotos";
-
+import { SectionHeader } from "../Shared/SectionHeader";
 
 // --- Icons (inline so there are no extra dependencies) ---
 const iconProps = {
@@ -186,7 +186,7 @@ const Lightbox: React.FC<LightboxProps> = ({
 // --- Main section ---
 export const GallerySection: React.FC<GallerySectionProps> = ({
   photos = defaultGalleryPhotos,
-  heading = "Snapshots from the journey",
+  heading = "Gallery",
   description = "Events, projects, and the everyday work behind them.",
   id = "gallery",
 }) => {
@@ -278,44 +278,38 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
       className="w-full scroll-mt-24 py-16 text-zinc-900 dark:text-neutral-100 md:py-24"
     >
       <div className="mx-auto max-w-7xl px-6">
+        <SectionHeader title={heading} description={description} />
+
         {/* Glass container */}
         <div
           className="relative overflow-hidden rounded-3xl p-8 sm:p-12
-                     bg-white/40 dark:bg-white/[0.03]
-                     backdrop-blur-md backdrop-saturate-150
-                     border border-white/80 dark:border-white/10    
-                     shadow-[0_8px_32px_0_rgba(0,0,0,0.06)] dark:shadow-2xl
-                     transition-colors duration-300"
+               bg-white/40 dark:bg-white/[0.03]
+               backdrop-blur-md backdrop-saturate-150
+               border border-white/80 dark:border-white/10
+               shadow-[0_8px_32px_0_rgba(0,0,0,0.06)] dark:shadow-2xl
+               transition-colors duration-300"
         >
           <div className="relative z-10">
-            {/* Header row */}
-            <div className="flex items-end justify-between gap-6">
-              <div className="max-w-2xl">
-                <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                  {heading}
-                </h2>
-                <p className="mt-3 text-sm font-medium text-zinc-600 dark:text-neutral-400 sm:text-base">
-                  {description}
-                </p>
-              </div>
-
-              <div className="flex shrink-0 gap-3">
-                <RoundButton
-                  label="Scroll gallery left"
-                  onClick={() => scrollByPage(-1)}
-                  disabled={!canPrev}
-                >
-                  <ChevronLeft />
-                </RoundButton>
-                <RoundButton
-                  label="Scroll gallery right"
-                  onClick={() => scrollByPage(1)}
-                  disabled={!canNext}
-                >
-                  <ChevronRight />
-                </RoundButton>
-              </div>
+            {/* Carousel controls */}
+            <div className="flex justify-end gap-3">
+              <RoundButton
+                label="Scroll gallery left"
+                onClick={() => scrollByPage(-1)}
+                disabled={!canPrev}
+              >
+                <ChevronLeft />
+              </RoundButton>
+              <RoundButton
+                label="Scroll gallery right"
+                onClick={() => scrollByPage(1)}
+                disabled={!canNext}
+              >
+                <ChevronRight />
+              </RoundButton>
             </div>
+
+            {/* Carousel track */}
+            {/* ...your <ul> stays exactly as it is... */}
 
             {/* Carousel track */}
             <ul
