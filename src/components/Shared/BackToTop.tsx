@@ -67,4 +67,5 @@ export const BackToTop: React.FC<BackToTopProps> = ({ threshold = 400 }) => {
   );
 };
 
+
 export default BackToTop;
