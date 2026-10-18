@@ -1,17 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import {type GalleryPhotoItemProps} from "../../interface/types";
 
-// --- Types ---
-export type GalleryPhotoItemProps = {
-  id: string;
-  photoTitle: string;
-  photoCategory: string;
-  photoUrl: string; // remote URL or a local import / "/gallery/photo.jpg" from /public
-  photoAlt?: string;
-  photoCaption?: string;
-  photoLocation?: string;
-  photoDate: string; // e.g. "Mar 12"
-  photoYear: string; // e.g. "2026"
-};
 
 export type GallerySectionProps = {
   photos?: GalleryPhotoItemProps[];
