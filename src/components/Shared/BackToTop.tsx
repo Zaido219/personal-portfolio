@@ -60,7 +60,7 @@ export const BackToTop: React.FC<BackToTopProps> = ({ threshold = 400 }) => {
         height="24"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="white"
+        stroke="currentColor"
         strokeWidth="2.25"
         strokeLinecap="round"
         strokeLinejoin="round"
