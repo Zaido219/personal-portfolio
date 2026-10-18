@@ -66,7 +66,7 @@ export const Footer: React.FC = () => {
 
             {/* Email CTA Button */}
             <a
-              href="mailto:contact@jplm.dev"
+              href="mailto:johnphilliplormalbas2@gmail.com"
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-sm text-white dark:text-neutral-950 
                          bg-gradient-to-r from-sunset-deep via-sunset-bright to-sunset-amber 
                          hover:contrast-125
