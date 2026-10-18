@@ -64,8 +64,8 @@ export const BackToTop: React.FC<BackToTopProps> = ({ threshold = 400 }) => {
         strokeWidth="2.25"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="relative drop-shadow-[0_1px_2px_rgba(184,67,5,0.6)] transition-transform duration-300
-                   motion-reduce:transition-none group-hover:-translate-y-0.5"
+        className="relative text-sunset-deep dark:text-sunset-bright transition-transform duration-300
++            motion-reduce:transition-none group-hover:-translate-y-0.5"
       >
         <path d="M12 19V5" />
         <path d="m5 12 7-7 7 7" />
