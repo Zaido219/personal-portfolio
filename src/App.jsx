@@ -8,6 +8,7 @@ import AboutSection from "./components/AboutSection/AboutMe";
 import Footer from "./components/FooterSection/FooterSection";
 import { BackgroundMesh } from "./components/Shared/BackgroundMesh";
 import CustomCursor from "./components/Shared/customCursor";
+import GallerySection from "./components/GallerySection/GallerySection";
 
 function App() {
   return (
@@ -28,8 +29,8 @@ function App() {
             <StackSection />
             <CertificatesSection />
             <AboutSection />
+            <GallerySection/>
           </main>
-
           <Footer />
         </div>
       </div>
