@@ -173,34 +173,43 @@ const Lightbox: React.FC<LightboxProps> = ({
       aria-modal="true"
       aria-label={photo.photoTitle}
       className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8
-                 bg-neutral-950/70 backdrop-blur-md"
+               bg-neutral-950/70 backdrop-blur-md"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl overflow-hidden rounded-3xl
-                   border border-white/15 bg-neutral-900/70 backdrop-blur-2xl
-                   shadow-2xl"
+        className="relative flex max-h-[90vh] w-full max-w-5xl flex-col overflow-hidden rounded-3xl
+                 border border-white/15 bg-neutral-900/70 shadow-2xl backdrop-blur-2xl md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative flex max-h-[70vh] items-center justify-center bg-black/40">
+        {/* Close button (sits in the card's top-right corner) */}
+        <div className="absolute right-4 top-4 z-10">
+          <RoundButton
+            label="Close photo"
+            onClick={onClose}
+            buttonRef={closeRef}
+          >
+            <CloseIcon />
+          </RoundButton>
+        </div>
+
+        {/* Photo area */}
+        <div className="relative flex min-h-0 items-center justify-center overflow-hidden bg-black/40 md:w-3/5">
+          {/* Blurred copy of the photo fills any empty space */}
+          <img
+            src={photo.photoUrl}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full scale-125 object-cover opacity-40 blur-2xl"
+          />
           <img
             src={photo.photoUrl}
             alt={photo.photoAlt ?? photo.photoTitle}
-            className="max-h-[70vh] w-full object-contain"
+            className="relative max-h-[55vh] w-full object-contain md:max-h-[90vh]"
           />
 
-          <div className="absolute inset-x-0 top-0 flex items-start justify-between p-4">
-            <span className="rounded-full border border-white/20 bg-black/40 px-3 py-1 text-xs font-medium text-white backdrop-blur-md">
-              {index + 1} / {total}
-            </span>
-            <RoundButton
-              label="Close photo"
-              onClick={onClose}
-              buttonRef={closeRef}
-            >
-              <CloseIcon />
-            </RoundButton>
-          </div>
+          <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-black/40 px-3 py-1 text-xs font-medium text-white backdrop-blur-md">
+            {index + 1} / {total}
+          </span>
 
           {total > 1 && (
             <>
@@ -218,11 +227,12 @@ const Lightbox: React.FC<LightboxProps> = ({
           )}
         </div>
 
-        <div className="p-6 sm:p-8">
-          <span className="inline-block rounded-full border border-sunset-amber/40 bg-sunset-bright/20 px-3 py-0.5 text-xs font-medium text-sunset-peach">
+        {/* Caption panel: under the photo on mobile, to the right on desktop */}
+        <div className="flex flex-col justify-end overflow-y-auto p-6 sm:p-8 md:w-2/5 md:p-10">
+          <span className="inline-block self-start rounded-full border border-sunset-amber/40 bg-sunset-bright/20 px-3 py-0.5 text-xs font-medium text-sunset-peach">
             {photo.photoCategory}
           </span>
-          <h3 className="mt-3 text-2xl font-bold tracking-tight text-neutral-100">
+          <h3 className="mt-3 text-2xl font-bold tracking-tight text-neutral-100 md:text-3xl">
             {photo.photoTitle}
           </h3>
           <p className="mt-1 text-sm text-neutral-400">
@@ -230,7 +240,7 @@ const Lightbox: React.FC<LightboxProps> = ({
             {photo.photoLocation ? `, ${photo.photoLocation}` : ""}
           </p>
           {photo.photoCaption && (
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-300 sm:text-base">
+            <p className="mt-4 text-sm leading-relaxed text-neutral-300 sm:text-base">
               {photo.photoCaption}
             </p>
           )}
@@ -344,7 +354,6 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
                      shadow-[0_8px_32px_0_rgba(0,0,0,0.06)] dark:shadow-2xl
                      transition-colors duration-300"
         >
-
           <div className="relative z-10">
             {/* Header row */}
             <div className="flex items-end justify-between gap-6">
