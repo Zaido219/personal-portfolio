@@ -1,3 +1,10 @@
+import {type GalleryPhotoItemProps} from "../interface/types";
+
+
+const placeholder = (seed: string) =>
+  `https://picsum.photos/seed/${seed}/800/1000`;
+
+
 export const defaultGalleryPhotos: GalleryPhotoItemProps[] = [
   {
     id: "g1",

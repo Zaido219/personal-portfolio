@@ -1,11 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { type GalleryPhotoItemProps } from "../../interface/types";
 import { type GallerySectionProps } from "../../interface/types";
+import { defaultGalleryPhotos } from "../../config/GalleryPhotos";
 
-// --- Placeholder data (swap these out by passing your own `photos` prop) ---
-// Lorem Picsum serves royalty-free Unsplash photos; the seed keeps each image stable.
-const placeholder = (seed: string) =>
-  `https://picsum.photos/seed/${seed}/800/1000`;
 
 // --- Icons (inline so there are no extra dependencies) ---
 const iconProps = {
