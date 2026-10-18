@@ -167,7 +167,7 @@ export const Footer: React.FC = () => {
               LinkedIn
             </a>
             <a
-              href="mailto:contact@jplm.dev"
+              href="mailto:johnphilliplormalbas2@gmail.com"
               className="hover:text-sunset-deep dark:hover:text-sunset-bright transition-colors"
               aria-label="Email"
             >
