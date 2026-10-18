@@ -50,7 +50,7 @@ export const BackToTop: React.FC<BackToTopProps> = ({ threshold = 400 }) => {
       <span
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-[3px] h-1/2 w-[72%] -translate-x-1/2 rounded-full
-                   bg-gradient-to-b from-white/70 to-transparent"
++            bg-gradient-to-b from-white/30 to-transparent"
       />
 
       {/* Arrow */}
