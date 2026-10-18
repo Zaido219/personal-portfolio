@@ -1,13 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import {type GalleryPhotoItemProps} from "../../interface/types";
-
-
-export type GallerySectionProps = {
-  photos?: GalleryPhotoItemProps[];
-  heading?: string;
-  description?: string;
-  id?: string;
-};
+import {type GallerySectionProps} from "../../interface/types";
 
 // --- Placeholder data (swap these out by passing your own `photos` prop) ---
 // Lorem Picsum serves royalty-free Unsplash photos; the seed keeps each image stable.

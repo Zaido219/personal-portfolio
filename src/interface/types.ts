@@ -1,5 +1,13 @@
 import { Children, type ReactNode } from "react"
 
+export type GallerySectionProps = {
+  photos?: GalleryPhotoItemProps[];
+  heading?: string;
+  description?: string;
+  id?: string;
+};
+
+
 export type GalleryPhotoItemProps = {
   id: string;
   photoTitle: string;
