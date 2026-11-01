@@ -8,7 +8,7 @@ export const Projects : ProjectItemProps[] = [
         projectLink:"https://github.com/Zaido219/fb-content-automation",
         techStacks: ["Python","GraphAPI","Gemini Api","Streamlit", "JSON"],
         images: [
-            "/images/projects/fb-content-automation/sample_img_output.png"        ]
+            "/images/projects/fb-content-automation/sample_img_output.webp"        ]
     },
     {
         projectName:"RAG Pipeline",
@@ -17,7 +17,7 @@ export const Projects : ProjectItemProps[] = [
         projectLink:"https://github.com/Zaido219/local-RAG-pipeline.git",
         techStacks: ["Python","ChromaDb","Redis","Gemini Api", "Streamlit"],
         images: [
-            "/images/projects/rag-pipeline/image.png"        ]
+            "/images/projects/rag-pipeline/image.webp"        ]
     },
     {
         projectName:"Custom Chess Engine",
@@ -26,8 +26,8 @@ export const Projects : ProjectItemProps[] = [
         projectLink:"https://github.com/Zaido219/custom-chess-engine.git",
         techStacks: ["C#", "Raylib"],
         images: [
-            "/images/projects/custom-chess-engine/image.png",
-            "/images/projects/custom-chess-engine/Screenshot 2026-07-27 192139.png",
+            "/images/projects/custom-chess-engine/image.webp",
+            "/images/projects/custom-chess-engine/Screenshot 2026-07-27 192139.webp",
         ]
     },
     {
@@ -37,7 +37,7 @@ export const Projects : ProjectItemProps[] = [
         projectLink:"https://www.gadinsight.com/",
         techStacks: ["Django", "TailwindCss", "Html", "JavaScript"],
         images:[
-            "/images/projects/fallback.jpg"
+            "/images/projects/fallback.webp"
         ]
     },
     {
@@ -47,7 +47,7 @@ export const Projects : ProjectItemProps[] = [
         projectLink: "https://github.com/Zaido219/static-html-server",
         techStacks: ["C#"],
         images:[
-            "/images/projects/fallback.jpg"
+            "/images/projects/fallback.webp"
         ]
     },
     {
@@ -57,7 +57,7 @@ export const Projects : ProjectItemProps[] = [
         projectLink:"https://github.com/Zaido219/Notepad.git",
         techStacks: ["C#"],
         images:[
-            "/images/projects/fallback.jpg"
+            "/images/projects/fallback.webp"
         ]
     },
     {
@@ -67,7 +67,7 @@ export const Projects : ProjectItemProps[] = [
         projectLink:"https://github.com/Zaido219/DigitalClockApp.git",
         techStacks: ["C#"],
         images:[
-            "/images/projects/fallback.jpg"
+            "/images/projects/fallback.webp"
         ]
     },
     {
@@ -77,7 +77,7 @@ export const Projects : ProjectItemProps[] = [
         projectLink:"https://github.com/Zaido219/atmSimulator.git",
         techStacks:["C#"],
         images:[
-            "/images/projects/fallback.jpg"
+            "/images/projects/fallback.webp"
         ]
     },
     {
@@ -87,7 +87,7 @@ export const Projects : ProjectItemProps[] = [
         projectLink:"https://bascgad.gadinsight.com/",
         techStacks:["Typescript", "React.js", "TailwindCss"],
         images:[
-            "/images/projects/fallback.jpg"
+            "/images/projects/fallback.webp"
         ]
     },
     {
@@ -97,7 +97,7 @@ export const Projects : ProjectItemProps[] = [
         projectLink:"https://photobooth-app-three.vercel.app/",
         techStacks:["React.js", "TailwindCss"],
         images:[
-            "/images/projects/fallback.jpg"
+            "/images/projects/fallback.webp"
         ]
     },
     {
@@ -107,7 +107,7 @@ export const Projects : ProjectItemProps[] = [
         projectLink:"https://github.com/Zaido219/ascii-videoplayer.git",
         techStacks:["Python"],
         images:[
-            "/images/projects/fallback.jpg"
+            "/images/projects/fallback.webp"
         ]
     },
 ]
