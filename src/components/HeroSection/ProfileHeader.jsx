@@ -202,7 +202,7 @@ const StatusBadge = ({ text }) => (
 
 // --- Glass button styles (shared by the hero CTAs) ---
 const glassBase =
-  "cursor-none inline-flex items-center justify-center whitespace-nowrap px-6 py-3 rounded-full border backdrop-blur-md font-medium text-sm md:text-xs transition-all duration-300 hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+  "cursor-none inline-flex items-center justify-center whitespace-nowrap px-5 py-2 rounded-full border backdrop-blur-md font-small text-sm md:text-sm transition-all duration-300 hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0";
 
 const glassPrimary =
   "bg-sunset-deep/70 border-white/30 text-white " +
@@ -255,18 +255,18 @@ const HeroCTA = () => (
 export const HeroSection = () => {
   return (
     <section className="min-h-screen bg-transparent text-neutral-900 dark:text-white flex flex-col justify-between selection:bg-sunset-bright/20 transition-colors duration-300">
-      <main className="w-full max-w-7xl mx-auto px-6 py-12 md:py-24 flex-1 flex flex-col md:flex-row items-center justify-between gap-12">
+      <main className="w-full max-w-7xl mx-auto px-6 py-12 md:py-24 flex-1 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-6">
         <div className="flex-1 w-full min-w-0 max-w-2xl">
           <StatusBadge text="Available for work" />
-          <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-neutral-900 dark:text-[#F88F22] mb-4 leading-none">
+          <h1 className="text-3xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-[#F88F22] mb-4 leading-none">
             John Phillip Lor Malbas
           </h1>
 
-          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-700 dark:text-sunset-bright mb-6">
+          <h2 className="text-xl sm:text-2xl font-semibold text-neutral-700 dark:text-sunset-bright mb-5">
             Software Developer
           </h2>
 
-          <p className="text-neutral-600 dark:text-sunset-bright text-base sm:text-md leading-relaxed max-w-xl mb-8">
+          <p className="text-neutral-600 dark:text-sunset-bright text-base sm:text-sm leading-relaxed max-w-l mb-7">
             I build data-driven web apps with Django, React, and Python, 
             and I'm learning to build the AI behind them. Currently looking for my first full-time developer role.
           </p>
@@ -275,7 +275,7 @@ export const HeroSection = () => {
         </div>
 
         <div className="flex-1 flex justify-center md:justify-end w-full">
-          <div className="relative w-full max-w-md aspect-square group">
+          <div className="relative w-full max-w-sm aspect-square group">
             <div
               aria-hidden="true"
               className="absolute -inset-1 sm:-inset-2 rounded-3xl bg-gradient-to-tr from-sunset-deep via-sunset-bright to-sunset-amber opacity-30 dark:opacity-40 blur-2xl transition duration-500 group-hover:opacity-60 dark:group-hover:opacity-70 group-hover:blur-3xl"
