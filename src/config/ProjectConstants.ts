@@ -8,7 +8,7 @@ export const Projects : ProjectItemProps[] = [
         projectLink:"https://github.com/Zaido219/fb-content-automation",
         techStacks: ["Dart","Flutter","Drift","SQlite"],
         images: [
-            "/images/projects/fb-content-automation/sample_img_output.webp"        ]
+            "/images/projects/habit-tracker-app/habit-tracker-habit-details.webp"        ]
     },
     {
         projectName:"Facebook Content Automation",
