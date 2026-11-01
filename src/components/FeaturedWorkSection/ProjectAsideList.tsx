@@ -54,12 +54,12 @@ export const ProjectAsideList: React.FC<ProjectAsideListProps> = ({ projects }) 
   if (projects.length === 0) return null;
 
   return (
-    <aside className="rounded-2xl p-6 flex flex-col h-full max-h-[580px] transition-colors duration-300
+    <aside className="rounded-2xl p-5 flex flex-col h-full max-h-[580px] transition-colors duration-300
                       bg-white/70 dark:bg-neutral-900/40 
                       backdrop-blur-2xl backdrop-saturate-150
                       border border-white/80 dark:border-white/10 
                       shadow-[0_8px_32px_0_rgba(0,0,0,0.06)] dark:shadow-2xl">
-      <div className="flex items-center justify-between mb-4 pb-3 border-b border-black/10 dark:border-white/10">
+      <div className="flex items-center justify-between mb-3 pb-2 border-b border-black/10 dark:border-white/10">
         <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-sunset-dusk dark:text-sunset-bright">
           Other Noteworthy Projects
         </h3>
