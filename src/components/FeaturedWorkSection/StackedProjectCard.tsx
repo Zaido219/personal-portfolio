@@ -51,7 +51,7 @@ export const StackedProjectCard: React.FC<StackedProjectCardProps> = ({
       }}
       transition={{ type: "spring", stiffness: 300, damping: 25 }}
       style={{ zIndex }}
-      className={`absolute inset-0 w-full rounded-2xl p-6 shadow-xl dark:shadow-2xl flex flex-col justify-between select-none transition-colors duration-300
+      className={`absolute inset-0 w-full rounded-2xl p-5 shadow-xl dark:shadow-2xl flex flex-col justify-between select-none transition-colors duration-300
         bg-white/75 dark:bg-neutral-900/40
         backdrop-blur-xl backdrop-saturate-150
         border border-black/10 dark:border-white/10
@@ -79,7 +79,7 @@ export const StackedProjectCard: React.FC<StackedProjectCardProps> = ({
 
         {/* Project Header */}
         <div className="flex items-center justify-between gap-x-2 mb-3">
-          <h3 className="text-xl font-bold text-neutral-900 dark:text-sunset-deep">
+          <h3 className="text-lg font-semibold text-neutral-900 dark:text-sunset-deep">
             {project.projectName}
           </h3>
 
