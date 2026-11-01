@@ -54,7 +54,7 @@ const ExperienceItemCard: React.FC<{ item: WorkExperienceItemProps }> = ({
         </span>
 
         {/* Role Title */}
-        <h3 className="text-lg sm:text-xl font-bold text-zinc-900 dark:text-white group-hover:text-sunset-deep dark:group-hover:text-sunset-bright transition-colors duration-200">
+        <h3 className="text-md sm:text-lg font-semibold text-zinc-900 dark:text-white group-hover:text-sunset-deep dark:group-hover:text-sunset-bright transition-colors duration-200">
           {item.title}
         </h3>
 
@@ -87,7 +87,7 @@ export const ExperienceSection: React.FC = () => {
   return (
     <section
       id="experience"
-      className="w-full bg-transparent max-w-7xl mx-auto px-6 py-16 md:py-24 transition-colors duration-300"
+      className="w-full bg-transparent max-w-7xl mx-auto px-7 py-18 md:py-24 transition-colors duration-300"
     >
       {/* Outer Card Shell */}
       <div className="rounded-3xl p-6 sm:p-10 md:p-12 transition-colors duration-300
