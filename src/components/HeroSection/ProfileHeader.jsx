@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ReflectedGlow } from "./../Shared/Glow";
 import { useTheme } from "../../hooks/useTheme";
 import myPfp from "../../../public/images/my_pfp_new.jpg";
+import myPfpDark from "../../../public/images/pfp/graduation-headshot-formal.jpg";
 import myLogo from "../../../public/myLogo.png";
 import myResume from "../../../public/files/JOHN PHILLIP MALBAS - RESUME.pdf"
 
@@ -285,7 +286,14 @@ export const HeroSection = () => {
               <img
                 src={myPfp}
                 alt="John Phillip Lor Malbas"
-                className="w-full h-full object-cover object-center"
+                className="absolute inset-0 w-full h-full object-cover object-center opacity-100 transition-opacity duration-500 ease-in-out dark:opacity-0 motion-reduce:transition-none"
+                loading="eager"
+              />
+              <img
+                src={myPfpDark}
+                alt="John Phillip Lor Malbas"
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-500 ease-in-out dark:opacity-100 motion-reduce:transition-none"
                 loading="eager"
               />
             </div>
