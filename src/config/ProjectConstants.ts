@@ -5,7 +5,7 @@ export const Projects : ProjectItemProps[] = [
         projectName:"Habit Tracker App",
         projectStatus:"Done",
         projectDescription:"A habit tracker app built with Flutter and Riverpod. Track daily habits on a scrollable date grid, set reminders, and view streaks, completion calendar, and score charts per habit.",
-        projectLink:"https://github.com/Zaido219/fb-content-automation",
+        projectLink:"https://github.com/Zaido219/habit_tracker_app",
         techStacks: ["Dart","Flutter","Drift","SQlite"],
         images: [
             "/images/projects/habit-tracker-app/habit-tracker-habit-details.webp"        ]
