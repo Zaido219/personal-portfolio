@@ -3,12 +3,16 @@ import type { ProjectItemProps } from "../../interface/types";
 
 interface ProjectAsideItemProps {
   project: ProjectItemProps;
+  onViewDetails: () => void;
 }
 
 /**
  * SRP: Renders a single secondary project row with clear neutral hierarchy
  */
-export const ProjectAsideItem: React.FC<ProjectAsideItemProps> = ({ project }) => (
+export const ProjectAsideItem: React.FC<ProjectAsideItemProps> = ({
+  project,
+  onViewDetails,
+}) => (
   <div className="group p-4 rounded-xl transition-all duration-200
                   bg-white/60 hover:bg-white/90 dark:bg-neutral-900/40 dark:hover:bg-neutral-900/70
                   backdrop-blur-md
@@ -29,28 +33,41 @@ export const ProjectAsideItem: React.FC<ProjectAsideItemProps> = ({ project }) =
       {project.projectDescription}
     </p>
 
-    {project.projectLink && (
-      <a
-        href={project.projectLink}
-        target="_blank"
-        rel="noopener noreferrer"
+    <div className="flex items-center justify-between gap-3">
+      <button
+        type="button"
+        onClick={onViewDetails}
         className="text-[11px] font-mono font-semibold text-sunset-dusk hover:text-sunset-deep dark:text-sunset-bright dark:hover:text-sunset-peach transition-colors inline-flex items-center gap-x-1"
       >
-        Source Code &rarr;
-      </a>
-    )}
+        View details &rarr;
+      </button>
+      {project.projectLink && (
+        <a
+          href={project.projectLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[11px] font-mono font-semibold text-sunset-dusk hover:text-sunset-deep dark:text-sunset-bright dark:hover:text-sunset-peach transition-colors inline-flex items-center gap-x-1"
+        >
+          Source Code &rarr;
+        </a>
+      )}
+    </div>
   </div>
 );
 
 interface ProjectAsideListProps {
   projects: ProjectItemProps[];
+  onViewDetails: (project: ProjectItemProps) => void;
   isDark?: boolean;
 }
 
 /**
  * SRP: Manages vertical scrolling bounds and container presentation
  */
-export const ProjectAsideList: React.FC<ProjectAsideListProps> = ({ projects }) => {
+export const ProjectAsideList: React.FC<ProjectAsideListProps> = ({
+  projects,
+  onViewDetails,
+}) => {
   if (projects.length === 0) return null;
 
   return (
@@ -70,7 +87,11 @@ export const ProjectAsideList: React.FC<ProjectAsideListProps> = ({ projects }) 
 
       <div className="flex flex-col gap-y-3 overflow-y-auto pr-1 custom-scrollbar">
         {projects.map((project) => (
-          <ProjectAsideItem key={project.projectName} project={project} />
+          <ProjectAsideItem
+            key={project.projectName}
+            project={project}
+            onViewDetails={() => onViewDetails(project)}
+          />
         ))}
       </div>
     </aside>

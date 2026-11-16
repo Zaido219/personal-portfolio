@@ -78,7 +78,11 @@ export const FeaturedWorkSection: React.FC = () => {
 
         {/* Right Column: Scrollable Secondary Projects (5 cols on Desktop) */}
         <div className="lg:col-span-5">
-          <ProjectAsideList projects={secondaryProjects} isDark={isDark} />
+          <ProjectAsideList
+            projects={secondaryProjects}
+            onViewDetails={setSelectedProject}
+            isDark={isDark}
+          />
         </div>
       </div>
       <ProjectModal project={selectedProject} onClose={handleCloseProject} />
