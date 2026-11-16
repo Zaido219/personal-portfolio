@@ -7,6 +7,7 @@ interface StackedProjectCardProps {
   offset: number;
   totalCards: number;
   onDismiss: () => void;
+  onViewDetails: () => void;
   isDark?: boolean;
 }
 
@@ -15,6 +16,7 @@ export const StackedProjectCard: React.FC<StackedProjectCardProps> = ({
   offset,
   totalCards,
   onDismiss,
+  onViewDetails,
 }) => {
   const isTop = offset === 0;
 
@@ -109,24 +111,36 @@ export const StackedProjectCard: React.FC<StackedProjectCardProps> = ({
       </div>
 
       {/* Footer */}
-      {project.projectLink && (
-        <div className="pt-4 border-t border-black/10 dark:border-white/10 flex items-center justify-between">
-          <a
-            href={project.projectLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs font-semibold uppercase tracking-wider text-sunset-deep dark:text-sunset-bright hover:text-neutral-950 dark:hover:text-white transition-colors"
-          >
-            Repository &rarr;
-          </a>
+      <div className="pt-4 border-t border-black/10 dark:border-white/10 flex items-center justify-between gap-3">
+        <button
+          type="button"
+          onPointerDown={(event) => event.stopPropagation()}
+          onClick={onViewDetails}
+          className="text-xs font-semibold uppercase tracking-wider text-sunset-deep dark:text-sunset-bright hover:text-neutral-950 dark:hover:text-white transition-colors"
+        >
+          View details <span aria-hidden="true">&rarr;</span>
+        </button>
+
+        <div className="flex items-center gap-3">
+          {project.projectLink && (
+            <a
+              href={project.projectLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              onPointerDown={(event) => event.stopPropagation()}
+              className="text-xs font-semibold uppercase tracking-wider text-neutral-600 dark:text-neutral-300 hover:text-sunset-deep dark:hover:text-sunset-bright transition-colors"
+            >
+              Repository
+            </a>
+          )}
 
           {isTop && (
-            <span className="text-[10px] font-mono text-neutral-500 dark:text-neutral-400">
-              Drag horizontally to dismiss
+            <span className="hidden text-[10px] font-mono text-neutral-500 dark:text-neutral-400 sm:inline">
+              Drag to dismiss
             </span>
           )}
         </div>
-      )}
+      </div>
     </motion.div>
   );
 };

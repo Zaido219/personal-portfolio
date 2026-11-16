@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Projects } from "../../config/ProjectConstants";
 import { StackedProjectCard } from "./StackedProjectCard";
 import { DeckControls } from "./DeckControls";
 import { ProjectAsideList } from "./ProjectAsideList";
 import { useTheme } from "../../hooks/useTheme";
 import { SectionHeader } from "../Shared/SectionHeader";
+import { ProjectModal } from "./ProjectModal";
+import type { ProjectItemProps } from "../../interface/types";
 
 export const FeaturedWorkSection: React.FC = () => {
   // Partitioning data: Top 5 for deck stack, remaining for secondary list
@@ -12,7 +14,11 @@ export const FeaturedWorkSection: React.FC = () => {
   const secondaryProjects = Projects.slice(5);
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [selectedProject, setSelectedProject] =
+    useState<ProjectItemProps | null>(null);
   const { isDark } = useTheme();
+
+  const handleCloseProject = useCallback(() => setSelectedProject(null), []);
 
   const handleNext = () => {
     setActiveIndex((prev) => (prev + 1) % featuredProjects.length);
@@ -51,6 +57,7 @@ export const FeaturedWorkSection: React.FC = () => {
                   offset={offset}
                   totalCards={featuredProjects.length}
                   onDismiss={handleNext}
+                  onViewDetails={() => setSelectedProject(project)}
                   isDark={isDark}
                 />
               );
@@ -74,6 +81,7 @@ export const FeaturedWorkSection: React.FC = () => {
           <ProjectAsideList projects={secondaryProjects} isDark={isDark} />
         </div>
       </div>
+      <ProjectModal project={selectedProject} onClose={handleCloseProject} />
     </section>
   );
 };
