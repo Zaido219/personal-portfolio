@@ -51,7 +51,7 @@ export const StackedProjectCard: React.FC<StackedProjectCardProps> = ({
         rotate,
         opacity,
       }}
-      transition={{ type: "spring", stiffness: 300, damping: 25 }}
+      transition={{ type: "spring", stiffness: 350, damping: 25 }}
       style={{ zIndex }}
       className={`absolute inset-0 w-full rounded-2xl p-5 shadow-xl dark:shadow-2xl flex flex-col justify-between select-none transition-colors duration-300
         bg-white/75 dark:bg-neutral-900/40
