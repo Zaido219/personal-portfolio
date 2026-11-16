@@ -1,83 +1,50 @@
 import { useEffect, useRef } from "react";
+import { MousePointer2 } from "lucide-react";
+
 export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const dotRef = useRef<HTMLDivElement>(null);
-  const crossRef = useRef<HTMLDivElement>(null);
-  const glassRef = useRef<HTMLDivElement>(null);
+  const pointerRef = useRef<SVGSVGElement>(null);
+  const wasClickableRef = useRef(false);
+
   useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      if (!cursorRef.current) return;
-      cursorRef.current.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
-      const target = document.elementFromPoint(
-        event.clientX,
-        event.clientY,
-      ) as HTMLElement | null;
+    const handlePointerMove = (event: PointerEvent) => {
+      if (event.pointerType === "touch") return;
+
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate3d(${event.clientX - 5}px, ${event.clientY - 3}px, 0)`;
+      }
+
+      const target = event.target instanceof Element ? event.target : null;
       const clickable = !!target?.closest(
         "a, button, [role='button'], [data-cursor='clickable']",
       );
-      if (clickable) {
-        dotRef.current?.classList.add("opacity-0", "scale-50");
-        crossRef.current?.classList.remove("opacity-0", "scale-50");
-        glassRef.current?.classList.add("scale-110");
-      } else {
-        dotRef.current?.classList.remove("opacity-0", "scale-50");
-        crossRef.current?.classList.add("opacity-0", "scale-50");
-        glassRef.current?.classList.remove("scale-110");
+
+      if (clickable !== wasClickableRef.current) {
+        pointerRef.current?.classList.toggle("scale-110", clickable);
+        wasClickableRef.current = clickable;
       }
     };
-    window.addEventListener("mousemove", handleMouseMove);
+
+    window.addEventListener("pointermove", handlePointerMove);
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("pointermove", handlePointerMove);
     };
   }, []);
+
   return (
     <div
       ref={cursorRef}
-      className=" pointer-events-none fixed left-0 top-0 z-[9999] hidden md:block "
+      aria-hidden="true"
+      className="pointer-events-none fixed left-0 top-0 z-[9999] hidden will-change-transform md:block"
     >
-      {" "}
-      {/* Liquid glass lens */}{" "}
-      <div
-        ref={glassRef}
-        className=" absolute -left-5 -top-5 h-10 w-10 rounded-full  backdrop-blur-[1px] shadow-[inset_0_0_8px_rgba(255,255,255,0.12)] transition-transform duration-200 "
-      >
-        {" "}
-        {/* Glass highlight */}{" "}
-      </div>{" "}
-      {/* Outer rotating dashed ring */}{" "}
-      <svg
-        className=" absolute -left-5 -top-5 h-10 w-10 animate-spin "
-        style={{ animationDuration: "7s" }}
-        viewBox="0 0 40 40"
-      >
-        {" "}
-        <circle
-          cx="20"
-          cy="20"
-          r="18"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeDasharray="6 10"
-          className="text-sunset-bright"
-        />{" "}
-      </svg>{" "}
-      {/* Normal cursor dot */}{" "}
-      <div
-        ref={dotRef}
-        className=" absolute -left-1 -top-1 h-2 w-2 rounded-full bg-sunset-bright transition-all duration-150 "
-      />{" "}
-      {/* Clickable cursor cross */}{" "}
-      <div
-        ref={crossRef}
-        className=" absolute -left-2 -top-2 h-4 w-4 opacity-0 scale-50 transition-all duration-150 "
-      >
-        {" "}
-        {/* Horizontal line */}{" "}
-        <div className=" absolute left-0 top-1/2 h-[2px] w-full -translate-y-1/2 rounded-full bg-sunset-bright " />{" "}
-        {/* Vertical line */}{" "}
-        <div className=" absolute left-1/2 top-0 h-full w-[2px] -translate-x-1/2 rounded-full bg-sunset-bright " />{" "}
-      </div>{" "}
+      <MousePointer2
+        ref={pointerRef}
+        size={30}
+        strokeWidth={2.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="absolute -left-[5px] -top-[3px] text-zinc-950 transition-transform duration-75 dark:text-neutral-100"
+      />
     </div>
   );
 }

@@ -27,11 +27,11 @@ function App() {
           <main>
             <HeroSection />
             <FeaturedWorkSection />
-            <ExperienceSection />
             <StackSection />
+            <ExperienceSection />
             <CertificatesSection />
-            <AboutSection />
             <GallerySection/>
+            <AboutSection />
           </main>
           <Footer />
         </div>
