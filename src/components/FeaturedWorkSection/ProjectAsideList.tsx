@@ -37,7 +37,7 @@ export const ProjectAsideItem: React.FC<ProjectAsideItemProps> = ({
       <button
         type="button"
         onClick={onViewDetails}
-        className="text-[11px] font-mono font-semibold text-sunset-dusk hover:text-sunset-deep dark:text-sunset-bright dark:hover:text-sunset-peach transition-colors inline-flex items-center gap-x-1"
+        className="text-[11px] leading-5 font-mono font-semibold text-sunset-dusk hover:text-sunset-deep dark:text-sunset-bright dark:hover:text-sunset-peach transition-colors inline-flex items-center gap-x-1"
       >
         View details &rarr;
       </button>
